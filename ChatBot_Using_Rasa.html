@@ -403,14 +403,13 @@ Lianghui Yi
 </section>
 <section id="what-are-chatbots" class="slide level2">
 <h2>What are chatbots?</h2>
-<p>Popular chatbos</p>
 <ul>
 <li><p>Siri</p></li>
 <li><p>Alexa</p></li>
 <li><p>ChatGpt</p></li>
 </ul>
 <aside class="notes">
-<p>Hi, everyone! Today I gonna introduce chatbots. We’ve seen a lot of chatbots in our daily life, like Siri, Alexa, and ChatGpt. But how do they work? How can we build one?</p>
+<p>Hi, everyone! Today I gonna introduce chatbots. Since they are so popular, I guess most of you have used them before. For example, Siri, Alexa, and ChatGpt. So chatbots are just applications that can talk to.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -428,10 +427,11 @@ Lianghui Yi
 <ul>
 <li><p>Customer Service (FAQ)</p></li>
 <li><p>Insurance Sales (Lenmonade, conversational)</p></li>
+<li><p>…</p></li>
 </ul>
 
 <img data-src="./Lemonade.png" class="r-stretch"><aside class="notes">
-<p>So, what can chatbots do? I guess, before ChatGpt, most of you have used chatbots for customer service. For example, when you have questions about your order, you can ask the chatbot.For example, Lemonade is a famous insurance company that uses chatbots to sell insurance. They are not clever like ChatGpt, but they can also do stuff with simple logic.</p>
+<p>So, what can chatbots do? For example, when you have questions about your order, you can ask the chatbot. For example, Lemonade is a famous insurance company that uses chatbots to sell insurance.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -462,29 +462,12 @@ Lianghui Yi
           display:block!important;
       }</style></aside>
 </section>
-<section id="how-does-rasa-work" class="slide level2">
-<h2>How does Rasa work?</h2>
-
-<img data-src="https://rasa.com/docs/rasa/img/architecture.png" class="r-stretch"><aside class="notes">
-<p>So, how does Rasa work? Here are the basic freame work of Rasa.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
 <section id="how-to-install-rasa" class="slide level2">
 <h2>How to Install Rasa</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>pip3 install -U pip</span>
 <span id="cb1-2"><a href="#cb1-2"></a>pip3 install rasa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside class="notes">
-<p>Now, let’s install Rasa. First make sure your pip version is up to date: Be careful, the python version should not be too new.</p>
+<p>Now, let’s install Rasa. You can easly install it by using pip. Be careful, the python version should not be too new.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -534,7 +517,7 @@ Lianghui Yi
 <li>Stories</li>
 </ul>
 <aside class="notes">
-<p>Now, let’s talk about how to train your model. There are four parts. Intents, responses, rules, and stories.</p>
+<p>Now, let’s talk about how to train your model.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -561,7 +544,7 @@ Lianghui Yi
 <span id="cb2-9"><a href="#cb2-9"></a>    - good morning</span>
 <span id="cb2-10"><a href="#cb2-10"></a>    - good evening</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside class="notes">
-<p>First, let’s talk about intents. Intents are what the user says. For example, when the user says “hey”, “hello”, “hi”, the intent is greet.</p>
+<p>First, Intents are what the user says. For example, when the user says “hey”, “hello”, “hi”, the intent is greet.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -637,7 +620,7 @@ Lianghui Yi
 <section id="story" class="slide level2">
 <h2>Story</h2>
 <aside class="notes">
-<p>Then, let’s talk about stories. Stories are common conversation flows. Beyond rules, this can give more context information to the bot. So they can be more clever.</p>
+<p>Stories are common conversation flows. Beyond rules, this can give more context information to the bot. So they can be more clever.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -658,25 +641,6 @@ Lianghui Yi
 <span id="cb5-6"><a href="#cb5-6"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">action</span><span class="kw">:</span><span class="at"> utter_greet</span></span>
 <span id="cb5-7"><a href="#cb5-7"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">intent</span><span class="kw">:</span><span class="at"> mood_great</span></span>
 <span id="cb5-8"><a href="#cb5-8"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">action</span><span class="kw">:</span><span class="at"> utter_happy</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="interactive-learning" class="slide level2">
-<h2>Interactive Learning</h2>
-<aside class="notes">
-<p>Besides the above methods, you can also use interactive learning to teach your assistant. It’s like teaching a child. You can talk with the bot, and the bot will ask you what to do next. So all the above rules, intents, and responses can be created dynamically while talking with the bot.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href="#cb6-1"></a>rasa data validate</span>
-<span id="cb6-2"><a href="#cb6-2"></a>rasa train</span>
-<span id="cb6-3"><a href="#cb6-3"></a>rasa interactive</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 <img data-src="./interactive_mode.png" class="r-stretch"></section>
 <section id="debug-using-real-time-conversation-graph" class="slide level2">
@@ -705,9 +669,9 @@ Lianghui Yi
 <section id="demo-time" class="slide level2">
 <h2>Demo time</h2>
 <aside class="notes">
-<p>To demo the easyness of Rasa, I build a simple chatbot in a imagined scenario. Suppose I have a girfriend, and she always text me or call while I am busy at meeting. So I build a chatbot to answer her questions when i was not avaliable.</p>
-<p>Frist we can see these are the training files I wrote.</p>
-<p>Then let’s see how it works. Then i will use rasa shell to test the result.</p>
+<p>To demo the easyness of Rasa, I build a simple chatbot in a imagined scenario. Suppose I have a girfriend, and she always text me or call while I am busy at meeting. So I build a chatbot to answer her questions.</p>
+<p>Frist we can see these are the training files I wrote. which are just intents、responses、rules、and stories.</p>
+<p>Since I already trained the model in advance, so now i will use rasa shell to test the result.</p>
 <ul>
 <li><dl>
 <dt>why don’t answer the call?</dt>
@@ -727,8 +691,13 @@ maybe next time, baby
 miss you, too. will let you know when I was free.
 </dd>
 </dl></li>
+<li><dl>
+<dt>are you a robot?</dt>
+<dd>
+of course not. how dare I? … That’s it.
+</dd>
+</dl></li>
 </ul>
-<p>… That’s it.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -741,10 +710,10 @@ miss you, too. will let you know when I was free.
           display:block!important;
       }</style></aside>
 <p>A simple chatbot that can help you answer questions coming from your girl friend.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href="#cb7-1"></a># Using Shell</span>
-<span id="cb7-2"><a href="#cb7-2"></a>rasa shell</span>
-<span id="cb7-3"><a href="#cb7-3"></a># Using Web widget</span>
-<span id="cb7-4"><a href="#cb7-4"></a>rasa run --enable-api --cors "*" --debug</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href="#cb6-1"></a># Using Shell</span>
+<span id="cb6-2"><a href="#cb6-2"></a>rasa shell</span>
+<span id="cb6-3"><a href="#cb6-3"></a># Using Web widget</span>
+<span id="cb6-4"><a href="#cb6-4"></a>rasa run --enable-api --cors "*" --debug</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="columns">
 <div class="column" style="width:40%;">
 <p><img data-src="./chat_non_sense.png"></p>
@@ -758,11 +727,11 @@ miss you, too. will let you know when I was free.
 <aside class="notes">
 <p>So, here are the summary.</p>
 <ul>
-<li>Chatbots are very popular.</li>
-<li>Rasa is a powerful open source framework for building chatbots.</li>
-<li>Good chatbots needs a lot of training data.</li>
+<li>Rasa is a powerful open source framework for building simple chatbots.</li>
+<li>It’s easy to use but needs a lot of training data.</li>
+<li>You can publish to public channels like slack、discord、telegram, etc.</li>
 </ul>
-<p>By the way, if I really have a girlfriend, I will not use this dummy chatbot to answer her questions.</p>
+<p>By the way, if you really have a girlfriend, do not try to use this dummy chatbot to fool her.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
