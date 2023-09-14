@@ -431,7 +431,7 @@ Lianghui Yi
 </ul>
 
 <img data-src="./Lemonade.png" class="r-stretch"><aside class="notes">
-<p>So, what can chatbots do? I guess, before ChatGpt, most of you have used chatbots for customer service. For example, when you have questions about your order, you can ask the chatbot. Another example is insurance sales. Lemonade is a famous insurance company that uses chatbots to sell insurance. They are not clever like ChatGpt, but they can also do stuff with simple logic.</p>
+<p>So, what can chatbots do? I guess, before ChatGpt, most of you have used chatbots for customer service. For example, when you have questions about your order, you can ask the chatbot.For example, Lemonade is a famous insurance company that uses chatbots to sell insurance. They are not clever like ChatGpt, but they can also do stuff with simple logic.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -466,7 +466,7 @@ Lianghui Yi
 <h2>How does Rasa work?</h2>
 
 <img data-src="https://rasa.com/docs/rasa/img/architecture.png" class="r-stretch"><aside class="notes">
-<p>So, how does Rasa work? Rasa has two parts. One is the training data, and the other is the runtime. The training data is used to train the model. And the runtime is used to run the model. The training data is composed of intents, responses, rules, and stories. The runtime is composed of NLU, Core, and Action Server. NLU is used to understand the user’s intent. Core is used to decide what to do next. And Action Server is used to execute the action.</p>
+<p>So, how does Rasa work? Here are the basic freame work of Rasa.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -479,12 +479,12 @@ Lianghui Yi
           display:block!important;
       }</style></aside>
 </section>
-<section id="install-rasa" class="slide level2">
-<h2>Install Rasa</h2>
+<section id="how-to-install-rasa" class="slide level2">
+<h2>How to Install Rasa</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>pip3 install -U pip</span>
 <span id="cb1-2"><a href="#cb1-2"></a>pip3 install rasa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside class="notes">
-<p>First make sure your pip version is up to date: Now, let’s install Rasa. First, make sure your pip version is up to date. Be careful, the python version should not be too new. Python 3.10 is not supported.</p>
+<p>Now, let’s install Rasa. First make sure your pip version is up to date: Be careful, the python version should not be too new.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -561,7 +561,7 @@ Lianghui Yi
 <span id="cb2-9"><a href="#cb2-9"></a>    - good morning</span>
 <span id="cb2-10"><a href="#cb2-10"></a>    - good evening</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside class="notes">
-<p>First, let’s talk about intents. Intents are what the user says. For example, when the user says “hey”, “hello”, “hi”, “hello there” the intent is greet.</p>
+<p>First, let’s talk about intents. Intents are what the user says. For example, when the user says “hey”, “hello”, “hi”, the intent is greet.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -702,33 +702,32 @@ Lianghui Yi
           display:block!important;
       }</style></aside>
 </section>
-<section id="deploy-and-publish-to-channel" class="slide level2">
-<h2>Deploy and Publish to Channel</h2>
-<ul>
-<li>Deploying to Cloud Google Cloud/AWS/Azure</li>
-<li>Telegram</li>
-<li>Slack</li>
-</ul>
-<aside class="notes">
-<p>After you train your model, you can deploy it to cloud. And you can publish it to public channels like telegram and slack.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
 <section id="demo-time" class="slide level2">
 <h2>Demo time</h2>
 <aside class="notes">
 <p>To demo the easyness of Rasa, I build a simple chatbot in a imagined scenario. Suppose I have a girfriend, and she always text me or call while I am busy at meeting. So I build a chatbot to answer her questions when i was not avaliable.</p>
 <p>Frist we can see these are the training files I wrote.</p>
 <p>Then let’s see how it works. Then i will use rasa shell to test the result.</p>
+<ul>
+<li><dl>
+<dt>why don’t answer the call?</dt>
+<dd>
+at meeting.
+</dd>
+</dl></li>
+<li><dl>
+<dt>would you have dinner with me tonight?</dt>
+<dd>
+maybe next time, baby
+</dd>
+</dl></li>
+<li><dl>
+<dt>okay, i miss you.</dt>
+<dd>
+miss you, too. will let you know when I was free.
+</dd>
+</dl></li>
+</ul>
 <p>… That’s it.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
