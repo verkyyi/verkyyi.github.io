@@ -1,2 +1,7 @@
-# verkyyi.github.io
+# Verky
+
+- Notes
+- Works
+- Profile
+
 Personal Github Pages
