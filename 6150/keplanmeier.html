@@ -167,8 +167,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
         <li class="sidebar-item">
- <span class="menu-text">Data Preprocessing</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./data_preprocess.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Preprocessing</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
@@ -210,7 +213,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#features-list" id="toc-features-list" class="nav-link active" data-scroll-target="#features-list">Features List</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.dev/gu-dsan6150/fall-2024-project-team-03/blob/main/keplanmeier.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/gu-dsan6150/fall-2024-project-team-03/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -741,8 +750,21 @@ The following objects are masked from 'package:base':
 </div>
 </div>
 </div>
+<p>We used Kaplan-Meier curves to identify potential predictors of PFS. The following variables were selected based on the log-rank test.</p>
+<ul>
+<li>Demographic variables</li>
+<li>Biomarkers</li>
+<li>Clinical characteristics</li>
+</ul>
+<section id="features-list" class="level2">
+<h2 class="anchored" data-anchor-id="features-list">Features List</h2>
+<p>Key Feature - Treatment Group</p>
+<p>Bio-Markers - LDH (Lactate Dehydrogenase) - ALB (Albumin) - HGB (Hemoglobin)</p>
+<p>Demographic Factors - SEX</p>
+<p>Clinical Characteristics - TOTAE (Count of adverse events) - ECOG (Eastern Cooperative Oncology Group performance status)</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1140,7 +1162,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.dev/gu-dsan6150/fall-2024-project-team-03/blob/main/keplanmeier.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/gu-dsan6150/fall-2024-project-team-03/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/gu-dsan6150/fall-2024-project-team-03/blob/main/keplanmeier.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/gu-dsan6150/fall-2024-project-team-03/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Site Icon from freepik</p>
 </div>

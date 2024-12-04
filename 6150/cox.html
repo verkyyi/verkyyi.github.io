@@ -4719,8 +4719,11 @@ vertical-align: -.125em;
   </div>
 </li>
         <li class="sidebar-item">
- <span class="menu-text">Data Preprocessing</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./data_preprocess.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Preprocessing</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
@@ -4769,7 +4772,6 @@ vertical-align: -.125em;
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#read-in-the-data" id="toc-read-in-the-data" class="nav-link" data-scroll-target="#read-in-the-data">Read in the Data</a></li>
   <li><a href="#feature-selection" id="toc-feature-selection" class="nav-link" data-scroll-target="#feature-selection">Feature Selection</a></li>
-  <li><a href="#features-list" id="toc-features-list" class="nav-link" data-scroll-target="#features-list">Features List</a></li>
   <li><a href="#fitting-the-cox-proportional-hazards-model" id="toc-fitting-the-cox-proportional-hazards-model" class="nav-link" data-scroll-target="#fitting-the-cox-proportional-hazards-model">Fitting the Cox Proportional Hazards Model</a></li>
   <li><a href="#getting-summary-statistics" id="toc-getting-summary-statistics" class="nav-link" data-scroll-target="#getting-summary-statistics">Getting Summary Statistics</a></li>
   <li><a href="#model-summary-interpretation" id="toc-model-summary-interpretation" class="nav-link" data-scroll-target="#model-summary-interpretation">Model Summary Interpretation</a>
@@ -4836,7 +4838,7 @@ vertical-align: -.125em;
 </section>
 <section id="read-in-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="read-in-the-data">Read in the Data</h2>
-<div id="cell-3" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="62">
+<div id="cell-3" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Read in the data</span></span>
@@ -4844,11 +4846,11 @@ vertical-align: -.125em;
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># drop NA values</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(data)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># get shape of data</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>A data.frame: 595 x 28</caption>
+<caption>A data.frame: 6 x 28</caption>
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -4916,7 +4918,7 @@ vertical-align: -.125em;
 <td>White</td>
 <td>Not Hispanic or Latino</td>
 <td>139.7219</td>
-<td>155.22263</td>
+<td>155.2226</td>
 <td>135.7905</td>
 <td>Dexamethasone</td>
 <td>110</td>
@@ -4940,7 +4942,7 @@ vertical-align: -.125em;
 <td>White</td>
 <td>Not Hispanic or Latino</td>
 <td>115.6110</td>
-<td>128.21082</td>
+<td>128.2108</td>
 <td>131.7716</td>
 <td>Daratumumab</td>
 <td>30</td>
@@ -4964,7 +4966,7 @@ vertical-align: -.125em;
 <td>White</td>
 <td>Not Hispanic or Latino</td>
 <td>144.8748</td>
-<td>171.44531</td>
+<td>171.4453</td>
 <td>129.9159</td>
 <td>Lenalidomide</td>
 <td>150</td>
@@ -4988,7 +4990,7 @@ vertical-align: -.125em;
 <td>White</td>
 <td>Not Hispanic or Latino</td>
 <td>161.9881</td>
-<td>131.31269</td>
+<td>131.3127</td>
 <td>164.3331</td>
 <td>Daratumumab</td>
 <td>130</td>
@@ -5012,7 +5014,7 @@ vertical-align: -.125em;
 <td>White</td>
 <td>Not Hispanic or Latino</td>
 <td>175.1388</td>
-<td>141.25248</td>
+<td>141.2525</td>
 <td>159.1366</td>
 <td>Lenalidomide</td>
 <td>20</td>
@@ -5036,1333 +5038,13 @@ vertical-align: -.125em;
 <td>White</td>
 <td>Hispanic or Latino</td>
 <td>105.8889</td>
-<td>156.47691</td>
+<td>156.4769</td>
 <td>156.2880</td>
 <td>Daratumumab</td>
 <td>170</td>
 <td>26.86364</td>
 <td>4</td>
 <td>12.715051</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">8</td>
-<td>8</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0008</td>
-<td>0</td>
-<td>TREAT B</td>
-<td>Y</td>
-<td>2015-03-30</td>
-<td>2017-02-18</td>
-<td>691</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Hispanic or Latino</td>
-<td>158.5127</td>
-<td>174.32668</td>
-<td>130.9288</td>
-<td>Daratumumab</td>
-<td>80</td>
-<td>26.52603</td>
-<td>0</td>
-<td>13.430191</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">9</td>
-<td>9</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0009</td>
-<td>1</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2022-12-14</td>
-<td>2023-06-12</td>
-<td>180</td>
-<td>LAST CONTACT</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>177.9875</td>
-<td>130.78646</td>
-<td>117.3007</td>
-<td>Daratumumab</td>
-<td>20</td>
-<td>22.26686</td>
-<td>2</td>
-<td>9.907564</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">10</td>
-<td>10</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0011</td>
-<td>0</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2018-04-09</td>
-<td>2019-01-30</td>
-<td>296</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>162.6243</td>
-<td>145.82577</td>
-<td>170.1736</td>
-<td>Lenalidomide</td>
-<td>140</td>
-<td>19.95198</td>
-<td>1</td>
-<td>12.485552</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">11</td>
-<td>11</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0013</td>
-<td>1</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2017-01-25</td>
-<td>2019-05-09</td>
-<td>834</td>
-<td>ANALYSIS CUT OFF</td>
-<td>...</td>
-<td>White</td>
-<td>Hispanic or Latino</td>
-<td>135.5481</td>
-<td>160.51663</td>
-<td>103.1171</td>
-<td>Dexamethasone</td>
-<td>120</td>
-<td>24.64792</td>
-<td>3</td>
-<td>5.498147</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">12</td>
-<td>12</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0014</td>
-<td>1</td>
-<td>TREAT B</td>
-<td>Y</td>
-<td>2017-10-25</td>
-<td>2018-04-24</td>
-<td>181</td>
-<td>ANALYSIS CUT OFF</td>
-<td>...</td>
-<td>Other</td>
-<td>Not Hispanic or Latino</td>
-<td>146.8514</td>
-<td>120.98298</td>
-<td>143.0962</td>
-<td>Dexamethasone</td>
-<td>180</td>
-<td>30.49207</td>
-<td>0</td>
-<td>12.944245</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">14</td>
-<td>14</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0018</td>
-<td>1</td>
-<td>TREAT B</td>
-<td>Y</td>
-<td>2015-01-04</td>
-<td>2015-05-03</td>
-<td>119</td>
-<td>ANALYSIS CUT OFF</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>157.0071</td>
-<td>143.68436</td>
-<td>121.7761</td>
-<td>Lenalidomide</td>
-<td>60</td>
-<td>25.11012</td>
-<td>3</td>
-<td>14.657066</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">15</td>
-<td>15</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0019</td>
-<td>0</td>
-<td>TREAT B</td>
-<td>Y</td>
-<td>2015-02-04</td>
-<td>2017-09-26</td>
-<td>965</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>146.3204</td>
-<td>161.93093</td>
-<td>123.1316</td>
-<td>Dexamethasone</td>
-<td>160</td>
-<td>16.08831</td>
-<td>3</td>
-<td>16.167677</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">16</td>
-<td>16</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0020</td>
-<td>1</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2018-05-18</td>
-<td>2018-06-19</td>
-<td>32</td>
-<td>ANALYSIS CUT OFF</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>170.0195</td>
-<td>164.15060</td>
-<td>180.0096</td>
-<td>Daratumumab</td>
-<td>170</td>
-<td>25.96287</td>
-<td>2</td>
-<td>13.158216</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">19</td>
-<td>19</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0023</td>
-<td>0</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2018-12-26</td>
-<td>2020-09-12</td>
-<td>626</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>121.0348</td>
-<td>162.29375</td>
-<td>136.3271</td>
-<td>Dexamethasone</td>
-<td>30</td>
-<td>25.60411</td>
-<td>2</td>
-<td>14.579298</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">20</td>
-<td>20</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0024</td>
-<td>0</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2021-03-01</td>
-<td>2021-08-19</td>
-<td>171</td>
-<td>DEATH</td>
-<td>...</td>
-<td>Asian</td>
-<td>Not Hispanic or Latino</td>
-<td>129.0412</td>
-<td>179.21835</td>
-<td>152.1392</td>
-<td>Lenalidomide</td>
-<td>50</td>
-<td>27.53356</td>
-<td>2</td>
-<td>7.032170</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">21</td>
-<td>21</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0025</td>
-<td>0</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2017-08-13</td>
-<td>2018-02-02</td>
-<td>173</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>156.6662</td>
-<td>153.89019</td>
-<td>163.0516</td>
-<td>Lenalidomide</td>
-<td>180</td>
-<td>29.86949</td>
-<td>1</td>
-<td>15.426842</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">22</td>
-<td>22</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0026</td>
-<td>0</td>
-<td>TREAT B</td>
-<td>Y</td>
-<td>2018-06-06</td>
-<td>2020-02-28</td>
-<td>632</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>179.4984</td>
-<td>151.24053</td>
-<td>174.4182</td>
-<td>Daratumumab</td>
-<td>40</td>
-<td>34.06144</td>
-<td>2</td>
-<td>8.865094</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">24</td>
-<td>24</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0028</td>
-<td>0</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2021-04-30</td>
-<td>2022-05-19</td>
-<td>384</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>153.6178</td>
-<td>152.54199</td>
-<td>140.8475</td>
-<td>Dexamethasone</td>
-<td>50</td>
-<td>26.23700</td>
-<td>3</td>
-<td>7.310152</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">25</td>
-<td>25</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0029</td>
-<td>1</td>
-<td>TREAT B</td>
-<td>Y</td>
-<td>2018-09-24</td>
-<td>2021-04-20</td>
-<td>939</td>
-<td>LAST CONTACT</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>137.5385</td>
-<td>171.91295</td>
-<td>146.2669</td>
-<td>Daratumumab</td>
-<td>40</td>
-<td>20.64214</td>
-<td>2</td>
-<td>9.605718</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">26</td>
-<td>26</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0030</td>
-<td>0</td>
-<td>TREAT B</td>
-<td>Y</td>
-<td>2015-12-24</td>
-<td>2016-04-21</td>
-<td>119</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>173.6296</td>
-<td>142.26122</td>
-<td>129.7304</td>
-<td>Lenalidomide</td>
-<td>100</td>
-<td>10.77050</td>
-<td>0</td>
-<td>4.495347</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">27</td>
-<td>27</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0031</td>
-<td>0</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2015-09-15</td>
-<td>2018-02-09</td>
-<td>878</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>178.9312</td>
-<td>148.03020</td>
-<td>174.3456</td>
-<td>Dexamethasone</td>
-<td>160</td>
-<td>17.56097</td>
-<td>4</td>
-<td>12.160450</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">28</td>
-<td>28</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0032</td>
-<td>0</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2018-03-14</td>
-<td>2018-10-20</td>
-<td>220</td>
-<td>DEATH</td>
-<td>...</td>
-<td>Black</td>
-<td>Not Hispanic or Latino</td>
-<td>125.3599</td>
-<td>157.15836</td>
-<td>143.6860</td>
-<td>Lenalidomide</td>
-<td>180</td>
-<td>28.47826</td>
-<td>0</td>
-<td>13.725362</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">29</td>
-<td>29</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0033</td>
-<td>0</td>
-<td>TREAT B</td>
-<td>Y</td>
-<td>2017-06-05</td>
-<td>2018-08-23</td>
-<td>444</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>189.0810</td>
-<td>176.15380</td>
-<td>161.2057</td>
-<td>Lenalidomide</td>
-<td>120</td>
-<td>31.62260</td>
-<td>1</td>
-<td>5.094466</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">30</td>
-<td>30</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0034</td>
-<td>0</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2022-11-04</td>
-<td>2022-12-20</td>
-<td>46</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>139.8618</td>
-<td>169.67002</td>
-<td>164.4339</td>
-<td>Dexamethasone</td>
-<td>10</td>
-<td>21.39157</td>
-<td>0</td>
-<td>15.405372</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">31</td>
-<td>31</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0035</td>
-<td>0</td>
-<td>TREAT B</td>
-<td>Y</td>
-<td>2022-11-06</td>
-<td>2024-04-11</td>
-<td>522</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Hispanic or Latino</td>
-<td>121.0651</td>
-<td>173.75942</td>
-<td>167.1401</td>
-<td>Lenalidomide</td>
-<td>40</td>
-<td>26.58693</td>
-<td>2</td>
-<td>14.632452</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">32</td>
-<td>32</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0037</td>
-<td>0</td>
-<td>TREAT B</td>
-<td>Y</td>
-<td>2022-10-16</td>
-<td>2024-06-14</td>
-<td>607</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>139.7214</td>
-<td>168.62282</td>
-<td>158.1860</td>
-<td>Dexamethasone</td>
-<td>150</td>
-<td>26.09122</td>
-<td>3</td>
-<td>11.343074</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">33</td>
-<td>33</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0038</td>
-<td>0</td>
-<td>TREAT B</td>
-<td>Y</td>
-<td>2018-05-19</td>
-<td>2019-03-16</td>
-<td>301</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Hispanic or Latino</td>
-<td>146.5011</td>
-<td>84.75701</td>
-<td>141.3681</td>
-<td>Dexamethasone</td>
-<td>90</td>
-<td>22.45053</td>
-<td>0</td>
-<td>7.283821</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">34</td>
-<td>34</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0039</td>
-<td>0</td>
-<td>TREAT B</td>
-<td>Y</td>
-<td>2020-10-17</td>
-<td>2023-01-06</td>
-<td>811</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>150.4858</td>
-<td>164.46790</td>
-<td>157.0526</td>
-<td>Dexamethasone</td>
-<td>30</td>
-<td>27.54444</td>
-<td>2</td>
-<td>8.482452</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">35</td>
-<td>35</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0040</td>
-<td>1</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2018-10-04</td>
-<td>2020-09-09</td>
-<td>706</td>
-<td>ANALYSIS CUT OFF</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>154.5349</td>
-<td>180.26421</td>
-<td>148.9422</td>
-<td>Dexamethasone</td>
-<td>140</td>
-<td>28.30781</td>
-<td>2</td>
-<td>10.888024</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td></td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">652</td>
-<td>652</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0702</td>
-<td>0</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2015-10-23</td>
-<td>2016-07-18</td>
-<td>269</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>13.256686</td>
-<td>12.294795</td>
-<td>8.826244</td>
-<td>Dexamethasone</td>
-<td>60</td>
-<td>24.61734</td>
-<td>1</td>
-<td>9.012902</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">653</td>
-<td>653</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0703</td>
-<td>0</td>
-<td>TREAT B</td>
-<td>Y</td>
-<td>2019-03-11</td>
-<td>2020-09-21</td>
-<td>560</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>9.052269</td>
-<td>12.727927</td>
-<td>13.184385</td>
-<td>Dexamethasone</td>
-<td>130</td>
-<td>23.06823</td>
-<td>1</td>
-<td>12.576931</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">654</td>
-<td>654</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0704</td>
-<td>0</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2020-03-14</td>
-<td>2021-06-23</td>
-<td>466</td>
-<td>DEATH</td>
-<td>...</td>
-<td>Black</td>
-<td>Not Hispanic or Latino</td>
-<td>11.619473</td>
-<td>14.231363</td>
-<td>15.723652</td>
-<td>Daratumumab</td>
-<td>60</td>
-<td>27.12375</td>
-<td>0</td>
-<td>13.969695</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">655</td>
-<td>655</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0705</td>
-<td>0</td>
-<td>TREAT B</td>
-<td>Y</td>
-<td>2015-03-13</td>
-<td>2016-04-04</td>
-<td>388</td>
-<td>DEATH</td>
-<td>...</td>
-<td>Black</td>
-<td>Not Hispanic or Latino</td>
-<td>16.426272</td>
-<td>8.640898</td>
-<td>14.619696</td>
-<td>Dexamethasone</td>
-<td>160</td>
-<td>20.97058</td>
-<td>2</td>
-<td>10.020725</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">656</td>
-<td>656</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0706</td>
-<td>0</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2016-04-08</td>
-<td>2018-07-08</td>
-<td>821</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>14.893293</td>
-<td>14.385803</td>
-<td>15.255714</td>
-<td>Daratumumab</td>
-<td>130</td>
-<td>29.63164</td>
-<td>4</td>
-<td>4.568429</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">657</td>
-<td>657</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0707</td>
-<td>0</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2018-07-13</td>
-<td>2019-03-29</td>
-<td>259</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>12.705206</td>
-<td>12.424095</td>
-<td>15.038656</td>
-<td>Dexamethasone</td>
-<td>200</td>
-<td>28.73425</td>
-<td>3</td>
-<td>9.774291</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">658</td>
-<td>658</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0708</td>
-<td>0</td>
-<td>TREAT B</td>
-<td>Y</td>
-<td>2017-03-20</td>
-<td>2018-11-08</td>
-<td>598</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>11.646766</td>
-<td>14.785652</td>
-<td>11.396628</td>
-<td>Daratumumab</td>
-<td>70</td>
-<td>32.10313</td>
-<td>0</td>
-<td>10.765830</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">659</td>
-<td>659</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0709</td>
-<td>1</td>
-<td>TREAT B</td>
-<td>Y</td>
-<td>2016-10-25</td>
-<td>2016-12-12</td>
-<td>48</td>
-<td>LAST CONTACT</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>11.825644</td>
-<td>11.601169</td>
-<td>14.765575</td>
-<td>Daratumumab</td>
-<td>200</td>
-<td>29.46426</td>
-<td>2</td>
-<td>7.987250</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">660</td>
-<td>660</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0711</td>
-<td>1</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2018-10-03</td>
-<td>2019-11-20</td>
-<td>413</td>
-<td>ANALYSIS CUT OFF</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>11.011784</td>
-<td>15.654379</td>
-<td>14.247519</td>
-<td>Daratumumab</td>
-<td>180</td>
-<td>22.36454</td>
-<td>3</td>
-<td>7.833012</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">661</td>
-<td>661</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0712</td>
-<td>0</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2020-09-18</td>
-<td>2023-05-11</td>
-<td>965</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>13.030831</td>
-<td>10.637558</td>
-<td>18.690930</td>
-<td>Dexamethasone</td>
-<td>150</td>
-<td>16.07533</td>
-<td>4</td>
-<td>15.815140</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">662</td>
-<td>662</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0713</td>
-<td>0</td>
-<td>TREAT B</td>
-<td>Y</td>
-<td>2019-08-09</td>
-<td>2021-12-03</td>
-<td>847</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>9.682851</td>
-<td>11.470617</td>
-<td>15.251839</td>
-<td>Dexamethasone</td>
-<td>80</td>
-<td>27.73745</td>
-<td>0</td>
-<td>14.602445</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">663</td>
-<td>663</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0714</td>
-<td>0</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2018-01-03</td>
-<td>2018-02-15</td>
-<td>43</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>9.892261</td>
-<td>13.880402</td>
-<td>9.866855</td>
-<td>Lenalidomide</td>
-<td>10</td>
-<td>26.17282</td>
-<td>3</td>
-<td>9.028565</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">664</td>
-<td>664</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0715</td>
-<td>0</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2022-05-13</td>
-<td>2022-12-06</td>
-<td>207</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>13.906302</td>
-<td>17.353424</td>
-<td>13.396625</td>
-<td>Dexamethasone</td>
-<td>100</td>
-<td>22.99454</td>
-<td>4</td>
-<td>3.772962</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">665</td>
-<td>665</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0716</td>
-<td>0</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2022-05-11</td>
-<td>2025-01-02</td>
-<td>967</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>13.962415</td>
-<td>14.453065</td>
-<td>11.408204</td>
-<td>Daratumumab</td>
-<td>160</td>
-<td>25.75414</td>
-<td>2</td>
-<td>7.472343</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">666</td>
-<td>666</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0717</td>
-<td>1</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2015-05-27</td>
-<td>2017-07-15</td>
-<td>780</td>
-<td>ANALYSIS CUT OFF</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>11.079163</td>
-<td>11.937430</td>
-<td>13.713378</td>
-<td>Daratumumab</td>
-<td>90</td>
-<td>13.94585</td>
-<td>3</td>
-<td>8.094419</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">668</td>
-<td>668</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0719</td>
-<td>1</td>
-<td>TREAT B</td>
-<td>Y</td>
-<td>2019-09-26</td>
-<td>2021-01-27</td>
-<td>489</td>
-<td>LAST CONTACT</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>11.903858</td>
-<td>12.886375</td>
-<td>13.349478</td>
-<td>Lenalidomide</td>
-<td>190</td>
-<td>28.45991</td>
-<td>1</td>
-<td>12.310376</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">669</td>
-<td>669</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0720</td>
-<td>1</td>
-<td>TREAT B</td>
-<td>Y</td>
-<td>2019-07-15</td>
-<td>2021-11-05</td>
-<td>844</td>
-<td>LAST CONTACT</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>9.777781</td>
-<td>12.668398</td>
-<td>10.590153</td>
-<td>Lenalidomide</td>
-<td>100</td>
-<td>27.31394</td>
-<td>4</td>
-<td>8.909191</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">670</td>
-<td>670</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0721</td>
-<td>1</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2021-06-02</td>
-<td>2023-03-26</td>
-<td>662</td>
-<td>ANALYSIS CUT OFF</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>12.491650</td>
-<td>14.012303</td>
-<td>14.253938</td>
-<td>Dexamethasone</td>
-<td>50</td>
-<td>22.17666</td>
-<td>3</td>
-<td>11.342092</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">671</td>
-<td>671</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0722</td>
-<td>0</td>
-<td>TREAT B</td>
-<td>Y</td>
-<td>2019-10-17</td>
-<td>2022-02-04</td>
-<td>841</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>11.221129</td>
-<td>10.592295</td>
-<td>16.554415</td>
-<td>Daratumumab</td>
-<td>30</td>
-<td>25.09682</td>
-<td>3</td>
-<td>9.820216</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">672</td>
-<td>672</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0723</td>
-<td>0</td>
-<td>TREAT B</td>
-<td>Y</td>
-<td>2019-12-02</td>
-<td>2021-01-24</td>
-<td>419</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>9.163082</td>
-<td>10.780264</td>
-<td>12.350317</td>
-<td>Dexamethasone</td>
-<td>110</td>
-<td>14.00581</td>
-<td>3</td>
-<td>5.113456</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">673</td>
-<td>673</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0724</td>
-<td>1</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2020-12-09</td>
-<td>2021-08-31</td>
-<td>265</td>
-<td>LAST CONTACT</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>12.854561</td>
-<td>11.741801</td>
-<td>10.293309</td>
-<td>Lenalidomide</td>
-<td>60</td>
-<td>27.30768</td>
-<td>4</td>
-<td>10.984977</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">674</td>
-<td>674</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0726</td>
-<td>0</td>
-<td>TREAT B</td>
-<td>Y</td>
-<td>2016-09-17</td>
-<td>2017-10-14</td>
-<td>392</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>13.845101</td>
-<td>15.060379</td>
-<td>15.202190</td>
-<td>Daratumumab</td>
-<td>150</td>
-<td>22.35990</td>
-<td>3</td>
-<td>7.078579</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">675</td>
-<td>675</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0727</td>
-<td>0</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2021-05-19</td>
-<td>2021-09-08</td>
-<td>112</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>14.820062</td>
-<td>12.449108</td>
-<td>9.488029</td>
-<td>Lenalidomide</td>
-<td>40</td>
-<td>22.65365</td>
-<td>4</td>
-<td>7.393112</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">676</td>
-<td>676</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0728</td>
-<td>0</td>
-<td>TREAT B</td>
-<td>Y</td>
-<td>2015-05-20</td>
-<td>2015-10-06</td>
-<td>139</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>9.876271</td>
-<td>14.370565</td>
-<td>8.427181</td>
-<td>Dexamethasone</td>
-<td>50</td>
-<td>33.45910</td>
-<td>3</td>
-<td>10.271646</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">677</td>
-<td>677</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0729</td>
-<td>1</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2017-09-01</td>
-<td>2019-01-03</td>
-<td>489</td>
-<td>ANALYSIS CUT OFF</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>14.483341</td>
-<td>13.040134</td>
-<td>16.828280</td>
-<td>Lenalidomide</td>
-<td>120</td>
-<td>29.32860</td>
-<td>3</td>
-<td>3.403075</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">678</td>
-<td>678</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0730</td>
-<td>0</td>
-<td>TREAT B</td>
-<td>Y</td>
-<td>2016-09-01</td>
-<td>2019-03-10</td>
-<td>920</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>12.978693</td>
-<td>8.712758</td>
-<td>14.648721</td>
-<td>Dexamethasone</td>
-<td>180</td>
-<td>26.94987</td>
-<td>4</td>
-<td>6.024873</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">679</td>
-<td>679</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0731</td>
-<td>0</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2020-04-17</td>
-<td>2022-12-18</td>
-<td>975</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>15.188769</td>
-<td>12.179532</td>
-<td>12.410017</td>
-<td>Lenalidomide</td>
-<td>70</td>
-<td>19.52904</td>
-<td>4</td>
-<td>9.669706</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">680</td>
-<td>680</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0734</td>
-<td>0</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2016-10-16</td>
-<td>2018-01-26</td>
-<td>467</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>17.095178</td>
-<td>12.191435</td>
-<td>12.176641</td>
-<td>Dexamethasone</td>
-<td>120</td>
-<td>30.38547</td>
-<td>4</td>
-<td>12.894555</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">682</td>
-<td>682</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0736</td>
-<td>0</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2018-11-03</td>
-<td>2021-05-01</td>
-<td>910</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>13.845385</td>
-<td>12.364111</td>
-<td>13.616505</td>
-<td>Dexamethasone</td>
-<td>160</td>
-<td>24.88020</td>
-<td>1</td>
-<td>11.494120</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">683</td>
-<td>683</td>
-<td>54767414MMY3008</td>
-<td>SUBJ0737</td>
-<td>0</td>
-<td>TREAT A</td>
-<td>Y</td>
-<td>2019-07-11</td>
-<td>2021-12-12</td>
-<td>885</td>
-<td>DEATH</td>
-<td>...</td>
-<td>White</td>
-<td>Not Hispanic or Latino</td>
-<td>12.328352</td>
-<td>12.618816</td>
-<td>11.061256</td>
-<td>Dexamethasone</td>
-<td>140</td>
-<td>34.39104</td>
-<td>0</td>
-<td>5.062824</td>
 </tr>
 </tbody>
 </table>
@@ -6389,20 +5071,7 @@ vertical-align: -.125em;
 </section>
 <section id="feature-selection" class="level2">
 <h2 class="anchored" data-anchor-id="feature-selection">Feature Selection</h2>
-<p>We used Kaplan-Meier curves to identify potential predictors of PFS. The following variables were selected based on the log-rank test.</p>
-<ul>
-<li>Demographic variables</li>
-<li>Biomarkers</li>
-<li>Clinical characteristics</li>
-</ul>
-</section>
-<section id="features-list" class="level2">
-<h2 class="anchored" data-anchor-id="features-list">Features List</h2>
-<p>Key Feature - Treatment Group</p>
-<p>Bio-Markers - LDH (Lactate Dehydrogenase) - ALB (Albumin) - HGB (Hemoglobin)</p>
-<p>Demographic Factors - SEX</p>
-<p>Clinical Characteristics - TOTAE (Count of adverse events) - ECOG (Eastern Cooperative Oncology Group performance status)</p>
-<div id="cell-7" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="64">
+<div id="cell-6" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>selected_columns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;TRT01P&quot;</span>, <span class="st">&quot;ECOG&quot;</span>, <span class="st">&quot;HGB&quot;</span>, <span class="st">&quot;TOTAE&quot;</span>, <span class="st">&quot;SEX&quot;</span>)</span>
@@ -6426,7 +5095,7 @@ vertical-align: -.125em;
 </section>
 <section id="fitting-the-cox-proportional-hazards-model" class="level2">
 <h2 class="anchored" data-anchor-id="fitting-the-cox-proportional-hazards-model">Fitting the Cox Proportional Hazards Model</h2>
-<div id="cell-9" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="65">
+<div id="cell-8" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="65">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the Cox model</span></span>
@@ -6439,7 +5108,7 @@ vertical-align: -.125em;
 </section>
 <section id="getting-summary-statistics" class="level2">
 <h2 class="anchored" data-anchor-id="getting-summary-statistics">Getting Summary Statistics</h2>
-<div id="cell-11" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="66">
+<div id="cell-10" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="66">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary of the model</span></span>
@@ -6508,7 +5177,7 @@ Score (logrank) test = 6.95  on 5 df,   p=0.2</code></pre>
 <p>This computes the Schoenfeld residuals for the Cox model to test whether the proportional hazards assumption holds for each covariate.</p>
 <p>The test evaluates if the effect of each covariate on the hazard ratio changes over time.</p>
 <p>A significant change indicates a violation of the proportional hazards assumption.</p>
-<div id="cell-14" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="67">
+<div id="cell-13" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="67">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">cox.zph</span>(cox_model))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -6561,7 +5230,7 @@ Score (logrank) test = 6.95  on 5 df,   p=0.2</code></pre>
 <section id="doing-adjusted-survival-curves" class="level3">
 <h3 class="anchored" data-anchor-id="doing-adjusted-survival-curves">Doing Adjusted Survival Curves</h3>
 <p>Adjusted survival curves are used in Cox proportional hazards models to visualize the survival probabilities while accounting for the effects of covariates. They present survival estimates that are adjusted for the average or specific values of covariates, allowing a more accurate comparison between groups (e.g., treatment groups).</p>
-<div id="cell-17" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="68">
+<div id="cell-16" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="68">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fix Covarites</span></span>
@@ -6625,14 +5294,14 @@ Score (logrank) test = 6.95  on 5 df,   p=0.2</code></pre>
 </table>
 </div>
 </div>
-<div id="cell-18" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="69">
+<div id="cell-17" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="69">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#  compute survival probabilities for the levels of your predictor of interes</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>surv_curves <span class="ot">&lt;-</span> <span class="fu">survfit</span>(cox_model, <span class="at">newdata =</span> newdata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="cell-19" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="70">
+<div id="cell-18" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="70">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Plot the Adjusted Survival Curves</span></span>
@@ -6655,7 +5324,7 @@ Score (logrank) test = 6.95  on 5 df,   p=0.2</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-20" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="71">
+<div id="cell-19" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="71">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="do">### ADD AIC Score Calculation</span></span>
@@ -6674,7 +5343,7 @@ Score (logrank) test = 6.95  on 5 df,   p=0.2</code></pre>
 <section id="checking-the-fit-of-the-model-by-doing-residual-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="checking-the-fit-of-the-model-by-doing-residual-analysis">Checking the fit of the model by doing Residual analysis</h2>
 <p>Cox-Snell residuals are used to assess the goodness-of-fit of a Cox proportional hazards model. The residuals provide insight into how well the model fits the data by comparing the observed survival to the expected survival under the fitted model.</p>
-<div id="cell-22" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="85">
+<div id="cell-21" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="85">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>resid_mart <span class="ot">&lt;-</span> <span class="fu">residuals</span>(cox_model, <span class="at">type =</span> <span class="st">&quot;martingale&quot;</span>)</span>
