@@ -4862,7 +4862,7 @@ vertical-align: -.125em;
 </section>
 <section id="attempt-different-combination-of-variables" class="level3">
 <h3 class="anchored" data-anchor-id="attempt-different-combination-of-variables">Attempt Different Combination of variables</h3>
-<p><strong>From the Kaplan-Meier Curve, we know that variable with smallest p-value is ‘TOTAE’. In this section, we are trying to use different combinations of variables and use them in AFT model to see if we can get any significant variables in these combinations and which combination makes the model better. We will start with only TOTAE First.</strong></p>
+<p><strong>From the Kaplan-Meier Curve, we know that variable with smallest p-value is ‘TOTAE’(Total Adverse Event). In this section, we are trying to use different combinations of variables and use them in AFT model to see if we can get any significant variables in these combinations and which combination makes the model better. We will start with only TOTAE(Total Adverse Event) First.</strong></p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -5173,7 +5173,7 @@ Number of Newton-Raphson Iterations: 7
 n=595 (88 observations deleted due to missingness)</code></pre>
 </div>
 </div>
-<p><strong>From the result above, we can see that the model with only TOTAE as a variable has the lowest AIC score. However, the difference of the AIC scores among the top ten models are not huge. And we don’t see any significant variables among these models.</strong></p>
+<p><strong>From the result above, we can see that the model with only TOTAE(Total Adverse Event) as a variable has the lowest AIC score. However, the difference of the AIC scores among the top ten models are not huge. And we don’t see any significant variables among these models.</strong></p>
 <p><strong>Now we want to use the Cox-Snell residual plots to compare how good each models fit the data.</strong></p>
 <div class="cell">
 <details class="code-fold">
@@ -5276,7 +5276,7 @@ n=595 (88 observations deleted due to missingness)</code></pre>
 </div>
 </div>
 </div>
-<p><strong>Even though the model with only TOTAE as a variable has the lowest AIC score, we don’t see any significant variables among these models. We now want to see the AIC scores of the model with the variables that we selected and check if there are any significant variables in it.</strong></p>
+<p><strong>Even though the model with only TOTAE(Total Adverse Event) as a variable has the lowest AIC score, we don’t see any significant variables among these models. We now want to see the AIC scores of the model with the variables that we selected and check if there are any significant variables in it.</strong></p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -5400,8 +5400,8 @@ n=595 (88 observations deleted due to missingness)</code></pre>
 </div>
 </div>
 </div>
-<p><strong>Although 7 point is a substantial difference for AIC score, we don’t see much difference from the plots above and the p value of TOTAE only differentiate by 0.01. Based on the reason that we select the features, we believe we can keep our selected model and make interpretation on it.</strong></p>
-<p><strong>For AFT models, if the coefficient is negative, that means increase in risk which cause the log survive time to decrease. In our result, Among all the variables, only LDH has a positive value, which indicates that every unit increase in LDH, the log of survival time increase by 0.002. The TRT10P has a negative value which indicates that Treatment B decrease the log survival time by 0.04 compare to Treatment A. Being a male also decrease the log survival time by 0.01 compare to being a female. All the other variables indicates ab decrease in log survival time.</strong></p>
+<p><strong>Although 7 point is a substantial difference for AIC score, we don’t see much difference from the plots above and the p value of TOTAE(Total Adverse Event) only differentiate by 0.01. Based on the reason that we select the features, we believe we can keep our selected model and make interpretation on it.</strong></p>
+<p><strong>For AFT models, if the coefficient is negative, that means increase in risk which cause the log survive time to decrease. In our result, Among all the variables, only LDH(Lactate Dehydrogenase) has a positive value, which indicates that every unit increase in LDH(Lactate Dehydrogenase), the log of survival time increase by 0.002. The TRT10P（Treatment group) has a negative value which indicates that Treatment B decrease the log survival time by 0.04 compare to Treatment A. Being a male also decrease the log survival time by 0.01 compare to being a female. All the other variables indicates ab decrease in log survival time.</strong></p>
 
 
 </section>
