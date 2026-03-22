@@ -38,7 +38,7 @@ jobs:
         run: |
           # Onboarding exemption: fewer than 3 evolve-specific entries means early setup
           EVOLVE_RUNS=$(grep -c "evolve.yml | self-evolution" state/agent_log.md 2>/dev/null || echo "0")
-          ONBOARDING=$( [ "$EVOLVE_RUNS" -lt 3 ] && echo "true" || echo "false" )
+          ONBOARDING=$( [ "$EVOLVE_RUNS" -lt 5 ] && echo "true" || echo "false" )
 
           RECENT_HUMAN=$(git log origin/main --since="2 hours ago" --format="%an" \
             | grep -v "agentfolio\[bot\]" | head -1)
