@@ -435,7 +435,14 @@ jobs:
             --fallback-model sonnet \
             --permission-mode bypassPermissions \
             --output-format json \
-            > /tmp/claude_output.json
+            > /tmp/claude_output.json 2>/tmp/claude_stderr.log || true
+          echo "=== EXIT CODE: $? ==="
+          echo "=== STDERR ==="
+          cat /tmp/claude_stderr.log || true
+          echo "=== OUTPUT (first 200 lines) ==="
+          head -200 /tmp/claude_output.json || true
+          if grep -q '"error"' /tmp/claude_output.json 2>/dev/null; then exit 1; fi
+          if [ ! -s /tmp/claude_output.json ]; then echo "Output file is empty"; exit 1; fi
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           GITHUB_TOKEN: ${{ github.token }}
