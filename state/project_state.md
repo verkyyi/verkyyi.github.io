@@ -10,12 +10,14 @@ Portfolio landing page — site needs a root index.html (issue #2). Deploy workf
 - Created issue #2: Create root index.html as portfolio landing page
 - Self-Evolve pipeline stabilized after initial failures
 
-## System Health (last evolve: 2026-03-22T14:10:31Z)
+## System Health (last watcher: 2026-03-22T14:45:25Z)
 - Self-Evolve: healthy (3 consecutive successes)
 - Deploy workflow: SKIP in config (failures expected, covered by issue #1)
 - pages-build-deployment: healthy
-- Config re-check: passed (no structural changes detected)
+- Triage: 0 runs ever — both issues <2h old, will need re-trigger next run if still untriaged
+- Coder: 0 runs (no agent-ready issues yet)
 - No agentfolio release exists yet for version tracking
+- Token data: 6/20 lines (insufficient for utilization analysis)
 
 ## Open Issues
 - #1 [pipeline] Deploy workflow fails: missing package-lock.json for npm cache
