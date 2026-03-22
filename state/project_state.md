@@ -9,6 +9,14 @@ Pipeline stabilization — Deploy workflow failing on every state commit.
 - Created issue #1: Deploy workflow fails due to missing package-lock.json
 - Self-Evolve --ignore-missing bug was fixed in commit e2ef016
 
+## System Health (last watcher: 2026-03-22T13:49:30Z)
+- Self-Evolve: recovered after 5 consecutive failures; 2 recent successes
+- Deploy workflow: SKIP in config (failures expected, covered by issue #1)
+- pages-build-deployment: healthy (multiple successes)
+- Pipeline chains: no broken links
+- No open PRs, no stale issues, no stuck runs
+- Token utilization: insufficient data (2 entries, need 20+)
+
 ## Open Issues
 - #1 [pipeline] Deploy workflow fails: missing package-lock.json for npm cache
 
