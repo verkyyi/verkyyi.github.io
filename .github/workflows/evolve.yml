@@ -435,14 +435,7 @@ jobs:
             --fallback-model sonnet \
             --permission-mode bypassPermissions \
             --output-format json \
-            > /tmp/claude_output.json 2>/tmp/claude_stderr.log || true
-          echo "=== EXIT CODE: $? ==="
-          echo "=== STDERR ==="
-          cat /tmp/claude_stderr.log || true
-          echo "=== OUTPUT (first 200 lines) ==="
-          head -200 /tmp/claude_output.json || true
-          if grep -q '"error"' /tmp/claude_output.json 2>/dev/null; then exit 1; fi
-          if [ ! -s /tmp/claude_output.json ]; then echo "Output file is empty"; exit 1; fi
+            > /tmp/claude_output.json
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           GITHUB_TOKEN: ${{ github.token }}
@@ -475,7 +468,7 @@ jobs:
 
       - name: Auto-commit safe changes
         run: |
-          git add state/ CLAUDE.md skills/ README.md public/robots.txt src/layouts/Base.astro src/pages/index.astro
+          git add --ignore-missing state/ CLAUDE.md skills/ README.md public/robots.txt src/layouts/Base.astro src/pages/index.astro
           if ! git diff --cached --quiet; then
             git commit -m "state: evolve.yml — $(date -u +%Y-%m-%d)"
             git pull --rebase || true
