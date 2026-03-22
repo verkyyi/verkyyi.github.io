@@ -10,12 +10,12 @@ Portfolio landing page — site needs a root index.html (issue #2). Deploy workf
 - Created issue #2: Create root index.html as portfolio landing page
 - Self-Evolve pipeline stabilized after initial failures
 
-## System Health (last evolve: 2026-03-22T15:08:28Z)
-- Self-Evolve: healthy (6 consecutive successes since initial failures)
+## System Health (last watcher: 2026-03-22T15:41:48Z)
+- Self-Evolve: healthy (consecutive successes)
 - Deploy workflow: SKIP in config (failures expected, covered by issue #1)
 - pages-build-deployment: healthy
-- Triage: 0 runs ever — issues #1/#2 still untriaged
-- Coder: 0 runs (no agent-ready issues yet)
+- Triage: first run triggered for issue #1 (was 0 runs ever); issue #2 next
+- Coder: 0 runs (awaiting triage to label issues agent-ready)
 - No agentfolio release exists yet for version tracking
 - OpenAI harness blog persistently blocked by Cloudflare
 
