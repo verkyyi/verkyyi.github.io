@@ -135,26 +135,35 @@ jobs:
           Append a health check summary to state/research_log.md:
           TIMESTAMP | pipeline-health | X failed runs checked, Y issues created | details
 
-          ## STEP 2b: Design Evaluation (profile page)
+          ## STEP 2b: Site Content & Design Evaluation
 
-          Check the Evolve Config. If the Stack does NOT include a frontend framework (e.g., Astro, Next.js, React, Vue) — SKIP this step entirely.
-
+          ### For framework-based sites (Astro, Next.js, React, Vue):
           Read src/pages/index.astro and src/layouts/Base.astro.
-          Evaluate the profile page design for:
-          - Visual consistency (colors, spacing, typography)
-          - Readability (contrast ratios, font sizes, line heights)
-          - Responsiveness (does the layout work on mobile?)
-          - Polish (hover states, transitions, alignment)
-          - Content presentation (are sections well-organized?)
 
-          If you identify a concrete CSS/layout improvement:
-          - For minor fixes (spacing, color tweaks, typos): write directly
-          - For structural layout changes: create a GitHub Issue (see Step 5)
+          ### For static HTML sites (no framework):
+          Find and read the main HTML files:
+          ```bash
+          find . -name "index.html" -not -path "./.git/*" | head -5
+          ls *.html 2>/dev/null
+          ```
+          Read the main index.html (if it exists) and any top-level HTML files.
 
-          Design improvements follow the same autonomy rules as other changes.
-          Keep the Cosmic design language: deep purple gradients, neon accents
-          (purple #a78bfa, blue #60a5fa, green #34d399), dark backgrounds,
-          glowing effects.
+          ### For ALL sites, evaluate:
+          - **Content completeness** — Does the site have real content? A personal portfolio
+            should have: an about/bio section, projects or work showcase, contact info or links.
+            If the site is mostly empty, placeholder, or only contains old academic projects
+            with no landing page — this is a critical finding. Create an issue.
+          - **Structure** — Is there a proper index.html at the root? Does it link to subpages?
+          - **Visual consistency** (colors, spacing, typography)
+          - **Readability** (contrast ratios, font sizes, line heights)
+          - **Responsiveness** (does the layout work on mobile?)
+          - **SEO basics** — meta tags, title, description, og:image
+          - **Content presentation** — are sections well-organized?
+
+          If you identify concrete improvements:
+          - For each distinct finding, create a separate GitHub Issue (see Step 5)
+          - Prioritize content gaps over visual polish
+          - Tag content issues with "evolve-finding"
 
           ## STEP 2c: Growth Metrics (once per day, hour 6 UTC only)
 
