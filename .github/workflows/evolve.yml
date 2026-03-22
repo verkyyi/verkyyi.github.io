@@ -36,8 +36,8 @@ jobs:
       - name: Check for recent human activity
         id: human
         run: |
-          # Onboarding exemption: fewer than 3 evolve entries means we're still in early setup
-          EVOLVE_RUNS=$(grep -c "^20" state/agent_log.md 2>/dev/null || echo "0")
+          # Onboarding exemption: fewer than 3 evolve-specific entries means early setup
+          EVOLVE_RUNS=$(grep -c "evolve.yml | self-evolution" state/agent_log.md 2>/dev/null || echo "0")
           ONBOARDING=$( [ "$EVOLVE_RUNS" -lt 3 ] && echo "true" || echo "false" )
 
           RECENT_HUMAN=$(git log origin/main --since="2 hours ago" --format="%an" \
@@ -48,7 +48,7 @@ jobs:
           else
             echo "HUMAN_ACTIVE=false" >> $GITHUB_OUTPUT
             if [ "$ONBOARDING" = "true" ]; then
-              echo "Onboarding mode ($EVOLVE_RUNS/3 runs) — bypassing HUMAN_ACTIVE"
+              echo "Onboarding mode ($EVOLVE_RUNS/3 evolve runs) — bypassing HUMAN_ACTIVE"
             fi
           fi
 
