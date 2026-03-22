@@ -468,7 +468,9 @@ jobs:
 
       - name: Auto-commit safe changes
         run: |
-          git add --ignore-missing state/ CLAUDE.md skills/ README.md public/robots.txt src/layouts/Base.astro src/pages/index.astro
+          for f in state/ CLAUDE.md skills/ README.md public/robots.txt src/layouts/Base.astro src/pages/index.astro; do
+            [ -e "$f" ] && git add "$f"
+          done
           if ! git diff --cached --quiet; then
             git commit -m "state: evolve.yml — $(date -u +%Y-%m-%d)"
             git pull --rebase || true
