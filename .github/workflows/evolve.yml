@@ -36,21 +36,19 @@ jobs:
       - name: Check for recent human activity
         id: human
         run: |
-          # First run exemption: if agent_log has no real entries, this is the first run
-          FIRST_RUN=false
-          if ! grep -q "^20" state/agent_log.md 2>/dev/null; then
-            FIRST_RUN=true
-          fi
+          # Onboarding exemption: fewer than 3 evolve entries means we're still in early setup
+          EVOLVE_RUNS=$(grep -c "^20" state/agent_log.md 2>/dev/null || echo "0")
+          ONBOARDING=$( [ "$EVOLVE_RUNS" -lt 3 ] && echo "true" || echo "false" )
 
           RECENT_HUMAN=$(git log origin/main --since="2 hours ago" --format="%an" \
             | grep -v "agentfolio\[bot\]" | head -1)
-          if [ -n "$RECENT_HUMAN" ] && [ "$FIRST_RUN" = "false" ]; then
+          if [ -n "$RECENT_HUMAN" ] && [ "$ONBOARDING" = "false" ]; then
             echo "HUMAN_ACTIVE=true" >> $GITHUB_OUTPUT
             echo "Human recently active — evolve will run in read-only mode"
           else
             echo "HUMAN_ACTIVE=false" >> $GITHUB_OUTPUT
-            if [ "$FIRST_RUN" = "true" ]; then
-              echo "First run detected — bypassing HUMAN_ACTIVE to deliver the aha moment"
+            if [ "$ONBOARDING" = "true" ]; then
+              echo "Onboarding mode ($EVOLVE_RUNS/3 runs) — bypassing HUMAN_ACTIVE"
             fi
           fi
 
