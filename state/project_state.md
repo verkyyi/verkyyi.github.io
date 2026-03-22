@@ -1,28 +1,29 @@
 # Project State
 
 ## Current Focus
-Pipeline stabilization — Deploy workflow failing on every state commit.
+Portfolio landing page — site needs a root index.html (issue #2). Deploy workflow fix pending (issue #1).
 
 ## Recent Changes
 - Added agentfolio autonomous pipeline workflows
-- First full evolve run completed (2026-03-22T13:43:54Z)
+- 5 evolve runs completed (2026-03-22, 3 under HUMAN_ACTIVE, 2 normal)
 - Created issue #1: Deploy workflow fails due to missing package-lock.json
-- Self-Evolve --ignore-missing bug was fixed in commit e2ef016
+- Created issue #2: Create root index.html as portfolio landing page
+- Self-Evolve pipeline stabilized after initial failures
 
-## System Health (last watcher: 2026-03-22T13:49:30Z)
-- Self-Evolve: recovered after 5 consecutive failures; 2 recent successes
+## System Health (last evolve: 2026-03-22T14:10:31Z)
+- Self-Evolve: healthy (3 consecutive successes)
 - Deploy workflow: SKIP in config (failures expected, covered by issue #1)
-- pages-build-deployment: healthy (multiple successes)
-- Pipeline chains: no broken links
-- No open PRs, no stale issues, no stuck runs
-- Token utilization: insufficient data (2 entries, need 20+)
+- pages-build-deployment: healthy
+- Config re-check: passed (no structural changes detected)
+- No agentfolio release exists yet for version tracking
 
 ## Open Issues
 - #1 [pipeline] Deploy workflow fails: missing package-lock.json for npm cache
+- #2 [evolve] Create root index.html as portfolio landing page
 
 ## Key Observations
-- No apps/ directory exists — this is a flat static site, not using Astro
-- Deploy workflow is configured for Astro but repo is static HTML/Quarto
+- No apps/ directory — flat static site, not using Astro
+- Site has 2 project subdirs (6150/ survival analysis, Presentation/ chatbot) but no landing page
 - OpenAI harness engineering blog consistently blocked by Cloudflare
 - Quarto CLI at v1.9 — no actionable changes for this repo
-- Agentfolio scaffold at v0.1.0 — no version tracking in evolve_config yet
+- No human-created issues in past 7 days
