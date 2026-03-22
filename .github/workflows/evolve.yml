@@ -1,0 +1,511 @@
+name: Self-Evolve
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  actions: write
+
+concurrency:
+  group: evolve
+  cancel-in-progress: true
+
+jobs:
+  evolve:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 50
+
+      - name: Check onboarding complete
+        run: |
+          if [ ! -f state/evolve_config.md ]; then
+            echo "::warning::Onboarding not complete. Run: claude 'Set up agentfolio. Follow https://github.com/verkyyi/agentfolio/blob/main/docs/onboarding.md'"
+            exit 0
+          fi
+
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Check for recent human activity
+        id: human
+        run: |
+          RECENT_HUMAN=$(git log origin/main --since="2 hours ago" --format="%an" \
+            | grep -v "agentfolio\[bot\]" | head -1)
+          if [ -n "$RECENT_HUMAN" ]; then
+            echo "HUMAN_ACTIVE=true" >> $GITHUB_OUTPUT
+            echo "Human recently active — evolve will run in read-only mode"
+          else
+            echo "HUMAN_ACTIVE=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Build evolution prompt
+        run: |
+          cat > /tmp/prompt.txt << HUMANFLAG
+          ## Human Activity Status: HUMAN_ACTIVE=${{ steps.human.outputs.HUMAN_ACTIVE }}
+          When HUMAN_ACTIVE=true, a human is working in a CLI session. In this mode:
+          - Still execute Step 1 (research) and log findings to research_log.md
+          - Still execute Step 2a (pipeline health check) — log findings only, do NOT create issues
+          - Still execute Steps 3-4 (logging and state) BUT do NOT overwrite project_state.md
+            (the human may have updated it). Instead, append a note to agent_log.md only.
+          - Do NOT execute Step 5 (act on findings) — do not create issues or write files
+          - Skip issues labeled "human-wip" in all analysis
+          When HUMAN_ACTIVE=false, operate normally with all steps.
+
+          HUMANFLAG
+
+          cat >> /tmp/prompt.txt << 'PROMPT'
+          You are the self-evolution agent for Agentfolio. You MUST execute
+          bash commands to fetch data, write files, and make changes.
+          Do NOT just reason about what to do — actually do it.
+
+          ## STEP 1: Research (REQUIRED — always execute these commands)
+
+          Read the Research Sources from the Evolve Config above.
+          For each GitHub repo listed, fetch recent commits:
+
+          ```bash
+          TIMESTAMP=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          # For each source in Research Sources:
+          # SOURCE_DATA=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+          #   "https://api.github.com/repos/OWNER/REPO/commits?per_page=3" | head -c 800)
+          ```
+
+          The tier rotation system is no longer used. Iterate ALL configured sources every run.
+
+          Also always check this non-GitHub source:
+          ```bash
+          # OpenAI harness engineering blog — foundational patterns for agent harnesses
+          R_OPENAI=$(curl -s "https://openai.com/index/harness-engineering/" | head -c 1500)
+          ```
+
+          Then append findings to state/research_log.md. For each source,
+          add ONE line in this exact format:
+          TIMESTAMP | source-name | one-line summary of what you found | action taken or "no action"
+
+          Example:
+          2026-03-20T03:00:00Z | anthropics/claude-code | v1.2.3 released with hooks improvement | reviewing for harness updates
+          2026-03-20T03:00:00Z | garrytan/gstack | new /architect skill added | analyzing for adoption
+          2026-03-20T03:00:00Z | openai-harness-blog | new section on tool orchestration | noted for review
+
+          ## STEP 2: Analyze
+
+          Read these files and look for issues:
+          - state/agent_log.md — any patterns or repeated failures?
+          - state/project_state.md — current priorities
+          - CLAUDE.md — check failure log section for entries starting with "# 20"
+          - git log --oneline -20 — recent changes
+          - ls apps/ — any folders without CLAUDE.md?
+
+          ## STEP 2a: Pipeline Health Check (REQUIRED)
+
+          Check recent workflow runs for failures:
+
+          ```bash
+          # Get failed runs from the last 24 hours
+          FAILED=$(gh run list --status failure --limit 10 --json databaseId,workflowName,createdAt,conclusion -q '.[] | "\(.databaseId) | \(.workflowName) | \(.createdAt)"')
+          ```
+
+          For each failed run:
+          1. Get the failure details: `gh run view <id> --log-failed 2>&1 | tail -20`
+          2. Categorize the failure:
+             - ALREADY-FIXED: the same workflow has succeeded more recently (skip)
+             - TRANSIENT: network timeout, rate limit, runner issue (skip)
+             - ACTIONABLE: code bug, config error, missing permission (create issue)
+          3. For ACTIONABLE failures, check if an issue already exists:
+             `gh issue list --state open --label pipeline-fix --json title -q '.[].title'`
+          4. If no existing issue covers this failure, create one:
+             `gh issue create --title "[pipeline] Brief description" --body "## Failed Workflow\n...\n## Error\n...\n## Suggested Fix\n...\n---\n*Created by evolve.yml pipeline health check*" --label "pipeline-fix,project:$(echo $GITHUB_REPOSITORY | cut -d/ -f2)"`
+
+          Append a health check summary to state/research_log.md:
+          TIMESTAMP | pipeline-health | X failed runs checked, Y issues created | details
+
+          ## STEP 2b: Design Evaluation (profile page)
+
+          Check the Evolve Config. If the Stack does NOT include a frontend framework (e.g., Astro, Next.js, React, Vue) — SKIP this step entirely.
+
+          Read src/pages/index.astro and src/layouts/Base.astro.
+          Evaluate the profile page design for:
+          - Visual consistency (colors, spacing, typography)
+          - Readability (contrast ratios, font sizes, line heights)
+          - Responsiveness (does the layout work on mobile?)
+          - Polish (hover states, transitions, alignment)
+          - Content presentation (are sections well-organized?)
+
+          If you identify a concrete CSS/layout improvement:
+          - For minor fixes (spacing, color tweaks, typos): write directly
+          - For structural layout changes: create a GitHub Issue (see Step 5)
+
+          Design improvements follow the same autonomy rules as other changes.
+          Keep the Cosmic design language: deep purple gradients, neon accents
+          (purple #a78bfa, blue #60a5fa, green #34d399), dark backgrounds,
+          glowing effects.
+
+          ## STEP 2c: Growth Metrics (once per day, hour 6 UTC only)
+
+          Check the Evolve Config. If the User Answers section does NOT say "Public: Yes" — SKIP this step entirely.
+
+          If the current hour is 06 UTC (check with `date -u +%H`), fetch:
+
+          ```bash
+          # GitHub repo stats
+          REPO_STATS=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+            "https://api.github.com/repos/$GITHUB_REPOSITORY")
+          STARS=$(echo "$REPO_STATS" | grep -o '"stargazers_count":[0-9]*' | cut -d: -f2)
+          FORKS=$(echo "$REPO_STATS" | grep -o '"forks_count":[0-9]*' | cut -d: -f2)
+          WATCHERS=$(echo "$REPO_STATS" | grep -o '"subscribers_count":[0-9]*' | cut -d: -f2)
+          OPEN_ISSUES=$(echo "$REPO_STATS" | grep -o '"open_issues_count":[0-9]*' | cut -d: -f2)
+
+          # Traffic (last 14 days — requires push access)
+          TRAFFIC=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+            "https://api.github.com/repos/$GITHUB_REPOSITORY/traffic/views")
+          VIEWS=$(echo "$TRAFFIC" | grep -o '"count":[0-9]*' | head -1 | cut -d: -f2)
+          UNIQUES=$(echo "$TRAFFIC" | grep -o '"uniques":[0-9]*' | head -1 | cut -d: -f2)
+
+          # Referrers
+          REFERRERS=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+            "https://api.github.com/repos/$GITHUB_REPOSITORY/traffic/popular/referrers" | head -c 500)
+          ```
+
+          Append to state/research_log.md:
+          TIMESTAMP | growth-metrics | stars:X forks:Y views:Z uniques:U | [note any significant changes]
+
+          Also fetch referrers and popular paths:
+          ```bash
+          REFERRERS=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+            "https://api.github.com/repos/$GITHUB_REPOSITORY/traffic/popular/referrers")
+          PATHS=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+            "https://api.github.com/repos/$GITHUB_REPOSITORY/traffic/popular/paths")
+          ```
+
+          Write ALL metrics to state/growth_metrics.md (overwrite):
+          ```
+          # Growth Metrics
+          Last updated: TIMESTAMP
+          Stars: X | Forks: Y | Watchers: Z
+          Views (14d): X | Unique visitors (14d): Y
+          Open issues: X
+
+          ## Referrers
+          <!-- Format: referrer | views | uniques -->
+          referrer1 | 100 | 50
+          referrer2 | 20 | 10
+
+          ## Popular Pages
+          <!-- Format: path | views | uniques -->
+          /path1 | 50 | 30
+          /path2 | 20 | 10
+          ```
+
+          If stars or forks increased since last check, note it.
+          If a new referrer appeared, note it — this tells us where exposure is coming from.
+          If a specific page is getting more traffic, consider creating an issue to improve it.
+
+          ## STEP 2d: Adoption Tracking (once per day, hour 06 UTC — same gate as 2c)
+
+          Check the Evolve Config. If the Purpose does NOT mention "template" or "scaffold" — SKIP this step entirely.
+
+          Search for public repos that were created from our template or forked
+          from us. These are real users — learn from how they use the scaffold.
+
+          ```bash
+          # Search for repos with our evolve.yml signature (unique to agentfolio)
+          ADOPTERS=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+            "https://api.github.com/search/repositories?q=agentfolio+in:name+fork:true&sort=updated&per_page=10" \
+            | head -c 2000)
+
+          # Also search for repos containing our workflow files
+          ADOPTERS2=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+            "https://api.github.com/search/code?q=self-evolution+agent+for+Agentfolio+in:file+language:yaml&per_page=5" \
+            | head -c 2000)
+
+          # Check forks directly
+          FORKS_LIST=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+            "https://api.github.com/repos/$GITHUB_REPOSITORY/forks?sort=newest&per_page=10" \
+            | head -c 2000)
+          ```
+
+          Read existing state/adopters.md to see which repos we already know about.
+
+          For each NEW repo found (not already in adopters.md):
+          1. Note its name, owner, creation date, and last push date
+          2. Check what they changed: did they modify workflows? Add new apps?
+             Remove features? Rename things?
+          3. Append to state/adopters.md:
+             TIMESTAMP | repo_full_name | created | last_push | notes
+
+          For EXISTING repos in adopters.md:
+          - Check if they have new commits since last check
+          - Note what they're actively working on
+
+          Analysis — look for patterns across adopters:
+          - What do users keep vs. remove? (tells us what's valuable)
+          - What do they modify first? (tells us what's confusing or wrong)
+          - What new apps/ do they add? (tells us use cases)
+          - Do they change workflow frequencies? (tells us our defaults are wrong)
+          - Do they add new research sources? (tells us gaps in our coverage)
+
+          If you find a pattern (3+ adopters did the same thing), create an issue:
+          "[adopter-insight] Users keep removing X" or "[adopter-insight] Users all add Y"
+          Label: "adopter-insight,project:$(echo $GITHUB_REPOSITORY | cut -d/ -f2)"
+
+          Append to research_log.md:
+          TIMESTAMP | adoption-tracking | X repos found, Y new, Z active | [key patterns]
+
+          ## STEP 2e: SEO & Discoverability (once per day, hour 12 UTC only)
+
+          Check the Evolve Config. If the User Answers section does NOT say "Public: Yes" — SKIP this step entirely.
+
+          If the current hour is 12 UTC (check with `date -u +%H`), do these:
+
+          1. Check README.md — does it accurately reflect the current workflow
+             count, features, and architecture? If not, update it.
+             Focus on: workflow descriptions, feature list, research sources,
+             architecture section. Keep it concise and scannable.
+
+          2. Check GitHub repo topics — run:
+             `gh repo view --json repositoryTopics -q '.repositoryTopics[].name'`
+             If relevant new topics should be added based on new capabilities,
+             update with: `gh repo edit --add-topic "new-topic"`
+
+          3. Check src/layouts/Base.astro meta tags — is the description still
+             accurate? Update if the project's scope has changed significantly.
+
+          4. Check public/robots.txt — is the sitemap URL correct?
+
+          Only make changes if something is genuinely out of date. Don't churn.
+
+          ## STEP 2f: Human Intent Analysis
+
+          Read state/learned_intents.md to see existing intent data.
+
+          Query recent human-created issues (not github-actions[bot]) from the last 7 days:
+
+          ```bash
+          SINCE=$(date -u -d '7 days ago' +%Y-%m-%dT%H:%M:%SZ)
+          HUMAN_ISSUES=$(gh issue list --state all --json number,title,author,labels,createdAt \
+            --jq "[.[] | select(.author.login != \"github-actions[bot]\" and .createdAt >= \"$SINCE\")]")
+          ```
+
+          For each human issue, categorize intent:
+          - EXPAND_SOURCES: "add X repo", "track Y"
+          - IMPROVE_QUALITY: "fix X", "improve Y"
+          - ADD_CAPABILITY: "add feature X", "support Y"
+          - FIX_PROCESS: "change workflow", "fix pipeline"
+          - GROW_REACH: "submit to X", "share on Y"
+
+          Append to state/learned_intents.md:
+          TIMESTAMP | issue #N | CATEGORY | intent summary | action taken or "noted"
+
+          Create at most 1 intent-driven issue per run, only when 2+ human issues
+          share the same category (conservative threshold). This intent-driven
+          issue counts toward the max issues per run limit (research + intent
+          combined, max 3 total).
+
+          Intent-driven issues: labeled `intent-driven,evolve-finding,project:$(echo $GITHUB_REPOSITORY | cut -d/ -f2)`,
+          body references original human issues with "Inspired by human action on #N".
+
+          ## STEP 2g: Config Re-check (every 7 days)
+
+          Read the "Last recheck" date from the Evolve Config header (line starting with "# Last recheck:").
+          If more than 7 days have passed since that date:
+
+          1. Scan the repo for structural changes:
+             - Check for new dependency files (package.json, requirements.txt, go.mod, Cargo.toml)
+               that weren't present when the config was written
+             - Check if existing dependency files have new major frameworks added
+             - Check for new Dockerfile or deploy configs (vercel.json, netlify.toml, fly.toml)
+             - Check for new test frameworks (jest.config, pytest.ini, etc.)
+          2. Compare findings against the Repo Profile and Build sections in the config.
+          3. If any significant change detected (new language, new framework, new deploy method):
+             - Create an issue titled "[config] Repo structure may have changed — run CLI session to update evolve config"
+             - Label: "needs-review"
+             - Body: Describe what changed and why the config may be outdated
+             - Do NOT auto-update the config
+          4. If no significant changes: update the "Last recheck" date in state/evolve_config.md
+             to today's date. Commit this change.
+
+          Only flag changes that affect workflow fit or build commands.
+          Ignore: minor dependency additions, dev tool changes, documentation files.
+
+          ## STEP 2h: Scaffold Version Check
+
+          Read the "Version" field from the Evolve Config header (line starting with "# Version:").
+          Fetch the latest agentfolio release:
+
+          ```bash
+          LATEST=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+            "https://api.github.com/repos/verkyyi/agentfolio/releases/latest" \
+            | grep -o '"tag_name":"[^"]*"' | cut -d'"' -f4)
+          ```
+
+          Compare LATEST against the Version field in the config.
+          If LATEST exists and is different from the config version:
+          - Check if an issue about this upgrade already exists (dedup)
+          - If not, create an issue:
+            Title: "[upgrade] Agentfolio scaffold update available: $LATEST"
+            Body: "A new version of the agentfolio scaffold is available.
+            Current: [version from config]. Latest: [version from release].
+            Run a Claude Code CLI session to review and apply changes."
+            Label: "needs-review"
+
+          If no release exists or versions match, skip silently.
+
+          ## STEP 3: Log this run
+
+          ALWAYS append a line to state/agent_log.md:
+          TIMESTAMP | evolve.yml | self-evolution run | summary of what you found and did
+
+          ## STEP 4: Update project state
+
+          Write a brief session summary to state/project_state.md covering
+          what you analyzed and any findings.
+
+          ## STEP 5: Act on findings (if any)
+
+          For safe changes (failure log entries, skill wording fixes):
+          - Write them directly to the files
+
+          For actionable improvements or features inspired by research:
+          - FIRST check for duplicate issues:
+            gh issue list --state all --limit 100 --label evolve-finding --json title -q '.[].title'
+          - If a similar issue already exists, skip it
+          - Otherwise, create a GitHub Issue and save its number:
+            ISSUE_URL=$(gh issue create \
+              --title "[evolve] Brief description of the improvement" \
+              --body "## Source\nWhat research finding or analysis inspired this.\n\n## Proposed Change\nWhat should be changed, why, and which files.\n\n## Evidence\nLink to commit/release/repo that inspired this.\n\n---\n*Created by evolve.yml self-evolution agent*" \
+              --label "evolve-finding,project:$(echo $GITHUB_REPOSITORY | cut -d/ -f2)")
+            ISSUE_NUM=$(echo "$ISSUE_URL" | grep -oP '\d+$')
+            echo "$ISSUE_NUM" >> .new_issues.txt
+          - The pipeline will automatically triage and route each issue
+          - Maximum THREE issues per run (2 research + 1 intent)
+
+          For new apps/ folders without CLAUDE.md:
+          - Write the folder name to .trigger-discovery.txt
+
+          ## Rules
+          - You CANNOT promote your own autonomy
+          - You CANNOT modify workflow YAML directly
+          - You MUST check for duplicate issues before creating new ones
+          - You MUST execute the curl commands in Step 1
+          - You MUST write to state/agent_log.md in Step 3
+          - You MUST update state/project_state.md in Step 4
+          - Maximum THREE issues per run (2 research + 1 intent) — quality over quantity
+
+          ## Context
+          $(cat $(grep '^CLAUDE.md:' state/evolve_config.md | cut -d' ' -f2))
+
+          ## Current State
+          $(cat state/project_state.md)
+
+          ## Recent Agent Log (last 20 lines)
+          $(tail -20 state/agent_log.md)
+
+          ## Failure Log
+          $(grep "^# [0-9]" CLAUDE.md | tail -20)
+
+          ## Learned Rules (from human feedback — MUST follow these)
+          $(cat state/learned_rules.md)
+
+          ## Evolve Config (adapt your behavior based on this)
+          $(cat state/evolve_config.md)
+
+          IMPORTANT CONFIG RULES:
+          - Use ONLY the Research Sources listed in the config for Step 1.
+          - For each source, fetch: curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/repos/<source>/commits?per_page=3" | head -c 800
+          - If the config has a "Search Queries" section, also run each search query. Replace {7_DAYS_AGO} with the actual date 7 days ago.
+          - Skip Steps 2b/2c/2d/2e based on Workflow Fit and Repo Profile in the config.
+          - Use the Build section commands — do NOT assume npm.
+          - Replace project:scaffold with the repo name in all labels.
+          - Read CLAUDE.md from the path specified in the Project section of the config.
+          PROMPT
+
+      - name: Run Claude Code
+        run: |
+          claude -p "$(cat /tmp/prompt.txt)" \
+            --model opus \
+            --effort max \
+            --max-turns 30 \
+            --fallback-model sonnet \
+            --permission-mode bypassPermissions \
+            --output-format json \
+            > /tmp/claude_output.json
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
+
+      - name: Log usage metrics
+        if: always()
+        run: |
+          TIMESTAMP=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          if [ -f /tmp/claude_output.json ]; then
+            MODEL=$(jq -r '(.modelUsage // {} | keys | .[0]) // "unknown"' /tmp/claude_output.json 2>/dev/null || echo "unknown")
+            INPUT=$(jq -r '((.usage.input_tokens // 0) + (.usage.cache_creation_input_tokens // 0) + (.usage.cache_read_input_tokens // 0)) | tostring' /tmp/claude_output.json 2>/dev/null || echo "unknown")
+            OUTPUT=$(jq -r '(.usage.output_tokens // 0) | tostring' /tmp/claude_output.json 2>/dev/null || echo "unknown")
+            TURNS=$(jq -r '(.num_turns // 0) | tostring' /tmp/claude_output.json 2>/dev/null || echo "unknown")
+            COST=$(jq -r '(.total_cost_usd // 0) | tostring' /tmp/claude_output.json 2>/dev/null || echo "unknown")
+          else
+            MODEL="unknown"; INPUT="unknown"; OUTPUT="unknown"; TURNS="unknown"; COST="unknown"
+          fi
+          mkdir -p state
+          if [ ! -f state/usage_log.md ]; then
+            printf '# Usage Log\n' > state/usage_log.md
+          fi
+          echo "${TIMESTAMP} | evolve | model:${MODEL} | in:${INPUT} | out:${OUTPUT} | turns:${TURNS} | cost:${COST}" >> state/usage_log.md
+          CUTOFF=$(date -u -d '7 days ago' +%Y-%m-%dT)
+          awk -v c="$CUTOFF" 'NR==1{print;next} $0>=c' state/usage_log.md > /tmp/usage_trimmed.md && mv /tmp/usage_trimmed.md state/usage_log.md
+
+      - name: Setup git config
+        run: |
+          git config user.name "agentfolio[bot]"
+          git config user.email "agentfolio[bot]@users.noreply.github.com"
+
+      - name: Auto-commit safe changes
+        run: |
+          git add state/ CLAUDE.md skills/ README.md public/robots.txt src/layouts/Base.astro src/pages/index.astro
+          if ! git diff --cached --quiet; then
+            git commit -m "state: evolve.yml — $(date -u +%Y-%m-%d)"
+            git pull --rebase || true
+            git push || true
+          fi
+
+      - name: Trigger triage for new issues
+        run: |
+          if [ -f .new_issues.txt ]; then
+            while read -r NUM; do
+              echo "Triggering triage for issue #$NUM"
+              gh workflow run triage.yml -f issue_number="$NUM"
+            done < .new_issues.txt
+          else
+            echo "No new issues created this run"
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Trigger discovery if needed
+        if: hashFiles('.trigger-discovery.txt') != ''
+        run: |
+          APP=$(cat .trigger-discovery.txt)
+          gh workflow run discover.yml -f app_name="$APP"
+          rm .trigger-discovery.txt
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Ensure labels exist
+        run: |
+          gh label create "evolve-finding" --color "7057ff" --description "Issue created by evolve.yml" --force
+          gh label create "pipeline-fix" --color "d73a4a" --description "Pipeline failure to fix" --force
+          gh label create "adopter-insight" --color "1d76db" --description "Pattern found from adopter usage" --force
+          gh label create "intent-driven" --color "5319e7" --description "Issue driven by human intent analysis" --force
+          gh label create "agent-ready" --color "0e8a16" --description "Ready for coder agent" --force
+          gh label create "needs-review" --color "fbca04" --description "Needs human review" --force
+          REPO_NAME=$(echo "$GITHUB_REPOSITORY" | cut -d/ -f2)
+          gh label create "project:${REPO_NAME}" --color "c5def5" --description "${REPO_NAME} project" --force
+        env:
+          GH_TOKEN: ${{ github.token }}
