@@ -1,9 +1,10 @@
 # Project State
 
 ## Current Focus
-Portfolio landing page — site needs a root index.html (issue #2). Deploy workflow fix pending (issue #1).
+Deploy workflow fix pending (issue #1, PR #3 open).
 
 ## Recent Changes
+- Created root index.html portfolio landing page (issue #2) — PR pending
 - Added agentfolio autonomous pipeline workflows
 - 6 evolve runs completed (2026-03-22, 3 under HUMAN_ACTIVE, 3 normal)
 - Created issue #1: Deploy workflow fails due to missing package-lock.json
@@ -22,13 +23,13 @@ Portfolio landing page — site needs a root index.html (issue #2). Deploy workf
 
 ## Open Issues
 - #1 [pipeline] Deploy workflow fails: missing package-lock.json — PR #3 open, agent-ready removed
-- #2 [evolve] Create root index.html as portfolio landing page — triage re-triggered
+- #2 [evolve] Create root index.html as portfolio landing page — PR opened
 
 ## Open PRs
 - #3 fix(workflow): disable deploy.yml push trigger (closes #1) — reviewer re-triggered
 
 ## Key Observations
 - No apps/ directory — flat static site, not using Astro
-- Site has 2 project subdirs (6150/ survival analysis, Presentation/ chatbot) but no landing page
+- Site now has root index.html linking to both project subdirs
 - Research sources quiet: agentfolio only has state commits, quarto-cli stable at v1.9
 - No human-created issues in past 7 days
