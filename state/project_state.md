@@ -12,6 +12,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 6. **P3: Activate unused workflows** — discover, feedback-learner, claude-task have not been triggered.
 
 ## Recent Changes
+- Fixed growth.yml: added file existence guards to all cat/tail commands in Collect growth context and Build growth prompt steps (closes #6)
 - Fixed deploy.yml: removed push trigger and npm cache, made workflow_dispatch-only (closes #1)
 - Added agentfolio autonomous pipeline workflows (11 total)
 - Self-Evolve stabilized after 5 initial failures (git add path issues)
@@ -25,7 +26,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Self-Evolve: healthy (last success 21:13)
 - Deploy workflow: SKIP in config (workflow_dispatch-only, issue #1 closed)
 - pages-build-deployment: healthy (last success 21:16)
-- Growth Strategist: **3/3 consecutive failures** (missing state/adopters.md). Pipeline issue #6 created at 18:52, triage re-triggered at 21:50 (was never triaged — watcher-created issue missed pipeline). PR #5 has fix, blocked on merge conflicts (needs-human ~15h).
+- Growth Strategist: fix applied (file guards added to growth.yml, closes #6). PR opened for review.
 - Weekly Analysis: 2/3 — failed at 12:18 and 18:18 since recovery at 06:28 (same workflow bug: rm .proposed-change.md before git commit). Next failure triggers 3/3 threshold.
 - Triage/Coder/Reviewer: all completed for issue #2 → PR #4
 - Token utilization: 69 data points — system healthy, no optimization needed
