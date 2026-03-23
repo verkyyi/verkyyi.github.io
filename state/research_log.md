@@ -81,3 +81,9 @@
 2026-03-23T05:34:44Z | quarto-dev/quarto-cli | still at v1.9 bump (64a2120), no new commits since 03-20 | no action
 2026-03-23T05:34:44Z | openai-harness-blog | blocked by Cloudflare challenge page | no action — persistent block
 2026-03-23T05:34:44Z | pipeline-health | 10 failed runs checked, 0 issues created (HUMAN_ACTIVE) | Weekly Analysis 2/3 (no new runs since 00:29), Growth Strategist 1/3 (no new runs since 18:10), remaining 8 ALREADY-FIXED, no new failures
+2026-03-23T06:29:57Z | verkyyi/agentfolio | API redirects to verkyyi/tokenman (repo renamed?), latest: weekly analysis state commit (b709600, 06:29Z) | notable — upstream repo may have been renamed
+2026-03-23T06:29:57Z | quarto-dev/quarto-cli | still at v1.9 bump (64a2120), no new commits since 03-20 | no action
+2026-03-23T06:29:57Z | openai-harness-blog | blocked by Cloudflare challenge page | no action — persistent block
+2026-03-23T06:29:57Z | pipeline-health | 10 failed runs checked, 0 issues created (HUMAN_ACTIVE) | Weekly Analysis 2/3 (no new runs since 00:29), Growth Strategist 1/3 (no new runs since 18:10), remaining 8 ALREADY-FIXED, no new failures
+2026-03-23T06:29:57Z | growth-metrics | stars:0 forks:0 watchers:1 issues:2 | first collection, traffic APIs 403 (token lacks admin scope)
+2026-03-23T06:29:57Z | site-evaluation | no root index.html (issue #2 open, PR #4 blocked merge conflicts needs-human ~12h) | no action (HUMAN_ACTIVE)
