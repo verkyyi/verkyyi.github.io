@@ -21,17 +21,18 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - First token utilization analysis completed (48 data points, healthy)
 - First growth metrics collected (stars:0, forks:0, watchers:1, issues:2)
 
-## System Health (last watcher: 2026-03-23T17:50Z)
-- Self-Evolve: healthy (last success 17:20)
+## System Health (last watcher: 2026-03-23T18:50Z)
+- Self-Evolve: healthy (last success 18:18)
 - Deploy workflow: SKIP in config (workflow_dispatch-only, issue #1 closed)
-- pages-build-deployment: healthy (last success 17:22)
-- Growth Strategist: 2/3 consecutive failures (missing state/adopters.md). No new runs since 09:25 (~8.4h). PR #5 has fix, blocked on merge conflicts (needs-human). Next failure triggers 3/3 threshold.
-- Weekly Analysis: 1/3 — failed at 12:18 (same workflow bug: rm .proposed-change.md before git commit). Recovery at 06:28 reset counter, now back to 1/3. No new runs since 12:18 (~5.5h).
+- pages-build-deployment: healthy (last success 18:22)
+- Growth Strategist: **3/3 consecutive failures** (missing state/adopters.md). Pipeline issue #6 created. PR #5 has fix, blocked on merge conflicts (needs-human ~12h).
+- Weekly Analysis: 2/3 — failed at 18:18 (same workflow bug: rm .proposed-change.md before git commit). Next failure triggers 3/3 threshold.
 - Triage/Coder/Reviewer: all completed for issue #2 → PR #4
-- Token utilization: 62 data points — system healthy, no optimization needed
+- Token utilization: 63 data points — system healthy, no optimization needed
 
 ## Open Issues
 - #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked on merge conflicts
+- #6 [pipeline] Growth Strategist fails: missing state/adopters.md (3/3 consecutive) — created by watcher
 
 ## Open PRs
 - #4 fix: [evolve] Create root index.html (closes #2) — reviewer approved (comment), needs-human (merge conflicts, 27+h)
