@@ -11,14 +11,14 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Created issue #2: Create root index.html as portfolio landing page
 - Self-Evolve pipeline stabilized after initial failures
 
-## System Health (last watcher: 2026-03-23T08:50Z)
-- Self-Evolve: healthy (last success 08:21)
+## System Health (last watcher: 2026-03-23T09:50Z)
+- Self-Evolve: healthy (last success 09:24)
 - Deploy workflow: SKIP in config (workflow_dispatch-only, issue #1 closed)
-- pages-build-deployment: healthy (last success 08:24)
-- Growth Strategist: 1st failure (missing state/growth_metrics.md) — no new runs since 18:10, monitoring (1/3). PR #5 open with fix, reviewed (merge conflicts).
-- Weekly Analysis: RECOVERED — success at 06:28, failure counter reset from 2/3 to 0/3
+- pages-build-deployment: healthy (last success 09:27)
+- Growth Strategist: 2nd consecutive failure at 09:25 (same bug: missing state/adopters.md). PR #5 has fix, blocked on merge conflicts (needs-human). 2/3 — monitoring.
+- Weekly Analysis: RECOVERED — success at 06:28, 0/3
 - Triage/Coder/Reviewer: all completed for issue #2 → PR #4
-- Token utilization: 42 data points — system healthy, no optimization needed
+- Token utilization: 44 data points — system healthy, no optimization needed
 
 ## Open Issues
 - #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked on merge conflicts
@@ -30,9 +30,9 @@ Portfolio landing page — site needs a root index.html (issue #2).
 ## Key Observations
 - No apps/ directory — flat static site, not using Astro
 - Site has 2 project subdirs (6150/ survival analysis, Presentation/ chatbot) but no landing page
-- PR #4 has been blocked on merge conflicts for ~16h (state file conflicts from PR #3 merge, needs-human since 18:50)
+- PR #4 has been blocked on merge conflicts for ~19h (state file conflicts from PR #3 merge, needs-human since 18:50)
 - PR #5 reviewed (approved via comment, merge conflicts) — needs-human for rebase
-- Growth Strategist: 1 failure, no new runs since 18:10 — PR #5 fix reviewed, blocked on merge conflicts
-- Weekly Analysis: RECOVERED at 06:28 — failure counter reset, workflow healthy
-- Token utilization: 40 data points analyzed — all workflows in healthy range, no rate-limit errors, no model fallbacks
+- Growth Strategist: 2 consecutive failures (missing state/adopters.md) — PR #5 fix reviewed, blocked on merge conflicts (needs-human). Next failure = 3/3 threshold.
+- Weekly Analysis: RECOVERED at 06:28 — 0/3, workflow healthy
+- Token utilization: 44 data points — all workflows healthy, no rate-limit errors, no model fallbacks
 - No human-created issues in past 7 days
