@@ -1,0 +1,1 @@
+PR creation blocked: no GITHUB_TOKEN available in this runner environment. The fix is committed and pushed to branch fix/issue-8. PR must be created manually or by a workflow with the token.
