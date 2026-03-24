@@ -22,14 +22,14 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - First token utilization analysis completed (48 data points, healthy)
 - First growth metrics collected (stars:0, forks:0, watchers:1, issues:2)
 
-## System Health (last watcher: 2026-03-24T05:55Z)
-- Self-Evolve: healthy (last success 05:31)
+## System Health (last watcher: 2026-03-24T06:55Z)
+- Self-Evolve: healthy (last success 06:25)
 - Deploy workflow: SKIP in config (workflow_dispatch-only, issue #1 closed)
-- pages-build-deployment: healthy (last success 05:34)
-- Growth Strategist: FIXED — PR #7 merged at 21:54 (closes #6). No new run since 18:20 (~12h). Awaiting next scheduled run to validate fix.
-- Weekly Analysis: FIXED — PR #9 merged at 03:33 (closes #8). Last failure 00:24. Next validation run expected ~06:18 UTC.
+- pages-build-deployment: healthy (last success 06:30)
+- Growth Strategist: FIXED — PR #7 merged at 21:54 (closes #6). No new run since 18:20 (~12.5h). Awaiting next scheduled run to validate fix.
+- Weekly Analysis: VALIDATED — PR #9 fix confirmed. First success at 06:25:42Z after 3/3 failure streak. Issue #8 fully resolved.
 - Triage/Coder/Reviewer: all healthy — full pipeline for #8 completed in ~5 min (03:28-03:33)
-- Token utilization: 87 data points — system healthy, no optimization needed
+- Token utilization: 89 data points — system healthy, no optimization needed
 
 ## Open Issues
 - #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked on merge conflicts
@@ -40,7 +40,8 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #1 [pipeline] Deploy workflow fails: missing package-lock.json — CLOSED 2026-03-22T16:50Z
 
 ## Open PRs
-- #4 fix: [evolve] Create root index.html (closes #2) — reviewer approved (comment), needs-human (merge conflicts, 40+h)
+- #10 Proposed Change: Fix watcher-created issues missing auto-triage — needs-review (created 06:30, awaiting reviewer)
+- #4 fix: [evolve] Create root index.html (closes #2) — reviewer approved (comment), needs-human (merge conflicts, 41+h)
 - #5 fix(workflow): add missing file guards to growth.yml — NOW REDUNDANT (PR #7 already merged same fix). Still open with needs-human. Human should close.
 
 ## Key Observations
