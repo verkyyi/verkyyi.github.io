@@ -271,3 +271,9 @@
 2026-03-24T20:15:41Z | pipeline-health | 10 failed runs checked, 0 issues created (HUMAN_ACTIVE) | Weekly Analysis branch collision 2/3 (12:19Z + 18:22Z on analyze/20260324). Tomorrow's run uses analyze/20260325, should succeed. Other 8 ALREADY-FIXED.
 2026-03-24T20:15:41Z | site-evaluation | no root index.html (issue #2 open, PR #4 blocked merge conflicts needs-human ~59h) | no action (HUMAN_ACTIVE)
 2026-03-24T20:15:41Z | scaffold-version | no formal GitHub release tag found for agentfolio/tokenman (API returns empty) | no action (HUMAN_ACTIVE)
+2026-03-24T21:15:22Z | verkyyi/agentfolio | routine evolve state commit (ddd3575, 20:52Z), repo redirects to tokenman, v0.2.0 still latest release | no action
+2026-03-24T21:15:22Z | quarto-dev/quarto-cli | unchanged — still at cderv env vars fix (2f1d73d, 03-20), no newer commits in 4+ days | no action
+2026-03-24T21:15:22Z | openai-harness-blog | blocked by Cloudflare challenge page | no action — persistent block
+2026-03-24T21:15:22Z | pipeline-health | 10 failed runs checked, 0 issues created (HUMAN_ACTIVE) | Weekly Analysis branch collision 2/3 (12:19Z + 18:22Z on analyze/20260324), next run ~00:18Z 03-25 on analyze/20260325 should succeed. Growth Strategist healthy (last 2 runs succeeded). Other 8 failures ALREADY-FIXED.
+2026-03-24T21:15:22Z | site-evaluation | no root index.html (issue #2 open, PR #4 blocked merge conflicts needs-human ~60h) | no action (HUMAN_ACTIVE)
+2026-03-24T21:15:22Z | scaffold-version | agentfolio/tokenman v0.2.0 confirmed (release tag exists), config has no Version field | no action (HUMAN_ACTIVE)
