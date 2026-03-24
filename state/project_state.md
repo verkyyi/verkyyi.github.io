@@ -27,12 +27,12 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Deploy workflow: SKIP in config (workflow_dispatch-only, issue #1 closed)
 - pages-build-deployment: healthy (last success 03:05)
 - Growth Strategist: FIXED — PR #7 merged at 21:54 (file existence guards in growth.yml, closes #6). No new run since 18:20 (~9h). Awaiting next scheduled run to confirm fix.
-- Weekly Analysis: 3/3 — failed at 12:18, 18:18, and 00:24 (same workflow bug: rm .proposed-change.md before git commit). Issue #8 created at 00:55, triage re-triggered at 03:27 (was untriaged for 2.5h).
+- Weekly Analysis: 3/3 — failed at 12:18, 18:18, and 00:24 (rm .proposed-change.md before git add). Issue #8: fix PR opened by coder agent (reordered rm before git add, added commit guard).
 - Triage/Coder/Reviewer: all healthy — triage re-triggered for issue #8 this run
 - Token utilization: 79 data points — system healthy, no optimization needed
 
 ## Open Issues
-- #8 [pipeline] Weekly Analysis fails: rm .proposed-change.md before git commit (3/3) — triage re-triggered 03:27Z
+- #8 [pipeline] Weekly Analysis fails: rm .proposed-change.md before git commit (3/3) — fix PR opened
 - #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked on merge conflicts
 
 ## Closed Issues (recent)
