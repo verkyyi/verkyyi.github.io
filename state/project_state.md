@@ -22,16 +22,17 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - First token utilization analysis completed (48 data points, healthy)
 - First growth metrics collected (stars:0, forks:0, watchers:1, issues:2)
 
-## System Health (last watcher: 2026-03-24T02:20Z)
-- Self-Evolve: healthy (last success 01:35)
+## System Health (last watcher: 2026-03-24T03:27Z)
+- Self-Evolve: healthy (last success 03:02)
 - Deploy workflow: SKIP in config (workflow_dispatch-only, issue #1 closed)
-- pages-build-deployment: healthy (last success 01:38)
-- Growth Strategist: FIXED — PR #7 merged at 21:54 (file existence guards in growth.yml, closes #6). No new run since 18:20 (~8h). Awaiting next scheduled run to confirm fix.
-- Weekly Analysis: 3/3 — failed at 12:18, 18:18, and 00:24 since recovery at 06:28 (same workflow bug: rm .proposed-change.md before git commit). Issue #8 created at 00:55, 0 comments, approaching 2h triage threshold (will need triage next run).
-- Triage/Coder/Reviewer: all healthy — full pipeline ran for issue #6 fix at 21:49-21:54 (5 min end-to-end)
-- Token utilization: 77 data points — system healthy, no optimization needed
+- pages-build-deployment: healthy (last success 03:05)
+- Growth Strategist: FIXED — PR #7 merged at 21:54 (file existence guards in growth.yml, closes #6). No new run since 18:20 (~9h). Awaiting next scheduled run to confirm fix.
+- Weekly Analysis: 3/3 — failed at 12:18, 18:18, and 00:24 (same workflow bug: rm .proposed-change.md before git commit). Issue #8 created at 00:55, triage re-triggered at 03:27 (was untriaged for 2.5h).
+- Triage/Coder/Reviewer: all healthy — triage re-triggered for issue #8 this run
+- Token utilization: 79 data points — system healthy, no optimization needed
 
 ## Open Issues
+- #8 [pipeline] Weekly Analysis fails: rm .proposed-change.md before git commit (3/3) — triage re-triggered 03:27Z
 - #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked on merge conflicts
 
 ## Closed Issues (recent)
