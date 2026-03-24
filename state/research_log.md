@@ -229,3 +229,9 @@
 2026-03-24T13:36:17Z | pipeline-health | 10 failed runs checked, 0 issues created (HUMAN_ACTIVE) | 9 ALREADY-FIXED (Weekly Analysis PR #9, Growth Strategist PR #7, Coder initial setup). 1 NEW: Weekly Analysis 12:19Z non-fast-forward push on analyze/20260324 branch (already exists from 06:25Z run) — 1/3 for this pattern, monitoring.
 2026-03-24T13:36:17Z | site-evaluation | no root index.html (issue #2 open, PR #4 blocked merge conflicts needs-human ~52h) | no action (HUMAN_ACTIVE)
 2026-03-24T13:36:17Z | scaffold-version | agentfolio/tokenman latest release v0.2.0, config still has no Version field | no action (HUMAN_ACTIVE)
+2026-03-24T14:30:24Z | verkyyi/agentfolio | repo redirect confirmed (now verkyyi/tokenman), latest commit "state: evolve — 2026-03-24T14:15" (active evolve cycle) | no action (HUMAN_ACTIVE)
+2026-03-24T14:30:24Z | quarto-dev/quarto-cli | fix: restore env vars in finally block to prevent test pollution (2f1d73d, 2026-03-24) | no action
+2026-03-24T14:30:24Z | openai-harness-blog | blocked by Cloudflare challenge page | no action — persistent block
+2026-03-24T14:30:24Z | pipeline-health | 10 failed runs checked, 0 issues created (HUMAN_ACTIVE) | all ALREADY-FIXED or known patterns. Weekly Analysis 12:19Z branch collision still sole active failure (1/3, monitoring). Growth Strategist healthy since 09:21Z. Coder Agent healthy.
+2026-03-24T14:30:24Z | site-evaluation | no root index.html (issue #2 open, PR #4 blocked merge conflicts needs-human ~53h) | no action (HUMAN_ACTIVE)
+2026-03-24T14:30:24Z | scaffold-version | agentfolio/tokenman latest release v0.2.0, config has no Version field | no action (HUMAN_ACTIVE)
