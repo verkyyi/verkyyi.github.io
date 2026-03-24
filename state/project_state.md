@@ -22,20 +22,20 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - First token utilization analysis completed (48 data points, healthy)
 - First growth metrics collected (stars:0, forks:0, watchers:1, issues:2)
 
-## System Health (last watcher: 2026-03-24T03:27Z)
+## System Health (last watcher: 2026-03-24T04:20Z)
 - Self-Evolve: healthy (last success 03:02)
 - Deploy workflow: SKIP in config (workflow_dispatch-only, issue #1 closed)
-- pages-build-deployment: healthy (last success 03:05)
-- Growth Strategist: FIXED — PR #7 merged at 21:54 (file existence guards in growth.yml, closes #6). No new run since 18:20 (~9h). Awaiting next scheduled run to confirm fix.
-- Weekly Analysis: 3/3 — failed at 12:18, 18:18, and 00:24 (rm .proposed-change.md before git add). Issue #8: fix PR opened by coder agent (reordered rm before git add, added commit guard).
-- Triage/Coder/Reviewer: all healthy — triage re-triggered for issue #8 this run
-- Token utilization: 79 data points — system healthy, no optimization needed
+- pages-build-deployment: healthy (last success 03:33)
+- Growth Strategist: FIXED — PR #7 merged at 21:54 (file existence guards in growth.yml, closes #6). No new run since 18:20 (~10h). Awaiting next scheduled run to validate fix.
+- Weekly Analysis: FIXED — issue #8 fix merged at 03:33 (reordered rm before git add, added git diff --cached guard). Last failure 00:24. Awaiting next scheduled run to validate fix.
+- Triage/Coder/Reviewer: all healthy — full pipeline for #8 completed in ~5 min (03:28-03:33)
+- Token utilization: 81 data points — system healthy, no optimization needed
 
 ## Open Issues
-- #8 [pipeline] Weekly Analysis fails: rm .proposed-change.md before git commit (3/3) — fix PR opened
 - #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked on merge conflicts
 
 ## Closed Issues (recent)
+- #8 [pipeline] Weekly Analysis fails: rm .proposed-change.md before git commit — CLOSED 2026-03-24T03:33Z (fixed by PR #9)
 - #6 [pipeline] Growth Strategist fails: missing state/adopters.md — CLOSED 2026-03-23T21:54Z (fixed by PR #7)
 - #1 [pipeline] Deploy workflow fails: missing package-lock.json — CLOSED 2026-03-22T16:50Z
 
