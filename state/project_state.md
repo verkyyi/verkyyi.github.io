@@ -28,15 +28,15 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Future targets: awesome-claude-code (31K stars), awesome-claude-code-subagents (15K stars)
 - Next action: create first release + submit to awesome lists once landing page ships
 
-## System Health (last watcher: 2026-03-24T14:00Z)
-- Self-Evolve: healthy (last success 13:33)
+## System Health (last watcher: 2026-03-24T14:53Z)
+- Self-Evolve: healthy (last success 14:29)
 - Deploy workflow: SKIP in config (workflow_dispatch-only, issue #1 closed)
-- pages-build-deployment: healthy (last success 13:37)
+- pages-build-deployment: healthy (last success 14:33)
 - Growth Strategist: healthy (validated 09:21)
-- Weekly Analysis: 1/3 for non-fast-forward push bug (12:19Z — analyze/20260324 branch already exists from earlier run that created PR #10). Previous rm bug fixed. Next run ~18:18Z will likely fail again (same-day branch collision).
+- Weekly Analysis: 1/3 for non-fast-forward push bug (12:19Z — analyze/20260324 branch already exists from earlier run). Next run ~18:18Z will likely be 2/3 (same-day branch collision).
 - Growth: first run completed 09:00Z (pre-growth baseline assessment)
-- Triage/Coder/Reviewer: healthy — PR #10 has 1 COMMENTED review (07:52, reviewer said "Merging" but PR still open ~7h)
-- Token utilization: 102 data points — no rate-limit errors, no model fallbacks, all claude-opus-4-6. Evolve turns elevated (metric mismatch, runs complete successfully).
+- Triage/Coder/Reviewer: healthy — but all 3 open PRs now needs-human (merge conflicts)
+- Token utilization: 105 data points — no rate-limit errors, no model fallbacks, all claude-opus-4-6.
 
 ## Open Issues
 - #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked on merge conflicts
@@ -47,8 +47,8 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #1 [pipeline] Deploy workflow fails: missing package-lock.json — CLOSED 2026-03-22T16:50Z
 
 ## Open PRs
-- #10 Proposed Change: Fix watcher-created issues missing auto-triage — needs-review, 1 COMMENTED review (07:52, reviewer said "Merging" but PR not merged ~7h, mergeState UNKNOWN)
-- #4 fix: [evolve] Create root index.html (closes #2) — needs-human (merge conflicts, 48+h). Human action required.
+- #10 Proposed Change: Fix watcher-created issues missing auto-triage — needs-human (merge conflicts, reviewer completed 07:52Z COMMENTED "Merging" but CONFLICTING state). Human rebase required.
+- #4 fix: [evolve] Create root index.html (closes #2) — needs-human (merge conflicts, 53+h). Human action required.
 - #5 fix(workflow): add missing file guards to growth.yml — REDUNDANT (PR #7 already merged same fix). needs-human. Human should close.
 
 ## Key Observations
