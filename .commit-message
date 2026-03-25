@@ -1,1 +1,1 @@
-fix(workflow): reorder rm before git add in analyze.yml (closes #8)
+fix(workflow): append GITHUB_RUN_ID to analyze.yml branch name (closes #12)

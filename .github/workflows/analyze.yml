@@ -120,7 +120,7 @@ jobs:
       - name: Create improvement PR if proposed
         if: hashFiles('.proposed-change.md') != ''
         run: |
-          BRANCH="analyze/$(date +%Y%m%d)"
+          BRANCH="analyze/$(date +%Y%m%d)-${GITHUB_RUN_ID}"
           git checkout -b "$BRANCH"
           TITLE=$(head -1 .proposed-change.md | sed 's/^# //')
           BODY=$(cat .proposed-change.md)
