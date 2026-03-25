@@ -14,6 +14,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 8. **P3: Activate unused workflows** — discover, feedback-learner, claude-task have never been triggered.
 
 ## Recent Changes
+- Fixed analyze.yml branch collision by appending GITHUB_RUN_ID to branch name (issue #12, opened PR)
 - Weekly Analysis rm bug fixed (PR #9, issue #8 closed, validated 06:25Z 03-24)
 - Growth Strategist adopters.md fix merged (PR #7, issue #6 closed, validated 09:21Z 03-24)
 - All 10 historical pipeline failures now resolved and validated
