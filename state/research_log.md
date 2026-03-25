@@ -295,3 +295,9 @@
 2026-03-25T00:28:12Z | pipeline-health | 10 failed runs checked, 0 issues created (HUMAN_ACTIVE) | Weekly Analysis in_progress (00:27Z 03-25 on analyze/20260325 — should succeed, new date avoids collision). Previous 2/3 branch collision on analyze/20260324 (12:19Z + 18:22Z). Other 8 ALREADY-FIXED. All 3 PRs mergeable UNKNOWN.
 2026-03-25T00:28:12Z | site-evaluation | no root index.html (issue #2 open, PR #4 blocked merge conflicts needs-human ~63h) | no action (HUMAN_ACTIVE)
 2026-03-25T00:28:12Z | scaffold-version | no release tag found for agentfolio or tokenman (API returns empty for both) | no action (HUMAN_ACTIVE)
+2026-03-25T01:36:48Z | verkyyi/agentfolio | routine state commit: reviewer usage metrics (0c0ac65, 01:06Z) | no action (HUMAN_ACTIVE)
+2026-03-25T01:36:48Z | quarto-dev/quarto-cli | fix: update crossref theorem test regexes for title bracket syntax (d577ef4, 00:36Z) | no action — test fix only
+2026-03-25T01:36:48Z | openai-harness-blog | blocked by Cloudflare challenge page | no action — persistent block
+2026-03-25T01:36:48Z | pipeline-health | 10 failed runs checked, 0 issues created (HUMAN_ACTIVE) | Weekly Analysis: last success 00:27Z 03-25 (RECOVERED). Growth Strategist: last success 18:23Z 03-24. All 10 failures ALREADY-FIXED.
+2026-03-25T01:36:48Z | site-evaluation | no root index.html (issue #2 open, PR #4 blocked merge conflicts needs-human ~64h) | no action (HUMAN_ACTIVE)
+2026-03-25T01:36:48Z | scaffold-version | tokenman v0.2.0 confirmed (release tag found via redirect) | no action (HUMAN_ACTIVE)
