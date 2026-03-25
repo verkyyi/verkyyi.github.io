@@ -353,3 +353,10 @@
 2026-03-25T11:18:21Z | pipeline-health | 10 failed runs checked, 0 issues created (HUMAN_ACTIVE) | Weekly Analysis 06:25Z branch collision (PR #11 needs-human), Growth Strategist all ALREADY-FIXED (succeeded 09:21Z). All 4 PRs needs-human.
 2026-03-25T11:18:21Z | site-evaluation | no root index.html (issue #2 open, PR #4 needs-human ~78h) | no action (HUMAN_ACTIVE)
 2026-03-25T11:18:21Z | human-intents | 0 human issues in last 7d, all 4 issues by github-actions[bot] | no action
+2026-03-25T12:20:27Z | verkyyi/agentfolio | routine state evolve commit (9dc4646, 11:56Z) — renamed to tokenman | no action
+2026-03-25T12:20:27Z | quarto-dev/quarto-cli | unchanged since last run (d577ef4, crossref test fix 03-24) | no action
+2026-03-25T12:20:27Z | openai-harness-blog | blocked by Cloudflare challenge page | no action — persistent block
+2026-03-25T12:20:27Z | pipeline-health | 10 failed runs checked, 0 issues created (HUMAN_ACTIVE) | Weekly Analysis 06:25Z branch collision (PR #11 needs-human, last success 00:27Z), Growth Strategist all ALREADY-FIXED (last success 09:21Z). All 4 PRs needs-human.
+2026-03-25T12:20:27Z | site-evaluation | no root index.html (issue #2 open, PR #4 needs-human ~79h) | no action (HUMAN_ACTIVE)
+2026-03-25T12:20:27Z | seo-check | hour 12 UTC — README.md garbled (repeated analyze.yml rows), no repo topics set, no robots.txt, no root HTML files | no action (HUMAN_ACTIVE)
+2026-03-25T12:20:27Z | human-intents | 0 human issues in last 7d, all 4 issues by github-actions[bot] | no action
