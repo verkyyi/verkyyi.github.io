@@ -3,13 +3,13 @@
 ## Current Focus
 Portfolio landing page — site needs a root index.html (issue #2).
 
-## Priorities (from weekly analysis 2026-03-24)
-1. **P0: Human action required on PRs** — PR #4 (landing page) blocked 56+h on merge conflicts, reviewer approved. PR #5 is REDUNDANT (same fix already merged in PR #7) — human should close. PR #10 (watcher triage fix) blocked 11+h on merge conflicts. Zero forward progress until human rebases.
-2. **P0: Fix analyze.yml branch collision** — Same-day runs collide on `analyze/YYYYMMDD` branch name. Currently 1/3, will hit 3/3 threshold imminently. Fix: add timestamp or run ID to branch name.
-3. **P1: Reduce state commit frequency** — 4 commits/hour (95% of git history) causes merge conflicts on every PR branch. Root cause of PR deadlock. Consider batching or consolidating state writes.
-4. **P1: Update evolve_config research sources** — Remove openai blog (Cloudflare-blocked on 100% of 50+ attempts), update agentfolio reference to tokenman, add Version field (upstream at v0.2.0).
-5. **P2: Auto-rebase capability** — Pipeline cannot self-heal merge conflicts. PRs that need rebase require human intervention, creating multi-day deadlocks.
-6. **P2: Create FEATURE_STATUS.md** — Recommended in both Week 1 and Week 2 analysis. Still missing.
+## Priorities (from weekly analysis 2026-03-25)
+1. **P0: Human action required on PRs** — PR #4 (landing page) blocked 62+h on merge conflicts. PR #10 (watcher triage fix) blocked 17+h on merge conflicts. PR #5 is REDUNDANT (same fix merged in PR #7) — human should close. Zero forward progress until human rebases. This bottleneck is now 3 weeks old.
+2. **P0: Fix analyze.yml branch collision** — Same-day runs collide on `analyze/YYYYMMDD` branch name. Currently 2/3. Existing .proposed-change.md has the fix but couldn't push due to the same bug. Next run on new date (03-25) should succeed and deliver the fix.
+3. **P1: Reduce state commit frequency** — 4 commits/hour (95% of git history) is the root cause of merge conflicts on every PR branch. Consider batching or consolidating state writes per workflow run.
+4. **P1: Update evolve_config** — Remove openai blog (Cloudflare-blocked on 100% of 50+ attempts), update agentfolio reference to tokenman, add Version field (upstream at v0.2.0).
+5. **P2: Auto-rebase capability** — Pipeline cannot self-heal merge conflicts. PRs that need rebase require human intervention, creating multi-day deadlocks. 3 consecutive weeks of this bottleneck.
+6. **P2: Create FEATURE_STATUS.md** — Recommended in Weeks 1, 2, and 3 analysis. Still missing.
 7. **P3: Fix README.md** — Currently broken/garbled (repeated analyze.yml rows), hurts discoverability.
 8. **P3: Activate unused workflows** — discover, feedback-learner, claude-task have never been triggered.
 
@@ -18,13 +18,15 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Growth Strategist adopters.md fix merged (PR #7, issue #6 closed, validated 09:21Z 03-24)
 - All 10 historical pipeline failures now resolved and validated
 - First growth metrics baseline collected (0 stars, 0 forks, pre-growth phase)
-- First token utilization analysis (110 data points, no errors, all claude-opus-4-6)
+- First growth strategy run completed (pre-growth baseline assessment)
+- First token utilization analysis (122 data points, no errors, all claude-opus-4-6)
 - Upstream agentfolio renamed to tokenman, v0.2.0 released
 - Watcher-created issues confirmed to miss auto-triage (PR #10 created to fix, blocked)
+- Week 3 analysis completed — same merge conflict bottleneck, zero feature delivery
 
 ## Growth Status (baseline: 2026-03-24T09:00Z)
 - Phase: pre-growth (0 stars, 0 forks, no releases)
-- Blockers: no landing page (PR #4 stuck 56+h), broken README, no releases
+- Blockers: no landing page (PR #4 stuck 62+h), broken README, no releases
 - Growth targets identified: awesome-claude-code (31K stars), awesome-claude-code-subagents (15K stars)
 - Next action: merge PR #4 landing page, fix README, create first release, then submit to awesome lists
 
@@ -33,13 +35,13 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Deploy: SKIP in config (workflow_dispatch-only)
 - pages-build-deployment: healthy (last success 23:13Z)
 - Growth Strategist: healthy (last success 18:23Z)
-- Weekly Analysis: 2/3 for branch collision bug (12:19Z, 18:22Z — analyze/20260324 non-fast-forward). Next run ~00:18Z 03-25 on analyze/20260325 — should succeed (new date avoids collision).
+- Weekly Analysis: 2/3 for branch collision bug (12:19Z, 18:22Z on analyze/20260324). Next run ~00:18Z 03-25 on analyze/20260325 — should succeed (new date avoids collision).
 - Growth: first run completed 09:00Z (pre-growth baseline assessment)
 - Triage/Coder/Reviewer: healthy but all 3 open PRs needs-human (merge conflicts)
 - Token utilization: 122 data points — no rate-limit errors, no model fallbacks, all claude-opus-4-6
 
 ## Open Issues
-- #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked on merge conflicts 56+h
+- #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked on merge conflicts 62+h
 
 ## Closed Issues (recent)
 - #8 [pipeline] Weekly Analysis fails: rm .proposed-change.md before git commit — CLOSED 2026-03-24T03:33Z (fixed by PR #9, validated 06:25Z)
@@ -47,17 +49,19 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #1 [pipeline] Deploy workflow fails: missing package-lock.json — CLOSED 2026-03-22T16:50Z
 
 ## Open PRs
-- #10 Proposed Change: Fix watcher-created issues missing auto-triage — needs-human (merge conflicts, reviewer completed 07:52Z COMMENTED). Human rebase required.
-- #4 fix: [evolve] Create root index.html (closes #2) — needs-human (merge conflicts, 56+h). Human rebase required.
+- #10 Proposed Change: Fix watcher-created issues missing auto-triage — needs-human (merge conflicts). Human rebase required.
+- #4 fix: [evolve] Create root index.html (closes #2) — needs-human (merge conflicts, 62+h). Human rebase required.
 - #5 fix(workflow): add missing file guards to growth.yml — REDUNDANT (PR #7 already merged same fix). Human should close.
 
 ## Key Observations
 - No apps/ directory — flat static site, not using Astro
 - Site has 2 project subdirs (6150/ survival analysis, Presentation/ chatbot) but no landing page
-- 229 commits in ~54h of operation — 95% state file updates, creating noisy git history
-- Merge conflicts are the #1 systemic bottleneck (same as Week 1, unresolved)
-- No human-created issues or human activity on PRs in past 7 days
+- 254 commits in ~83h of operation — 95% state file updates, creating noisy git history
+- Merge conflicts are the #1 systemic bottleneck (3 consecutive weeks, unresolved)
+- No human-created issues or human activity on PRs in past 7+ days
 - OpenAI blog research source 100% blocked by Cloudflare (50+ failed attempts)
 - agentfolio upstream repo renamed to tokenman — evolve_config research sources stale
-- No skills directory exists
-- No FEATURE_STATUS.md exists
+- No skills directory exists (empty dir created)
+- No FEATURE_STATUS.md exists (recommended 3 consecutive weeks)
+- Pipeline stability excellent — all historical failures resolved, zero open pipeline-fix issues
+- Feature delivery zero — no PRs merged in 7 days due to merge conflict deadlock
