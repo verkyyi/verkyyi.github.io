@@ -360,3 +360,8 @@
 2026-03-25T12:20:27Z | site-evaluation | no root index.html (issue #2 open, PR #4 needs-human ~79h) | no action (HUMAN_ACTIVE)
 2026-03-25T12:20:27Z | seo-check | hour 12 UTC — README.md garbled (repeated analyze.yml rows), no repo topics set, no robots.txt, no root HTML files | no action (HUMAN_ACTIVE)
 2026-03-25T12:20:27Z | human-intents | 0 human issues in last 7d, all 4 issues by github-actions[bot] | no action
+2026-03-25T13:33:45Z | verkyyi/agentfolio | repo redirect to tokenman active; recent commits: watcher health check (ddf8563, 12:57Z), reviewer trigger for PR #107 (d1e89ec, 12:56Z), reviewer usage metrics (40c0a95, 12:56Z) — routine state activity | no action
+2026-03-25T13:33:45Z | quarto-dev/quarto-cli | 3 bug-fix commits: crossref theorem test regex update (d577ef4, 03-24), theorem block Typst markup fix (306b346, 03-24), env var restore in test finally block (2f1d73d, 03-20) | no action — maintenance fixes, no impact on portfolio
+2026-03-25T13:33:45Z | openai-harness-blog | blocked by Cloudflare challenge page | no action — persistent block
+2026-03-25T13:33:45Z | pipeline-health | 10 failed runs checked, 0 issues created (HUMAN_ACTIVE) | Weekly Analysis 12:18Z branch collision (2/3, PR #11 needs-human, next failure ~18:18Z will hit threshold), Growth Strategist 18:20Z 03-23 ALREADY-FIXED (last success 09:21Z 03-25)
+2026-03-25T13:33:45Z | human-intents | 0 human issues in last 7d, all issues by github-actions[bot] | no action
