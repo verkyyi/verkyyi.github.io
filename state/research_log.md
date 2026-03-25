@@ -347,3 +347,9 @@
 2026-03-25T10:19:52Z | pipeline-health | 10 failed runs checked, 0 issues created (HUMAN_ACTIVE) | Weekly Analysis: 5 failures all branch collision (PR #11 fix needs-human). Growth Strategist: 3 failures ALREADY-FIXED (succeeded 09:21Z 03-25). All 4 PRs needs-human.
 2026-03-25T10:19:52Z | site-evaluation | no root index.html (issue #2 open, PR #4 needs-human ~76h) | no action (HUMAN_ACTIVE)
 2026-03-25T10:19:52Z | human-intents | 0 human issues in last 7d, all 4 issues by github-actions[bot] | no action
+2026-03-25T11:18:21Z | verkyyi/agentfolio | routine state evolve commit (fa6c7c9, 11:09Z) — renamed to tokenman, API returns redirect | no action
+2026-03-25T11:18:21Z | quarto-dev/quarto-cli | crossref theorem test regex fix (d577ef4, 03-25) — same as previous check | no action
+2026-03-25T11:18:21Z | openai-harness-blog | blocked by Cloudflare challenge page | no action — persistent block
+2026-03-25T11:18:21Z | pipeline-health | 10 failed runs checked, 0 issues created (HUMAN_ACTIVE) | Weekly Analysis 06:25Z branch collision (PR #11 needs-human), Growth Strategist all ALREADY-FIXED (succeeded 09:21Z). All 4 PRs needs-human.
+2026-03-25T11:18:21Z | site-evaluation | no root index.html (issue #2 open, PR #4 needs-human ~78h) | no action (HUMAN_ACTIVE)
+2026-03-25T11:18:21Z | human-intents | 0 human issues in last 7d, all 4 issues by github-actions[bot] | no action
