@@ -28,15 +28,15 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Growth targets identified: awesome-claude-code (31K stars), awesome-claude-code-subagents (15K stars)
 - Next action: merge PR #4 landing page, fix README, create first release, then submit to awesome lists
 
-## System Health (last watcher: 2026-03-25T02:20Z)
-- Self-Evolve: healthy (last success 01:36Z 03-25)
+## System Health (last watcher: 2026-03-25T03:30Z)
+- Self-Evolve: healthy (last success 03:04Z 03-25)
 - Deploy: SKIP in config (workflow_dispatch-only)
-- pages-build-deployment: healthy (last success 01:39Z 03-25)
+- pages-build-deployment: healthy (last success 03:06Z 03-25)
 - Growth Strategist: healthy (last success 18:23Z 03-24)
-- Weekly Analysis: RECOVERED — succeeded 00:27Z 03-25 (branch collision streak broken). PR #11 created with permanent fix, but has merge conflicts.
+- Weekly Analysis: RECOVERED — succeeded 00:27Z 03-25. PR #11 with permanent fix now needs-human (reviewer failed twice, 0 reviews produced).
 - Growth: first run completed 09:00Z 03-24 (pre-growth baseline assessment)
-- Triage/Coder/Reviewer: healthy but all 4 open PRs blocked on merge conflicts. Reviewer re-triggered for PR #11 at 02:20Z.
-- Token utilization: 126 data points — no rate-limit errors, no model fallbacks, all claude-opus-4-6
+- Triage/Coder/Reviewer: healthy but all 4 open PRs now needs-human. PR #11 escalated after reviewer produced 0 reviews on re-trigger.
+- Token utilization: 129 data points — no rate-limit errors, no model fallbacks, all claude-opus-4-6
 
 ## Open Issues
 - #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked on merge conflicts 56+h
@@ -47,7 +47,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #1 [pipeline] Deploy workflow fails: missing package-lock.json — CLOSED 2026-03-22T16:50Z
 
 ## Open PRs
-- #11 Fix analyze.yml branch collision on same-day runs — needs-review (created 00:32Z 03-25, CONFLICTING). Reviewer re-triggered at 02:20Z.
+- #11 Fix analyze.yml branch collision on same-day runs — needs-review,needs-human (created 00:32Z 03-25). Reviewer failed twice (0 reviews), escalated to needs-human.
 - #10 Proposed Change: Fix watcher-created issues missing auto-triage — needs-human (merge conflicts, reviewer completed 07:52Z COMMENTED). Human rebase required.
 - #4 fix: [evolve] Create root index.html (closes #2) — needs-human (merge conflicts, ~65h). Human rebase required.
 - #5 fix(workflow): add missing file guards to growth.yml — REDUNDANT (PR #7 already merged same fix). Human should close.
