@@ -289,3 +289,9 @@
 2026-03-24T23:11:06Z | pipeline-health | 10 failed runs checked, 0 issues created (HUMAN_ACTIVE) | Weekly Analysis branch collision 2/3 (12:19Z + 18:22Z on analyze/20260324). Next run ~00:18Z 03-25 on analyze/20260325 should succeed (new date). Other 8 ALREADY-FIXED. No open pipeline-fix issues.
 2026-03-24T23:11:06Z | site-evaluation | no root index.html, no HTML files at root (issue #2 open, PR #4 blocked merge conflicts needs-human ~62h) | no action (HUMAN_ACTIVE)
 2026-03-24T23:11:06Z | scaffold-version | agentfolio/tokenman v0.2.0 confirmed (release exists), config has no Version field | no action (HUMAN_ACTIVE)
+2026-03-25T00:28:12Z | verkyyi/agentfolio | routine evolve state commit (53b4c54, 00:27Z 03-25), repo redirects to tokenman, no release tag found | no action
+2026-03-25T00:28:12Z | quarto-dev/quarto-cli | unchanged — still at env vars fix (2f1d73d, 03-20), 5+ days inactive | no action
+2026-03-25T00:28:12Z | openai-harness-blog | blocked by Cloudflare challenge page | no action — persistent block
+2026-03-25T00:28:12Z | pipeline-health | 10 failed runs checked, 0 issues created (HUMAN_ACTIVE) | Weekly Analysis in_progress (00:27Z 03-25 on analyze/20260325 — should succeed, new date avoids collision). Previous 2/3 branch collision on analyze/20260324 (12:19Z + 18:22Z). Other 8 ALREADY-FIXED. All 3 PRs mergeable UNKNOWN.
+2026-03-25T00:28:12Z | site-evaluation | no root index.html (issue #2 open, PR #4 blocked merge conflicts needs-human ~63h) | no action (HUMAN_ACTIVE)
+2026-03-25T00:28:12Z | scaffold-version | no release tag found for agentfolio or tokenman (API returns empty for both) | no action (HUMAN_ACTIVE)
