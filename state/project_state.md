@@ -22,11 +22,12 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Upstream agentfolio renamed to tokenman, v0.2.0 released
 - Watcher-created issues confirmed to miss auto-triage (PR #10 created to fix, blocked)
 
-## Growth Status (baseline: 2026-03-24T09:00Z)
-- Phase: pre-growth (0 stars, 0 forks, no releases)
-- Blockers: no landing page (PR #4 stuck 56+h), broken README, no releases
-- Growth targets identified: awesome-claude-code (31K stars), awesome-claude-code-subagents (15K stars)
-- Next action: merge PR #4 landing page, fix README, create first release, then submit to awesome lists
+## Growth Status (last run: 2026-03-25T09:00Z)
+- Phase: pre-growth (0 stars, 0 forks, no releases) — unchanged from baseline
+- Blockers: no landing page (PR #4 stuck ~73h), broken README, no releases, all 4 PRs needs-human
+- Growth targets: awesome-claude-code (32K stars), awesome-claude-code-subagents (15K stars), awesome-claude-code-toolkit (899 stars)
+- Next action: waiting for human to unblock PR backlog — then fix README, create first release, submit to awesome lists
+- Discussions: disabled on this repo (cannot use discussion channel)
 
 ## System Health (last watcher: 2026-03-25T08:50Z)
 - Self-Evolve: healthy (last success 08:17Z 03-25)
