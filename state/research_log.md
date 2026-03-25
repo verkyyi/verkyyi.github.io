@@ -341,3 +341,9 @@
 2026-03-25T09:21:27Z | pipeline-health | 10 failed runs checked, 0 issues created (HUMAN_ACTIVE) | Weekly Analysis 06:25Z branch collision 1/3 new cycle (analyze/20260325 non-fast-forward), 9 ALREADY-FIXED. All 4 PRs CONFLICTING. 0 open pipeline-fix issues.
 2026-03-25T09:21:27Z | site-evaluation | no root index.html (issue #2 open, PR #4 CONFLICTING needs-human ~74h) | no action (HUMAN_ACTIVE)
 2026-03-25T09:21:27Z | scaffold-version | tokenman v0.2.0 confirmed (release tag found via redirect) | no action (HUMAN_ACTIVE)
+2026-03-25T10:19:52Z | verkyyi/agentfolio | routine state commit: evolve run at 10:10Z (ed2dc6c) | no action — routine state update
+2026-03-25T10:19:52Z | quarto-dev/quarto-cli | fix: update crossref theorem test regexes for title bracket syntax (d577ef4, Gordon Woodhull 03-25) | no action — test update only
+2026-03-25T10:19:52Z | openai-harness-blog | blocked by Cloudflare challenge page | no action — persistent block
+2026-03-25T10:19:52Z | pipeline-health | 10 failed runs checked, 0 issues created (HUMAN_ACTIVE) | Weekly Analysis: 5 failures all branch collision (PR #11 fix needs-human). Growth Strategist: 3 failures ALREADY-FIXED (succeeded 09:21Z 03-25). All 4 PRs needs-human.
+2026-03-25T10:19:52Z | site-evaluation | no root index.html (issue #2 open, PR #4 needs-human ~76h) | no action (HUMAN_ACTIVE)
+2026-03-25T10:19:52Z | human-intents | 0 human issues in last 7d, all 4 issues by github-actions[bot] | no action
