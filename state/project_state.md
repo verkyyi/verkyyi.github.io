@@ -14,12 +14,12 @@ Portfolio landing page — site needs a root index.html (issue #2).
 8. **P3: Activate unused workflows** — discover, feedback-learner, claude-task have never been triggered.
 
 ## Recent Changes
-- Fixed analyze.yml branch collision by appending GITHUB_RUN_ID to branch name (issue #12, opened PR)
+- Weekly Analysis branch collision FIXED — PR #13 merged 21:53Z 03-25, issue #12 closed. Awaiting validation on next cron run (~00:18Z 03-26).
+- PR #11 now REDUNDANT (same fix as PR #13 for issue #12). Human should close.
 - Weekly Analysis rm bug fixed (PR #9, issue #8 closed, validated 06:25Z 03-24)
 - Growth Strategist adopters.md fix merged (PR #7, issue #6 closed, validated 09:21Z 03-24)
-- All 10 historical pipeline failures now resolved and validated
+- All historical pipeline failures now resolved — 0 open pipeline-fix issues
 - First growth metrics baseline collected (0 stars, 0 forks, pre-growth phase)
-- First token utilization analysis (110 data points, no errors, all claude-opus-4-6)
 - Upstream agentfolio renamed to tokenman, v0.2.0 released
 - Watcher-created issues confirmed to miss auto-triage (PR #10 created to fix, blocked)
 
@@ -30,29 +30,29 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Next action: waiting for human to unblock PR backlog — then fix README, create first release, submit to awesome lists
 - Discussions: disabled on this repo (cannot use discussion channel)
 
-## System Health (last watcher: 2026-03-25T21:50Z)
-- Self-Evolve: healthy (last success 21:13Z 03-25)
+## System Health (last watcher: 2026-03-25T22:50Z)
+- Self-Evolve: healthy (last success 22:12Z 03-25)
 - Deploy: SKIP in config (workflow_dispatch-only)
-- pages-build-deployment: healthy (last success 21:17Z 03-25)
+- pages-build-deployment: healthy (last success 22:17Z 03-25)
 - Growth Strategist: healthy (last success 18:23Z 03-25)
-- Weekly Analysis: 3/3 branch collision (06:25Z + 12:18Z + 18:21Z 03-25). Issue #12 open (3h, triage re-triggered 21:50Z). Fix in PR #11, blocked needs-human with 0 reviews.
+- Weekly Analysis: FIXED — PR #13 merged 21:53Z closing issue #12. 3 failures today (06:25Z + 12:18Z + 18:21Z) all from branch collision bug. Next cron run (~00:18Z 03-26) will validate fix.
 - Growth: 3rd run completed 18:00Z 03-25 (still pre-growth, 0 stars/forks, no change)
-- Triage/Coder/Reviewer: healthy but all 4 open PRs needs-human. PR #11 has 0 formal reviews (escalated needs-human after 2 failed reviewer triggers).
-- Token utilization: 168 lines in usage_log, healthy — no rate-limit errors, no model fallbacks, all claude-opus-4-6
+- Triage/Coder/Reviewer: healthy. Full pipeline chain completed for #12 in ~4min (triage 21:49→coder 21:50→reviewer 21:52→merge 21:53). All 4 remaining PRs needs-human.
+- Token utilization: 171 lines in usage_log, healthy — no rate-limit errors, no model fallbacks, all claude-opus-4-6
 
 ## Open Issues
-- #12 [pipeline] Weekly Analysis fails: branch collision on same-day runs (3/3 consecutive) — fix in PR #11, needs-human
-- #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked on merge conflicts ~92h
+- #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked on merge conflicts ~97h
 
 ## Closed Issues (recent)
+- #12 [pipeline] Weekly Analysis fails: branch collision on same-day runs — CLOSED 2026-03-25T21:53Z (fixed by PR #13, awaiting validation ~00:18Z 03-26)
 - #8 [pipeline] Weekly Analysis fails: rm .proposed-change.md before git commit — CLOSED 2026-03-24T03:33Z (fixed by PR #9, validated 06:25Z)
 - #6 [pipeline] Growth Strategist fails: missing state/adopters.md — CLOSED 2026-03-23T21:54Z (fixed by PR #7, validated 09:21Z)
 - #1 [pipeline] Deploy workflow fails: missing package-lock.json — CLOSED 2026-03-22T16:50Z
 
 ## Open PRs
-- #11 Fix analyze.yml branch collision on same-day runs — needs-review,needs-human (created 00:32Z 03-25). Reviewer failed twice (0 reviews), escalated to needs-human.
+- #11 Fix analyze.yml branch collision on same-day runs — REDUNDANT (PR #13 already merged fixing issue #12). Human should close.
 - #10 Proposed Change: Fix watcher-created issues missing auto-triage — needs-human (merge conflicts, reviewer completed 07:52Z COMMENTED). Human rebase required.
-- #4 fix: [evolve] Create root index.html (closes #2) — needs-human (merge conflicts, ~65h). Human rebase required.
+- #4 fix: [evolve] Create root index.html (closes #2) — needs-human (merge conflicts, ~97h). Human rebase required.
 - #5 fix(workflow): add missing file guards to growth.yml — REDUNDANT (PR #7 already merged same fix). Human should close.
 
 ## Key Observations
