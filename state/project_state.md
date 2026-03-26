@@ -28,14 +28,14 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Growth targets: awesome-claude-code (32K), awesome-ai-agents (27K), awesome-claude-code-subagents (15K), awesome-claude-code-toolkit (906), awesome-claude-code-plugins (646)
 - Next action: fix README (prerequisite for awesome-list submissions)
 
-## System Health (last watcher: 2026-03-26T11:50Z)
-- Self-Evolve: healthy (last success 11:21Z 03-26)
+## System Health (last watcher: 2026-03-26T12:50Z)
+- Self-Evolve: healthy (last success 12:21Z 03-26)
 - Deploy: SKIP in config (workflow_dispatch-only)
-- pages-build-deployment: healthy (last success 11:24Z 03-26)
+- pages-build-deployment: healthy (last success 12:24Z 03-26)
 - Growth Strategist: healthy (last success 09:24Z 03-26, created v0.1.0 release)
-- Weekly Analysis: healthy (last success 06:27Z 03-26, validated)
+- Weekly Analysis: healthy (last success 12:21Z 03-26)
 - Triage/Coder/Reviewer: healthy. No pending triggers.
-- Token utilization: 197 data points, 2 model fallbacks (1% rate, isolated, not actionable), 0 max-turns hits, 0 rate-limit errors
+- Token utilization: 200 data points, 2 model fallbacks (1% rate, isolated, not actionable), 0 max-turns hits, 0 rate-limit errors
 
 ## Open Issues
 - #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked on merge conflicts ~121h
@@ -47,10 +47,11 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #1 [pipeline] Deploy workflow package-lock.json — CLOSED 2026-03-22T16:50Z (PR #3)
 
 ## Open PRs
+- #16 Reduce evolve.yml and watcher.yml cron frequency — needs-review (opened 12:26Z 03-26, awaiting reviewer)
 - #11 Fix analyze.yml branch collision — REDUNDANT (PR #13 already merged). Human should close.
 - #10 Fix watcher-created issues missing auto-triage — needs-human (1 review, merge conflicts). Human rebase required.
 - #5 Add missing file guards to growth.yml — REDUNDANT (PR #7 already merged). Human should close.
-- #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~136h). Human rebase required.
+- #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~142h). Human rebase required.
 
 ## Key Observations
 - No apps/ directory — flat static site, not using Astro
