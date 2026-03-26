@@ -425,3 +425,9 @@
 2026-03-25T23:14:37Z | pipeline-health | 10 failed runs checked, 0 issues created (HUMAN_ACTIVE) | ALL ALREADY-FIXED: 3 Weekly Analysis today pre-PR#13 fix, 4 older Weekly Analysis, 2 Growth Strategist. PR #13 merged 21:53Z. Next Weekly Analysis cron ~00:18Z 03-26 will validate fix.
 2026-03-25T23:14:37Z | site-evaluation | no root index.html (issue #2 open, PR #4 needs-human ~98h) | no action (HUMAN_ACTIVE)
 2026-03-25T23:14:37Z | human-intents | 0 human issues in last 7d, all issues by github-actions[bot] | no action
+2026-03-26T00:32:36Z | verkyyi/agentfolio | redirect to tokenman active; routine state commit (7881fd4, 00:28Z weekly analysis) — no new features | no action
+2026-03-26T00:32:36Z | quarto-dev/quarto-cli | unchanged since last run (d577ef4, crossref test fix 03-24) | no action
+2026-03-26T00:32:36Z | openai-harness-blog | blocked by Cloudflare challenge page | no action — persistent block
+2026-03-26T00:32:36Z | pipeline-health | 10 failed runs checked, 0 issues created (HUMAN_ACTIVE) | ALL ALREADY-FIXED: 3 Weekly Analysis 03-25 pre-PR#13, 5 older Weekly Analysis, 2 Growth Strategist. Weekly Analysis validation run IN_PROGRESS (00:29Z 03-26) — first run since PR #13 fix.
+2026-03-26T00:32:36Z | site-evaluation | no root index.html (issue #2 open, PR #4 needs-human ~100h) | no action (HUMAN_ACTIVE)
+2026-03-26T00:32:36Z | human-intents | 0 human issues in last 7d, all issues by github-actions[bot] | no action
