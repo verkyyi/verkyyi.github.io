@@ -493,3 +493,7 @@
 2026-03-26T13:35:16Z | openai-harness-blog | Cloudflare-blocked (source removed via PR #14) | no action
 2026-03-26T13:35:16Z | pipeline-health | 10 failed runs checked, 0 actionable — all ALREADY-FIXED (Weekly Analysis success 12:21Z, Growth Strategist success 09:24Z) | no action
 2026-03-26T13:35:16Z | human-intents | 0 human issues in last 7d, all issues by github-actions[bot] | no action
+2026-03-26T14:37:01Z | verkyyi/agentfolio | repo renamed to tokenman, latest commit: watcher health check 2026-03-26T12:55Z (bot state commit) | no action (HUMAN_ACTIVE)
+2026-03-26T14:37:01Z | quarto-dev/quarto-cli | fix: update crossref theorem test regexes for title bracket syntax (commit d577ef4, 2026-03-25) | no action
+2026-03-26T14:37:01Z | openai-harness-blog | Cloudflare-blocked (expected, removed from sources in PR #14) | no action
+2026-03-26T14:37:01Z | pipeline-health | 10 failed runs checked (Weekly Analysis x8, Growth Strategist x2, all 03-23 to 03-25), all ALREADY-FIXED — succeeded on 03-26 | 0 issues created (HUMAN_ACTIVE)
