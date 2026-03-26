@@ -13,14 +13,13 @@ Portfolio landing page — site needs a root index.html (issue #2).
 7. **P3: Activate unused workflows** — discover, feedback-learner, claude-task have never been triggered.
 
 ## Recent Changes (since last analysis 2026-03-26T00:18Z)
-- PR #15 opened (06:32Z 03-26) — proposed cron frequency reduction for evolve+watcher (P0 recommendation). Awaiting reviewer.
+- PR #15 MERGED (07:56Z 03-26) — cron frequency reduction for evolve+watcher (P0 fix now deployed)
 - PR #14 merged (02:22Z 03-26) — removed OpenAI blog from research sources (100% Cloudflare-blocked)
-- Weekly Analysis branch collision fix validated (00:29Z 03-26, first success since PR #13)
-- Weekly Analysis 2nd success (06:27Z 03-26) — fix confirmed stable
+- Weekly Analysis branch collision fix validated (00:29Z + 06:27Z 03-26) — fix confirmed stable
 - Full automated pipeline chain proven twice: issue #12 (4min) and PR #14 (triage→coder→reviewer→merge)
+- Model fallback detected: watcher at 07:56Z used claude-haiku-4-5 instead of opus (1/191 runs = 0.5%, isolated, concurrent burst during PR #15 merge)
 - Growth strategy: 3 runs completed, all no-action (pre-growth, 0 stars/forks)
-- Watcher: 24+ health checks/day, all healthy, no new pipeline issues
-- Evolve: 24+ runs/day, all HUMAN_ACTIVE, 0 issues created
+- Cron reduction should lower state commits from ~48/day to ~16/day going forward
 
 ## Growth Status (last run: 2026-03-25T18:00Z)
 - Phase: pre-growth (0 stars, 0 forks, no releases) — unchanged since inception
@@ -28,14 +27,14 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Growth targets: awesome-claude-code (32K), awesome-claude-code-subagents (15K), awesome-claude-code-toolkit (902), awesome-claude-code-plugins (646)
 - Next action: waiting for human to unblock PR backlog
 
-## System Health (last watcher: 2026-03-26T06:55Z)
-- Self-Evolve: healthy (last success 07:29Z 03-26)
+## System Health (last watcher: 2026-03-26T08:50Z)
+- Self-Evolve: healthy (last success 08:20Z 03-26)
 - Deploy: SKIP in config (workflow_dispatch-only)
-- pages-build-deployment: healthy (last success 07:31Z 03-26)
-- Growth Strategist: healthy (last success 18:23Z 03-25)
-- Weekly Analysis: healthy (last success 06:27Z 03-26, 2nd success since fix)
-- Triage/Coder/Reviewer: healthy. Reviewer re-triggered for PR #15 (07:55Z)
-- Token utilization: 190 data points, healthy — no model fallbacks, no rate-limit errors
+- pages-build-deployment: healthy (last success 08:22Z 03-26)
+- Growth Strategist: healthy (last success 18:23Z 03-25, scheduled)
+- Weekly Analysis: healthy (last success 06:27Z 03-26, validated)
+- Triage/Coder/Reviewer: healthy. PR #15 reviewed + merged via full pipeline chain.
+- Token utilization: 191 data points, 1 model fallback (haiku at 07:56Z, 0.5% rate, isolated)
 
 ## Open Issues
 - #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked on merge conflicts ~121h
@@ -47,11 +46,10 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #1 [pipeline] Deploy workflow package-lock.json — CLOSED 2026-03-22T16:50Z (PR #3)
 
 ## Open PRs
-- #15 Reduce evolve.yml and watcher.yml cron frequency — needs-review (opened 06:32Z 03-26, reviewer triggered 07:55Z)
 - #11 Fix analyze.yml branch collision — REDUNDANT (PR #13 already merged). Human should close.
-- #10 Fix watcher-created issues missing auto-triage — needs-human (merge conflicts). Human rebase required.
-- #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~121h). Human rebase required.
+- #10 Fix watcher-created issues missing auto-triage — needs-human (1 review, merge conflicts). Human rebase required.
 - #5 Add missing file guards to growth.yml — REDUNDANT (PR #7 already merged). Human should close.
+- #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~136h). Human rebase required.
 
 ## Key Observations
 - No apps/ directory — flat static site, not using Astro
@@ -63,4 +61,4 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - No skills directory, no FEATURE_STATUS.md
 
 ## Week-over-Week Trends
-- Week 3→4: OpenAI blog blocker RESOLVED (PR #14). Branch collision RESOLVED (PR #13). State commit frequency UNCHANGED. Human activity UNCHANGED (none). PR #4 blockage WORSENED (105h→117h). Pipeline chain PROVEN (2 successful automated fix cycles).
+- Week 3→4: OpenAI blog blocker RESOLVED (PR #14). Branch collision RESOLVED (PR #13). State commit frequency FIX DEPLOYED (PR #15 merged, cron reduced). Human activity UNCHANGED (none). PR #4 blockage WORSENED (105h→136h). Pipeline chain PROVEN (3 successful automated fix cycles: #12, #14, #15).
