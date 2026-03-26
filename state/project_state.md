@@ -28,14 +28,14 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Next action: waiting for human to unblock PR backlog
 - Discussions: disabled on this repo
 
-## System Health (last watcher: 2026-03-26T01:01Z)
-- Self-Evolve: healthy (last success 00:29Z 03-26)
+## System Health (last watcher: 2026-03-26T02:20Z)
+- Self-Evolve: healthy (last success 01:36Z 03-26)
 - Deploy: SKIP in config (workflow_dispatch-only)
-- pages-build-deployment: healthy (last success 00:33Z 03-26)
+- pages-build-deployment: healthy (last success 01:38Z 03-26)
 - Growth Strategist: healthy (last success 18:23Z 03-25)
-- Weekly Analysis: VALIDATED — first successful run (00:29Z 03-26) since PR #13 branch collision fix
-- Triage/Coder/Reviewer: healthy. Full pipeline chain validated for #12 in ~4min
-- Token utilization: 177 data points, healthy — no rate-limit errors, no model fallbacks
+- Weekly Analysis: VALIDATED — successful run (00:29Z 03-26) since PR #13 branch collision fix
+- Triage/Coder/Reviewer: healthy. Reviewer re-triggered for PR #14 (0 reviews after 1h48m)
+- Token utilization: 177 data points, healthy — 12.4% at 40+ turns, no rate-limit errors, no model fallbacks
 
 ## Open Issues
 - #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked on merge conflicts ~105h
@@ -47,7 +47,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #1 [pipeline] Deploy workflow package-lock.json — CLOSED 2026-03-22T16:50Z (PR #3)
 
 ## Open PRs
-- #14 Remove OpenAI blog from research sources — needs-review (created 00:32Z 03-26). Reviewer not yet triggered.
+- #14 Remove OpenAI blog from research sources — needs-review (created 00:32Z 03-26). Reviewer re-triggered 02:20Z.
 - #11 Fix analyze.yml branch collision — REDUNDANT (PR #13 already merged). Human should close.
 - #10 Fix watcher-created issues missing auto-triage — needs-human (merge conflicts). Human rebase required.
 - #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~107h). Human rebase required.
