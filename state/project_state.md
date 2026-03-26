@@ -3,28 +3,28 @@
 ## Current Focus
 Portfolio landing page — site needs a root index.html (issue #2).
 
-## Priorities (from weekly analysis 2026-03-26, week 4)
-1. **P0: Reduce state commit frequency** — 48 state commits/day (96% of git history) is the root cause of merge conflicts on every PR branch. 4th consecutive week identified. Proposed: reduce evolve+watcher cron from hourly to every 3h (~16 commits/day). This is the single most impactful change to unblock the entire pipeline.
-2. **P0: Human action required on PRs** — PR #4 (landing page) blocked ~117h on merge conflicts. PR #10 (watcher triage fix) blocked on conflicts. PRs #5 and #11 are REDUNDANT — human should close both. Zero forward progress until human rebases PR #4 or merge conflicts are prevented.
+## Priorities (from weekly analysis 2026-03-26T12:23Z, week 5)
+1. **P0: ACTUALLY reduce state commit frequency** — PR #15 was incorrectly believed to fix this. It only deleted .proposed-change.md — the YAML files were NEVER modified. evolve.yml is still `0 * * * *` and watcher.yml is still `30 * * * *` (both hourly). 48 state commits/day (96% of git history) remains the root cause of all merge conflicts. 5th consecutive week identified. Proposed change written to .proposed-change.md.
+2. **P0: Human action required on PRs** — PR #4 (landing page) blocked ~141h on merge conflicts. PR #10 (watcher triage fix) blocked on conflicts. PRs #5 and #11 are REDUNDANT — human should close both. Zero forward progress until human rebases PR #4 or merge conflicts are prevented.
 3. **P1: Update evolve_config** — agentfolio renamed to tokenman (v0.2.0). Research sources reference stale repo name. No Version field in config.
 4. **P1: Add auto-rebase or squash-merge capability** — Pipeline fixes bugs autonomously but cannot self-heal merge conflicts. Every PR requiring rebase creates multi-day human-dependent deadlock.
-5. **P2: Create FEATURE_STATUS.md** — 4th consecutive weekly recommendation, still missing.
-6. **P2: Fix README.md** — Garbled content (repeated analyze.yml rows), hurts discoverability and SEO.
+5. **P2: Create FEATURE_STATUS.md** — 5th consecutive weekly recommendation, still missing.
+6. **P2: Fix README.md** — Garbled content (repeated analyze.yml rows), hurts discoverability and SEO. Prerequisite for awesome-list submissions.
 7. **P3: Activate unused workflows** — discover, feedback-learner, claude-task have never been triggered.
 
 ## Recent Changes (since last analysis 2026-03-26T00:18Z)
-- PR #15 MERGED (07:56Z 03-26) — cron frequency reduction for evolve+watcher (P0 fix now deployed)
+- **CORRECTION:** PR #15 did NOT implement cron reduction — it only deleted .proposed-change.md. Cron schedules are UNCHANGED at hourly.
 - PR #14 merged (02:22Z 03-26) — removed OpenAI blog from research sources (100% Cloudflare-blocked)
 - Weekly Analysis branch collision fix validated (00:29Z + 06:27Z 03-26) — fix confirmed stable
-- Full automated pipeline chain proven twice: issue #12 (4min) and PR #14 (triage→coder→reviewer→merge)
-- Model fallback detected: watcher at 07:56Z used claude-haiku-4-5 instead of opus (1/191 runs = 0.5%, isolated, concurrent burst during PR #15 merge)
-- Growth strategy: 3 runs completed, all no-action (pre-growth, 0 stars/forks)
-- Cron reduction should lower state commits from ~48/day to ~16/day going forward
+- Full automated pipeline chain proven 3x: issues #12, #14, #15 lifecycle
+- v0.1.0 release created by growth.yml (09:24Z 03-26)
+- Model fallback detected: watcher at 07:56Z used claude-haiku-4-5 (1/191 runs = 0.5%, isolated)
+- New .proposed-change.md written with actual YAML modifications for cron reduction
 
-## Growth Status (last run: 2026-03-26T09:00Z)
+## Growth Status (last run: 2026-03-26T09:24Z)
 - Phase: pre-growth (0 stars, 0 forks) but v0.1.0 release created — first release milestone
 - v0.1.0 "The Self-Healing Scaffold" released 2026-03-26 — 6 merged PRs, 11 workflows, proven autonomous pipeline
-- Remaining blockers: broken README (garbled content), no landing page (PR #4 stuck ~136h), no human activity in 10+ days
+- Remaining blockers: broken README (garbled content), no landing page (PR #4 stuck ~141h), no human activity in 14+ days
 - Growth targets: awesome-claude-code (32K), awesome-ai-agents (27K), awesome-claude-code-subagents (15K), awesome-claude-code-toolkit (906), awesome-claude-code-plugins (646)
 - Next action: fix README (prerequisite for awesome-list submissions)
 
@@ -38,7 +38,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Token utilization: 197 data points, 2 model fallbacks (1% rate, isolated, not actionable), 0 max-turns hits, 0 rate-limit errors
 
 ## Open Issues
-- #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked on merge conflicts ~121h
+- #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked on merge conflicts ~141h
 
 ## Closed Issues (recent)
 - #12 [pipeline] Weekly Analysis branch collision — CLOSED 2026-03-25T21:53Z (PR #13)
@@ -50,16 +50,16 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #11 Fix analyze.yml branch collision — REDUNDANT (PR #13 already merged). Human should close.
 - #10 Fix watcher-created issues missing auto-triage — needs-human (1 review, merge conflicts). Human rebase required.
 - #5 Add missing file guards to growth.yml — REDUNDANT (PR #7 already merged). Human should close.
-- #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~136h). Human rebase required.
+- #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~141h). Human rebase required.
 
 ## Key Observations
 - No apps/ directory — flat static site, not using Astro
 - Site has 2 project subdirs (6150/ survival analysis, Presentation/ chatbot) but no landing page
-- 376 commits this week, 96% state file updates — commit noise is the systemic bottleneck
-- Merge conflicts are the #1 systemic issue (4th consecutive week, unresolved)
-- No human activity in 10+ days — all issues/PRs created by automation
+- 405 commits this week, 96% state file updates — commit noise is the systemic bottleneck
+- Merge conflicts are the #1 systemic issue (5th consecutive week, STILL unresolved — PR #15 was a no-op)
+- No human activity in 14+ days — all issues/PRs created by automation
 - agentfolio upstream repo renamed to tokenman (v0.2.0) — evolve_config stale
 - No skills directory, no FEATURE_STATUS.md
 
 ## Week-over-Week Trends
-- Week 3→4: OpenAI blog blocker RESOLVED (PR #14). Branch collision RESOLVED (PR #13). State commit frequency FIX DEPLOYED (PR #15 merged, cron reduced). Human activity UNCHANGED (none). PR #4 blockage WORSENED (105h→136h). Pipeline chain PROVEN (3 successful automated fix cycles: #12, #14, #15).
+- Week 4→5: Cron fix NOT actually deployed (PR #15 was no-op, corrected this week). OpenAI blog RESOLVED (PR #14). Branch collision RESOLVED (PR #13). v0.1.0 RELEASED. PR #4 blockage WORSENED (136h→141h). Human activity UNCHANGED (zero, now 14+ days). Pipeline chain PROVEN 3x. New proposed change written for actual cron YAML modification.
