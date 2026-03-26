@@ -29,16 +29,16 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Next action: waiting for human to unblock PR backlog
 
 ## System Health (last watcher: 2026-03-26T06:55Z)
-- Self-Evolve: healthy (last success 06:28Z 03-26)
+- Self-Evolve: healthy (last success 07:29Z 03-26)
 - Deploy: SKIP in config (workflow_dispatch-only)
-- pages-build-deployment: healthy (last success 06:32Z 03-26)
+- pages-build-deployment: healthy (last success 07:31Z 03-26)
 - Growth Strategist: healthy (last success 18:23Z 03-25)
 - Weekly Analysis: healthy (last success 06:27Z 03-26, 2nd success since fix)
-- Triage/Coder/Reviewer: healthy. PR #14 merged (02:22Z) — full pipeline chain completed
-- Token utilization: 187 data points, healthy — no model fallbacks, no rate-limit errors
+- Triage/Coder/Reviewer: healthy. Reviewer re-triggered for PR #15 (07:55Z)
+- Token utilization: 190 data points, healthy — no model fallbacks, no rate-limit errors
 
 ## Open Issues
-- #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked on merge conflicts ~117h
+- #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked on merge conflicts ~121h
 
 ## Closed Issues (recent)
 - #12 [pipeline] Weekly Analysis branch collision — CLOSED 2026-03-25T21:53Z (PR #13)
@@ -47,10 +47,10 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #1 [pipeline] Deploy workflow package-lock.json — CLOSED 2026-03-22T16:50Z (PR #3)
 
 ## Open PRs
-- #15 Reduce evolve.yml and watcher.yml cron frequency — needs-review (opened 06:32Z 03-26, awaiting reviewer)
+- #15 Reduce evolve.yml and watcher.yml cron frequency — needs-review (opened 06:32Z 03-26, reviewer triggered 07:55Z)
 - #11 Fix analyze.yml branch collision — REDUNDANT (PR #13 already merged). Human should close.
 - #10 Fix watcher-created issues missing auto-triage — needs-human (merge conflicts). Human rebase required.
-- #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~119h). Human rebase required.
+- #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~121h). Human rebase required.
 - #5 Add missing file guards to growth.yml — REDUNDANT (PR #7 already merged). Human should close.
 
 ## Key Observations
