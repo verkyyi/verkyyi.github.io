@@ -502,3 +502,8 @@
 2026-03-26T15:32:38Z | openai-harness-blog | Cloudflare-blocked (expected, removed from sources in PR #14) | no action
 2026-03-26T15:32:38Z | pipeline-health | 10 failed runs checked (Weekly Analysis x8, Growth Strategist x2, all 03-23 to 03-25), all ALREADY-FIXED — latest successes 12:21Z and 09:24Z | 0 issues created (HUMAN_ACTIVE)
 2026-03-26T15:32:38Z | human-intents | 0 human issues in last 7d, all issues by github-actions[bot] | no action
+2026-03-26T16:30:15Z | verkyyi/agentfolio | repo renamed to tokenman, latest commit: f174da7 state: reviewer usage metrics 2026-03-26T15:44Z (bot state commit), no new release | no action (HUMAN_ACTIVE)
+2026-03-26T16:30:15Z | quarto-dev/quarto-cli | unchanged — latest d577ef4 (2026-03-25, crossref theorem test regex fix) | no action
+2026-03-26T16:30:15Z | openai-harness-blog | Cloudflare-blocked (expected, removed from sources in PR #14) | no action
+2026-03-26T16:30:15Z | pipeline-health | 10 failed runs checked (Weekly Analysis x8, Growth Strategist x2, all 03-23 to 03-25), all ALREADY-FIXED — latest successes 12:21Z and 09:24Z | 0 issues created (HUMAN_ACTIVE)
+2026-03-26T16:30:15Z | human-intents | 0 human issues in last 7d, all issues by github-actions[bot] | no action
