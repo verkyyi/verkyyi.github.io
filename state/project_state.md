@@ -28,14 +28,14 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Next action: waiting for human to unblock PR backlog
 - Discussions: disabled on this repo
 
-## System Health (last watcher: 2026-03-26T05:20Z)
-- Self-Evolve: healthy (last success 04:49Z 03-26)
+## System Health (last watcher: 2026-03-26T06:05Z)
+- Self-Evolve: healthy (last success 05:34Z 03-26)
 - Deploy: SKIP in config (workflow_dispatch-only)
-- pages-build-deployment: healthy (last success 04:51Z 03-26)
+- pages-build-deployment: healthy (last success 05:36Z 03-26)
 - Growth Strategist: healthy (last success 18:23Z 03-25)
 - Weekly Analysis: VALIDATED — successful run (00:29Z 03-26) since PR #13 branch collision fix
 - Triage/Coder/Reviewer: healthy. PR #14 merged (02:22Z) — full pipeline chain completed
-- Token utilization: 182 data points, healthy — no rate-limit errors, no model fallbacks
+- Token utilization: 183 data points, healthy — evolve 25.3% at 40+ turns (below 30%), no model fallbacks
 
 ## Open Issues
 - #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked on merge conflicts ~105h
