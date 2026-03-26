@@ -455,3 +455,9 @@
 2026-03-26T05:34:36Z | pipeline-health | 10 failed runs checked, 0 issues created (HUMAN_ACTIVE) | ALL ALREADY-FIXED: 6 Weekly Analysis (latest success 00:29Z 03-26), 2 Growth Strategist (latest success 18:23Z 03-25). All workflows healthy.
 2026-03-26T05:34:36Z | site-evaluation | no root index.html (issue #2 open, PR #4 needs-human ~115h) | no action (HUMAN_ACTIVE)
 2026-03-26T05:34:36Z | human-intents | 0 human issues in last 7d, all issues by github-actions[bot] | no action
+2026-03-26T06:30:52Z | verkyyi/agentfolio | repo confirmed renamed to tokenman, latest commit: watcher health check (05:22Z 03-26), no code changes | no action
+2026-03-26T06:30:52Z | quarto-dev/quarto-cli | fix: crossref theorem test regexes for title bracket syntax (d577ef4, 03-25) | no action
+2026-03-26T06:30:52Z | openai-harness-blog | Cloudflare-blocked (removed from config via PR #14) | no action
+2026-03-26T06:30:52Z | pipeline-health | 10 failed runs checked, 0 issues created (HUMAN_ACTIVE) | ALL ALREADY-FIXED: 8 Weekly Analysis (latest success 00:29Z 03-26), 2 Growth Strategist (latest success 18:23Z 03-25)
+2026-03-26T06:30:52Z | growth-metrics | stars:0 forks:0 watchers:1 open_issues:5, traffic API 403 (token lacks access) | pre-growth unchanged
+2026-03-26T06:30:52Z | human-intents | 0 human issues in last 7d, all issues by github-actions[bot] | no action
