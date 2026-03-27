@@ -13,7 +13,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 7. **P3: Activate unused workflows** — discover, feedback-learner, claude-task have never been triggered.
 
 ## Recent Changes (since last analysis 2026-03-26T00:18Z)
-- PR opened for issue #20 (2026-03-27) — replaced garbled README.md with clean structured content (title, workflow table, features, project structure)
+- PR #21 MERGED (2026-03-27) — replaced garbled README.md with clean structured content (closes #20)
 - PR #15 MERGED (07:56Z 03-26) — cron frequency reduction for evolve+watcher (P0 fix now deployed)
 - PR #14 merged (02:22Z 03-26) — removed OpenAI blog from research sources (100% Cloudflare-blocked)
 - Weekly Analysis branch collision fix validated (00:29Z + 06:27Z 03-26) — fix confirmed stable
@@ -40,10 +40,10 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Token utilization: 245 data points, 2 model fallbacks (0.8%, isolated), 0 max-turns hits, 0 rate-limit errors
 
 ## Open Issues
-- #20 [growth] Fix garbled README — PR opened by coder agent (2026-03-27)
 - #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked on merge conflicts ~191h
 
 ## Closed Issues (recent)
+- #20 [growth] Fix garbled README — CLOSED 2026-03-27 (PR #21 merged by reviewer agent)
 - #12 [pipeline] Weekly Analysis branch collision — CLOSED 2026-03-25T21:53Z (PR #13)
 - #8 [pipeline] Weekly Analysis rm bug — CLOSED 2026-03-24T03:33Z (PR #9)
 - #6 [pipeline] Growth Strategist adopters.md — CLOSED 2026-03-23T21:54Z (PR #7)
