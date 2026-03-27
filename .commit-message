@@ -1,1 +1,1 @@
-fix(workflow): append GITHUB_RUN_ID to analyze.yml branch name (closes #12)
+fix: replace garbled README with clean structured content (closes #20)
