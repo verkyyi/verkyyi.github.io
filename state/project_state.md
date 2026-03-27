@@ -30,19 +30,20 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~194h), initial stars for list credibility, no human activity in 10+ days
 - Next action: wait for repo topics + landing page + initial stars → then submit to awesome-claude-code-toolkit first (lower bar), awesome-claude-code second
 
-## System Health (last watcher: 2026-03-27T17:53Z)
-- Self-Evolve: healthy (last success 17:19Z 03-27)
+## System Health (last watcher: 2026-03-27T18:49Z)
+- Self-Evolve: healthy (last success 18:20Z 03-27)
 - Deploy: SKIP in config (workflow_dispatch-only)
-- pages-build-deployment: healthy (last success 17:22Z 03-27). 13:59Z failure was transient GitHub API 403, auto-recovered.
-- Growth Strategist: healthy (last success 09:21Z 03-27)
-- Weekly Analysis: healthy (last success 12:17Z 03-27)
+- pages-build-deployment: healthy (last success 18:26Z 03-27)
+- Growth Strategist: healthy (last success 18:21Z 03-27)
+- Weekly Analysis: healthy (last success 18:20Z 03-27)
 - Reviewer Agent: healthy (last success 13:58Z 03-27). Prior failure (07:52Z on PR #19) already escalated.
 - Coder Agent: healthy (last success 11:51Z 03-27, issue #20 fix)
 - Triage: healthy (last success 11:49Z 03-27)
-- Token utilization: 258 data points, 3 model fallbacks (1.2%, isolated), 0 max-turns hits, 0 rate-limit errors
+- Token utilization: 260 data points, 3 model fallbacks (1.2%, isolated), 0 max-turns hits, 0 rate-limit errors
 
 ## Open Issues
-- #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked on merge conflicts ~191h
+- #24 [growth] Submit to awesome-claude-code lists — needs-review, growth-action (created 18:24Z 03-27, not yet triaged, under 2h threshold)
+- #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked on merge conflicts ~196h
 
 ## Closed Issues (recent)
 - #20 [growth] Fix garbled README — CLOSED 2026-03-27 (PR #21 merged by reviewer agent)
@@ -52,15 +53,16 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #1 [pipeline] Deploy workflow package-lock.json — CLOSED 2026-03-22T16:50Z (PR #3)
 
 ## Open PRs
-- #22 Apply cron frequency reduction directly to workflow YAMLs — CLOSED by reviewer (13:58Z 03-27, not merged)
+- #23 Apply cron frequency reduction to workflow YAMLs — needs-review (created 18:24Z 03-27, 0 reviews, under 1h threshold)
 - #19 Fix cron frequency — evolve and watcher still running hourly — needs-human (reviewer failed twice, escalated 08:53Z 03-27)
 - #16 Reduce evolve.yml and watcher.yml cron frequency — needs-human (redundant, PR #15 already merged the fix). Human should close.
 - #11 Fix analyze.yml branch collision — REDUNDANT (PR #13 already merged). Human should close.
 - #10 Fix watcher-created issues missing auto-triage — needs-human (1 review, merge conflicts). Human rebase required.
 - #5 Add missing file guards to growth.yml — REDUNDANT (PR #7 already merged). Human should close.
-- #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~194h). Human rebase required.
+- #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~196h). Human rebase required.
 
 ## Recently Closed PRs
+- #22 Apply cron frequency reduction directly to workflow YAMLs — CLOSED by reviewer (13:58Z 03-27, not merged)
 - #18 Enable watcher to auto-close redundant PRs — CLOSED by reviewer (02:22Z 03-27, not merged — proposal rejected)
 - #17 Update evolve_config.md for tokenman rename — CLOSED by reviewer (19:51Z 03-26, not merged)
 
