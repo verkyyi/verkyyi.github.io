@@ -3,40 +3,39 @@
 ## Current Focus
 Portfolio landing page — site needs a root index.html (issue #2).
 
-## Priorities (from weekly analysis 2026-03-26, week 4)
-1. **P0: Reduce state commit frequency** — 48 state commits/day (96% of git history) is the root cause of merge conflicts on every PR branch. 4th consecutive week identified. Proposed: reduce evolve+watcher cron from hourly to every 3h (~16 commits/day). This is the single most impactful change to unblock the entire pipeline.
-2. **P0: Human action required on PRs** — PR #4 (landing page) blocked ~117h on merge conflicts. PR #10 (watcher triage fix) blocked on conflicts. PRs #5 and #11 are REDUNDANT — human should close both. Zero forward progress until human rebases PR #4 or merge conflicts are prevented.
-3. **P1: Update evolve_config** — agentfolio renamed to tokenman (v0.2.0). Research sources reference stale repo name. No Version field in config.
-4. **P1: Add auto-rebase or squash-merge capability** — Pipeline fixes bugs autonomously but cannot self-heal merge conflicts. Every PR requiring rebase creates multi-day human-dependent deadlock.
-5. **P2: Create FEATURE_STATUS.md** — 4th consecutive weekly recommendation, still missing.
-6. ~~**P2: Fix README.md**~~ — RESOLVED (PR for issue #20, coder agent replaced garbled content with clean structured README).
+## Priorities (from weekly analysis 2026-03-27, week 5)
+1. **P0: Cron frequency fix NOT APPLIED — mechanism bug** — PRs #15, #16, #19 all only delete .proposed-change.md without modifying workflow YAML. evolve.yml still `'0 * * * *'`, watcher.yml still `'30 * * * *'` (both hourly). 537 commits in 7 days (93% state). Root cause: proposed-change mechanism creates spec-only PRs that never apply file changes. **Human must edit YAML directly** — change evolve.yml line 5 to `'0 */3 * * *'` and watcher.yml line 5 to `'30 */3 * * *'`.
+2. **P0: Human action required on PRs** — PR #4 (landing page) blocked ~191h (8+ days) on merge conflicts. 3 redundant PRs (#5, #11, #16) need closing. PR #10 (watcher triage fix) needs rebase. PR #19 (cron fix spec) needs-human after reviewer crash. Zero forward progress until human acts.
+3. **P1: Fix proposed-change mechanism** — Evolve workflow reads .proposed-change.md and opens PRs, but PRs only contain the spec file deletion. The actual file changes described in "Files Changed" section are never applied. This breaks the self-improvement loop.
+4. **P1: Update evolve_config** — agentfolio renamed to tokenman (v0.2.0). Research sources reference stale repo name. No Version field in config. PR #17 (tokenman rename) was rejected by reviewer.
+5. **P2: Create FEATURE_STATUS.md** — 5th consecutive weekly recommendation, still missing.
+6. **P2: Set repo topics** — GITHUB_TOKEN lacks admin permission. Human must set via Settings. Suggested: github-pages, portfolio, autonomous-agents, claude-code, github-actions, self-healing, ai-agents, automation.
 7. **P3: Activate unused workflows** — discover, feedback-learner, claude-task have never been triggered.
 
 ## Recent Changes (since last analysis 2026-03-26T00:18Z)
 - PR #21 MERGED (2026-03-27) — replaced garbled README.md with clean structured content (closes #20)
-- PR #15 MERGED (07:56Z 03-26) — cron frequency reduction for evolve+watcher (P0 fix now deployed)
-- PR #14 merged (02:22Z 03-26) — removed OpenAI blog from research sources (100% Cloudflare-blocked)
-- Weekly Analysis branch collision fix validated (00:29Z + 06:27Z 03-26) — fix confirmed stable
-- Full automated pipeline chain proven twice: issue #12 (4min) and PR #14 (triage→coder→reviewer→merge)
-- Model fallback detected: watcher at 07:56Z used claude-haiku-4-5 instead of opus (1/191 runs = 0.5%, isolated, concurrent burst during PR #15 merge)
-- Growth strategy: 3 runs completed, all no-action (pre-growth, 0 stars/forks)
-- Cron reduction should lower state commits from ~48/day to ~16/day going forward
+- PR #15 MERGED (07:56Z 03-26) — **spec-only, did NOT change workflow YAMLs** (only deleted .proposed-change.md)
+- PR #14 MERGED (02:22Z 03-26) — removed OpenAI blog from research sources (100% Cloudflare-blocked)
+- PR #17 CLOSED (19:51Z 03-26) — tokenman config rename rejected by reviewer
+- PR #18 CLOSED (02:22Z 03-27) — auto-close redundant PRs rejected by reviewer
+- PR #19 OPENED (06:32Z 03-27) — cron fix (spec-only again), reviewer failed, escalated needs-human
+- Issue #20 opened and closed (03-27) — garbled README fixed via full pipeline chain
+- Full automated pipeline chain proven: issue #20 (triage→coder→reviewer→merge)
+- Cron YAML still hourly despite 3 "fix" PRs — mechanism bug confirmed
 
-## Growth Status (last run: 2026-03-26T18:00Z)
-- Phase: pre-growth (0 stars, 0 forks). v0.1.0 live 9h, 0 traction (broken README kills conversion)
-- README fix: branch growth/fix-readme-content pushed, PR blocked by token permissions. Human must merge or create PR.
-- Repo topics: empty. Human must set via Settings (GITHUB_TOKEN lacks admin). Suggested: github-pages, portfolio, autonomous-agents, claude-code, github-actions, self-healing, ai-agents, automation
-- Remaining blockers: README merge, repo topics, no landing page (PR #4 stuck ~155h), no human activity in 10+ days
-- Growth targets: awesome-claude-code (32.7K), awesome-ai-agents (26.9K), awesome-claude-code-subagents (15.3K), awesome-claude-code-toolkit (907), awesome-claude-code-plugins (647), awesome-claude-code-setup (259)
-- Next action: after README merges → create issues for awesome-list submissions
+## Growth Status (last run: 2026-03-27T09:21Z)
+- Phase: pre-growth (0 stars, 0 forks). v0.1.0 live, README now fixed
+- Awesome-list targets: awesome-claude-code (32.7K), awesome-ai-agents (26.9K), awesome-claude-code-subagents (15.3K)
+- Prerequisites unmet: no landing page (PR #4 stuck), 0 traction, no repo topics
+- Next action: after landing page merges → create issues for awesome-list submissions
 
 ## System Health (last watcher: 2026-03-27T11:49Z)
 - Self-Evolve: healthy (last success 11:18Z 03-27)
 - Deploy: SKIP in config (workflow_dispatch-only)
 - pages-build-deployment: healthy (last success 11:20Z 03-27)
 - Growth Strategist: healthy (last success 09:21Z 03-27)
-- Weekly Analysis: healthy (last success 06:28Z 03-27)
-- Reviewer Agent: 1 failure (07:52Z on PR #19, already escalated to needs-human at 08:53Z). Previous 4 runs succeeded — isolated, no pipeline-fix issue needed.
+- Weekly Analysis: healthy (last success 12:20Z 03-27)
+- Reviewer Agent: 1 failure (07:52Z on PR #19, escalated to needs-human). Previous runs succeeded — isolated.
 - Token utilization: 245 data points, 2 model fallbacks (0.8%, isolated), 0 max-turns hits, 0 rate-limit errors
 
 ## Open Issues
@@ -50,25 +49,29 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #1 [pipeline] Deploy workflow package-lock.json — CLOSED 2026-03-22T16:50Z (PR #3)
 
 ## Open PRs
-- #19 Fix cron frequency — evolve and watcher still running hourly — needs-human (reviewer failed twice, escalated 08:53Z 03-27)
-- #16 Reduce evolve.yml and watcher.yml cron frequency — needs-human (redundant, PR #15 already merged the fix). Human should close.
-- #11 Fix analyze.yml branch collision — REDUNDANT (PR #13 already merged). Human should close.
-- #10 Fix watcher-created issues missing auto-triage — needs-human (1 review, merge conflicts). Human rebase required.
-- #5 Add missing file guards to growth.yml — REDUNDANT (PR #7 already merged). Human should close.
-- #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~185h). Human rebase required.
+- #19 Fix cron frequency (spec-only) — needs-human (reviewer failed twice, escalated 08:53Z 03-27)
+- #16 Reduce evolve.yml and watcher.yml cron frequency (spec-only) — needs-human (REDUNDANT, PR #15 already merged)
+- #11 Fix analyze.yml branch collision — needs-human (REDUNDANT, PR #13 already merged)
+- #10 Fix watcher-created issues missing auto-triage — needs-human (1 review, merge conflicts)
+- #5 Add missing file guards to growth.yml — needs-human (REDUNDANT, PR #7 already merged)
+- #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~191h)
 
 ## Recently Closed PRs
-- #18 Enable watcher to auto-close redundant PRs — CLOSED by reviewer (02:22Z 03-27, not merged — proposal rejected)
+- #21 Fix garbled README (closes #20) — MERGED 2026-03-27
+- #18 Enable watcher to auto-close redundant PRs — CLOSED by reviewer (02:22Z 03-27, not merged)
 - #17 Update evolve_config.md for tokenman rename — CLOSED by reviewer (19:51Z 03-26, not merged)
+- #15 Reduce cron frequency (spec-only) — MERGED 07:56Z 03-26 (did not change YAML)
+- #14 Remove OpenAI blog from research sources — MERGED 02:22Z 03-26
 
 ## Key Observations
 - No apps/ directory — flat static site, not using Astro
 - Site has 2 project subdirs (6150/ survival analysis, Presentation/ chatbot) but no landing page
-- 376 commits this week, 96% state file updates — commit noise is the systemic bottleneck
-- Merge conflicts are the #1 systemic issue (4th consecutive week, unresolved)
-- No human activity in 10+ days — all issues/PRs created by automation
+- 537 commits this week, 93% state file updates — commit noise UNCHANGED despite "fix"
+- **Proposed-change mechanism is broken** — 3 PRs (#15, #16, #19) all spec-only, never modify target files
+- Merge conflicts remain the #1 systemic issue (5th consecutive week)
+- No human activity in 14+ days — all issues/PRs created by automation
 - agentfolio upstream repo renamed to tokenman (v0.2.0) — evolve_config stale
 - No skills directory, no FEATURE_STATUS.md
 
 ## Week-over-Week Trends
-- Week 3→4: OpenAI blog blocker RESOLVED (PR #14). Branch collision RESOLVED (PR #13). State commit frequency FIX DEPLOYED (PR #15 merged, cron reduced). Human activity UNCHANGED (none). PR #4 blockage WORSENED (105h→136h). Pipeline chain PROVEN (3 successful automated fix cycles: #12, #14, #15).
+- Week 4→5: README RESOLVED (PR #21). OpenAI blog RESOLVED (PR #14). Cron fix STILL BROKEN (mechanism bug — 3 spec-only PRs merged/opened, 0 YAML changes). Human activity UNCHANGED (none in 14d). PR #4 blockage WORSENED (136h→191h). PR debt INCREASED (4→6 open PRs). Pipeline automation PROVEN (2 more successful chains: issue #20, PR #14). Growth prerequisites partially met (README fixed, landing page still blocked).
