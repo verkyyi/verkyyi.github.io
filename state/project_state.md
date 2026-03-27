@@ -29,14 +29,14 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Growth targets: awesome-claude-code (32.7K), awesome-ai-agents (26.9K), awesome-claude-code-subagents (15.3K), awesome-claude-code-toolkit (907), awesome-claude-code-plugins (647), awesome-claude-code-setup (259)
 - Next action: after README merges → create issues for awesome-list submissions
 
-## System Health (last watcher: 2026-03-26T23:46Z)
-- Self-Evolve: healthy (last success 23:08Z 03-26)
+## System Health (last watcher: 2026-03-27T01:00Z)
+- Self-Evolve: healthy (last success 00:29Z 03-27)
 - Deploy: SKIP in config (workflow_dispatch-only)
-- pages-build-deployment: healthy (last success 23:11Z 03-26)
+- pages-build-deployment: healthy (last success 00:32Z 03-27)
 - Growth Strategist: healthy (last success 18:25Z 03-26)
-- Weekly Analysis: healthy (last success 18:23Z 03-26)
-- Reviewer Agent: healthy (last success 19:51Z — reviewed PR #17, closed it)
-- Token utilization: 222 data points, all claude-opus-4-6 (0 recent fallbacks), 0 max-turns hits, 0 rate-limit errors
+- Weekly Analysis: healthy (last success 00:29Z 03-27)
+- Reviewer Agent: healthy (last success 19:51Z 03-26 — reviewed PR #17, closed it)
+- Token utilization: 225 data points, 2 model fallbacks (0.9%, isolated), 0 max-turns hits, 0 rate-limit errors
 
 ## Open Issues
 - #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked on merge conflicts ~121h
@@ -48,11 +48,12 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #1 [pipeline] Deploy workflow package-lock.json — CLOSED 2026-03-22T16:50Z (PR #3)
 
 ## Open PRs
+- #18 Enable watcher to auto-close redundant PRs — needs-review (new, 27min old, awaiting reviewer)
 - #16 Reduce evolve.yml and watcher.yml cron frequency — needs-human (redundant, PR #15 already merged the fix). Human should close.
 - #11 Fix analyze.yml branch collision — REDUNDANT (PR #13 already merged). Human should close.
 - #10 Fix watcher-created issues missing auto-triage — needs-human (1 review, merge conflicts). Human rebase required.
 - #5 Add missing file guards to growth.yml — REDUNDANT (PR #7 already merged). Human should close.
-- #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~162h). Human rebase required.
+- #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~107h). Human rebase required.
 
 ## Recently Closed PRs
 - #17 Update evolve_config.md for tokenman rename — CLOSED by reviewer (19:51Z 03-26, not merged)
