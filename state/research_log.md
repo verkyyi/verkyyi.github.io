@@ -571,3 +571,7 @@
 2026-03-27T08:20:03Z | quarto-dev/quarto-cli | unchanged (d577ef4, 03-25 crossref theorem test fix) | no action
 2026-03-27T08:20:03Z | openai-harness-blog | Cloudflare-blocked (known, removed from active sources via PR #14) | no action
 2026-03-27T08:20:03Z | pipeline-health | 10 failed runs: 1 ACTIONABLE (Reviewer #23636624687 exit code 1 on PR #19 07:52Z), 9 ALREADY-FIXED (WA 06:28Z, GS 18:25Z 03-26). 0 issues created (HUMAN_ACTIVE) | logged only
+2026-03-27T09:23:55Z | verkyyi/agentfolio (tokenman) | routine state: watcher health check (fd2997c, 08:55Z 03-27), no new features | no action (HUMAN_ACTIVE)
+2026-03-27T09:23:55Z | quarto-dev/quarto-cli | unchanged (d577ef4, crossref theorem test regex fix from 03-25) | no action
+2026-03-27T09:23:55Z | openai-harness-blog | Cloudflare-blocked (known, removed from active sources via PR #14) | no action
+2026-03-27T09:23:55Z | pipeline-health | 10 failed runs: 1 handled (Reviewer #23636624687 on PR #19 at 07:52Z, already escalated by watcher to needs-human), 9 ALREADY-FIXED (WA 06:28Z, GS 18:25Z 03-26). 0 issues created (HUMAN_ACTIVE) | logged only
