@@ -29,14 +29,14 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Growth targets: awesome-claude-code (32.7K), awesome-ai-agents (26.9K), awesome-claude-code-subagents (15.3K), awesome-claude-code-toolkit (907), awesome-claude-code-plugins (647), awesome-claude-code-setup (259)
 - Next action: after README merges → create issues for awesome-list submissions
 
-## System Health (last watcher: 2026-03-27T06:05Z)
-- Self-Evolve: healthy (last success 05:34Z 03-27)
+## System Health (last watcher: 2026-03-27T06:52Z)
+- Self-Evolve: healthy (last success 06:29Z 03-27)
 - Deploy: SKIP in config (workflow_dispatch-only)
-- pages-build-deployment: healthy (last success 05:37Z 03-27)
+- pages-build-deployment: healthy (last success 06:32Z 03-27)
 - Growth Strategist: healthy (last success 18:25Z 03-26)
-- Weekly Analysis: healthy (last success 00:29Z 03-27)
+- Weekly Analysis: healthy (last success 06:28Z 03-27)
 - Reviewer Agent: healthy (last success 02:21Z 03-27, closed PR #18)
-- Token utilization: 232 data points, all opus (0 recent fallbacks), 0 max-turns hits, 0 rate-limit errors
+- Token utilization: 234 data points, all opus (0 recent fallbacks), 0 max-turns hits, 0 rate-limit errors
 
 ## Open Issues
 - #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked on merge conflicts ~121h
@@ -48,11 +48,12 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #1 [pipeline] Deploy workflow package-lock.json — CLOSED 2026-03-22T16:50Z (PR #3)
 
 ## Open PRs
+- #19 Fix cron frequency — evolve and watcher still running hourly — needs-review (new, 20min old, reviewer not yet triggered)
 - #16 Reduce evolve.yml and watcher.yml cron frequency — needs-human (redundant, PR #15 already merged the fix). Human should close.
 - #11 Fix analyze.yml branch collision — REDUNDANT (PR #13 already merged). Human should close.
 - #10 Fix watcher-created issues missing auto-triage — needs-human (1 review, merge conflicts). Human rebase required.
 - #5 Add missing file guards to growth.yml — REDUNDANT (PR #7 already merged). Human should close.
-- #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~107h). Human rebase required.
+- #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~185h). Human rebase required.
 
 ## Recently Closed PRs
 - #18 Enable watcher to auto-close redundant PRs — CLOSED by reviewer (02:22Z 03-27, not merged — proposal rejected)
