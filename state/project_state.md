@@ -9,10 +9,11 @@ Portfolio landing page — site needs a root index.html (issue #2).
 3. **P1: Update evolve_config** — agentfolio renamed to tokenman (v0.2.0). Research sources reference stale repo name. No Version field in config.
 4. **P1: Add auto-rebase or squash-merge capability** — Pipeline fixes bugs autonomously but cannot self-heal merge conflicts. Every PR requiring rebase creates multi-day human-dependent deadlock.
 5. **P2: Create FEATURE_STATUS.md** — 4th consecutive weekly recommendation, still missing.
-6. **P2: Fix README.md** — Garbled content (repeated analyze.yml rows), hurts discoverability and SEO.
+6. ~~**P2: Fix README.md**~~ — RESOLVED (PR for issue #20, coder agent replaced garbled content with clean structured README).
 7. **P3: Activate unused workflows** — discover, feedback-learner, claude-task have never been triggered.
 
 ## Recent Changes (since last analysis 2026-03-26T00:18Z)
+- PR opened for issue #20 (2026-03-27) — replaced garbled README.md with clean structured content (title, workflow table, features, project structure)
 - PR #15 MERGED (07:56Z 03-26) — cron frequency reduction for evolve+watcher (P0 fix now deployed)
 - PR #14 merged (02:22Z 03-26) — removed OpenAI blog from research sources (100% Cloudflare-blocked)
 - Weekly Analysis branch collision fix validated (00:29Z + 06:27Z 03-26) — fix confirmed stable
@@ -39,7 +40,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Token utilization: 245 data points, 2 model fallbacks (0.8%, isolated), 0 max-turns hits, 0 rate-limit errors
 
 ## Open Issues
-- #20 [growth] Fix garbled README — branch ready to merge (created 09:24Z 03-27, growth-action, triage re-triggered 11:49Z — was never triaged in 2h25m)
+- #20 [growth] Fix garbled README — PR opened by coder agent (2026-03-27)
 - #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked on merge conflicts ~191h
 
 ## Closed Issues (recent)
