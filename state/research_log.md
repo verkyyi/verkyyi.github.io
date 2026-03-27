@@ -623,3 +623,7 @@
 2026-03-27T21:14:32Z | quarto-dev/quarto-cli | unchanged (4a7b6ce, Windows dart-sass accented path fix from 19:29Z 03-27) | no action
 2026-03-27T21:14:32Z | openai-harness-blog | Cloudflare-blocked (persistent, removed from active sources via PR #14) | no action
 2026-03-27T21:14:32Z | pipeline-health | 10 failed runs checked, ALL ALREADY-FIXED: pages-build 13:59Z (succeeded 20:50Z), Reviewer 07:52Z (succeeded 19:48Z), WA x5 + GS x1 all pre-03-26 (WA succeeded 18:20Z, GS 18:21Z). 0 actionable, 0 issues created | logged only (HUMAN_ACTIVE)
+2026-03-27T22:10:50Z | verkyyi/agentfolio (tokenman) | routine state commits (d66627e, evolve run 21:19Z 03-27); upstream now at v0.3.0 (was v0.2.0 last noted) | no action (HUMAN_ACTIVE) — v0.3.0 upgrade issue may already exist
+2026-03-27T22:10:50Z | quarto-dev/quarto-cli | unchanged (4a7b6ce, Windows dart-sass accented path fix from 19:29Z 03-27) | no action
+2026-03-27T22:10:50Z | openai-harness-blog | Cloudflare-blocked (persistent, removed from active sources via PR #14) | no action
+2026-03-27T22:10:50Z | pipeline-health | 10 failed runs checked, ALL ALREADY-FIXED: pages-build 13:59Z (succeeded 21:49Z), Reviewer 07:52Z (succeeded 19:48Z), WA x6 + GS x1 all pre-03-26 (WA succeeded 18:20Z, GS 18:21Z). 0 actionable, 0 issues created | logged only (HUMAN_ACTIVE)
