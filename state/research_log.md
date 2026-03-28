@@ -3,6 +3,11 @@
 <!-- Append entries below -->
 2026-03-22T13:36:23Z | verkyyi/agentfolio | fix: closed issues count uses search API, remove Codex refs (commit 69edea1) | no action (HUMAN_ACTIVE)
 2026-03-22T13:36:23Z | quarto-dev/quarto-cli | bumped version to 1.9, updated release date in CITATION.cff (commit 64a2120) | no action
+2026-03-28T01:36:46Z | verkyyi/agentfolio (tokenman) | routine state commit (watcher health check), no code changes; latest release now v0.3.0 (up from v0.2.0) | no action (HUMAN_ACTIVE)
+2026-03-28T01:36:46Z | quarto-dev/quarto-cli | fix Windows dart-sass failures with accented paths #14273 (commit 4a7b6ce) | no action — Windows-specific, not relevant to static site
+2026-03-28T01:36:46Z | openai-harness-blog | Cloudflare-blocked as expected (removed from sources in PR #14) | no action
+2026-03-28T01:36:46Z | pipeline-health | 10 failed runs checked, 0 issues created — all ALREADY-FIXED (pages-build, reviewer, weekly-analysis x6, growth-strategist) | no action (HUMAN_ACTIVE)
+2026-03-28T01:36:46Z | scaffold-version | tokenman v0.3.0 available, config has no Version field — upgrade issue warranted but deferred (HUMAN_ACTIVE) | noted
 2026-03-22T13:36:23Z | openai-harness-blog | blocked by Cloudflare challenge page, not accessible | no action
 2026-03-22T13:36:23Z | pipeline-health | 6 failed runs checked (5 Self-Evolve, 1 Deploy), 0 issues created (HUMAN_ACTIVE) | Self-Evolve: git add --ignore-missing error; Deploy: missing package-lock.json
 2026-03-22T13:43:54Z | verkyyi/agentfolio | feedback-learner usage metrics state commits (137335e, 2a02db0, df63139) | no action — routine state updates
