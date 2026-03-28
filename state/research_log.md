@@ -652,3 +652,8 @@
 2026-03-28T05:31:13Z | quarto-dev/quarto-cli | unchanged since 03-27 (4a7b6ce, Windows dart-sass accented path fix) | no action
 2026-03-28T05:31:13Z | openai-harness-blog | Cloudflare-blocked (consistent) | no action
 2026-03-28T05:31:13Z | pipeline-health | 10 failed runs checked, ALL ALREADY-FIXED (pages-build 03-27→05:09Z, Reviewer 07:52Z→02:22Z, WA x5→00:26Z, GS→18:21Z 03-27), 0 actionable, 0 issues created | no action (HUMAN_ACTIVE)
+2026-03-28T06:23:00Z | verkyyi/agentfolio | repo redirects to verkyyi/tokenman, latest commit: state watcher health check (05:12Z), no code changes | no action (HUMAN_ACTIVE)
+2026-03-28T06:23:00Z | quarto-dev/quarto-cli | fix Windows dart-sass failures with accented paths (#14273, 03-27) | no action — not relevant to static HTML site
+2026-03-28T06:23:00Z | openai-harness-blog | blocked by Cloudflare challenge page, not accessible from runner | no action
+2026-03-28T06:23:00Z | pipeline-health | 10 failed runs checked (pages-build 03-27 transient 403, reviewer 03-27 normal cleanup, 5x weekly-analysis 03-23-25, 1x growth 03-23), all ALREADY-FIXED, 0 issues created | no action (HUMAN_ACTIVE)
+2026-03-28T06:23:00Z | growth-metrics | stars:0 forks:0 watchers:1 open_issues:8 traffic:403-no-access | no change from prior check, traffic API requires push-scope token
