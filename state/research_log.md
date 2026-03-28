@@ -673,3 +673,7 @@
 2026-03-28T10:12:15Z | quarto-dev/quarto-cli | unchanged since 03-27 (4a7b6ce, Windows dart-sass fix #14273) | no action
 2026-03-28T10:12:15Z | openai-harness-blog | Cloudflare-blocked (persistent) | no action
 2026-03-28T10:12:15Z | pipeline-health | 10 failed runs ALL ALREADY-FIXED (pages-build 09:50Z, reviewer 07:49Z, WA 06:22Z, GS 09:14Z), 0 actionable, 0 issues created | no action (HUMAN_ACTIVE)
+2026-03-28T11:09:47Z | verkyyi/agentfolio | redirect to tokenman, latest commit a35d814 (watcher 10:49Z 03-28) — routine state | no action (HUMAN_ACTIVE)
+2026-03-28T11:09:47Z | quarto-dev/quarto-cli | new commit e626825 — fix quarto create read-only files from system packages (#14258) | no action (not relevant to this repo)
+2026-03-28T11:09:47Z | openai-harness-blog | Cloudflare-blocked (persistent) | no action
+2026-03-28T11:09:47Z | pipeline-health | 10 failed runs ALL ALREADY-FIXED (pages-build 10:48Z, reviewer 07:49Z, GS 09:14Z), 0 actionable, 0 issues created | no action (HUMAN_ACTIVE)
