@@ -30,16 +30,16 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~250h), zero human activity in 14+ days
 - 5th consecutive no-action run. No new distribution channels or signals found.
 
-## System Health (last watcher: 2026-03-28T19:45Z)
-- Self-Evolve: healthy (last success 19:12Z 03-28)
+## System Health (last watcher: 2026-03-28T20:46Z)
+- Self-Evolve: healthy (last success 20:08Z 03-28)
 - Deploy: SKIP in config (workflow_dispatch-only)
-- pages-build-deployment: healthy (last success 19:14Z 03-28)
+- pages-build-deployment: healthy (last success 20:10Z 03-28)
 - Growth Strategist: healthy (last success 18:11Z 03-28)
 - Weekly Analysis: healthy (last success 18:09Z 03-28)
-- Reviewer Agent: healthy (last success 13:50Z 03-28, closed PR #27; re-triggered for PR #28)
+- Reviewer Agent: healthy (last success 19:44Z 03-28, closed PR #28)
 - Coder Agent: healthy (last success 11:51Z 03-27, issue #20 fix)
 - Triage: healthy (last success 20:49Z 03-27, issue #24 triaged)
-- Token utilization: 314 data points, all claude-opus-4-6, 0 max-turns hits, 0 rate-limit errors
+- Token utilization: 316 data points, all claude-opus-4-6, 0 max-turns hits, 0 rate-limit errors
 
 ## Open Issues
 - #24 [growth] Submit to awesome-claude-code lists — needs-human, growth-action
@@ -53,15 +53,15 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #1 [pipeline] Deploy workflow package-lock.json — CLOSED 2026-03-22
 
 ## Open PRs
-- #28 Add conditional state commits to reduce commit noise — needs-review (created 18:13Z 03-28, reviewer re-triggered 19:45Z)
 - #19 Fix cron frequency — evolve and watcher still running hourly — needs-human (escalated 08:53Z 03-27, reviewer failed twice)
 - #16 Reduce evolve.yml and watcher.yml cron frequency — REDUNDANT (PR #15 merged but ineffective). Human should close.
 - #11 Fix analyze.yml branch collision — REDUNDANT (PR #13 merged). Human should close.
 - #10 Fix watcher-created issues missing auto-triage — needs-human (merge conflicts)
 - #5 Add missing file guards to growth.yml — REDUNDANT (PR #7 merged). Human should close.
-- #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~244h)
+- #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~250h)
 
 ## Recently Closed PRs
+- #28 Add conditional state commits to reduce commit noise — CLOSED by reviewer (19:45Z 03-28, not merged)
 - #25 Reduce evolve.yml and watcher.yml cron — MERGED by reviewer (02:26Z 03-28, state-only changes, cron YAML unchanged)
 - #23 Apply cron frequency reduction — CLOSED by reviewer (19:48Z 03-27)
 - #22 Apply cron frequency reduction directly — CLOSED by reviewer (13:58Z 03-27)
