@@ -275,3 +275,4 @@
 2026-03-28T00:59:02Z | watcher | model:claude-opus-4-6 | in:669851 | out:7224 | turns:20 | cost:1.0325632500000002
 2026-03-28T01:38:40Z | evolve | model:claude-opus-4-6 | in:485398 | out:6590 | turns:29 | cost:0.593998
 2026-03-28T02:23:00Z | watcher | model:claude-opus-4-6 | in:664058 | out:6947 | turns:18 | cost:1.024942
+2026-03-28T02:26:37Z | reviewer | model:claude-opus-4-6 | in:1057641 | out:13278 | turns:32 | cost:1.15937
