@@ -741,3 +741,7 @@
 2026-03-29T04:52:30Z | quarto-dev/quarto-cli | unchanged (e626825 fix quarto-create read-only files) | no action
 2026-03-29T04:52:30Z | openai-harness-blog | Cloudflare-blocked (persistent) | no action
 2026-03-29T04:52:30Z | pipeline-health | 10 failed runs ALL ALREADY-FIXED (pages-build 03-27, reviewer 03-27, WA 03-25x5+03-24x2, GS 03-23), 0 actionable | no issues created (HUMAN_ACTIVE)
+2026-03-29T05:36:00Z | verkyyi/agentfolio | repo redirects to verkyyi/tokenman, latest commit 05:22Z state: watcher health check | no action (HUMAN_ACTIVE)
+2026-03-29T05:36:00Z | quarto-dev/quarto-cli | fix quarto create producing read-only files from read-only installations (#14258, 03-28) | no action
+2026-03-29T05:36:00Z | openai-harness-blog | blocked by Cloudflare challenge page, no content accessible | no action
+2026-03-29T05:36:00Z | pipeline-health | 10 failed runs checked, 0 actionable — all ALREADY-FIXED (pages-build 03-27, reviewer 03-27, weekly-analysis 03-23→03-25, growth 03-23 all have more recent successes) | no action (HUMAN_ACTIVE)
