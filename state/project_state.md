@@ -28,16 +28,16 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~260h), zero human activity in 15+ days
 - 5th consecutive no-action run. No new distribution channels or signals found.
 
-## System Health (last watcher: 2026-03-29T02:21Z)
-- Self-Evolve: healthy (last success 01:35Z 03-29)
+## System Health (last watcher: 2026-03-29T03:45Z)
+- Self-Evolve: healthy (last success 03:06Z 03-29)
 - Deploy: SKIP in config (workflow_dispatch-only)
-- pages-build-deployment: healthy (last success 01:37Z 03-29)
+- pages-build-deployment: healthy (last success 03:08Z 03-29)
 - Growth Strategist: healthy (last success 18:11Z 03-28)
 - Weekly Analysis: healthy (last success 00:30Z 03-29)
-- Reviewer Agent: healthy (last success 19:44Z 03-28, closed PR #28; reviewer re-triggered for PR #29)
+- Reviewer Agent: healthy (last success 02:22Z 03-29, merged PR #29)
 - Coder Agent: healthy (last success 11:51Z 03-27, issue #20 fix)
 - Triage: healthy (last success 20:49Z 03-27, issue #24 triaged)
-- Token utilization: 327 data points, all claude-opus-4-6, 0 max-turns hits, 0 rate-limit errors
+- Token utilization: 328 data points, all claude-opus-4-6, 0 max-turns hits, 0 rate-limit errors
 
 ## Open Issues
 - #24 [growth] Submit to awesome-claude-code lists — needs-human, growth-action
@@ -51,7 +51,6 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #1 [pipeline] Deploy workflow package-lock.json — CLOSED 2026-03-22
 
 ## Open PRs
-- #29 Create FEATURE_STATUS.md in state/ directory — needs-review (reviewer triggered 02:21Z 03-29)
 - #19 Fix cron frequency — evolve and watcher still running hourly — needs-human (escalated 08:53Z 03-27, reviewer failed twice)
 - #16 Reduce evolve.yml and watcher.yml cron frequency — REDUNDANT (PR #15 merged but ineffective). Human should close.
 - #11 Fix analyze.yml branch collision — REDUNDANT (PR #13 merged). Human should close.
@@ -60,6 +59,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~262h)
 
 ## Recently Closed PRs
+- #29 Create FEATURE_STATUS.md in state/ directory — MERGED by reviewer (02:23Z 03-29, but misleading: only deleted .proposed-change.md, did NOT create FEATURE_STATUS.md)
 - #28 Add conditional state commits to reduce commit noise — CLOSED by reviewer (19:45Z 03-28, not merged)
 - #27 Reduce evolve.yml and watcher.yml cron — CLOSED by reviewer (13:50Z 03-28, not merged)
 - #26 Add FEATURE_STATUS.md — CLOSED by reviewer (07:49Z 03-28, not merged)
