@@ -1,6 +1,6 @@
 # Feature Status
 <!-- Updated by weekly analysis. AUTO-tier state file. -->
-<!-- Last updated: 2026-03-30T12:15Z (week 9 analysis) -->
+<!-- Last updated: 2026-03-30T18:00Z (week 10 analysis) -->
 
 ## In Progress
 | Feature | Issue | PR | Status | Blocked Since | Blocker |
@@ -12,7 +12,7 @@
 | Item | Weeks Stalled | Attempts | Blocker |
 |------|--------------|----------|---------|
 | Cron frequency reduction | 9 | 10+ PRs | Circular deadlock: hourly cron → state commits → merge conflicts → PR failure. Human must edit evolve.yml + watcher.yml directly. |
-| evolve_config.md update (tokenman v0.3.0) | 2 | 2 PRs (#17, #30) | Reviewer rejected both. Should commit directly as AUTO-tier. |
+| evolve_config.md update (tokenman v0.3.0) | RESOLVED | 2 PRs + direct commit | Updated directly by week 10 analysis (approved by PR #34). |
 | Repo topics | 4 | 1 API call | GITHUB_TOKEN lacks admin scope. Human must set manually. |
 | Redundant PR cleanup (#5, #11, #16) | 2-4 | 0 | Human must close. |
 

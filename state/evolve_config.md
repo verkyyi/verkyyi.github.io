@@ -1,10 +1,10 @@
 # Evolve Config
-# Last recheck: 2026-03-29
+# Last recheck: 2026-03-30
 
 ## Repo Profile
 - **Name:** verkyyi.github.io
 - **Stack:** HTML, CSS, JavaScript (static GitHub Pages site, Quarto-generated content)
-- **Maturity:** Early (18 commits)
+- **Maturity:** Early (700+ commits, 98% automated state)
 - **Visibility:** Public
 
 ## Build Commands
@@ -30,7 +30,7 @@
 | claude-task | HIGH | Ad-hoc task runner |
 
 ## Research Sources
-- verkyyi/agentfolio
+- verkyyi/tokenman (formerly agentfolio, v0.3.0 "Lean Operations" released 2026-03-26)
 - quarto-dev/quarto-cli
 
 ## User Answers
