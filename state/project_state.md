@@ -11,13 +11,13 @@ Portfolio landing page — site needs a root index.html (issue #2).
 5. **P2: Set repo topics** — GITHUB_TOKEN lacks admin scope. Growth prerequisite (2/4 met). Suggested: github-pages, autonomous-agents, claude-code, github-actions.
 6. **P3: Activate unused workflows** — discover, feedback-learner, claude-task have never been triggered.
 
-## Recent Changes (since last analysis 2026-03-30T06:42Z)
-- PR #34 MERGED by reviewer (08:07Z 03-30) — proposed direct AUTO-tier commits for FEATURE_STATUS.md and evolve_config.md
-- FEATURE_STATUS.md CREATED directly by week 9 analysis (12:15Z 03-30) — breaking 9-week PR deadlock
-- Watcher: ~8 health checks since week 8 analysis, all healthy, 0 corrective actions
-- Evolve: ~6 runs since 06:42Z, all HUMAN_ACTIVE, 0 issues created
-- Growth: 1 run (09:35Z), 8th consecutive no-action
-- Research: tokenman routine state commits, quarto-cli minor test timing commit (94ebb7f), OpenAI blog Cloudflare-blocked
+## Recent Changes (since last analysis 2026-03-30T12:15Z)
+- PR #35 MERGED by reviewer (14:06Z 03-30) — agent log compaction
+- PR #36 opened (18:27Z 03-30) — research log compaction for routine entries, awaiting reviewer
+- Watcher: ~6 health checks since week 9 analysis, all healthy, 1 corrective action (re-triggered reviewer for PR #35 at 14:10Z)
+- Evolve: ~6 runs, all HUMAN_ACTIVE, 0 issues created
+- Growth: 1 run (18:00Z), 9th consecutive no-action
+- Research: tokenman routine state, quarto-cli shortcode math fix (ad06e01), OpenAI blog Cloudflare-blocked
 
 ## Growth Status (last run: 2026-03-30T18:00Z)
 - Phase: pre-growth (0 stars, 0 forks). v0.1.0 live ~105h, README clean (PR #21 merged 03-27)
@@ -27,16 +27,16 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~387h), zero human activity in 19+ days
 - 13 runs total, 9 consecutive no-action. No new distribution channels or signals found.
 
-## System Health (last watcher: 2026-03-30T17:50Z)
-- Self-Evolve: healthy (last success 17:20Z 03-30)
+## System Health (last watcher: 2026-03-30T18:55Z)
+- Self-Evolve: healthy (last success 18:22Z 03-30)
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
-- pages-build-deployment: healthy (last success 17:22Z 03-30)
-- Growth Strategist: healthy (last success 09:35Z 03-30)
-- Weekly Analysis: healthy (last success 12:21Z 03-30)
+- pages-build-deployment: healthy (last success 18:25Z 03-30)
+- Growth Strategist: healthy (last success 18:22Z 03-30)
+- Weekly Analysis: healthy (last success 18:21Z 03-30)
 - Reviewer Agent: healthy (last success 14:06Z 03-30, merged PR #35)
 - Coder Agent: healthy (last success 11:51Z 03-27, issue #20 fix)
 - Triage: healthy (last success 20:49Z 03-27, issue #24 triaged)
-- Token utilization: 381 data points, all claude-opus-4-6, 0 max-turns hits, 0 rate-limit errors
+- Token utilization: 384 data points, all claude-opus-4-6, 0 max-turns hits, 0 rate-limit errors
 
 ## Open Issues
 - #24 [growth] Submit to awesome-claude-code lists — needs-human, growth-action
@@ -50,14 +50,16 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #1 [pipeline] Deploy workflow package-lock.json — CLOSED 2026-03-22
 
 ## Open PRs
+- #36 Research Log Compaction for Routine Entries — needs-review (created 18:27Z 03-30, awaiting reviewer)
 - #19 Fix cron frequency — evolve and watcher still running hourly — needs-human (escalated 08:53Z 03-27, reviewer failed twice)
 - #16 Reduce evolve.yml and watcher.yml cron frequency — REDUNDANT (PR #15 merged but ineffective). Human should close.
 - #11 Fix analyze.yml branch collision — REDUNDANT (PR #13 merged). Human should close.
 - #10 Fix watcher-created issues missing auto-triage — needs-human (merge conflicts)
 - #5 Add missing file guards to growth.yml — REDUNDANT (PR #7 merged). Human should close.
-- #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~370h)
+- #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~387h)
 
 ## Recently Closed PRs
+- #35 Agent log compaction — MERGED by reviewer (14:06Z 03-30)
 - #34 Direct AUTO-tier commits for FEATURE_STATUS.md and evolve_config.md — MERGED by reviewer (08:07Z 03-30)
 - #33 FEATURE_STATUS.md as direct AUTO-tier commit — MERGED by reviewer (02:24Z 03-30, misleading: only deleted .proposed-change.md)
 - #32 Create FEATURE_STATUS.md in state/ directory — CLOSED by reviewer (19:44Z 03-29, not merged)
