@@ -13,9 +13,9 @@ Portfolio landing page — site needs a root index.html (issue #2).
 
 ## Recent Changes (since last analysis 2026-03-30T12:15Z)
 - PR #35 MERGED by reviewer (14:06Z 03-30) — agent log compaction
-- PR #36 opened (18:27Z 03-30) — research log compaction for routine entries, awaiting reviewer
-- Watcher: ~7 health checks since week 9 analysis, 2 corrective actions (re-triggered reviewer for PR #35 at 14:10Z, PR #36 at 19:50Z)
-- Evolve: ~6 runs, all HUMAN_ACTIVE, 0 issues created
+- PR #36 CLOSED by reviewer (19:51Z 03-30) — research log compaction rejected, not merged
+- Watcher: ~8 health checks since week 9 analysis, 2 corrective actions (re-triggered reviewer for PR #35 at 14:10Z, PR #36 at 19:50Z)
+- Evolve: ~7 runs, all HUMAN_ACTIVE, 0 issues created
 - Growth: 1 run (18:00Z), 9th consecutive no-action
 - Research: tokenman routine state, quarto-cli shortcode math fix (ad06e01), OpenAI blog Cloudflare-blocked
 
@@ -27,13 +27,13 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~387h), zero human activity in 19+ days
 - 13 runs total, 9 consecutive no-action. No new distribution channels or signals found.
 
-## System Health (last watcher: 2026-03-30T19:50Z)
-- Self-Evolve: healthy (last success 19:24Z 03-30)
+## System Health (last watcher: 2026-03-30T20:50Z)
+- Self-Evolve: healthy (last success 20:14Z 03-30)
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
-- pages-build-deployment: healthy (last success 19:27Z 03-30)
+- pages-build-deployment: healthy (last success 20:16Z 03-30)
 - Growth Strategist: healthy (last success 18:22Z 03-30)
-- Weekly Analysis: healthy (last success 18:21Z 03-30)
-- Reviewer Agent: healthy (last success 14:06Z 03-30, merged PR #35) — re-triggered for PR #36
+- Weekly Analysis: healthy (last success 12:21Z 03-30)
+- Reviewer Agent: healthy (last success 19:51Z 03-30, closed PR #36)
 - Coder Agent: healthy (last success 11:51Z 03-27, issue #20 fix)
 - Triage: healthy (last success 20:49Z 03-27, issue #24 triaged)
 - Token utilization: 388 data points, all claude-opus-4-6, 0 max-turns hits, 0 rate-limit errors
@@ -50,7 +50,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #1 [pipeline] Deploy workflow package-lock.json — CLOSED 2026-03-22
 
 ## Open PRs
-- #36 Research Log Compaction for Routine Entries — needs-review (created 18:27Z 03-30, awaiting reviewer)
+- #36 Research Log Compaction for Routine Entries — CLOSED by reviewer (19:51Z 03-30, not merged)
 - #19 Fix cron frequency — evolve and watcher still running hourly — needs-human (escalated 08:53Z 03-27, reviewer failed twice)
 - #16 Reduce evolve.yml and watcher.yml cron frequency — REDUNDANT (PR #15 merged but ineffective). Human should close.
 - #11 Fix analyze.yml branch collision — REDUNDANT (PR #13 merged). Human should close.
