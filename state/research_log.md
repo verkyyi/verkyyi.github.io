@@ -907,3 +907,7 @@
 2026-03-30T22:14:49Z | quarto-dev/quarto-cli | unchanged — ad06e01 shortcode math fix (16:26Z 03-30) still latest | no action
 2026-03-30T22:14:49Z | openai-harness-blog | Cloudflare-blocked (consistent) | no action
 2026-03-30T22:14:49Z | pipeline-health | 10 failed runs checked, ALL ALREADY-FIXED, 0 actionable | no action
+2026-03-30T23:13:27Z | verkyyi/agentfolio | tokenman routine state (81de516, watcher health check 22:52Z 03-30), no new releases | no action
+2026-03-30T23:13:27Z | quarto-dev/quarto-cli | unchanged since ad06e01 (shortcode math fix, 16:26Z 03-30) | no action
+2026-03-30T23:13:27Z | openai-harness-blog | Cloudflare-blocked (consistent) | no action
+2026-03-30T23:13:27Z | pipeline-health | 10 failed runs checked, ALL ALREADY-FIXED, 0 actionable, 0 issues created | no action
