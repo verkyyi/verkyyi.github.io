@@ -18,12 +18,13 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Evolve: ~6 runs since midnight 03-30, all HUMAN_ACTIVE, 0 issues created
 - Research: tokenman routine state commits only, quarto-cli unchanged, OpenAI blog Cloudflare-blocked
 
-## Growth Status (last run: 2026-03-29T18:00Z)
-- Phase: pre-growth (0 stars, 0 forks). v0.1.0 live ~105h, README clean (PR #21 merged 03-27)
+## Growth Status (last run: 2026-03-30T09:35Z)
+- Phase: pre-growth (0 stars, 0 forks). v0.1.0 live ~96h, README clean (PR #21 merged 03-27)
 - Prerequisites: 2/4 met (clean README, first release | missing: repo topics, landing page)
 - Issue #24 open: awesome-list submission instructions for awesome-claude-code and awesome-claude-code-toolkit
-- Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~355h), zero human activity in 18+ days
-- 8th consecutive no-action run. No new distribution channels or signals found.
+- Awesome-list targets growing: awesome-claude-code 34.3K (+500 in 2d), ai-agents 27.0K, toolkit 950
+- Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~370h), zero human activity in 18+ days
+- 8th consecutive no-action run (12th total). No new distribution channels or signals found.
 
 ## System Health (last watcher: 2026-03-30T09:01Z)
 - Self-Evolve: healthy (last success 08:34Z 03-30)
