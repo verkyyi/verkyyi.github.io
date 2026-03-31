@@ -27,16 +27,16 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~387+h), zero human activity in 20+ days
 - 13 runs total, 9 consecutive no-action. No new distribution channels or signals found.
 
-## System Health (last watcher: 2026-03-30T23:50Z)
-- Self-Evolve: healthy (last success 23:13Z 03-30)
+## System Health (last watcher: 2026-03-31T01:00Z)
+- Self-Evolve: healthy (last success 00:30Z 03-31)
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
-- pages-build-deployment: healthy (last success 23:19Z 03-30)
+- pages-build-deployment: healthy (last success 00:34Z 03-31)
 - Growth Strategist: healthy (last success 18:22Z 03-30)
-- Weekly Analysis: healthy (last success 12:21Z 03-30)
+- Weekly Analysis: healthy (last success 00:29Z 03-31)
 - Reviewer Agent: healthy (last success 19:51Z 03-30)
 - Coder Agent: healthy (last success 11:51Z 03-27, issue #20 fix)
 - Triage: healthy (last success 20:49Z 03-27, issue #24 triaged)
-- Token utilization: 395 data points, all claude-opus-4-6, 0 max-turns hits, 0 rate-limit errors
+- Token utilization: 349+ data points, all claude-opus-4-6 (3 haiku fallbacks 03-26/27, not recurring), 0 max-turns hits, 0 rate-limit errors
 
 ## Open Issues
 - #24 [growth] Submit to awesome-claude-code lists — needs-human, growth-action
@@ -50,12 +50,13 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #1 [pipeline] Deploy workflow package-lock.json — CLOSED 2026-03-22
 
 ## Open PRs
+- #37 Update evolve_config.md — tokenman rename + v0.3.0 — needs-review (created 00:34Z 03-31, 0 reviews)
 - #19 Fix cron frequency — evolve and watcher still running hourly — needs-human (escalated 08:53Z 03-27, reviewer failed twice)
 - #16 Reduce evolve.yml and watcher.yml cron frequency — REDUNDANT (PR #15 merged but ineffective). Human should close.
 - #11 Fix analyze.yml branch collision — REDUNDANT (PR #13 merged). Human should close.
 - #10 Fix watcher-created issues missing auto-triage — needs-human (merge conflicts)
 - #5 Add missing file guards to growth.yml — REDUNDANT (PR #7 merged). Human should close.
-- #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~387+h)
+- #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~389+h)
 
 ## Recently Closed PRs
 - #36 Research log compaction — CLOSED by reviewer (19:51Z 03-30, not merged)
