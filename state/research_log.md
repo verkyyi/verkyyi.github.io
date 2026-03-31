@@ -936,3 +936,7 @@
 2026-03-31T06:34:13Z | openai-harness-blog | Cloudflare-blocked (consistent) | no action
 2026-03-31T06:34:13Z | pipeline-health | 10 failed runs checked (03-23 to 03-27), ALL ALREADY-FIXED (pages 06:05Z, reviewer 02:22Z, WA 00:29Z, growth 18:22Z 03-30), 0 actionable | no action (HUMAN_ACTIVE)
 2026-03-31T06:34:13Z | growth-metrics | stars:0 forks:0 watchers:1 open_issues:8 views:N/A uniques:N/A | open issues 6→8 (6 PRs counted), traffic 403, no change in stars/forks
+2026-03-31T07:35:10Z | verkyyi/agentfolio | tokenman routine state commit 95bf01a (watcher 07:00Z 03-31), v0.3.0 still latest, no new release | no action
+2026-03-31T07:35:10Z | quarto-dev/quarto-cli | unchanged since ad06e01 (shortcode math fix, 16:26Z 03-30) | no action
+2026-03-31T07:35:10Z | openai-harness-blog | Cloudflare-blocked (consistent) | no action
+2026-03-31T07:35:10Z | pipeline-health | 10 failed runs checked (03-23 to 03-27), ALL ALREADY-FIXED, 0 actionable | no action (HUMAN_ACTIVE)
