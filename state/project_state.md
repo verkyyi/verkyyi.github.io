@@ -6,7 +6,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 ## Priorities (from weekly analysis 2026-03-31, week 10)
 1. **P0: Cron frequency — requires human manual edit** — 10th consecutive week. Proven circular deadlock: hourly cron produces ~100 state commits/day (98.4%), which create merge conflicts on every PR branch before review. 10+ PRs have attempted YAML fix, ALL failed. No automated approach can succeed. Human must manually edit evolve.yml and watcher.yml cron schedules directly on main.
 2. **P0: Human must act on PR backlog** — 6 PRs stuck needs-human for 2-4+ weeks. PR #4 (landing page) blocked ~387+h (16.1+ days). PRs #5/#11/#16 are REDUNDANT (superseded by merged PRs) — close them. PR #19 (cron fix) escalated to needs-human. PR #10 (watcher triage fix) blocked on merge conflicts. 20+ days zero human activity. Zero forward progress possible until human acts.
-3. **P1: Update evolve_config.md** — agentfolio renamed to tokenman upstream. v0.3.0 "Lean Operations" released 03-26 (69% cost reduction via cron optimization — directly relevant). Two PRs attempted (#17, #30), both rejected. Config has stale research source name, no Version field. Should be committed directly as AUTO-tier state file. Proposed change written.
+3. ~~**P1: Update evolve_config.md**~~ — RESOLVED. PR #37 merged 02:23Z 03-31. Config now has tokenman rename and v0.3.0 version.
 4. **P1: Auto-rebase capability** — Pipeline fixes bugs autonomously but cannot self-heal merge conflicts. Every PR requiring rebase creates multi-day human-dependent deadlock. This is the structural weakness behind P0.
 5. **P2: Set repo topics** — GITHUB_TOKEN lacks admin scope. Growth prerequisite (2/4 met). Suggested: github-pages, autonomous-agents, claude-code, github-actions.
 6. **P3: Activate unused workflows** — discover, feedback-learner, claude-task have never been triggered.
@@ -27,16 +27,16 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~387+h), zero human activity in 20+ days
 - 13 runs total, 9 consecutive no-action. No new distribution channels or signals found.
 
-## System Health (last watcher: 2026-03-31T02:20Z)
-- Self-Evolve: healthy (last success 01:36Z 03-31)
+## System Health (last watcher: 2026-03-31T03:35Z)
+- Self-Evolve: healthy (last success 03:06Z 03-31)
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
-- pages-build-deployment: healthy (last success 01:38Z 03-31)
+- pages-build-deployment: healthy (last success 03:08Z 03-31)
 - Growth Strategist: healthy (last success 18:22Z 03-30)
 - Weekly Analysis: healthy (last success 00:29Z 03-31)
-- Reviewer Agent: healthy (last success 19:51Z 03-30, re-triggered for PR #37 at 02:20Z)
+- Reviewer Agent: healthy (last success 02:22Z 03-31 — merged PR #37)
 - Coder Agent: healthy (last success 11:51Z 03-27, issue #20 fix)
 - Triage: healthy (last success 20:49Z 03-27, issue #24 triaged)
-- Token utilization: 351+ data points, all claude-opus-4-6, 0 max-turns hits, 0 rate-limit errors
+- Token utilization: 354+ data points, all claude-opus-4-6, 0 max-turns hits, 0 rate-limit errors
 
 ## Open Issues
 - #24 [growth] Submit to awesome-claude-code lists — needs-human, growth-action
@@ -50,7 +50,6 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #1 [pipeline] Deploy workflow package-lock.json — CLOSED 2026-03-22
 
 ## Open PRs
-- #37 Update evolve_config.md — tokenman rename + v0.3.0 — needs-review (created 00:34Z 03-31, 0 reviews)
 - #19 Fix cron frequency — evolve and watcher still running hourly — needs-human (escalated 08:53Z 03-27, reviewer failed twice)
 - #16 Reduce evolve.yml and watcher.yml cron frequency — REDUNDANT (PR #15 merged but ineffective). Human should close.
 - #11 Fix analyze.yml branch collision — REDUNDANT (PR #13 merged). Human should close.
@@ -59,6 +58,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~389+h)
 
 ## Recently Closed PRs
+- #37 Update evolve_config.md — tokenman rename + v0.3.0 — MERGED by reviewer (02:22Z 03-31)
 - #36 Research log compaction — CLOSED by reviewer (19:51Z 03-30, not merged)
 - #35 Agent log compaction — MERGED by reviewer (14:06Z 03-30)
 - #34 Direct AUTO-tier commits for FEATURE_STATUS.md and evolve_config.md — MERGED by reviewer (08:07Z 03-30)
@@ -74,10 +74,10 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Cron fix has failed via PR 10+ times — structural inability to modify workflow YAML via PR
 - Merge conflicts are the #1 systemic issue (10th consecutive week, unresolved)
 - No human activity in 20+ days — all issues/PRs created by automation
-- tokenman upstream now at v0.3.0 (from v0.2.0) — evolve_config stale (3 weeks)
+- tokenman upstream now at v0.3.0 (from v0.2.0) — evolve_config UPDATED (PR #37 merged 03-31)
 - FEATURE_STATUS.md created in week 9 (breaking 9-week PR deadlock)
 - Agent log compaction merged (PR #35) — first genuine harness improvement in 2 weeks
-- Proposed change: evolve_config.md direct update (tokenman rename + v0.3.0 version)
+- evolve_config.md updated via PR #37 (tokenman rename + v0.3.0 version) — P1 resolved
 
 ## Week-over-Week Trends
 - Week 9→10: Commit cadence FLAT (99.6→99.9/day). State ratio FLAT (98.4%). Productive output FLAT (11 substantive commits). PRs merged: 3 (1 genuine — #35 log compaction, 2 misleading — #33/#34). FEATURE_STATUS.md 9-week deadlock BROKEN (direct commit, previous week). Agent log compaction MERGED (PR #35 — first real harness improvement). Cron fix NO progress (10th week). PR #4 blockage WORSENED (370h→387h+). Human inactivity WORSENED (19d→20d+). Growth STALLED (9+ consecutive no-action). evolve_config STALLED (3rd week). Token utilization STABLE (healthy). Overall: system operationally healthy but 98.4% of activity is self-referential state maintenance. One genuine improvement made (log compaction). Zero forward progress on user-facing features. 20+ day human absence is the singular root cause.
