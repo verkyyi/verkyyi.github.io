@@ -12,13 +12,14 @@ Portfolio landing page — site needs a root index.html (issue #2).
 6. **P3: Activate unused workflows** — discover, feedback-learner, claude-task have never been triggered.
 
 ## Recent Changes (since last analysis 2026-04-01T12:22Z)
+- PR #41 MERGED (19:54Z 04-01) — evolve no-action run compaction in agent_log (~30-40% log growth reduction)
 - PR #40 MERGED (14:09Z 04-01) — research log quiet-run aggregation (week 12's proposed change)
 - Evolve runs adopting aggregated research format ("all-quiet") post-PR #40
-- quarto-cli: lua-types docs PR#14295, Node.js 24 Actions compat PR#14294, typst-gather 0.2.2 — all non-actionable
+- quarto-cli: lua-types docs PR#14295, Node.js 24 Actions compat PR#14294, typst-gather 0.2.2, typst-gather fallback test fixes — all non-actionable
 
 ## Week 13 Summary (2026-03-26 to 2026-04-01)
-- **Best week for harness improvements**: 4 PRs merged (#35 agent log compaction, #37 evolve_config update, #38 watcher abbreviated format, #40 research log aggregation)
-- **Log reduction campaign COMPLETE**: 3 improvements collectively reduce state file growth by ~60%
+- **Best week for harness improvements**: 5 PRs merged (#35 agent log compaction, #37 evolve_config update, #38 watcher abbreviated format, #40 research log aggregation, #41 evolve no-action compaction)
+- **Log reduction campaign COMPLETE**: 4 improvements collectively reduce state file growth by ~60-70%
 - **Proposed-change pipeline validated**: evolve→reviewer turnaround consistently <6h
 - **tokenman v0.4.0** released — security-scan.yml + triage improvement, upgrade pending
 - **PR #39** approved but merge-blocked — validates systemic merge conflict pattern for 13th consecutive week
@@ -31,16 +32,16 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~504h), zero human activity in 25+ days
 - 17 runs total, 13+ consecutive no-action. No new distribution channels or signals found.
 
-## System Health (last watcher: 2026-04-01T19:55Z)
-- Self-Evolve: healthy (19:26Z 04-01, 10+ consecutive successes)
+## System Health (last watcher: 2026-04-01T20:50Z)
+- Self-Evolve: healthy (20:15Z 04-01, 10+ consecutive successes)
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
-- pages-build-deployment: healthy (last success 19:28Z 04-01)
+- pages-build-deployment: healthy (last success 20:17Z 04-01)
 - Growth Strategist: healthy (last success 18:21Z 04-01)
 - Weekly Analysis: healthy (18:20Z 04-01, week 13 analysis complete)
-- Reviewer Agent: healthy (14:09Z 04-01, re-triggered for PR #41 at 19:55Z)
+- Reviewer Agent: healthy (19:52Z 04-01, PR #41 reviewed and merged)
 - Coder Agent: healthy (last success 11:51Z 03-27, issue #20 fix)
 - Triage: healthy (last success 20:49Z 03-27, issue #24 triaged)
-- Token utilization: 387 data points, claude-opus-4-6, 0 max-turns hits, 0 rate-limit errors
+- Token utilization: 389 data points, claude-opus-4-6, 0 max-turns hits, 0 rate-limit errors
 
 ## Open Issues
 - #24 [growth] Submit to awesome-claude-code lists — needs-human, growth-action
@@ -54,7 +55,6 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #1 [pipeline] Deploy workflow package-lock.json — CLOSED 2026-03-22
 
 ## Open PRs
-- #41 Evolve No-Action Run Compaction in Agent Log — needs-review (created 18:25Z 04-01, reviewer re-triggered 19:55Z)
 - #39 Agent Log Archival — needs-human (reviewer approved via comment but merge-blocked by conflicts)
 - #19 Fix cron frequency — evolve and watcher still running hourly — needs-human (escalated 08:53Z 03-27, reviewer failed twice)
 - #16 Reduce evolve.yml and watcher.yml cron frequency — REDUNDANT (PR #15 merged but ineffective). Human should close.
@@ -64,6 +64,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~504h)
 
 ## Recently Closed PRs
+- #41 Evolve No-Action Run Compaction in Agent Log — MERGED (19:54Z 04-01)
 - #40 Research Log Quiet-Run Aggregation — MERGED (14:09Z 04-01)
 - #38 Watcher Health-Check Abbreviated Format — MERGED (03:07Z 04-01)
 - #37 Update evolve_config.md — tokenman rename + v0.3.0 — MERGED by reviewer (02:22Z 03-31)
@@ -79,8 +80,8 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Merge conflicts are the #1 systemic issue (13th consecutive week, unresolved)
 - No human activity in 25+ days — all issues/PRs created by automation
 - tokenman v0.4.0 released 04-01 — security-scan.yml + triage improvement, upgrade issue pending
-- Log reduction campaign COMPLETE: PRs #35/#38/#40 merged, ~60% state file growth reduction
-- Proposed-change pipeline validated: 4 proposals merged this week with <6h avg turnaround
+- Log reduction campaign COMPLETE: PRs #35/#38/#40/#41 merged, ~60-70% state file growth reduction
+- Proposed-change pipeline validated: 5 proposals merged this week with <6h avg turnaround
 - Research log at 1061 lines, growth rate declining post-PR #40 aggregation
 
 ## Week-over-Week Trends
