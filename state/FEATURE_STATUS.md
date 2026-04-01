@@ -1,25 +1,26 @@
 # Feature Status
 <!-- Updated by weekly analysis. AUTO-tier state file. -->
-<!-- Last updated: 2026-04-01T12:24Z (week 12 analysis) -->
+<!-- Last updated: 2026-04-01T18:22Z (week 13 analysis) -->
 
 ## In Progress
 | Feature | Issue | PR | Status | Blocked Since | Blocker |
 |---------|-------|-----|--------|---------------|---------|
-| Root index.html (landing page) | #2 | #4 | needs-human | 2026-03-14 | Merge conflicts, ~480h (20 days). Human must rebase and merge. |
+| Root index.html (landing page) | #2 | #4 | needs-human | 2026-03-14 | Merge conflicts, ~504h (21+ days). Human must rebase and merge. |
 | Awesome-list submission | #24 | — | needs-human | 2026-03-27 | Human must submit to awesome-claude-code lists |
 | Agent log archival | — | #39 | needs-human | 2026-04-01 | Reviewer approved but merge-blocked by conflicts |
-| tokenman v0.4.0 upgrade | — | — | pending | 2026-04-01 | Detected 09:28Z 04-01. Upgrade issue expected from next evolve run. |
+| tokenman v0.4.0 upgrade | — | — | pending | 2026-04-01 | Detected 09:28Z 04-01. Upgrade issue pending next evolve run. |
 
 ## Stalled (no automated path forward)
 | Item | Weeks Stalled | Attempts | Blocker |
 |------|--------------|----------|---------|
-| Cron frequency reduction | 12 | 10+ PRs | Circular deadlock: hourly cron → state commits → merge conflicts → PR failure. Human must edit evolve.yml + watcher.yml directly. |
-| Repo topics | 7 | 1 API call | GITHUB_TOKEN lacks admin scope. Human must set manually. |
-| Redundant PR cleanup (#5, #11, #16) | 5-7 | 0 | Human must close. |
+| Cron frequency reduction | 13 | 10+ PRs | Circular deadlock: hourly cron → state commits → merge conflicts → PR failure. Human must edit evolve.yml + watcher.yml directly. |
+| Repo topics | 8 | 1 API call | GITHUB_TOKEN lacks admin scope. Human must set manually. |
+| Redundant PR cleanup (#5, #11, #16) | 6-8 | 0 | Human must close. |
 
 ## Completed
 | Feature | Issue | PR | Completed |
 |---------|-------|-----|-----------|
+| Research log quiet-run aggregation | — | #40 | 2026-04-01 (merged, aggregated format for no-action research entries) |
 | Watcher abbreviated health check format | — | #38 | 2026-04-01 (merged, ~75% health check log reduction) |
 | evolve_config.md update (tokenman v0.3.0) | — | #37 | 2026-03-31 (merged by reviewer, tokenman rename + v0.3.0 version) |
 | Agent log compaction | — | #35 | 2026-03-30 (merged by reviewer, ~80% watcher log reduction) |
