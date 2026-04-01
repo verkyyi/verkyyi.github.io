@@ -1,19 +1,19 @@
 # Feature Status
 <!-- Updated by weekly analysis. AUTO-tier state file. -->
-<!-- Last updated: 2026-04-01T00:00Z (week 11 analysis) -->
+<!-- Last updated: 2026-04-01T06:30Z (week 12 analysis) -->
 
 ## In Progress
 | Feature | Issue | PR | Status | Blocked Since | Blocker |
 |---------|-------|-----|--------|---------------|---------|
-| Root index.html (landing page) | #2 | #4 | needs-human | 2026-03-14 | Merge conflicts, ~430h (17.9 days). Human must rebase and merge. |
+| Root index.html (landing page) | #2 | #4 | needs-human | 2026-03-14 | Merge conflicts, ~450h (18.7 days). Human must rebase and merge. |
 | Awesome-list submission | #24 | — | needs-human | 2026-03-27 | Human must submit to awesome-claude-code lists |
 
 ## Stalled (no automated path forward)
 | Item | Weeks Stalled | Attempts | Blocker |
 |------|--------------|----------|---------|
-| Cron frequency reduction | 11 | 10+ PRs | Circular deadlock: hourly cron → state commits → merge conflicts → PR failure. Human must edit evolve.yml + watcher.yml directly. |
-| Repo topics | 6 | 1 API call | GITHUB_TOKEN lacks admin scope. Human must set manually. |
-| Redundant PR cleanup (#5, #11, #16) | 4-6 | 0 | Human must close. |
+| Cron frequency reduction | 12 | 10+ PRs | Circular deadlock: hourly cron → state commits → merge conflicts → PR failure. Human must edit evolve.yml + watcher.yml directly. |
+| Repo topics | 7 | 1 API call | GITHUB_TOKEN lacks admin scope. Human must set manually. |
+| Redundant PR cleanup (#5, #11, #16) | 5-7 | 0 | Human must close. |
 
 ## Completed
 | Feature | Issue | PR | Completed |
@@ -33,4 +33,4 @@
 - [x] Clean README (PR #21 merged 2026-03-27)
 - [x] First release (v0.1.0 released 2026-03-26)
 - [ ] Repo topics (needs admin scope)
-- [ ] Landing page (PR #4 blocked ~430h)
+- [ ] Landing page (PR #4 blocked ~450h)
