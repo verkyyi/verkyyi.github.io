@@ -37,7 +37,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
 - pages-build-deployment: healthy (last success 20:14Z 04-02)
 - Growth Strategist: healthy (last success 09:24Z 04-02)
-- Weekly Analysis: FAILING — 3 consecutive failures (06:29Z, 12:21Z, 18:19Z 04-02). Root cause: git push rejected for workflow file changes (missing `workflows` permission). Issue #43 exists (created 18:51Z). Triage re-triggered for #43.
+- Weekly Analysis: FIX PENDING — 3 consecutive failures (06:29Z, 12:21Z, 18:19Z 04-02). Root cause: `git add -A` staged workflow YAML files, push rejected for missing `workflows` permission. Fix: PR for issue #43 excludes `.github/workflows/` from improvement PR commits.
 - Reviewer Agent: healthy (02:21Z 04-02, reviewed PR #42 via comment — approved, merge-blocked)
 - Coder Agent: healthy (last success 11:51Z 03-27, issue #20 fix)
 - Triage: re-triggered for issue #43 (last organic run 20:49Z 03-27)

@@ -126,6 +126,7 @@ jobs:
           BODY=$(cat .proposed-change.md)
           rm .proposed-change.md
           git add -A
+          git reset HEAD .github/workflows/ 2>/dev/null || true
           git diff --cached --quiet || git commit -m "feat(harness): $TITLE"
           git push -u origin "$BRANCH"
           gh pr create \
