@@ -1088,3 +1088,6 @@
 2026-04-02T07:33:02Z | research-check | all-quiet | tokenman:routine-state(5310831e,06:59Z) quarto:typst-gather-fallback-tests(3fa22f9b,unchanged) openai:blocked pipeline:10-failed-all-already-fixed
 2026-04-02T07:33:02Z | pipeline-health | 10 failed runs checked, 0 issues created | all ALREADY-FIXED
 2026-04-02T07:33:02Z | human-intent | 0 human-created issues in 7d | no action
+2026-04-02T08:25:35Z | research-check | all-quiet | tokenman:routine-state(5310831e,06:59Z) quarto:typst-gather-fallback-tests(3fa22f9b,unchanged) openai:blocked pipeline:10-failed-all-already-fixed
+2026-04-02T08:25:35Z | pipeline-health | 10 failed runs checked, 0 issues created | all ALREADY-FIXED (Weekly Analysis 04-02 06:29Z transient — 2 prior successes)
+2026-04-02T08:25:35Z | human-intent | 0 human-created issues in 7d | no action
