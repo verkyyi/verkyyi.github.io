@@ -3,49 +3,52 @@
 ## Current Focus
 Portfolio landing page — site needs a root index.html (issue #2).
 
-## Priorities (from weekly analysis 2026-04-01, week 13)
-1. **P0: Cron frequency — requires human manual edit** — 13th consecutive week. Proven circular deadlock: hourly cron produces ~100 state commits/day (98.1%), which create merge conflicts on every PR branch before review. 10+ PRs have attempted YAML fix, ALL failed. No automated approach can succeed. Human must manually edit evolve.yml and watcher.yml cron schedules directly on main.
-2. **P0: Human must act on PR backlog** — 7 PRs stuck needs-human for 2-7+ weeks. PR #4 (landing page) blocked ~504h (21+ days). PR #39 (agent log archival) approved by reviewer but merge-blocked by conflicts. PRs #5/#11/#16 are REDUNDANT (superseded by merged PRs) — close them. PR #19 (cron fix) escalated to needs-human. PR #10 (watcher triage fix) blocked on merge conflicts. 25+ days zero human activity. Zero forward progress possible until human acts.
-3. **P1: tokenman v0.4.0 upgrade** — Detected 09:28Z 04-01. New features: security-scan.yml workflow (runner-guard for PR YAML), triage skips closed issues. Upgrade issue pending creation by next evolve run (non-HUMAN_ACTIVE).
-4. **P1: Auto-rebase capability** — Pipeline fixes bugs autonomously but cannot self-heal merge conflicts. PR #39 (approved 08:04Z) blocked by conflicts by 08:52Z — same hour. This is the structural weakness behind P0.
-5. **P2: Set repo topics** — GITHUB_TOKEN lacks admin scope. Growth prerequisite (2/4 met). Suggested: github-pages, autonomous-agents, claude-code, github-actions.
-6. **P3: Activate unused workflows** — discover, feedback-learner, claude-task have never been triggered.
+## Priorities (from weekly analysis 2026-04-02, week 14)
+1. **P0: Cron frequency — requires human manual edit** — 14th consecutive week. Proven circular deadlock: hourly cron produces ~100 state commits/day (98.1%), which create merge conflicts on every PR branch before review. 10+ PRs have attempted YAML fix, ALL failed. No automated approach can succeed. Human must manually edit evolve.yml and watcher.yml cron schedules directly on main.
+2. **P0: Human must act on PR backlog** — 7 PRs stuck needs-human for 2-8+ weeks. PR #4 (landing page) blocked ~528h (22+ days). PR #39 (agent log archival) approved by reviewer but merge-blocked by conflicts. PRs #5/#11/#16 are REDUNDANT (superseded by merged PRs) — close them. PR #19 (cron fix) escalated to needs-human. PR #10 (watcher triage fix) blocked on merge conflicts. 26+ days zero human activity. Zero forward progress possible until human acts.
+3. **P1: Research log rotation** — Research log at 1073 lines (62K tokens), EXCEEDS Read tool limit (25K tokens). Actively degrading weekly analysis capability — cannot read full research log. Agent log at 523 lines, approaching limit. Proposed change written for this run.
+4. **P1: tokenman v0.4.0 upgrade** — Detected 09:28Z 04-01. New features: security-scan.yml workflow (runner-guard for PR YAML), triage skips closed issues. Upgrade issue pending creation by next evolve run (non-HUMAN_ACTIVE).
+5. **P1: Auto-rebase capability** — Pipeline fixes bugs autonomously but cannot self-heal merge conflicts. PR #39 (approved 08:04Z) blocked by conflicts by 08:52Z — same hour. This is the structural weakness behind P0.
+6. **P2: Set repo topics** — GITHUB_TOKEN lacks admin scope. Growth prerequisite (2/4 met). Suggested: github-pages, autonomous-agents, claude-code, github-actions.
+7. **P3: Activate unused workflows** — discover, feedback-learner, claude-task have never been triggered.
 
-## Recent Changes (since last analysis 2026-04-01T12:22Z)
+## Recent Changes (since last analysis 2026-04-01T12:24Z)
 - PR #41 MERGED (19:54Z 04-01) — evolve no-action run compaction in agent_log (~30-40% log growth reduction)
-- PR #40 MERGED (14:09Z 04-01) — research log quiet-run aggregation (week 12's proposed change)
-- Evolve runs adopting aggregated research format ("all-quiet") post-PR #40
-- quarto-cli: lua-types docs PR#14295, Node.js 24 Actions compat PR#14294, typst-gather 0.2.2, typst-gather fallback test fixes — all non-actionable
+- Log reduction campaign fully VALIDATED in production — all 4 compaction formats active
+- Research: all-quiet pattern (tokenman routine, quarto: lua-types/Node.js 24/typst-gather, openai: blocked)
+- Growth run 17th (18:00Z 04-01): 13th+ consecutive no-action, 0 stars/forks
 
-## Week 13 Summary (2026-03-26 to 2026-04-01)
-- **Best week for harness improvements**: 5 PRs merged (#35 agent log compaction, #37 evolve_config update, #38 watcher abbreviated format, #40 research log aggregation, #41 evolve no-action compaction)
-- **Log reduction campaign COMPLETE**: 4 improvements collectively reduce state file growth by ~60-70%
-- **Proposed-change pipeline validated**: evolve→reviewer turnaround consistently <6h
+## Week 14 Summary (2026-03-26 to 2026-04-02)
+- **Best week ever for harness improvements**: 7 genuine PRs merged (#21 README fix, #34 AUTO-tier commits, #35 agent log compaction, #37 evolve_config update, #38 watcher abbreviated format, #40 research log aggregation, #41 evolve no-action compaction)
+- **Log reduction campaign COMPLETE and VALIDATED**: 4 improvements collectively reduce state file growth by ~60-70%, all formats active in production
+- **Proposed-change pipeline validated**: 5 proposals merged with <6h avg turnaround
+- **Full pipeline chain validated**: issue #20 → triage → coder → PR #21 → reviewer → merge → deploy (autonomous end-to-end)
 - **tokenman v0.4.0** released — security-scan.yml + triage improvement, upgrade pending
-- **PR #39** approved but merge-blocked — validates systemic merge conflict pattern for 13th consecutive week
+- **PR #39** approved but merge-blocked within 48min — validates systemic merge conflict pattern for 14th consecutive week
+- **Research log CRITICAL**: 1073 lines (62K tokens) exceeds Read tool limit, proposed rotation this run
 
 ## Growth Status (last run: 2026-04-01T18:00Z)
-- Phase: pre-growth (0 stars, 0 forks). v0.1.0 live ~186h, README clean (PR #21 merged 03-27)
+- Phase: pre-growth (0 stars, 0 forks). v0.1.0 live ~210h, README clean (PR #21 merged 03-27)
 - Prerequisites: 2/4 met (clean README, first release | missing: repo topics, landing page)
 - Issue #24 open: awesome-list submission instructions for awesome-claude-code and awesome-claude-code-toolkit
 - Awesome-list targets: awesome-claude-code 35.4K, subagents 15.9K, toolkit 991
-- Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~504h), zero human activity in 25+ days
-- 17 runs total, 13+ consecutive no-action. No new distribution channels or signals found.
+- Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~528h), zero human activity in 26+ days
+- 17 runs total, 14+ consecutive no-action. No new distribution channels or signals found.
 
 ## System Health (last watcher: 2026-04-01T23:49Z)
 - Self-Evolve: healthy (23:13Z 04-01, 10+ consecutive successes)
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
 - pages-build-deployment: healthy (last success 23:15Z 04-01)
 - Growth Strategist: healthy (last success 18:21Z 04-01)
-- Weekly Analysis: healthy (18:20Z 04-01, week 13 analysis complete)
+- Weekly Analysis: healthy (this run, week 14 analysis complete)
 - Reviewer Agent: healthy (19:52Z 04-01, PR #41 reviewed and merged)
 - Coder Agent: healthy (last success 11:51Z 03-27, issue #20 fix)
 - Triage: healthy (last success 20:49Z 03-27, issue #24 triaged)
-- Token utilization: 396 data points, claude-opus-4-6, 0 max-turns hits, 0 rate-limit errors
+- Token utilization: 396+ data points, claude-opus-4-6, 0 max-turns hits, 0 rate-limit errors
 
 ## Open Issues
 - #24 [growth] Submit to awesome-claude-code lists — needs-human, growth-action
-- #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked ~504h
+- #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked ~528h
 
 ## Closed Issues (recent)
 - #20 [growth] Fix garbled README — CLOSED 2026-03-27 (PR #21 merged)
@@ -61,7 +64,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #11 Fix analyze.yml branch collision — REDUNDANT (PR #13 merged). Human should close.
 - #10 Fix watcher-created issues missing auto-triage — needs-human (merge conflicts)
 - #5 Add missing file guards to growth.yml — REDUNDANT (PR #7 merged). Human should close.
-- #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~504h)
+- #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~528h)
 
 ## Recently Closed PRs
 - #41 Evolve No-Action Run Compaction in Agent Log — MERGED (19:54Z 04-01)
@@ -75,14 +78,15 @@ Portfolio landing page — site needs a root index.html (issue #2).
 ## Key Observations
 - No apps/ directory — flat static site, not using Astro
 - Site has 2 project subdirs (6150/ survival analysis, Presentation/ chatbot) but no landing page
-- 702 commits this week (100.3/day), 98.1% state file updates — commit noise UNCHANGED
+- 704 commits this week (100.6/day), 98.1% state file updates — commit noise UNCHANGED
 - Cron fix has failed via PR 10+ times — structural inability to modify workflow YAML via PR
-- Merge conflicts are the #1 systemic issue (13th consecutive week, unresolved)
-- No human activity in 25+ days — all issues/PRs created by automation
+- Merge conflicts are the #1 systemic issue (14th consecutive week, unresolved)
+- No human activity in 26+ days — all issues/PRs created by automation
 - tokenman v0.4.0 released 04-01 — security-scan.yml + triage improvement, upgrade issue pending
-- Log reduction campaign COMPLETE: PRs #35/#38/#40/#41 merged, ~60-70% state file growth reduction
-- Proposed-change pipeline validated: 5 proposals merged this week with <6h avg turnaround
-- Research log at 1061 lines, growth rate declining post-PR #40 aggregation
+- Log reduction campaign COMPLETE and VALIDATED: PRs #35/#38/#40/#41 merged, ~60-70% state file growth reduction
+- Proposed-change pipeline validated: 5+ proposals merged with <6h avg turnaround
+- Research log at 1073 lines (62K tokens) — EXCEEDS Read tool limit, CRITICAL for analysis
+- Agent log at 523 lines — approaching read limit
 
 ## Week-over-Week Trends
-- Week 10→13: Commit cadence FLAT (99.9→100.3/day). State ratio FLAT (98.4→98.1%). Productive output FLAT (11→13 substantive). PRs merged: 4 genuine (#35 log compaction, #37 evolve_config, #38 abbreviated health checks, #40 research aggregation) — BEST WEEK for harness improvements. Log reduction campaign COMPLETE (3/3 improvements merged, ~60% growth reduction). Proposed-change pipeline VALIDATED (<6h avg turnaround). PR #39 blocked by conflicts within same hour as approval — validates merge conflict as systemic for 13th week. tokenman v0.4.0 NEW finding (upgrade pending). Cron fix NO progress (13th week). PR #4 blockage WORSENED (387h→504h+). Human inactivity WORSENED (20d→25d+). Growth STALLED (9→13+ consecutive no-action). 1 transient Self-Evolve failure (03-31 18:21Z, self-recovered). Overall: system operationally healthy, best week for self-improvement (4 PRs, log campaign complete), but 98% of activity remains self-referential state maintenance. Zero user-facing progress. 25+ day human absence is the singular root cause.
+- Week 13→14: Commit cadence FLAT (100.3→100.6/day). State ratio FLAT (98.1%). Productive output FLAT (13). PRs merged: 5 genuine (#35 log compaction, #37 evolve_config, #38 abbreviated health checks, #40 research aggregation, #41 evolve compaction) — joint-BEST WEEK with week 13 for harness improvements. Log reduction campaign COMPLETE and VALIDATED (all 4 formats active in production). Proposed-change pipeline CONFIRMED (<6h turnaround). PR #39 blocked within 48min of approval — validates merge conflict as systemic for 14th week. tokenman v0.4.0 detected (upgrade pending). Research log size CRITICAL (1073 lines, 62K tokens, exceeds read limit). Cron fix NO progress (14th week). PR #4 blockage WORSENED (504h→528h+). Human inactivity WORSENED (25d→26d+). Growth STALLED (13→14+ consecutive no-action). 1 transient Self-Evolve failure (03-31 20:14Z, self-recovered). Overall: system operationally healthy, log campaign complete and validated, but 98% of activity remains self-referential state maintenance. Zero user-facing progress. 26+ day human absence is the singular root cause.
