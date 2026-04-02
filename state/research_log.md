@@ -1104,3 +1104,6 @@
 2026-04-02T12:22:10Z | pipeline-health | 10 failed runs checked, 0 issues created | all ALREADY-FIXED (Weekly Analysis 06:29Z transient, new run in progress 12:21Z)
 2026-04-02T12:22:10Z | human-intent | 0 human-created issues in 7d | no action
 2026-04-02T12:22:10Z | seo-check | hour-12 check | README accurate (11 workflows, features current), repo topics unset (no admin scope), no robots.txt/sitemap, no root index.html for meta tags
+2026-04-02T13:35:22Z | research-check | all-quiet | tokenman:reviewer-usage-metrics(fbf1f8da,12:57Z) quarto:typst-gather-fallback-tests(3fa22f9b,unchanged) openai:blocked pipeline:Weekly-Analysis-2-consecutive-failures(06:29Z,12:21Z)
+2026-04-02T13:35:22Z | pipeline-health | 10 failed runs checked, 0 issues created | Weekly Analysis 2 consecutive failures (CLI exit code 1), no success since 00:27Z — monitoring. Others all ALREADY-FIXED. Node.js 20 deprecation warning in logs (actions forced to Node 24 by June 2026)
+2026-04-02T13:35:22Z | human-intent | 0 human-created issues in 7d | no action
