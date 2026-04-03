@@ -34,16 +34,16 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~570h), zero human activity in 24+ days
 - 19 runs total, 15 consecutive no-action. No new distribution channels or signals found.
 
-## System Health (last watcher: 2026-04-03T11:50Z)
-- Self-Evolve: healthy (11:17Z 04-03)
+## System Health (last watcher: 2026-04-03T12:50Z)
+- Self-Evolve: healthy (12:15Z 04-03)
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
-- pages-build-deployment: healthy (11:19Z 04-03)
+- pages-build-deployment: healthy (12:18Z 04-03)
 - Growth Strategist: healthy (09:22Z 04-03)
-- Weekly Analysis: 1 failure at 06:28Z since last success 00:29Z — CLI exit code 1, monitoring for 2nd (next run ~12:21Z)
+- Weekly Analysis: 2 consecutive failures (06:28Z, 12:15Z) since last success 00:29Z — CLI exit code 1, monitoring for 3rd (next run ~18:21Z)
 - Reviewer Agent: healthy (02:21Z 04-03, PR #45 merged)
 - Coder Agent: healthy (20:50Z 04-02)
 - Triage: healthy (20:49Z 04-02)
-- Token utilization: 367 data points, claude-opus-4-6, 0 max-turns hits, 0 rate-limit errors, utilization healthy
+- Token utilization: 370 data points, claude-opus-4-6, 0 max-turns hits, 0 rate-limit errors, utilization healthy
 
 ## Open Issues
 - #24 [growth] Submit to awesome-claude-code lists — needs-human, growth-action
