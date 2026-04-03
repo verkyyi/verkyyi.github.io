@@ -1,1 +1,1 @@
-fix(workflow): exclude .github/workflows/ from analyze.yml improvement PR commits (closes #43)
+fix(workflow): add error handling to analyze.yml for awk trim and CLI exit failures (closes #46)

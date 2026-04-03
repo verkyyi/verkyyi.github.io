@@ -13,6 +13,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 7. **P3: Activate unused workflows** — discover, feedback-learner, claude-task have never been triggered.
 
 ## Recent Changes (since last analysis 2026-04-01T18:22Z)
+- PR for issue #46 opened (04-03) — fix dual failure mode in analyze.yml (awk trimming + CLI exit 1)
 - PR #44 MERGED (20:52Z 04-02) — fixed Weekly Analysis git push rejection (issue #43, `workflows` permission)
 - Issue #43 created + resolved (04-02) — full triage→coder→reviewer→merge chain in ~3 min
 - PR #42 created (research log rotation) — reviewer approved via comment, merge-blocked by conflicts
@@ -39,7 +40,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
 - pages-build-deployment: healthy (20:13Z 04-03)
 - Growth Strategist: healthy (18:15Z 04-03)
-- Weekly Analysis: **3/3 consecutive failures** (06:28Z, 12:15Z, 18:14Z) since last success 00:29Z — issue #46 exists (triage re-triggered 20:50Z after 2h with 0 comments)
+- Weekly Analysis: **3/3 consecutive failures** (06:28Z, 12:15Z, 18:14Z) since last success 00:29Z — issue #46 fix PR opened
 - Reviewer Agent: healthy (02:21Z 04-03, PR #45 merged)
 - Coder Agent: healthy (20:50Z 04-02)
 - Triage: re-triggered for #46 (20:50Z 04-03, last auto-run 20:49Z 04-02)
