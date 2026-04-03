@@ -74,6 +74,7 @@ jobs:
           PROMPT
 
       - name: Run Claude Code
+        continue-on-error: true
         run: |
           claude -p "$(cat /tmp/prompt.txt)" \
             --model opus \
@@ -87,6 +88,7 @@ jobs:
 
       - name: Log usage metrics
         if: always()
+        continue-on-error: true
         run: |
           TIMESTAMP=$(date -u +%Y-%m-%dT%H:%M:%SZ)
           if [ -f /tmp/claude_output.json ]; then
@@ -104,7 +106,7 @@ jobs:
           fi
           echo "${TIMESTAMP} | analyze | model:${MODEL} | in:${INPUT} | out:${OUTPUT} | turns:${TURNS} | cost:${COST}" >> state/usage_log.md
           CUTOFF=$(date -u -d '7 days ago' +%Y-%m-%dT)
-          awk -v c="$CUTOFF" 'NR==1{print;next} $0>=c' state/usage_log.md > /tmp/usage_trimmed.md && mv /tmp/usage_trimmed.md state/usage_log.md
+          awk -v c="$CUTOFF" 'NR==1{print;next} $0>=c' state/usage_log.md > /tmp/usage_trimmed.md && mv /tmp/usage_trimmed.md state/usage_log.md || true
 
       - name: Setup git config
         run: |
