@@ -34,17 +34,16 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~550h), zero human activity in 27+ days
 - 18 runs total, 14 consecutive no-action. No new distribution channels or signals found.
 
-## System Health (last watcher: 2026-04-03T02:20Z)
-- Self-Evolve: healthy (01:36Z 04-03)
+## System Health (last watcher: 2026-04-03T03:40Z)
+- Self-Evolve: healthy (03:05Z 04-03)
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
-- pages-build-deployment: healthy (01:38Z 04-03)
+- pages-build-deployment: healthy (03:07Z 04-03)
 - Growth Strategist: healthy (09:24Z 04-02)
 - Weekly Analysis: healthy (00:29Z 04-03, fix verified)
-- Reviewer Agent: healthy (20:51Z 04-02) — re-triggered for PR #45 at 02:20Z
+- Reviewer Agent: healthy (02:21Z 04-03, PR #45 reviewed+merged)
 - Coder Agent: healthy (20:50Z 04-02)
 - Triage: healthy (20:49Z 04-02)
-- Token utilization: 349 data points, claude-opus-4-6, 0 max-turns hits, 0 rate-limit errors, utilization healthy
-- PR #45 (Direct Log Archival) — reviewer re-triggered by watcher (1h45m old, 0 reviews, no prior reviewer run)
+- Token utilization: 352 data points, claude-opus-4-6, 0 max-turns hits, 0 rate-limit errors, utilization healthy
 
 ## Open Issues
 - #24 [growth] Submit to awesome-claude-code lists — needs-human, growth-action
@@ -59,7 +58,6 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #1 [pipeline] Deploy workflow package-lock.json — CLOSED 2026-03-22
 
 ## Open PRs
-- #45 Direct Log Archival in Analyze Workflow — needs-review (created 00:35Z 04-03, awaiting reviewer)
 - #42 Research Log Rotation — needs-human (reviewer approved via comment, merge-blocked by conflicts)
 - #39 Agent Log Archival — needs-human (reviewer approved via comment but merge-blocked by conflicts)
 - #19 Fix cron frequency — evolve and watcher still running hourly — needs-human (escalated 08:53Z 03-27, reviewer failed twice)
@@ -70,6 +68,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~550h)
 
 ## Recently Closed PRs
+- #45 Direct Log Archival in Analyze Workflow — MERGED (02:23Z 04-03, analyze→watcher-reviewer-trigger→reviewer→merge chain)
 - #44 Fix Weekly Analysis git push rejection — MERGED (20:52Z 04-02)
 - #41 Evolve No-Action Run Compaction in Agent Log — MERGED (19:54Z 04-01)
 - #40 Research Log Quiet-Run Aggregation — MERGED (14:09Z 04-01)
