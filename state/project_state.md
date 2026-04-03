@@ -26,13 +26,13 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - **2 PRs merged**: #41 evolve compaction (04-01), #44 Weekly Analysis fix (04-02)
 - **Node.js 20 deprecation** detected in CI logs — actions forced to Node 24 by June 2026, low urgency
 
-## Growth Status (last run: 2026-04-02T09:00Z)
+## Growth Status (last run: 2026-04-03T09:00Z)
 - Phase: pre-growth (0 stars, 0 forks). v0.1.0 live ~216h, README clean (PR #21 merged 03-27)
 - Prerequisites: 2/4 met (clean README, first release | missing: repo topics, landing page)
 - Issue #24 open: awesome-list submission instructions for awesome-claude-code and awesome-claude-code-toolkit
-- Awesome-list targets: awesome-claude-code 35.7K, subagents 16.0K, toolkit 1004 (crossed 1K)
-- Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~550h), zero human activity in 27+ days
-- 18 runs total, 14 consecutive no-action. No new distribution channels or signals found.
+- Awesome-list targets: awesome-claude-code 36.0K, subagents 16.1K, toolkit 1028
+- Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~570h), zero human activity in 24+ days
+- 19 runs total, 15 consecutive no-action. No new distribution channels or signals found.
 
 ## System Health (last watcher: 2026-04-03T08:50Z)
 - Self-Evolve: healthy (08:19Z 04-03)
