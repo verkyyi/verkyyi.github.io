@@ -1187,3 +1187,7 @@
 2026-04-03T16:15:07Z | research-check | all-quiet | tokenman:evolve-state(3b0c36b1,15:24Z) quarto:fix-preview-browse-url-single-file(a42c44c5,11:31Z,#14300,unchanged) openai:blocked pipeline:8-ALREADY-FIXED,Weekly-Analysis-2-failures(06:28Z,12:15Z)-since-success(00:29Z)-monitoring
 2026-04-03T16:15:07Z | pipeline-health | 10 failed runs checked, 0 issues created | Weekly Analysis 06:28Z+12:15Z 04-03: 2 consecutive failures since success 00:29Z — awk/usage_log.md step. 2/3 threshold, monitoring (next run ~18:21Z). Other 8: ALREADY-FIXED (Self-Evolve 15:17Z, pages 15:19Z). (HUMAN_ACTIVE)
 2026-04-03T16:15:07Z | human-intent | 0 human-created issues in 7d | no action (HUMAN_ACTIVE)
+2026-04-03T17:14:12Z | verkyyi/agentfolio | repo redirects to tokenman, latest commit state/watcher (aea72d55, 16:53Z 04-03), v0.4.0 release unchanged | no action
+2026-04-03T17:14:12Z | quarto-dev/quarto-cli | fix preview browse URL for single-file docs #14300 (a42c44c5, 11:31Z 04-03), unchanged from prior runs | no action
+2026-04-03T17:14:12Z | openai-harness-blog | Cloudflare-blocked (persistent) | no action
+2026-04-03T17:14:12Z | pipeline-health | 10 failed runs checked, 0 issues created (HUMAN_ACTIVE). Weekly Analysis 2 consecutive failures (06:28Z, 12:15Z) since success 00:29Z — awk/usage_log step exit 1, 2/3 threshold monitoring. All other failures ALREADY-FIXED | monitoring
