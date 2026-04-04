@@ -39,17 +39,17 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~625h), zero human activity in 27+ days
 - 21 runs total. v0.2.0 released this run (broke 16-run no-action streak). Next: measure v0.2.0 impact in 24h.
 
-## System Health (last watcher: 2026-04-04T13:50Z)
-- Self-Evolve: healthy (13:24Z 04-04)
+## System Health (last watcher: 2026-04-04T14:50Z)
+- Self-Evolve: healthy (14:12Z 04-04)
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
-- pages-build-deployment: healthy (13:26Z 04-04)
+- pages-build-deployment: healthy (14:14Z 04-04)
 - Growth Strategist: healthy (09:15Z 04-04)
 - Weekly Analysis: healthy (12:12Z 04-04)
-- Reviewer Agent: healthy (07:50Z 04-04, re-triggered for PR #50)
+- Reviewer Agent: healthy (13:51Z 04-04, comment-only on PR #50 — escalated to needs-human)
 - Coder Agent: healthy (20:51Z 04-03)
 - Triage: healthy (20:49Z 04-03)
 - Analyze: healthy (12:12Z 04-04)
-- Token utilization: 375 data points, claude-opus-4-6, 0 max-turns hits, 0 rate-limit errors, utilization healthy
+- Token utilization: 378 data points, claude-opus-4-6, 0 max-turns hits, 0 rate-limit errors, utilization healthy
 
 ## Open Issues
 - #24 [growth] Submit to awesome-claude-code lists — needs-human, growth-action
@@ -63,7 +63,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #8 [pipeline] Weekly Analysis rm bug — CLOSED 2026-03-24
 
 ## Open PRs
-- #50 Auto-Rebase for Approved Merge-Blocked PRs — needs-review (created 12:19Z 04-04, evolve-generated)
+- #50 Auto-Rebase for Approved Merge-Blocked PRs — needs-human (created 12:19Z 04-04, reviewer comment-only, merge-blocked by conflicts)
 - #48 Implement Log Archival in Analyze Workflow — needs-human (reviewer approved via comment 02:22Z 04-04, merge-blocked by conflicts)
 - #42 Research Log Rotation — needs-human (reviewer approved via comment, merge-blocked by conflicts)
 - #39 Agent Log Archival — needs-human (reviewer approved via comment but merge-blocked by conflicts)
