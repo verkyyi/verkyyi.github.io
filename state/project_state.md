@@ -3,29 +3,32 @@
 ## Current Focus
 Portfolio landing page — site needs a root index.html (issue #2).
 
-## Priorities (from weekly analysis 2026-04-03, week 14)
-1. **P0: Cron frequency — requires human manual edit** — 14th consecutive week. Proven circular deadlock: hourly cron produces ~100 state commits/day (98.3%), which create merge conflicts on every PR branch before review. 10+ PRs have attempted YAML fix, ALL failed. No automated approach can succeed. Human must manually edit evolve.yml and watcher.yml cron schedules directly on main.
-2. **P0: Human must act on PR backlog** — 8 PRs stuck needs-human for 1-8+ weeks. PR #4 (landing page) blocked ~550h (23+ days). PRs #39/#42 (log archival/rotation) approved by reviewer but merge-blocked by conflicts. PRs #5/#11/#16 are REDUNDANT (superseded by merged PRs) — close them. PR #19 (cron fix) escalated to needs-human. PR #10 (watcher triage fix) blocked on merge conflicts. 27+ days zero human activity. Zero forward progress possible until human acts.
-3. **P0-NEW: Log archival critical** — agent_log.md is 384KB (exceeds 256KB tooling read limit). research_log.md is 172KB/1139 lines. Both archival PRs (#39, #42) merge-blocked by conflicts. Proposed: analyze workflow should archive directly as AUTO-tier state file operation.
-4. **P1: tokenman v0.4.0 upgrade** — Detected 09:28Z 04-01. New features: security-scan.yml workflow (runner-guard for PR YAML), triage skips closed issues. Upgrade issue pending creation by next evolve run (non-HUMAN_ACTIVE).
-5. **P1: Auto-rebase capability** — Pipeline fixes bugs autonomously but cannot self-heal merge conflicts. PR #42 (approved) blocked by conflicts — same pattern as #39, #10, #4. This is the structural weakness behind P0.
-6. **P2: Set repo topics** — GITHUB_TOKEN lacks admin scope. Growth prerequisite (2/4 met). Suggested: github-pages, autonomous-agents, claude-code, github-actions.
-7. **P3: Activate unused workflows** — discover, feedback-learner, claude-task have never been triggered.
+## Priorities (from weekly analysis 2026-04-04, week 15)
+1. **P0: Log archival — CRITICAL** — agent_log.md is 621 lines / 415KB, exceeds 256KB tooling read limit. Analysis tooling degraded. PR #45 ("Direct Log Archival") merged 04-03 but only deleted the proposal file — archival logic was NEVER implemented in analyze.yml. research_log.md at 1217 lines also growing. Proposed change filed to implement actual archival.
+2. **P0: Cron frequency — requires human manual edit** — 15th consecutive week. Proven circular deadlock: hourly cron → ~100 state commits/day (98.1%) → merge conflicts → PR failure. 10+ PRs attempted, ALL failed. Human must manually edit evolve.yml and watcher.yml cron schedules directly on main.
+3. **P0: Human must act on PR backlog** — 8 PRs stuck needs-human for 1-9+ weeks. PR #4 (landing page) blocked ~600h+ (25+ days). PRs #39/#42 (log archival) approved but merge-blocked. PRs #5/#11/#16 REDUNDANT — close them. PR #19 (cron fix) escalated. PR #10 (watcher triage) merge-blocked. 28+ days zero human activity.
+4. **P1: tokenman v0.4.0 upgrade** — Detected 09:28Z 04-01. New features: security-scan.yml (runner-guard for PR YAML), triage skips closed issues. Upgrade issue still pending creation.
+5. **P1: Auto-rebase capability** — Pipeline self-heals bugs but cannot resolve merge conflicts. PRs #42, #39, #10, #4 all blocked by same pattern. Structural weakness.
+6. **P2: Set repo topics** — GITHUB_TOKEN lacks admin scope. Growth prerequisite (2/4 met).
+7. **P3: Activate unused workflows** — discover, feedback-learner, claude-task never triggered.
 
-## Recent Changes (since last analysis 2026-04-01T18:22Z)
-- PR for issue #46 opened (04-03) — fix dual failure mode in analyze.yml (awk trimming + CLI exit 1)
-- PR #44 MERGED (20:52Z 04-02) — fixed Weekly Analysis git push rejection (issue #43, `workflows` permission)
-- Issue #43 created + resolved (04-02) — full triage→coder→reviewer→merge chain in ~3 min
-- PR #42 created (research log rotation) — reviewer approved via comment, merge-blocked by conflicts
-- Weekly Analysis had 3 consecutive failures (06:29Z, 12:21Z, 18:19Z 04-02) — watcher escalated at 3/3 threshold, self-healed via pipeline
-- Research: tokenman v0.4.0 pending, quarto-cli all minor/non-actionable, OpenAI Cloudflare-blocked
+## Recent Changes (since last analysis 2026-04-03T00:27Z)
+- PR #47 MERGED (04-03) — fixed issue #46: dual failure mode in analyze.yml (awk trimming + CLI exit 1)
+- Issue #46 created + resolved (04-03) — full triage→coder→reviewer→merge chain in ~5 min
+- PR #44 MERGED (20:52Z 04-02) — fixed Weekly Analysis git push rejection (issue #43)
+- Issue #43 created + resolved (04-02) — full pipeline chain in ~3 min
+- Weekly Analysis had 3 consecutive failures on 04-03 (06:28Z, 12:15Z, 18:14Z) — watcher escalated, self-healed via pipeline
+- Research: tokenman v0.4.0 pending, quarto-cli minor fixes (preview URL, skill testing), OpenAI Cloudflare-blocked
 
-## Week 14 Summary (2026-03-27 to 2026-04-03)
-- **Pipeline self-healing validated (3rd time)**: Issue #43 demonstrated full autonomous chain in ~3 min
-- **Log reduction campaign COMPLETE**: 4 PRs merged (#35/#38/#40/#41), ~60-70% state file growth reduction
-- **Log sizes now operationally impactful**: agent_log 384KB (unreadable), research_log 172KB — both archival PRs merge-blocked
-- **2 PRs merged**: #41 evolve compaction (04-01), #44 Weekly Analysis fix (04-02)
-- **Node.js 20 deprecation** detected in CI logs — actions forced to Node 24 by June 2026, low urgency
+## Week 15 Summary (2026-03-28 to 2026-04-04)
+- **8 PRs merged** (#35/#37/#38/#40/#41/#44/#45/#47) — most productive week to date
+- **Pipeline self-healing validated** 2 more times (issues #43, #46) — now 5 total validated self-healing cycles
+- **Log reduction campaign COMPLETE** but archival NOT implemented: PR #45 merged but only deleted proposal file, no archival logic added to workflows
+- **agent_log.md now 621 lines / 415KB** — critically exceeds 256KB tooling read limit, analysis quality degrading
+- **Weekly Analysis** failed 3x on 04-03 (dual failure mode: awk + CLI exit 1), self-healed via issue #46 → PR #47
+- **Growth** stalled: 16 consecutive no-action runs, 0 stars, prerequisites stuck at 2/4
+- **tokenman v0.4.0** detected but upgrade issue not yet created
+- **Node.js 20 deprecation** in CI — migration to Node 24 by June 2026, low urgency
 
 ## Growth Status (last run: 2026-04-03T18:00Z)
 - Phase: pre-growth (0 stars, 0 forks). v0.1.0 live ~225h, README clean (PR #21 merged 03-27)
@@ -35,16 +38,16 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~600h), zero human activity in 25+ days
 - 20 runs total, 16 consecutive no-action. No new distribution channels or signals found.
 
-## System Health (last watcher: 2026-04-03T23:45Z)
+## System Health (last watcher: 2026-04-03T23:47Z)
 - Self-Evolve: healthy (23:11Z 04-03)
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
 - pages-build-deployment: healthy (23:14Z 04-03)
 - Growth Strategist: healthy (18:15Z 04-03)
-- Weekly Analysis: 3/3 failures today (06:28Z, 12:15Z, 18:14Z) — issue #46 CLOSED, fix merged (PR #47). Awaiting next run (~00:28Z 04-04) to confirm.
+- Weekly Analysis: fix merged (PR #47). Awaiting confirmation at ~00:28Z 04-04.
 - Reviewer Agent: healthy (20:53Z 04-03)
-- Coder Agent: healthy (20:51Z 04-03)
+- Coder Agent: healthy (21:00Z 04-03)
 - Triage: healthy (20:49Z 04-03)
-- Token utilization: 394 data points, claude-opus-4-6, 0 max-turns hits, 0 rate-limit errors, utilization healthy
+- Token utilization: healthy, 0 max-turns hits, 0 rate-limit errors
 
 ## Open Issues
 - #24 [growth] Submit to awesome-claude-code lists — needs-human, growth-action
@@ -82,16 +85,17 @@ Portfolio landing page — site needs a root index.html (issue #2).
 ## Key Observations
 - No apps/ directory — flat static site, not using Astro
 - Site has 2 project subdirs (6150/ survival analysis, Presentation/ chatbot) but no landing page
-- 697 commits this week (99.6/day), 98.3% state file updates — commit noise UNCHANGED
-- Log files reaching operational limits: agent_log 384KB (exceeds 256KB read limit), research_log 172KB
-- Both log archival PRs (#39, #42) merge-blocked — same systemic pattern, now affecting analysis tooling
+- 701 commits this week (100.1/day), 98.1% state file updates — commit noise UNCHANGED
+- agent_log.md 621 lines / 415KB — CRITICAL, exceeds 256KB read limit, degrading analysis
+- research_log.md 1217 lines — large but still readable with offsets
+- PR #45 (log archival) merged but ONLY deleted proposal — archival logic never implemented
 - Cron fix has failed via PR 10+ times — structural inability to modify workflow YAML via PR
-- Merge conflicts are the #1 systemic issue (14th consecutive week, unresolved)
-- No human activity in 27+ days — all issues/PRs created by automation
-- tokenman v0.4.0 released 04-01 — security-scan.yml + triage improvement, upgrade issue pending
-- Log reduction campaign COMPLETE: PRs #35/#38/#40/#41 merged, ~60-70% state file growth reduction
-- Pipeline self-healing validated 3 times (#12, #8/#43) — triage→coder→reviewer→merge chain reliable
+- Merge conflicts are the #1 systemic issue (15th consecutive week, unresolved)
+- No human activity in 28+ days — all issues/PRs created by automation
+- tokenman v0.4.0 released 04-01 — upgrade issue still pending creation
+- Log reduction campaign COMPLETE but archival gap discovered
+- Pipeline self-healing validated 5 times total — triage→coder→reviewer→merge chain highly reliable
 - Node.js 20 deprecation warning in CI — forced migration to Node 24 by June 2026
 
 ## Week-over-Week Trends
-- Week 13→14: Commit cadence FLAT (100.3→99.6/day). State ratio FLAT (98.1→98.3%). Productive output FLAT (13→12 substantive). PRs merged: 2 (#41 evolve compaction, #44 Weekly Analysis fix). Log reduction campaign COMPLETE (no further improvements). Pipeline self-healing VALIDATED for 3rd time (issue #43 chain in ~3 min). Log sizes NOW CRITICAL — agent_log 384KB exceeds read limits, both archival PRs merge-blocked. PR #42 (research rotation) approved but blocked — same pattern as #39. Cron fix NO progress (14th week). PR #4 blockage WORSENED (504h→550h+). Human inactivity WORSENED (25d→27d+). Growth STALLED (13→14+ consecutive no-action). Node.js 20 deprecation detected (low urgency). Overall: system operationally healthy, self-healing proven, log reduction complete. But 98.3% of activity remains self-referential state maintenance. Log file sizes now degrading analysis tooling — archival is the new critical path. Zero user-facing progress. 27+ day human absence is the singular root cause.
+- Week 14→15: Commit cadence FLAT (99.6→100.1/day). State ratio FLAT (98.3→98.1%). Productive output UP (12→13 substantive). PRs merged UP significantly (2→8). Pipeline self-healing VALIDATED 2 more times (issues #43, #46 — now 5 total). Log archival gap DISCOVERED: PR #45 merged but archival never implemented — agent_log grew from 384KB→415KB, now 621 lines. research_log 1217 lines. Cron fix NO progress (15th week). PR #4 blockage WORSENED (550h→600h+). Human inactivity WORSENED (27d→28d+). Growth STALLED (14→16+ consecutive no-action). tokenman v0.4.0 upgrade still pending. Overall: most productive week for merged PRs (8), self-healing chain highly reliable, but 98.1% of commits remain self-referential. The archival implementation gap means log files continue growing unchecked. The system is operationally healthy but structurally stalled — all user-facing work blocked on human action.

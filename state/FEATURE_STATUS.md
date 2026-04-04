@@ -1,11 +1,11 @@
 # Feature Status
 <!-- Updated by weekly analysis. AUTO-tier state file. -->
-<!-- Last updated: 2026-04-03T00:27Z (week 14 analysis) -->
+<!-- Last updated: 2026-04-04T00:30Z (week 15 analysis) -->
 
 ## In Progress
 | Feature | Issue | PR | Status | Blocked Since | Blocker |
 |---------|-------|-----|--------|---------------|---------|
-| Root index.html (landing page) | #2 | #4 | needs-human | 2026-03-14 | Merge conflicts, ~550h (23+ days). Human must rebase and merge. |
+| Root index.html (landing page) | #2 | #4 | needs-human | 2026-03-14 | Merge conflicts, ~600h+ (25+ days). Human must rebase and merge. |
 | Awesome-list submission | #24 | — | needs-human | 2026-03-27 | Human must submit to awesome-claude-code lists |
 | Agent log archival | — | #39 | needs-human | 2026-04-01 | Reviewer approved but merge-blocked by conflicts |
 | Research log rotation | — | #42 | needs-human | 2026-04-02 | Reviewer approved via comment but merge-blocked by conflicts |
@@ -14,14 +14,15 @@
 ## Stalled (no automated path forward)
 | Item | Weeks Stalled | Attempts | Blocker |
 |------|--------------|----------|---------|
-| Cron frequency reduction | 14 | 10+ PRs | Circular deadlock: hourly cron → state commits → merge conflicts → PR failure. Human must edit evolve.yml + watcher.yml directly. |
-| Repo topics | 9 | 1 API call | GITHUB_TOKEN lacks admin scope. Human must set manually. |
-| Redundant PR cleanup (#5, #11, #16) | 7-9 | 0 | Human must close. |
-| Log archival (operational) | 1 | 2 PRs (#39, #42) | Both approved, both merge-blocked. agent_log 384KB exceeds tooling limits. Proposed: direct AUTO-tier archival in analyze workflow. |
+| Cron frequency reduction | 15 | 10+ PRs | Circular deadlock: hourly cron → state commits → merge conflicts → PR failure. Human must edit evolve.yml + watcher.yml directly. |
+| Repo topics | 10 | 1 API call | GITHUB_TOKEN lacks admin scope. Human must set manually. |
+| Redundant PR cleanup (#5, #11, #16) | 8-10 | 0 | Human must close. |
+| Log archival (operational) | 2 | 3 PRs (#39, #42, #45) | #39/#42 merge-blocked. #45 merged but only deleted proposal — archival logic never implemented. agent_log 415KB/621 lines, exceeds 256KB tooling limit. New proposed change filed. |
 
 ## Completed
 | Feature | Issue | PR | Completed |
 |---------|-------|-----|-----------|
+| Weekly Analysis dual failure mode fix | #46 | #47 | 2026-04-03 (merged, full pipeline chain ~5 min) |
 | Weekly Analysis push rejection fix | #43 | #44 | 2026-04-02 (merged, full pipeline chain ~3 min) |
 | Evolve no-action run compaction | — | #41 | 2026-04-01 (merged, ~30-40% evolve log reduction) |
 | Research log quiet-run aggregation | — | #40 | 2026-04-01 (merged, aggregated format for no-action research entries) |
