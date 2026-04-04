@@ -1,6 +1,6 @@
 # Feature Status
 <!-- Updated by weekly analysis. AUTO-tier state file. -->
-<!-- Last updated: 2026-04-04T06:00Z (week 15 analysis) -->
+<!-- Last updated: 2026-04-04T12:00Z (week 15 supplemental analysis) -->
 
 ## In Progress
 | Feature | Issue | PR | Status | Blocked Since | Blocker |
@@ -10,6 +10,7 @@
 | Agent log archival | — | #39 | needs-human | 2026-04-01 | Reviewer approved but merge-blocked by conflicts |
 | Research log rotation | — | #42 | needs-human | 2026-04-02 | Reviewer approved via comment but merge-blocked by conflicts |
 | Log archival in analyze | — | #48 | needs-human | 2026-04-04 | Reviewer approved via comment but merge-blocked by conflicts |
+| Auto-rebase capability | — | — | proposed | 2026-04-04 | Proposed change written — watcher auto-rebase for approved merge-blocked PRs. needs-review tier. |
 | tokenman v0.4.0 upgrade | — | — | pending | 2026-04-01 | Detected 09:28Z 04-01. Upgrade issue pending next evolve run. |
 
 ## Stalled (no automated path forward)
@@ -18,7 +19,7 @@
 | Cron frequency reduction | 15 | 10+ PRs | Circular deadlock: hourly cron → state commits → merge conflicts → PR failure. Human must edit evolve.yml + watcher.yml directly. |
 | Repo topics | 10 | 1 API call | GITHUB_TOKEN lacks admin scope. Human must set manually. |
 | Redundant PR cleanup (#5, #11, #16) | 8-10 | 0 | Human must close. |
-| Log archival (operational) | 2 | 3 PRs (#39, #42, #48) | All 3 approved, all 3 merge-blocked. agent_log 420KB+ exceeds tooling limits. |
+| Log archival (operational) | 2 | 3 PRs (#39, #42, #48) | All 3 approved, all 3 merge-blocked. agent_log 431KB+ exceeds tooling limits. Inline truncation live (PR #49), first trim pending. |
 
 ## Completed
 | Feature | Issue | PR | Completed |
