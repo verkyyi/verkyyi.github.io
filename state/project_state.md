@@ -3,33 +3,32 @@
 ## Current Focus
 Portfolio landing page — site needs a root index.html (issue #2).
 
-## Priorities (from weekly analysis 2026-04-04, week 15)
-1. **P0: Cron frequency — requires human manual edit** — 15th consecutive week. Proven circular deadlock: hourly cron produces ~98 state commits/day, which create merge conflicts on every PR branch before review. 10+ PRs have attempted YAML fix, ALL failed. No automated approach can succeed. Human must manually edit evolve.yml and watcher.yml cron schedules directly on main.
-2. **P0: Human must act on PR backlog** — 9 PRs stuck needs-human for 1-9+ weeks. PR #4 (landing page) blocked ~600h (25+ days). PRs #39/#42/#48 (log archival/rotation) ALL approved by reviewer but merge-blocked by conflicts. PRs #5/#11/#16 are REDUNDANT (superseded by merged PRs) — close them. PR #19 (cron fix) escalated to needs-human. PR #10 (watcher triage fix) blocked on merge conflicts. 27+ days zero human activity.
-3. **P0: Log file sizes now critical** — agent_log.md is 420KB+ (exceeds 256KB tooling read limit, analysis tooling degraded). research_log.md is 172KB/1243 lines. All 3 archival PRs (#39, #42, #48) merge-blocked by conflicts. Inline truncation by analyze workflow is the only remaining automated path.
+## Priorities (from weekly analysis 2026-04-04, week 16)
+1. **P0: Cron frequency — requires human manual edit** — 16th consecutive week. Proven circular deadlock: hourly cron produces ~98 state commits/day, which create merge conflicts on every PR branch before review. 10+ PRs have attempted YAML fix, ALL failed. No automated approach can succeed. Human must manually edit evolve.yml and watcher.yml cron schedules directly on main.
+2. **P0: Human must act on PR backlog** — 10 PRs stuck needs-human for 1-10+ weeks. PR #4 (landing page) blocked ~625h (26+ days). PRs #39/#42/#48/#50 (log archival + auto-rebase) ALL approved/opened by reviewer but merge-blocked by conflicts. PRs #5/#11/#16 are REDUNDANT (superseded by merged PRs) — close them. PR #19 (cron fix) escalated to needs-human. PR #10 (watcher triage fix) blocked on merge conflicts. 27+ days zero human activity.
+3. **P0: Log file sizes CRITICAL** — agent_log.md is 436.8KB (EXCEEDS 256KB tooling read limit — analyze workflow cannot fully read its own logs). research_log.md is 1300 lines/77K+ tokens approaching limit. All 4 archival/fix PRs (#39, #42, #48, #50) merge-blocked. Inline truncation (PR #49 merged) insufficient — file still exceeds limit. Proposed: aggressive truncation retaining only summaries + last 50 entries.
 4. **P1: tokenman v0.4.0 upgrade** — Detected 09:28Z 04-01. New features: security-scan.yml workflow (runner-guard for PR YAML), triage skips closed issues. Upgrade issue pending creation by next evolve run (non-HUMAN_ACTIVE).
-5. **P1: Auto-rebase capability** — Pipeline fixes bugs autonomously but cannot self-heal merge conflicts. PRs #39, #42, #48 (all approved) blocked by conflicts — same systemic pattern. This is the structural weakness behind P0.
+5. **P1: Auto-rebase capability** — PR #50 opened 12:19Z 04-04 but ALSO merge-blocked within hours. Meta-problem confirmed: the fix for merge conflicts gets merge-conflicted. This is the structural weakness behind P0.
 6. **P2: Set repo topics** — GITHUB_TOKEN lacks admin scope. Growth prerequisite (2/4 met). Suggested: github-pages, autonomous-agents, claude-code, github-actions.
 7. **P3: Activate unused workflows** — discover, feedback-learner, claude-task have never been triggered.
 8. **P3: Node.js 20→24 migration** — GitHub Actions forcing Node 24 by June 2026. Low urgency, 2 months runway.
 
-## Recent Changes (since last analysis 2026-04-03T00:27Z)
-- PR #47 MERGED (04-03) — fixed analyze.yml dual failure mode (issue #46), full pipeline chain triage→coder→reviewer→merge in ~5 min
-- PR #44 MERGED (04-02) — fixed Weekly Analysis git push rejection (issue #43, `workflows` permission)
+## Recent Changes (since last analysis 2026-04-04T06:00Z)
 - PR #49 MERGED (04-04 07:51Z) — inline log truncation in analyze workflow, reviewer→merge chain
-- PR #48 opened (04-04) — log archival in analyze workflow, reviewer approved via comment, merge-blocked by conflicts
-- Weekly Analysis confirmed fixed (success 00:27Z 04-04 after PR #47 merge)
-- 2 pipeline issues resolved autonomously (#43 in ~3 min, #46 in ~5 min)
+- v0.2.0 RELEASED (04-04 09:00Z) — "First Self-Improvement Cycle", first release since v0.1.0 (03-26)
+- PR #50 OPENED (04-04 12:19Z) — auto-rebase for approved merge-blocked PRs, reviewer comment-only, merge-blocked by conflicts
+- All workflows healthy throughout 04-04 (17 watcher checks, 0 corrective actions needed after 13:52Z)
+- agent_log.md reached 436.8KB — now EXCEEDS 256KB tooling read limit
 
-## Week 15 Summary (2026-03-28 to 2026-04-04)
-- **Most productive week**: 8 PRs merged (project record), 5 harness improvements, 2 pipeline fixes, 1 config update
-- **Pipeline self-healing validated** 4th and 5th time (issues #43 and #46)
-- **Log reduction campaign COMPLETE**: PRs #35/#38/#40/#41 merged, ~60-70% state file growth reduction
-- **FEATURE_STATUS.md** created via direct commit (broke 9-week deadlock)
-- **evolve_config.md** updated (tokenman rename + v0.3.0, 3-week stall resolved)
-- **Log sizes NOW CRITICAL**: agent_log 420KB+ (exceeds tooling read limit), 3 archival PRs merge-blocked
-- **All future improvements blocked**: merge conflict cycle prevents any more PR-based changes
-- Node.js 20 deprecation detected in CI — forced to Node 24 by June 2026
+## Week 16 Summary (2026-03-28 to 2026-04-04, updated 18:00Z)
+- **Most productive week**: 9 PRs merged (#35/#37/#38/#40/#41/#44/#45/#47/#49 — project record)
+- **v0.2.0 released** (09:00Z 04-04) — "First Self-Improvement Cycle", broke 16-run growth no-action streak
+- **Pipeline self-healing validated** 5 times total (issues #43 and #46 this week)
+- **Log reduction campaign COMPLETE**: PRs #35/#38/#40/#41/#49 merged, ~60-70% state file growth reduction
+- **Meta-problem confirmed**: PR #50 (auto-rebase fix) merge-blocked within hours — fix for merge conflicts gets merge-conflicted
+- **Log sizes CRITICAL**: agent_log 436.8KB (EXCEEDS 256KB tooling read limit), research_log 1300 lines/77K+ tokens
+- **All future PR-based improvements blocked**: merge conflict cycle from hourly cron is absolute
+- 27+ days zero human activity — longest streak in project history
 
 ## Growth Status (last run: 2026-04-04T09:00Z)
 - Phase: pre-growth (0 stars, 0 forks). v0.2.0 released 04-04 ("First Self-Improvement Cycle"), v0.1.0 live since 03-26
@@ -77,6 +76,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 ## Recently Closed PRs
 - #49 Inline Log Truncation in Analyze Workflow — MERGED (04-04 07:51Z, reviewer→merge chain)
 - #47 Fix analyze.yml dual failure mode — MERGED (04-03, full pipeline chain ~5 min)
+- #50 Auto-Rebase for Approved Merge-Blocked PRs — opened 04-04 12:19Z, merge-blocked by conflicts
 - #45 Direct Log Archival in Analyze Workflow — MERGED (02:23Z 04-03)
 - #44 Fix Weekly Analysis git push rejection — MERGED (20:52Z 04-02)
 - #41 Evolve No-Action Run Compaction in Agent Log — MERGED (19:54Z 04-01)
@@ -88,17 +88,17 @@ Portfolio landing page — site needs a root index.html (issue #2).
 ## Key Observations
 - No apps/ directory — flat static site, not using Astro
 - Site has 2 project subdirs (6150/ survival analysis, Presentation/ chatbot) but no landing page
-- 685 commits this week (97.9/day), 98.4% state file updates — commit noise UNCHANGED
-- Log files at operational limit: agent_log 420KB+ (exceeds 256KB read limit), research_log 172KB
-- All 3 archival PRs (#39, #42, #48) merge-blocked — systemic pattern now affecting analysis tooling
+- 697 commits this week (99.6/day), 98.3% state file updates — commit noise UNCHANGED
+- Log files PAST operational limit: agent_log 436.8KB (EXCEEDS 256KB read limit — tooling degraded), research_log 1300 lines/77K+ tokens
+- All 4 improvement PRs (#39, #42, #48, #50) merge-blocked — including the auto-rebase fix itself
 - Cron fix has failed via PR 10+ times — structural inability to modify workflow YAML via PR
-- Merge conflicts are the #1 systemic issue (15th consecutive week, unresolved)
+- Merge conflicts are the #1 systemic issue (16th consecutive week, unresolved)
 - No human activity in 27+ days — all issues/PRs created by automation
 - tokenman v0.4.0 released 04-01 — security-scan.yml + triage improvement, upgrade pending
-- Log reduction campaign COMPLETE: PRs #35/#38/#40/#41 merged, ~60-70% growth reduction
+- Log reduction campaign COMPLETE but insufficient: PRs #35/#38/#40/#41/#49 merged, agent_log still over limit
 - Pipeline self-healing validated 5 times total — triage→coder→reviewer→merge chain reliable
-- Node.js 20 deprecation warning in CI — forced migration to Node 24 by June 2026
-- Most productive week in project history: 8 PRs merged
+- v0.2.0 released 04-04 — first release since v0.1.0 (03-26), broke 16-run growth no-action streak
+- Most productive week in project history: 9 PRs merged
 
 ## Week-over-Week Trends
-- Week 14→15: Commit cadence DOWN slightly (99.6→97.9/day). State ratio FLAT (98.3→98.4%). Productive output FLAT (12→11 substantive). PRs merged UP significantly (2→8, project record). Pipeline self-healing VALIDATED 2 more times (#43, #46). Log reduction COMPLETE. All 3 new archival PRs MERGE-BLOCKED. agent_log NOW EXCEEDS tooling read limit (420KB+). Cron fix NO progress (15th week). PR #4 blockage WORSENED (550h→600h+). Human inactivity WORSENED (25d→27d+). Growth STALLED (14→16 consecutive no-action). tokenman v0.4.0 detected, upgrade pending. Node.js 20 deprecation detected (low urgency). Overall: most productive week for merged improvements but system has now optimized everything it can without human intervention. All future automated improvements blocked by merge conflict cycle from hourly cron. Log sizes degrading analysis tooling. 98.4% self-referential activity structurally locked.
+- Week 15→16 (same period, updated): Commits 697 (99.6/day, UP from 97.9). State ratio 98.3%. 12 substantive. PRs merged 9 (UP from 8, new project record — PR #49 inline log truncation). v0.2.0 RELEASED (broke 16-run growth no-action streak). PR #50 opened AND merge-blocked (meta-problem: auto-rebase fix gets merge-conflicted). agent_log WORSENED 420KB→436.8KB. Cron fix NO progress (16th week). PR #4 blockage 625h+ (26+ days). Human inactivity 27+ days UNCHANGED. Growth: v0.2.0 released but Stars:0 Forks:0. Overall: system has exhausted all self-improvement paths. Every remaining improvement requires either (a) human cron edit, (b) human PR merge/close, or (c) aggressive inline log truncation. The 98.3% self-referential activity rate is permanently locked without cron reduction. Log sizes actively degrading the analysis tooling that monitors system health — approaching self-monitoring failure.
