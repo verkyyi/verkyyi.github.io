@@ -1,11 +1,11 @@
 # Feature Status
 <!-- Updated by weekly analysis. AUTO-tier state file. -->
-<!-- Last updated: 2026-04-05T06:00Z (week 16 analysis) -->
+<!-- Last updated: 2026-04-05T06:32Z (week 17 analysis) -->
 
 ## In Progress
 | Feature | Issue | PR | Status | Blocked Since | Blocker |
 |---------|-------|-----|--------|---------------|---------|
-| Root index.html (landing page) | #2 | #4 | needs-human | 2026-03-14 | Merge conflicts, ~600h (25+ days). Human must rebase and merge. |
+| Root index.html (landing page) | #2 | #4 | needs-human | 2026-03-14 | Merge conflicts, ~650h (27+ days). Human must rebase and merge. |
 | Awesome-list submission | #24 | — | needs-human | 2026-03-27 | Human must submit to awesome-claude-code lists |
 | Agent log archival | — | #39 | needs-human | 2026-04-01 | Reviewer approved but merge-blocked by conflicts |
 | Research log rotation | — | #42 | needs-human | 2026-04-02 | Reviewer approved via comment but merge-blocked by conflicts |
