@@ -1387,3 +1387,7 @@
 2026-04-05T12:14:42Z | pipeline-health | 10 failed runs checked (6 Weekly Analysis, 2 Self-Evolve, 1 pages-build, 1 Reviewer), all ALREADY-FIXED | no action (HUMAN_ACTIVE)
 2026-04-05T12:14:42Z | human-intent | 0 human-created issues in 7d | no action (HUMAN_ACTIVE)
 2026-04-05T12:14:42Z | seo-check | Hour 12 UTC — README accurate, 0 repo topics (needs admin), no index.html (issue #2 exists), no robots.txt | no action (HUMAN_ACTIVE)
+2026-04-05T13:27:13Z | verkyyi/agentfolio | API redirects to tokenman repo (ID 1187398303), latest: watcher health check 04-05T12:54Z | no action (HUMAN_ACTIVE)
+2026-04-05T13:27:13Z | quarto-dev/quarto-cli | fix skill for preview testing (04-03, Christophe Dervieux) | no action
+2026-04-05T13:27:13Z | openai-harness-blog | Cloudflare challenge (blocked) | no action
+2026-04-05T13:27:13Z | pipeline-health | 10 failed runs checked, 0 actionable (all ALREADY-FIXED: Weekly Analysis 04-02/04-03, Self-Evolve 03-31, pages-build 03-27, Reviewer 03-27) | no issues (HUMAN_ACTIVE)
