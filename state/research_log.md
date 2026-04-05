@@ -1404,3 +1404,7 @@
 2026-04-05T16:11:40Z | openai-harness-blog | Cloudflare challenge page — not accessible from runner | no action
 2026-04-05T16:11:40Z | pipeline-health | 10 failed runs checked (6 Weekly Analysis, 2 Self-Evolve, 1 pages-build, 1 Reviewer), all ALREADY-FIXED | no action (HUMAN_ACTIVE)
 2026-04-05T16:11:40Z | human-intent | 0 human-created issues in 7d | no action (HUMAN_ACTIVE)
+2026-04-05T17:11:14Z | verkyyi/agentfolio | API redirects to tokenman, latest commit bda9e70 "state: reviewer usage metrics" (routine state) | no action
+2026-04-05T17:11:14Z | quarto-dev/quarto-cli | unchanged at fbaf628 (04-03, "fix skill for preview testing") | no action
+2026-04-05T17:11:14Z | openai-harness-blog | Cloudflare-blocked (persistent) | no action
+2026-04-05T17:11:14Z | pipeline-health | 10 failed runs checked, 0 actionable (all ALREADY-FIXED) | no action
