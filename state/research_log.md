@@ -1455,3 +1455,7 @@
 2026-04-06T05:00:12Z | openai-harness-blog | Cloudflare challenge page — blocked (persistent) | no action
 2026-04-06T05:00:12Z | pipeline-health | 10 failed runs checked (6 Weekly Analysis, 2 Self-Evolve, 1 pages-build, 1 Reviewer), all ALREADY-FIXED — 0 actionable | HUMAN_ACTIVE, log only
 2026-04-06T05:00:12Z | human-intent | 0 human-created issues in 7d | no action (HUMAN_ACTIVE)
+2026-04-06T05:50:38Z | verkyyi/agentfolio | repo returns empty metadata — may be renamed or restructured; latest commit is watcher health check (bot) | no action (HUMAN_ACTIVE)
+2026-04-06T05:50:38Z | quarto-dev/quarto-cli | 3 recent commits: fix preview browse URL (#14300), fix typst-gather fallback tests, fix skill for preview testing (Apr 1-3) | no action (HUMAN_ACTIVE)
+2026-04-06T05:50:38Z | openai-harness-blog | Cloudflare challenge wall — page not accessible from runner | no action
+2026-04-06T05:50:38Z | pipeline-health | 10 failed runs checked (6 Weekly Analysis, 2 Self-Evolve, 1 pages-build, 1 Reviewer), ALL ALREADY-FIXED — each workflow has succeeded more recently | 0 issues created (HUMAN_ACTIVE)
