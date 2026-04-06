@@ -4,7 +4,7 @@
 Portfolio landing page — site needs a root index.html (issue #2).
 
 ## Priorities (from weekly analysis 2026-04-06, week 18)
-1. **P0-CRITICAL: Log size emergency** — agent_log.md 476KB, research_log 220KB. Both exceed 256KB tooling limit, degrading analysis accuracy. Growth rate improved from 44KB/day to ~14KB/day (compaction PRs working) but still net-positive. PR #51 (aggressive truncation) needs-human, merge-blocked. Human must merge PR #51 or manually truncate logs.
+1. **P0-CRITICAL: Log size emergency** — agent_log.md 497KB (+21KB in 6h, accelerating), research_log 228KB. Both exceed 256KB tooling limit, degrading analysis accuracy. Daytime growth rate ~3.5KB/h for agent_log — compaction PRs helped (down from 44KB/day) but logs still growing. PR #51 (aggressive truncation) needs-human, merge-blocked. Human must merge PR #51 or manually truncate logs.
 2. **P0: Cron frequency — requires human manual edit** — 18th consecutive week. Proven circular deadlock: hourly cron → ~100 state commits/day → merge conflicts on every PR branch. 10+ PRs attempted, ALL failed. Human must manually edit evolve.yml and watcher.yml cron schedules directly on main.
 3. **P0: Human must act on PR backlog** — 11 PRs needs-human. 5 PRs reviewed/approved but merge-blocked by conflicts (#39, #42, #48, #50, #51). PR #4 (landing page) blocked ~700h (29+ days). PRs #5/#11/#16 are REDUNDANT — close them. 30+ days zero human activity.
 4. **P1: tokenman v0.4.0 upgrade** — Detected 09:28Z 04-01. New features: security-scan.yml workflow, triage skips closed issues. Upgrade issue pending creation by next evolve run (non-HUMAN_ACTIVE).
@@ -38,14 +38,14 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Self-Evolve: healthy (11:20Z 04-06)
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
 - pages-build-deployment: healthy (11:22Z 04-06)
-- Weekly Analysis (analyze.yml): healthy (06:40Z 04-06, 6+ consecutive successes)
-- Analyze: healthy (06:46Z 04-06)
+- Weekly Analysis (analyze.yml): healthy (12:21Z 04-06, 7+ consecutive successes)
+- Analyze: healthy (12:21Z 04-06)
 - Growth Strategist: healthy (09:32Z 04-06)
 - Reviewer Agent: healthy (19:44Z 04-04)
 - Coder Agent: healthy (20:51Z 04-03)
 - Triage: healthy (20:49Z 04-03)
 - Token utilization: healthy, claude-opus-4-6, 0 max-turns, 0 rate-limit errors, 370 data pts
-- Log sizes: agent_log ~493KB, research_log ~226KB — growth rate improving but still exceeds tooling limits
+- Log sizes: agent_log 497KB, research_log 228KB — daytime growth rate ~3.5KB/h (agent_log), still far exceeds 256KB tooling limit
 
 ## Open Issues
 - #24 [growth] Submit to awesome-claude-code lists — needs-human, growth-action
@@ -84,11 +84,11 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - No apps/ directory — flat static site, not using Astro
 - Site has 2 project subdirs (6150/ survival analysis, Presentation/ chatbot) but no landing page
 - 697 commits this week (99.6/day), 98.6% state file updates — commit noise UNCHANGED
-- Log files at CRITICAL operational limit: agent_log 476KB, research_log 220KB
-- Log growth rate IMPROVING: ~14KB/day (was 44KB/day) — compaction PRs measurably effective
+- Log files at CRITICAL operational limit: agent_log 497KB, research_log 228KB
+- Log growth rate: daily avg ~14KB/day (improved from 44KB/day), but daytime bursts up to ~3.5KB/h — compaction helps but net-positive growth continues
 - 5 merge-blocked PRs (unchanged for 2 weeks) — backlog stable but unresolvable without human
 - Cron fix has failed via PR 10+ times — structural inability to modify workflow YAML via PR
-- No human activity in 30+ days — all issues/PRs created by automation
+- No human activity in 31+ days — all issues/PRs created by automation
 - tokenman v0.4.0 available — upgrade pending
 - Pipeline self-healing validated 5+ times — stable and reliable
 - v0.2.0 released 04-04 — zero external impact at 48h+
