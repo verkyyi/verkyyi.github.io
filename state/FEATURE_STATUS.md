@@ -1,6 +1,6 @@
 # Feature Status
 <!-- Updated by weekly analysis. AUTO-tier state file. -->
-<!-- Last updated: 2026-04-06T12:21Z (week 18 analysis refresh) -->
+<!-- Last updated: 2026-04-06T18:23Z (week 18 final analysis) -->
 
 ## In Progress
 | Feature | Issue | PR | Status | Blocked Since | Blocker |
@@ -20,7 +20,7 @@
 | Cron frequency reduction | 18 | 10+ PRs | Circular deadlock: hourly cron → state commits → merge conflicts → PR failure. Human must edit evolve.yml + watcher.yml directly. |
 | Repo topics | 12 | 1 API call | GITHUB_TOKEN lacks admin scope. Human must set manually. |
 | Redundant PR cleanup (#5, #11, #16) | 10-12 | 0 | Human must close. |
-| Log archival (operational) | 4 | 5 PRs (#39, #42, #48, #50, #51) | All 5 reviewed/approved, all 5 merge-blocked. agent_log 476KB, research_log 220KB — both exceed tooling limits. Growth rate improving (~14KB/day, was 44KB/day). |
+| Log archival (operational) | 4 | 5 PRs (#39, #42, #48, #50, #51) | All 5 reviewed/approved, all 5 merge-blocked. agent_log 493KB, research_log 226KB — both exceed tooling limits. Growth rate cut 83% (~2.4KB/day, was 14KB/day). |
 
 ## Completed
 | Feature | Issue | PR | Completed |
