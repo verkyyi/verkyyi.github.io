@@ -1496,3 +1496,7 @@
 2026-04-06T14:24:20Z | quarto-dev/quarto-cli | same commit 03138ed "timing for new tests" by cderv (unchanged since 13:07Z) | no action
 2026-04-06T14:24:20Z | openai-harness-blog | Cloudflare-blocked (32+ days, persistent) | no action
 2026-04-06T14:24:20Z | pipeline-health | 10 failed runs checked (6 Weekly Analysis, 2 Self-Evolve, 1 pages-build, 1 Reviewer), all ALREADY-FIXED | 0 issues created
+2026-04-06T15:20:29Z | verkyyi/agentfolio | repo renamed to verkyyi/tokenman; latest commit: state watcher health check (14:53Z), no code changes | update config source name (HUMAN_ACTIVE, deferred)
+2026-04-06T15:20:29Z | quarto-dev/quarto-cli | "timing for new tests [auto PR]" by cderv (13:07Z Apr 6) — routine test timing update | no action
+2026-04-06T15:20:29Z | openai-harness-blog | Cloudflare-blocked (31+ consecutive days) | no action (HUMAN_ACTIVE, removal deferred)
+2026-04-06T15:20:29Z | pipeline-health | 10 failed runs checked, 0 actionable — all ALREADY-FIXED: Weekly Analysis (6 failures Apr 2-3, fixed 12:20Z Apr 6), Self-Evolve (2 failures Mar 31, fixed 14:22Z Apr 6), pages-build-deployment (1 failure Mar 27, fixed 14:52Z Apr 6), Reviewer Agent (1 failure Mar 27, fixed since). 0 issues created | HUMAN_ACTIVE — log only
