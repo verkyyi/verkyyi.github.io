@@ -1464,3 +1464,7 @@
 2026-04-06T06:41:29Z | openai-harness-blog | Cloudflare challenge wall — not accessible from runner | no action
 2026-04-06T06:41:29Z | pipeline-health | 10 failed runs checked, ALL ALREADY-FIXED — 0 actionable | 0 issues (HUMAN_ACTIVE)
 2026-04-06T06:41:29Z | growth-metrics | stars:0 forks:0 watchers:1 open_issues:13 views:N/A uniques:N/A | unchanged, traffic API inaccessible
+2026-04-06T07:36:40Z | agentfolio | repo redirects to tokenman, state-only bot commit ea48561 (07:10Z 04-06) | no action
+2026-04-06T07:36:40Z | quarto-cli | unchanged since Apr 3 (fbaf628, preview testing fix) | no action
+2026-04-06T07:36:40Z | openai-harness-blog | Cloudflare-blocked (31+ consecutive days) | no action
+2026-04-06T07:36:40Z | pipeline-health | 10 failed runs checked, all ALREADY-FIXED, 0 issues created | no action
