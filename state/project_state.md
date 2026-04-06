@@ -33,16 +33,17 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~700h), zero human activity 30+ days
 - 24 growth runs total. Next: measure v0.2.0 at 48h mark.
 
-## System Health (last watcher: 2026-04-06T05:22Z)
-- Self-Evolve: healthy (04:58Z 04-06)
+## System Health (last watcher: 2026-04-06T06:10Z)
+- Self-Evolve: healthy (05:48Z 04-06)
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
-- pages-build-deployment: healthy (05:00Z 04-06)
-- Weekly Analysis (analyze.yml): healthy (00:31Z 04-06, 5 consecutive successes)
+- pages-build-deployment: healthy (05:51Z 04-06)
+- Weekly Analysis (analyze.yml): healthy (00:31Z 04-06, 5+ consecutive successes)
 - Growth Strategist: healthy (18:12Z 04-05)
 - Reviewer Agent: healthy (19:44Z 04-04)
 - Coder Agent: healthy (20:51Z 04-03)
 - Triage: healthy (20:49Z 04-03)
 - Token utilization: healthy, claude-opus-4-6, 0 max-turns, 0 rate-limit errors, 355 data pts
+- Log sizes: agent_log 486KB (+5%), research_log 224KB (+7%) — still growing
 
 ## Open Issues
 - #24 [growth] Submit to awesome-claude-code lists — needs-human, growth-action
