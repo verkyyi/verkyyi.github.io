@@ -1459,3 +1459,8 @@
 2026-04-06T05:50:38Z | quarto-dev/quarto-cli | 3 recent commits: fix preview browse URL (#14300), fix typst-gather fallback tests, fix skill for preview testing (Apr 1-3) | no action (HUMAN_ACTIVE)
 2026-04-06T05:50:38Z | openai-harness-blog | Cloudflare challenge wall — page not accessible from runner | no action
 2026-04-06T05:50:38Z | pipeline-health | 10 failed runs checked (6 Weekly Analysis, 2 Self-Evolve, 1 pages-build, 1 Reviewer), ALL ALREADY-FIXED — each workflow has succeeded more recently | 0 issues created (HUMAN_ACTIVE)
+2026-04-06T06:41:29Z | verkyyi/agentfolio | repo still redirects to tokenman; latest commit: state weekly analysis (bot, 06:40Z) | no action (HUMAN_ACTIVE)
+2026-04-06T06:41:29Z | quarto-dev/quarto-cli | unchanged from last run; latest: fix skill for preview testing (Apr 3) | no action (HUMAN_ACTIVE)
+2026-04-06T06:41:29Z | openai-harness-blog | Cloudflare challenge wall — not accessible from runner | no action
+2026-04-06T06:41:29Z | pipeline-health | 10 failed runs checked, ALL ALREADY-FIXED — 0 actionable | 0 issues (HUMAN_ACTIVE)
+2026-04-06T06:41:29Z | growth-metrics | stars:0 forks:0 watchers:1 open_issues:13 views:N/A uniques:N/A | unchanged, traffic API inaccessible
