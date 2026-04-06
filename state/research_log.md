@@ -1472,3 +1472,7 @@
 2026-04-06T08:35:40Z | quarto-cli | maintenance fixes: preview testing (fbaf628), preview browse URL #14300 (a42c44c), typst-gather fallback (3fa22f9) — all Apr 1-3 | no action
 2026-04-06T08:35:40Z | openai-harness-blog | Cloudflare-blocked (31+ consecutive days) | no action — recommend removal from sources
 2026-04-06T08:35:40Z | pipeline-health | 10 failed runs checked, all ALREADY-FIXED (Weekly Analysis Apr 2-3, Self-Evolve Mar 31, pages Mar 27, Reviewer Mar 27), 0 actionable | no action (HUMAN_ACTIVE)
+2026-04-06T09:31:37Z | verkyyi/agentfolio | agentfolio→tokenman redirect, latest commit state-only bot (09:00Z 04-06) | no action (HUMAN_ACTIVE)
+2026-04-06T09:31:37Z | quarto-dev/quarto-cli | unchanged since 04-03 (fbaf628 preview fix) | no action
+2026-04-06T09:31:37Z | openai-harness-blog | Cloudflare-blocked (31+ consecutive days) | no action
+2026-04-06T09:31:37Z | pipeline-health | 10 failed runs all ALREADY-FIXED (Weekly Analysis 04-02/03, Self-Evolve 03-31, pages-build 03-27, Reviewer 03-27), 0 actionable | no action
