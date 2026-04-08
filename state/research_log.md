@@ -1631,3 +1631,7 @@
 2026-04-08T00:32:14Z | quarto-dev/quarto-cli | fix quarto inspect emitting project for standalone files in RStudio (2026-04-07) — gates project field to avoid RStudio crash | no action — quarto fix, not relevant to this site
 2026-04-08T00:32:14Z | openai-harness-blog | Cloudflare blocked (36+ consecutive days) | no action — recommend removal from sources
 2026-04-08T00:32:14Z | pipeline-health | 10 failed runs checked (6 Weekly Analysis, 2 Self-Evolve, 1 pages-build, 1 Reviewer), all ALREADY-FIXED — each workflow has succeeded more recently | no action
+2026-04-08T01:36:45Z | verkyyi/agentfolio | redirects to tokenman, latest commit dda7f03 (watcher health check 01:07Z 04-08) — state-only | no action (HUMAN_ACTIVE)
+2026-04-08T01:36:45Z | quarto-dev/quarto-cli | unchanged b6e1c2e — fix quarto inspect for standalone files in RStudio | no action
+2026-04-08T01:36:45Z | openai-harness-blog | Cloudflare-blocked (48th+ consecutive day) | no action
+2026-04-08T01:36:45Z | pipeline-health | 10 failed runs all ALREADY-FIXED (Weekly Analysis x6, Self-Evolve x2, pages-build x1, Reviewer x1), 0 issues | no action
