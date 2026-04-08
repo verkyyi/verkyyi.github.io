@@ -1652,3 +1652,7 @@
 2026-04-08T06:36Z | openai-harness-blog | Cloudflare-blocked 52d+ | no action
 2026-04-08T06:36Z | pipeline-health | 10 failed all ALREADY-FIXED, 0 actionable | no action
 2026-04-08T06:36Z | growth-metrics | stars:0 forks:0 watchers:1 issues:13 | no change
+2026-04-08T07:35Z | verkyyi/agentfolio | redirects to verkyyi/tokenman (renamed), latest: state watcher commit 07:04Z | config source stale
+2026-04-08T07:35Z | quarto-dev/quarto-cli | fix quarto inspect emitting project field for standalone files in RStudio (Apr 7) | no action
+2026-04-08T07:35Z | openai-harness-blog | Cloudflare-blocked | no action
+2026-04-08T07:35Z | pipeline-health | 10 failed all ALREADY-FIXED (Weekly Analysis Apr 2-3, Self-Evolve Mar 31), 0 actionable | no action
