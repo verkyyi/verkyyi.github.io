@@ -34,18 +34,18 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~860h), zero human activity 33+ days
 - 29 growth runs total. 23rd consecutive no-action. No action possible without human intervention.
 
-## System Health (last watcher: 2026-04-08T16:52Z)
-- Self-Evolve: healthy (16:28Z 04-08)
+## System Health (last watcher: 2026-04-08T17:53Z)
+- Self-Evolve: healthy (17:26Z 04-08)
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
-- pages-build-deployment: healthy (16:30Z 04-08)
+- pages-build-deployment: healthy (17:28Z 04-08)
 - Weekly Analysis (analyze.yml): healthy (00:31Z 04-08, 5+ consecutive successes)
 - Analyze: healthy (00:35Z 04-08)
 - Growth Strategist: healthy (09:30Z 04-08)
 - Reviewer Agent: healthy (19:44Z 04-04)
 - Coder Agent: healthy (20:51Z 04-03)
 - Triage: healthy (20:49Z 04-03)
-- Token utilization: healthy, claude-opus-4-6, 0 max-turns, 0 rate-limit errors, 382 data pts
-- Watcher 09:53Z transient failure recovered (10:49Z success). Not consecutive.
+- Token utilization: healthy, claude-opus-4-6, 0 max-turns, 0 rate-limit errors, 383 data pts
+- Watcher 09:53Z transient failure now >6h ago. No failures in last 6h.
 - Log sizes: agent_log ~555KB, research_log ~254KB — both at/beyond tooling limits
 
 ## Open Issues
