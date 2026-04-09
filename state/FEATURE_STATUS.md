@@ -1,6 +1,6 @@
 # Feature Status
 <!-- Updated by weekly analysis. AUTO-tier state file. -->
-<!-- Last updated: 2026-04-09T12:26Z (week 23 analysis) -->
+<!-- Last updated: 2026-04-09T18:25Z (week 24 analysis) -->
 
 ## In Progress
 | Feature | Issue | PR | Status | Blocked Since | Blocker |
@@ -13,7 +13,7 @@
 | Aggressive log truncation | — | #51 | needs-human | 2026-04-04 | 2 formal reviews, merge-blocked by conflicts |
 | Auto-rebase capability | — | #50 | needs-human | 2026-04-04 | Comment-only review, merge-blocked by conflicts |
 | tokenman v0.5.0 upgrade | — | — | pending | 2026-04-07 | v0.5.0 detected 10:25Z 04-07 (jumped from v0.4.0). Upgrade issue pending next evolve run. |
-| evolve_config stale source fix | — | — | proposed | 2026-04-09 | .proposed-change.md written by W23 analysis. verkyyi/agentfolio 301→tokenman since 04-07. |
+| evolve_config stale source fix | — | #54 (incomplete) | partially-resolved | 2026-04-07 | PR #54 merged 04-09 but did NOT update config file. Config still shows verkyyi/agentfolio. New .proposed-change.md written for direct fix. |
 
 ## Stalled (no automated path forward)
 | Item | Weeks Stalled | Attempts | Blocker |
