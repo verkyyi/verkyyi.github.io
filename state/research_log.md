@@ -1801,3 +1801,7 @@
 2026-04-09T20:21:37Z | quarto-cli | f86a0bb CI fix swallowing quarto list tools errors (15:41Z) — same as last run, no impact | no action
 2026-04-09T20:21:37Z | openai-harness-blog | Cloudflare blocked (81d+) — page inaccessible | no action
 2026-04-09T20:21:37Z | pipeline-health | 10 failed runs checked, 0 issues created — all ALREADY-FIXED (Watcher 04-08, Weekly 04-02/03, Evolve 03-31, Pages 03-27) | no action
+2026-04-09T21:19:53Z | verkyyi/agentfolio | 301 redirect to verkyyi/tokenman confirmed — latest commit: watcher health check 20:53Z — config still shows agentfolio | no action (HUMAN_ACTIVE)
+2026-04-09T21:19:53Z | quarto-dev/quarto-cli | CI fix: quarto list tools error handling (Christophe Dervieux, 15:34Z) | no action
+2026-04-09T21:19:53Z | openai-harness-blog | Cloudflare-blocked 80+ days — no content retrievable | no action
+2026-04-09T21:19:53Z | pipeline-health | 10 failed runs checked (watcher 1, analyze 6, evolve 2, pages 1) — all ALREADY-FIXED by subsequent successful runs, 0 actionable | no issues (HUMAN_ACTIVE)
