@@ -1781,3 +1781,7 @@
 2026-04-09T15:35:29Z | quarto-dev/quarto-cli | 2742236 hide deprecated chromium from tool listings (14:14Z), version.txt update cc169e5 (11:02Z) | no action needed
 2026-04-09T15:35:29Z | openai-harness-blog | Cloudflare-blocked 78d+ | no action
 2026-04-09T15:35:29Z | pipeline-health | 10 failed runs checked (watcher 04-08, analyze 04-02/03, evolve 03-31, pages 03-27), all ALREADY-FIXED — 0 issues created | no action
+2026-04-09T16:32:19Z | verkyyi/agentfolio | 301→tokenman redirect, 7a4b1c5 state churn (watcher 15:09Z) | config still stale, no action (HUMAN_ACTIVE)
+2026-04-09T16:32:19Z | quarto-dev/quarto-cli | f86a0bb Fix CI step swallowing quarto list tools errors (15:41Z, new) | CI fix, no impact on this project
+2026-04-09T16:32:19Z | openai-harness-blog | Cloudflare blocked 79d+ | no action
+2026-04-09T16:32:19Z | pipeline-health | 10 failed runs checked, 0 issues created | all ALREADY-FIXED (watcher 04-08 recovered, analyze 04-02/03, evolve 03-31, pages 03-27)
