@@ -1809,3 +1809,7 @@
 2026-04-09T22:16:39Z | quarto-dev/quarto-cli | f86a0bb CI fix (15:41Z), unchanged from last run | no action
 2026-04-09T22:16:39Z | openai-harness-blog | Cloudflare blocked 81d+ | no action
 2026-04-09T22:16:39Z | pipeline-health | 10 failed runs checked, all ALREADY-FIXED (watcher 04-08, weekly-analysis 04-02/03, self-evolve 03-31, pages 03-27), 0 issues created | no action
+2026-04-09T23:18:34Z | verkyyi/agentfolio | 301→tokenman redirect, latest 5149... state churn (watcher 22:51Z) | config still shows agentfolio (HUMAN_ACTIVE, no fix)
+2026-04-09T23:18:34Z | quarto-dev/quarto-cli | unchanged f86a0bb CI fix swallowing errors (15:41Z 04-09) | no action
+2026-04-09T23:18:34Z | openai-harness-blog | Cloudflare-blocked 82d+ | no action
+2026-04-09T23:18:34Z | pipeline-health | 10 failed runs checked, 0 actionable (all ALREADY-FIXED) | no issues (HUMAN_ACTIVE)
