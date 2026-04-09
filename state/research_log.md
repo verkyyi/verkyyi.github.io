@@ -1777,3 +1777,7 @@
 2026-04-09T14:39:01Z | quarto-dev/quarto-cli | hide deprecated chromium from tool listings (commit 2742236, merged 14:14Z 04-09) — cleanup only, no harness impact | no action
 2026-04-09T14:39:01Z | openai-harness-blog | Cloudflare-blocked (76+ days), no content accessible | no action
 2026-04-09T14:39:01Z | pipeline-health | 10 failed runs checked (watcher 1, analysis 6, evolve 2, pages 1) — ALL have subsequent successful runs, 0 actionable | no issues (HUMAN_ACTIVE)
+2026-04-09T15:35:29Z | verkyyi/agentfolio | 301→tokenman redirect still active, latest commit 15:09Z watcher state churn, no release | config still shows agentfolio despite PR #54 merged
+2026-04-09T15:35:29Z | quarto-dev/quarto-cli | 2742236 hide deprecated chromium from tool listings (14:14Z), version.txt update cc169e5 (11:02Z) | no action needed
+2026-04-09T15:35:29Z | openai-harness-blog | Cloudflare-blocked 78d+ | no action
+2026-04-09T15:35:29Z | pipeline-health | 10 failed runs checked (watcher 04-08, analyze 04-02/03, evolve 03-31, pages 03-27), all ALREADY-FIXED — 0 issues created | no action
