@@ -1,6 +1,6 @@
 # Feature Status
 <!-- Updated by weekly analysis. AUTO-tier state file. -->
-<!-- Last updated: 2026-04-09T06:37Z (week 22 analysis) -->
+<!-- Last updated: 2026-04-09T12:26Z (week 23 analysis) -->
 
 ## In Progress
 | Feature | Issue | PR | Status | Blocked Since | Blocker |
@@ -13,7 +13,7 @@
 | Aggressive log truncation | — | #51 | needs-human | 2026-04-04 | 2 formal reviews, merge-blocked by conflicts |
 | Auto-rebase capability | — | #50 | needs-human | 2026-04-04 | Comment-only review, merge-blocked by conflicts |
 | tokenman v0.5.0 upgrade | — | — | pending | 2026-04-07 | v0.5.0 detected 10:25Z 04-07 (jumped from v0.4.0). Upgrade issue pending next evolve run. |
-| Watcher silent-clear mode | — | — | proposed | 2026-04-09 | .proposed-change.md written. Watcher logs all-clear checks ~24x/day (~15KB/day agent_log growth). Proposed: log only on state changes. |
+| evolve_config stale source fix | — | — | proposed | 2026-04-09 | .proposed-change.md written by W23 analysis. verkyyi/agentfolio 301→tokenman since 04-07. |
 
 ## Stalled (no automated path forward)
 | Item | Weeks Stalled | Attempts | Blocker |
@@ -21,11 +21,12 @@
 | Cron frequency reduction | 22 | 10+ PRs | Circular deadlock: hourly cron → state commits → merge conflicts → PR failure. Human must edit evolve.yml + watcher.yml directly. |
 | Repo topics | 16 | 1 API call | GITHUB_TOKEN lacks admin scope. Human must set manually. |
 | Redundant PR cleanup (#5, #11, #16) | 14-16 | 0 | Human must close. |
-| Log archival (operational) | 8 | 5 PRs (#39, #42, #48, #50, #51) | All 5 reviewed/approved, all 5 merge-blocked. agent_log 571KB (2.23x limit), research_log 262KB (EXCEEDED limit — UNREADABLE). PR #52 (emergency truncation) merged 04-09 but execution pending. |
+| Log archival (operational) | 8 | 5 PRs (#39, #42, #48, #50, #51) | All 5 reviewed/approved, all 5 merge-blocked. agent_log 581KB (2.27x limit), research_log 266KB (EXCEEDED limit — UNREADABLE). PR #52 merged 04-09 but truncation execution pending. |
 
 ## Completed
 | Feature | Issue | PR | Completed |
 |---------|-------|-----|-----------|
+| Watcher silent-clear mode | — | #53 | 2026-04-09 (merged 08:05Z, expected ~80% watcher noise reduction) |
 | Emergency log truncation (proposed change) | — | #52 | 2026-04-09 (merged, execution of truncation pending) |
 | Inline log truncation in analyze | — | #49 | 2026-04-04 (merged 07:51Z, insufficient — logs still growing 44KB/day) |
 | Weekly Analysis dual failure fix | #46 | #47 | 2026-04-03 (merged, full pipeline chain ~5 min) |
