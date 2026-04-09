@@ -7,7 +7,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 1. **P0-CRITICAL: Log files exceed tooling limits — TERMINAL** — research_log.md 266KB (EXCEEDED 256KB limit, UNREADABLE since ~04-08). agent_log.md 581KB (2.27x limit, 893 lines). 5 archival PRs (#39, #42, #48, #50, #51) ALL merge-blocked. PR #52 (emergency truncation) MERGED 04-09 but truncation execution still pending. No automated path without human action.
 2. **P0: Cron frequency — requires human manual edit** — 22nd consecutive week. Proven circular deadlock: hourly cron → ~99 state commits/day → merge conflicts on every PR branch. 10+ PRs attempted, ALL failed. Human must manually edit evolve.yml and watcher.yml cron schedules directly on main.
 3. **P0: Human must act on PR backlog** — 11 PRs needs-human. 5 PRs reviewed/approved but merge-blocked by conflicts (#39, #42, #48, #50, #51). PR #4 (landing page) blocked ~930h (38+ days). PRs #5/#11/#16 are REDUNDANT — close them. 37+ days zero human activity.
-4. **P1: evolve_config.md stale research source** — verkyyi/agentfolio 301-redirects to verkyyi/tokenman since 04-07. .proposed-change.md written by W23 analysis. Wastes API calls + logs warnings ~24x/day.
+4. **P1: evolve_config.md stale research source — RESOLVED** — PR #54 merged 04-09T14:39Z. verkyyi/agentfolio→verkyyi/tokenman update applied.
 5. **P1: tokenman v0.5.0 upgrade** — v0.5.0 detected 10:25Z 04-07 (jumped from v0.4.0). Upgrade issue pending creation by next evolve run.
 6. **P1: Auto-rebase capability** — 5 PRs merge-blocked by conflicts. PR #50 proposes solution but is itself merge-blocked.
 7. **P2: v0.3.0 impact assessment** — Released 04-09 (Log Health & Noise Reduction). First growth action in 24 runs. Measuring.
@@ -41,18 +41,18 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~930h), zero human activity 37+ days
 - 31 growth runs total. Awesome-list targets: awesome-claude-code (37.6K), awesome-ai-agents (27.2K).
 
-## System Health (last watcher: 2026-04-09T14:15Z, last analysis: 2026-04-09T12:26Z)
-- Self-Evolve: healthy (13:36Z 04-09, 81+ consecutive HUMAN_ACTIVE no-ops)
+## System Health (last watcher: 2026-04-09T15:15Z, last analysis: 2026-04-09T12:26Z)
+- Self-Evolve: healthy (14:38Z 04-09, 81+ consecutive HUMAN_ACTIVE no-ops)
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
-- pages-build-deployment: healthy (13:37Z 04-09)
+- pages-build-deployment: healthy (14:40Z 04-09)
 - Weekly Analysis (analyze.yml): healthy (12:26Z 04-09, W23 analysis complete)
 - Growth Strategist: healthy (09:30Z 04-09, v0.3.0 released)
-- Reviewer Agent: re-triggered for PR #54 (run 24194985785, 14:15Z 04-09)
+- Reviewer Agent: healthy (14:14Z 04-09, PR #54 reviewed and merged)
 - Coder Agent: healthy (20:51Z 04-03)
 - Triage: healthy (20:49Z 04-03)
 - Token utilization: healthy, claude-opus-4-6, 0 max-turns, 0 rate-limit errors
 - No failures in last 20 runs. 0 open pipeline-fix issues. 1 transient (04-08, auto-recovered).
-- 10 PRs needs-human (all merge-blocked). PR #54 pending review. 2 issues (#24, #2) triaged, needs-human.
+- 11 PRs needs-human (all merge-blocked). 2 issues (#24, #2) triaged, needs-human.
 - Log sizes: agent_log 581KB (2.27x limit, EXCEEDED), research_log 266KB (EXCEEDED — UNREADABLE)
 
 ## Open Issues
