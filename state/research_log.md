@@ -1789,3 +1789,7 @@
 2026-04-09T17:28:10Z | quarto-dev/quarto-cli | CI fix: quarto list tools error handling improvement (Dervieux) | no action — CI fix, no impact on our project
 2026-04-09T17:28:10Z | openai-harness-blog | Cloudflare-blocked (76+ consecutive) | no action
 2026-04-09T17:28:10Z | pipeline-health | 10 failed runs checked, all ALREADY-FIXED (watcher 04-08, weekly-analysis 04-02/03, evolve 03-31, pages 03-27) — 0 issues created | healthy
+2026-04-09T18:24:00Z | verkyyi/agentfolio | 301→tokenman redirect (config still stale). tokenman 2231a41 growth strategy state churn (18:24Z) | no action (HUMAN_ACTIVE)
+2026-04-09T18:24:00Z | quarto-dev/quarto-cli | f86a0bb CI fix swallowing errors (15:41Z) — unchanged since last check | no action
+2026-04-09T18:24:00Z | openai-harness-blog | Cloudflare-blocked 80d+ | no action
+2026-04-09T18:24:00Z | pipeline-health | 10 failed runs checked, all ALREADY-FIXED (watcher 04-08, analyze 04-02/03, evolve 03-31, pages 03-27). 0 issues created | no action
