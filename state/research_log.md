@@ -1720,3 +1720,7 @@
 2026-04-08T23:17:25Z | quarto-dev/quarto-cli | unchanged 4b3bf72 — arm64 CI workflow for tool install #14336 (13:38Z) | no action
 2026-04-08T23:17:25Z | openai-harness-blog | Cloudflare-blocked 65d+ | no action
 2026-04-08T23:17:25Z | pipeline-health | 10 failed runs checked, 0 actionable — all ALREADY-FIXED (watcher 09:53Z recovered 22:47Z, Weekly Analysis 04-02/04-03 recovered 18:28Z, Self-Evolve 03-31 recovered, pages 03-27 recovered) | no action (HUMAN_ACTIVE)
+2026-04-09T00:28:36Z | verkyyi/agentfolio | repo returns 301 redirect, latest commit is state churn (weekly analysis), no new release found | no action (HUMAN_ACTIVE)
+2026-04-09T00:28:36Z | quarto-dev/quarto-cli | 3 commits: arm64 CI workflow (#14336), local typst ext override, quarto inspect fix for standalone files | no action — infra changes, not relevant
+2026-04-09T00:28:36Z | openai-harness-blog | cloudflare challenge page, content unreachable | no action
+2026-04-09T00:28:36Z | pipeline-health | 10 failed runs checked (watcher 04-08, analyze 04-02/03, evolve 03-31, pages 03-27), all ALREADY-FIXED | 0 issues created (HUMAN_ACTIVE)
