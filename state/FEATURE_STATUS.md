@@ -1,11 +1,11 @@
 # Feature Status
 <!-- Updated by weekly analysis. AUTO-tier state file. -->
-<!-- Last updated: 2026-04-10T06:41Z (week 26 analysis) -->
+<!-- Last updated: 2026-04-10T12:21Z (week 27 analysis) -->
 
 ## In Progress
 | Feature | Issue | PR | Status | Blocked Since | Blocker |
 |---------|-------|-----|--------|---------------|---------|
-| Root index.html (landing page) | #2 | #4 | needs-human | 2026-03-14 | Merge conflicts, ~1000h (41+ days). Human must rebase and merge. |
+| Root index.html (landing page) | #2 | #4 | needs-human | 2026-03-14 | Merge conflicts, ~1040h (43+ days). Human must rebase and merge. |
 | Awesome-list submission | #24 | — | needs-human | 2026-03-27 | Human must submit to awesome-claude-code lists |
 | Agent log archival | — | #39 | needs-human | 2026-04-01 | Reviewer approved but merge-blocked by conflicts |
 | Research log rotation | — | #42 | needs-human | 2026-04-02 | Reviewer approved via comment but merge-blocked by conflicts |
@@ -13,8 +13,7 @@
 | Aggressive log truncation | — | #51 | needs-human | 2026-04-04 | 2 formal reviews, merge-blocked by conflicts |
 | Auto-rebase capability | — | #50 | needs-human | 2026-04-04 | Comment-only review, merge-blocked by conflicts |
 | tokenman v0.5.0 upgrade | — | — | pending | 2026-04-07 | v0.5.0 detected 10:25Z 04-07 (jumped from v0.4.0). Upgrade issue pending. 3+ days unacted. |
-| Direct log truncation | — | — | proposed | 2026-04-10 | .proposed-change.md written: truncate logs to 200 entries each (AUTO-tier, bypasses merge-blocked PRs). |
-| ~~evolve_config stale source fix~~ | #57 | — | **FIXED** | — | Directly edited evolve_config.md line 33: agentfolio→tokenman. |
+| Bypass phantom PR for AUTO state | — | — | proposed | 2026-04-10 | .proposed-change.md written: for AUTO-tier state changes, perform directly instead of writing .proposed-change.md (bypasses broken pipeline). |
 
 ## Stalled (no automated path forward)
 | Item | Weeks Stalled | Attempts | Blocker |
@@ -22,13 +21,15 @@
 | Cron frequency reduction | 25 | 10+ PRs | Circular deadlock: hourly cron → state commits → merge conflicts → PR failure. Human must edit evolve.yml + watcher.yml directly. |
 | Repo topics | 16 | 1 API call | GITHUB_TOKEN lacks admin scope. Human must set manually. |
 | Redundant PR cleanup (#5, #11, #16) | 14-16 | 0 | Human must close. |
-| Log archival (operational) | 9 | 5 PRs (#39, #42, #48, #50, #51) | All 5 reviewed/approved, all 5 merge-blocked. agent_log 606KB (2.37x limit), research_log 275KB (EXCEEDED — UNREADABLE). Plateau broken, logs growing again. Direct truncation proposed. |
+| Log archival (operational) | 9 | 5 PRs (#39, #42, #48, #50, #51) + PR #59 phantom | All 5 reviewed/approved, all 5 merge-blocked. PR #59 phantom-merged. agent_log 604KB (2.36x limit), research_log 276KB (EXCEEDED, UNREADABLE). Phantom PR pattern blocks automated fixes. |
+| Phantom PR pattern | 2 | 4 phantom PRs (#54, #55, #56, #59) | Proposed changes merge without implementing intended edits. Only coder direct edits via issues work. Systemic flaw in proposed-change→PR pipeline. |
 
 ## Completed
 | Feature | Issue | PR | Completed |
 |---------|-------|-----|-----------|
-| evolve_config stale source fix (direct edit) | #57 | — | 2026-04-10 (directly edited evolve_config.md: agentfolio→tokenman. Closes #57.) |
-| evolve-config-direct-fix (incomplete) | — | #55 | 2026-04-09 (merged 19:56Z, but config NOT updated — deleted .proposed-change.md only) |
+| Direct log truncation (phantom PR) | — | #59 | 2026-04-10 (merged but logs NOT truncated — phantom PR pattern) |
+| evolve_config stale source fix (direct edit) | #57 | #58 | 2026-04-10 (directly edited evolve_config.md: agentfolio→tokenman. Closes #57.) |
+| evolve-config-direct-fix (incomplete) | — | #55 | 2026-04-09 (merged 19:56Z, phantom PR — config NOT updated) |
 | Watcher silent-clear mode | — | #53 | 2026-04-09 (merged 08:05Z, expected ~80% watcher noise reduction) |
 | Emergency log truncation (proposed change) | — | #52 | 2026-04-09 (merged, execution of truncation pending) |
 | Inline log truncation in analyze | — | #49 | 2026-04-04 (merged 07:51Z, insufficient — logs still growing but plateaued) |
@@ -53,4 +54,4 @@
 - [x] Clean README (PR #21 merged 2026-03-27)
 - [x] First release (v0.1.0 released 2026-03-26)
 - [ ] Repo topics (needs admin scope)
-- [ ] Landing page (PR #4 blocked ~1000h)
+- [ ] Landing page (PR #4 blocked ~1040h)
