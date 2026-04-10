@@ -1,34 +1,35 @@
 # Feature Status
 <!-- Updated by weekly analysis. AUTO-tier state file. -->
-<!-- Last updated: 2026-04-09T18:25Z (week 24 analysis) -->
+<!-- Last updated: 2026-04-10T00:32Z (week 25 analysis) -->
 
 ## In Progress
 | Feature | Issue | PR | Status | Blocked Since | Blocker |
 |---------|-------|-----|--------|---------------|---------|
-| Root index.html (landing page) | #2 | #4 | needs-human | 2026-03-14 | Merge conflicts, ~920h (38+ days). Human must rebase and merge. |
+| Root index.html (landing page) | #2 | #4 | needs-human | 2026-03-14 | Merge conflicts, ~1000h (41+ days). Human must rebase and merge. |
 | Awesome-list submission | #24 | — | needs-human | 2026-03-27 | Human must submit to awesome-claude-code lists |
 | Agent log archival | — | #39 | needs-human | 2026-04-01 | Reviewer approved but merge-blocked by conflicts |
 | Research log rotation | — | #42 | needs-human | 2026-04-02 | Reviewer approved via comment but merge-blocked by conflicts |
 | Log archival in analyze | — | #48 | needs-human | 2026-04-04 | Reviewer approved via comment but merge-blocked by conflicts |
 | Aggressive log truncation | — | #51 | needs-human | 2026-04-04 | 2 formal reviews, merge-blocked by conflicts |
 | Auto-rebase capability | — | #50 | needs-human | 2026-04-04 | Comment-only review, merge-blocked by conflicts |
-| tokenman v0.5.0 upgrade | — | — | pending | 2026-04-07 | v0.5.0 detected 10:25Z 04-07 (jumped from v0.4.0). Upgrade issue pending next evolve run. |
-| evolve_config stale source fix | — | #54 (incomplete) | partially-resolved | 2026-04-07 | PR #54 merged 04-09 but did NOT update config file. Config still shows verkyyi/agentfolio. New .proposed-change.md written for direct fix. |
+| tokenman v0.5.0 upgrade | — | — | pending | 2026-04-07 | v0.5.0 detected 10:25Z 04-07 (jumped from v0.4.0). Upgrade issue pending next evolve run. 3+ days unacted. |
+| evolve_config stale source fix | — | #54, #55 (both incomplete) | unresolved | 2026-04-07 | PRs #54 and #55 BOTH merged but NEITHER updated config file. #54 wrote .proposed-change.md only, #55 deleted it only. Config still shows verkyyi/agentfolio (301→tokenman). 3rd attempt via new .proposed-change.md. |
 
 ## Stalled (no automated path forward)
 | Item | Weeks Stalled | Attempts | Blocker |
 |------|--------------|----------|---------|
-| Cron frequency reduction | 22 | 10+ PRs | Circular deadlock: hourly cron → state commits → merge conflicts → PR failure. Human must edit evolve.yml + watcher.yml directly. |
+| Cron frequency reduction | 24 | 10+ PRs | Circular deadlock: hourly cron → state commits → merge conflicts → PR failure. Human must edit evolve.yml + watcher.yml directly. |
 | Repo topics | 16 | 1 API call | GITHUB_TOKEN lacks admin scope. Human must set manually. |
 | Redundant PR cleanup (#5, #11, #16) | 14-16 | 0 | Human must close. |
-| Log archival (operational) | 8 | 5 PRs (#39, #42, #48, #50, #51) | All 5 reviewed/approved, all 5 merge-blocked. agent_log 581KB (2.27x limit), research_log 266KB (EXCEEDED limit — UNREADABLE). PR #52 merged 04-09 but truncation execution pending. |
+| Log archival (operational) | 8 | 5 PRs (#39, #42, #48, #50, #51) | All 5 reviewed/approved, all 5 merge-blocked. agent_log 588KB (2.3x limit), research_log 268KB (EXCEEDED limit — UNREADABLE). Log sizes plateaued but still exceeded. |
 
 ## Completed
 | Feature | Issue | PR | Completed |
 |---------|-------|-----|-----------|
+| evolve-config-direct-fix (incomplete) | — | #55 | 2026-04-09 (merged 19:56Z, but config NOT updated — deleted .proposed-change.md only) |
 | Watcher silent-clear mode | — | #53 | 2026-04-09 (merged 08:05Z, expected ~80% watcher noise reduction) |
 | Emergency log truncation (proposed change) | — | #52 | 2026-04-09 (merged, execution of truncation pending) |
-| Inline log truncation in analyze | — | #49 | 2026-04-04 (merged 07:51Z, insufficient — logs still growing 44KB/day) |
+| Inline log truncation in analyze | — | #49 | 2026-04-04 (merged 07:51Z, insufficient — logs still growing but plateaued) |
 | Weekly Analysis dual failure fix | #46 | #47 | 2026-04-03 (merged, full pipeline chain ~5 min) |
 | Direct log archival in analyze | — | #45 | 2026-04-03 (merged, analyze→watcher→reviewer→merge chain) |
 | Weekly Analysis push rejection fix | #43 | #44 | 2026-04-02 (merged, full pipeline chain ~3 min) |
@@ -50,4 +51,4 @@
 - [x] Clean README (PR #21 merged 2026-03-27)
 - [x] First release (v0.1.0 released 2026-03-26)
 - [ ] Repo topics (needs admin scope)
-- [ ] Landing page (PR #4 blocked ~920h)
+- [ ] Landing page (PR #4 blocked ~1000h)
