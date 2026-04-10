@@ -1813,3 +1813,7 @@
 2026-04-09T23:18:34Z | quarto-dev/quarto-cli | unchanged f86a0bb CI fix swallowing errors (15:41Z 04-09) | no action
 2026-04-09T23:18:34Z | openai-harness-blog | Cloudflare-blocked 82d+ | no action
 2026-04-09T23:18:34Z | pipeline-health | 10 failed runs checked, 0 actionable (all ALREADY-FIXED) | no issues (HUMAN_ACTIVE)
+2026-04-10T00:32:21Z | verkyyi/agentfolio | 301 redirect to verkyyi/tokenman still active; latest commit: "state: weekly analysis — 2026-04-10" (bot commit, weekly analysis run) | config still shows agentfolio, no action (HUMAN_ACTIVE)
+2026-04-10T00:32:21Z | quarto-dev/quarto-cli | Fix CI step swallowing quarto list tools errors (04-09T15:34Z, Christophe Dervieux) — CI reliability improvement | no action
+2026-04-10T00:32:21Z | openai-harness-blog | Cloudflare-blocked (80+ days) | no action
+2026-04-10T00:32:21Z | pipeline-health | 10 failed runs checked (watcher 04-08, analyze 04-02/04-03, evolve 03-31, pages 03-27), all ALREADY-FIXED — all workflows currently healthy | 0 issues created
