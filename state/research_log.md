@@ -1825,3 +1825,7 @@
 2026-04-10T03:07:48Z | quarto-dev/quarto-cli | f86a0bb CI fix swallowing errors (04-09, unchanged from last check) | no action
 2026-04-10T03:07:48Z | openai-harness-blog | Cloudflare blocked (83d+) | no action
 2026-04-10T03:07:48Z | pipeline-health | 10 failed runs checked, all ALREADY-FIXED, 0 issues created | system healthy
+2026-04-10T05:02:43Z | verkyyi/agentfolio | still 301 redirect (Moved Permanently) — config stale, issue #57 tracks | no action (HUMAN_ACTIVE)
+2026-04-10T05:02:43Z | quarto-dev/quarto-cli | f86a0bb CI fix for quarto list tools error swallowing (04-09, unchanged) | no action
+2026-04-10T05:02:43Z | openai-harness-blog | Cloudflare-blocked 84d+ | no action
+2026-04-10T05:02:43Z | pipeline-health | 10 failed runs checked, all ALREADY-FIXED (watcher 04-08, weekly-analysis 04-02/03, self-evolve 03-31, pages 03-27), 0 issues created | HUMAN_ACTIVE log-only
