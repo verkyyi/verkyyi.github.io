@@ -30,7 +30,7 @@
 | claude-task | HIGH | Ad-hoc task runner |
 
 ## Research Sources
-- verkyyi/agentfolio
+- verkyyi/tokenman
 - quarto-dev/quarto-cli
 
 ## User Answers

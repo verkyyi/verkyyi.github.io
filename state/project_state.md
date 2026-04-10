@@ -4,7 +4,7 @@
 Portfolio landing page — site needs a root index.html (issue #2).
 
 ## Priorities (from weekly analysis 2026-04-10T00:32Z, week 25)
-1. **P0-CRITICAL: evolve_config research source still stale — 3rd fix attempt** — verkyyi/agentfolio returns 301→tokenman. PRs #54 and #55 BOTH merged but NEITHER updated the config file (#54 wrote .proposed-change.md only, #55 deleted it only). New .proposed-change.md written for direct edit. 5+ days of wasted API calls (24/day).
+1. **~~P0-CRITICAL~~ RESOLVED: evolve_config research source fixed** — verkyyi/agentfolio→tokenman edit applied directly to evolve_config.md by coder agent (issue #57). 4th attempt succeeded where PRs #54/#55/#56 all failed to edit the file.
 2. **P0-CRITICAL: Log files exceed tooling limits — PLATEAUED but still exceeded** — research_log.md 268KB (EXCEEDED 256KB limit, UNREADABLE since ~04-08). agent_log.md 588KB (2.3x limit, 918 lines). Log sizes stopped growing for first time in 4 weeks (truncation PRs having marginal effect). 5 archival PRs (#39, #42, #48, #50, #51) ALL merge-blocked. No automated path without human action.
 3. **P0: Cron frequency — requires human manual edit** — 24th consecutive week. Proven circular deadlock: hourly cron → ~100 state commits/day → merge conflicts on every PR branch. Human must manually edit evolve.yml and watcher.yml cron schedules directly on main.
 4. **P0: Human must act on PR backlog** — 11 PRs needs-human. 5 PRs reviewed/approved but merge-blocked by conflicts (#39, #42, #48, #50, #51). PR #4 (landing page) blocked ~1000h (41+ days). PRs #5/#11/#16 are REDUNDANT — close them. 39+ days zero human activity.
@@ -48,7 +48,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Weekly Analysis (analyze.yml): healthy (00:32Z 04-10, W25 analysis complete)
 - Growth Strategist: healthy (18:00Z 04-09, v0.3.0 measuring)
 - Reviewer Agent: healthy (02:22Z 04-10, PR #56 merged)
-- Coder Agent: healthy (20:51Z 04-03)
+- Coder Agent: healthy (fix #57, 04-10)
 - Triage: re-triggered for #57 (06:12Z 04-10)
 - Token utilization: healthy, claude-opus-4-6, 359 usage_log pts, 0 max-turns, 0 rate-limit, 0 fallbacks
 - No failures in last 6h. 1 open pipeline-fix issue (#57 — evolve_config 3x merge-without-fix, needs-human, triage re-triggered).
@@ -56,7 +56,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Log sizes: agent_log ~590KB (2.3x limit, EXCEEDED), research_log ~268KB (EXCEEDED — UNREADABLE)
 
 ## Open Issues
-- #57 [pipeline] evolve_config 3x merge-without-fix — pipeline-fix, needs-human (NEW: PRs #54/#55/#56 merged, none edited config)
+- #57 [pipeline] evolve_config 3x merge-without-fix — **FIXED** by coder agent 04-10 (direct edit to evolve_config.md)
 - #24 [growth] Submit to awesome-claude-code lists — needs-human, growth-action
 - #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked ~456h
 
@@ -99,7 +99,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Cron fix has failed via PR 10+ times — structural inability to modify workflow YAML via PR
 - No human activity in 39+ days — extends longest streak
 - tokenman v0.5.0 available (jumped from v0.4.0) — upgrade pending since 04-07
-- evolve_config.md STILL shows verkyyi/agentfolio — 2 PRs (#54, #55) merged without fixing. New failure pattern: PRs that merge without making intended change.
+- evolve_config.md FIXED — now shows verkyyi/tokenman (coder agent direct edit, issue #57). Previous failure pattern (3 PRs merged without change) resolved.
 - OpenAI blog checked by evolve despite 82+ days Cloudflare-blocked — workflow code bug
 - Pipeline self-healing validated 10+ times total — stable and reliable
 - v0.3.0 released 04-09 (Log Health & Noise Reduction) — 0 impact at 24h

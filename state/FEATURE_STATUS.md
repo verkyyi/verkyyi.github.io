@@ -13,7 +13,7 @@
 | Aggressive log truncation | — | #51 | needs-human | 2026-04-04 | 2 formal reviews, merge-blocked by conflicts |
 | Auto-rebase capability | — | #50 | needs-human | 2026-04-04 | Comment-only review, merge-blocked by conflicts |
 | tokenman v0.5.0 upgrade | — | — | pending | 2026-04-07 | v0.5.0 detected 10:25Z 04-07 (jumped from v0.4.0). Upgrade issue pending next evolve run. 3+ days unacted. |
-| evolve_config stale source fix | — | #54, #55 (both incomplete) | unresolved | 2026-04-07 | PRs #54 and #55 BOTH merged but NEITHER updated config file. #54 wrote .proposed-change.md only, #55 deleted it only. Config still shows verkyyi/agentfolio (301→tokenman). 3rd attempt via new .proposed-change.md. |
+| ~~evolve_config stale source fix~~ | #57 | — | **FIXED** | — | Directly edited evolve_config.md line 33: agentfolio→tokenman. |
 
 ## Stalled (no automated path forward)
 | Item | Weeks Stalled | Attempts | Blocker |
@@ -26,6 +26,7 @@
 ## Completed
 | Feature | Issue | PR | Completed |
 |---------|-------|-----|-----------|
+| evolve_config stale source fix (direct edit) | #57 | — | 2026-04-10 (directly edited evolve_config.md: agentfolio→tokenman. Closes #57.) |
 | evolve-config-direct-fix (incomplete) | — | #55 | 2026-04-09 (merged 19:56Z, but config NOT updated — deleted .proposed-change.md only) |
 | Watcher silent-clear mode | — | #53 | 2026-04-09 (merged 08:05Z, expected ~80% watcher noise reduction) |
 | Emergency log truncation (proposed change) | — | #52 | 2026-04-09 (merged, execution of truncation pending) |

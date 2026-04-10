@@ -1,1 +1,1 @@
-fix(workflow): add error handling to analyze.yml for awk trim and CLI exit failures (closes #46)
+fix: update stale research source agentfolio→tokenman in evolve_config (closes #57)
