@@ -1817,3 +1817,7 @@
 2026-04-10T00:32:21Z | quarto-dev/quarto-cli | Fix CI step swallowing quarto list tools errors (04-09T15:34Z, Christophe Dervieux) — CI reliability improvement | no action
 2026-04-10T00:32:21Z | openai-harness-blog | Cloudflare-blocked (80+ days) | no action
 2026-04-10T00:32:21Z | pipeline-health | 10 failed runs checked (watcher 04-08, analyze 04-02/04-03, evolve 03-31, pages 03-27), all ALREADY-FIXED — all workflows currently healthy | 0 issues created
+2026-04-10T01:39:03Z | verkyyi/agentfolio | 301 redirect to tokenman — config still stale, latest commit: state update 04-10T01:05Z | no action (HUMAN_ACTIVE)
+2026-04-10T01:39:03Z | quarto-dev/quarto-cli | CI fix: error handling for quarto list tools step (04-09) | no action
+2026-04-10T01:39:03Z | openai-harness-blog | Cloudflare-blocked (83+ days) | no action
+2026-04-10T01:39:03Z | pipeline-health | 10 failed runs checked (all ALREADY-FIXED: watcher 04-08, analyze 04-02/03, evolve 03-31, pages 03-27), 0 issues created | all workflows healthy
