@@ -42,20 +42,20 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~1040h), zero human activity 40+ days
 - 33 growth runs total. Awesome-list targets: awesome-claude-code (37.8K), awesome-ai-agents (27.2K).
 
-## System Health (last watcher: 2026-04-10T11:51Z, last analysis: 2026-04-10T12:21Z)
-- Self-Evolve: healthy (11:19Z 04-10, 98+ consecutive HUMAN_ACTIVE no-ops)
+## System Health (last watcher: 2026-04-10T12:50Z, last analysis: 2026-04-10T12:21Z)
+- Self-Evolve: healthy (12:19Z 04-10, 99+ consecutive HUMAN_ACTIVE no-ops)
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
-- pages-build-deployment: healthy (11:21Z 04-10)
-- Weekly Analysis (analyze.yml): healthy (12:21Z 04-10, W27 analysis complete)
+- pages-build-deployment: healthy (12:26Z 04-10)
+- Weekly Analysis (analyze.yml): healthy (12:19Z+12:26Z 04-10, W27 analysis complete)
 - Growth Strategist: healthy (09:31Z 04-10, v0.3.0 measuring)
 - Reviewer Agent: healthy (08:06Z 04-10, merged PR #59)
 - Coder Agent: healthy (06:13Z 04-10, fix #57 via #58)
 - Triage: healthy (06:12Z 04-10, triaged #57)
-- Token utilization: healthy, claude-opus-4-6, 375 usage_log pts, 0 max-turns, 0 rate-limit, 0 fallbacks
+- Token utilization: healthy, claude-opus-4-6, 377 usage_log pts, 0 max-turns, 0 rate-limit, 0 fallbacks
 - No failures in last 6h. All workflows operational.
-- 11 PRs needs-human (all merge-blocked). 2 issues (#24, #2) open.
-- Log sizes: agent_log ~604KB (2.36x limit, EXCEEDED), research_log ~276KB (EXCEEDED)
-- .proposed-change.md: bypass-phantom-pr-for-auto-state (pending)
+- 11 PRs needs-human (all merge-blocked) + PR #60 (phantom PR, under 1h threshold). 2 issues (#24, #2) open.
+- Log sizes: agent_log ~612KB (2.39x limit, EXCEEDED), research_log ~276KB (EXCEEDED)
+- PR #60: phantom PR from analyze workflow — only contains .proposed-change.md, title "---" (bypass-phantom-pr-for-auto-state proposal)
 
 ## Open Issues
 - #24 [growth] Submit to awesome-claude-code lists — needs-human, growth-action
