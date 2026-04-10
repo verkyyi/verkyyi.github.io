@@ -1,6 +1,6 @@
 # Feature Status
 <!-- Updated by weekly analysis. AUTO-tier state file. -->
-<!-- Last updated: 2026-04-10T00:32Z (week 25 analysis) -->
+<!-- Last updated: 2026-04-10T06:41Z (week 26 analysis) -->
 
 ## In Progress
 | Feature | Issue | PR | Status | Blocked Since | Blocker |
@@ -12,16 +12,17 @@
 | Log archival in analyze | — | #48 | needs-human | 2026-04-04 | Reviewer approved via comment but merge-blocked by conflicts |
 | Aggressive log truncation | — | #51 | needs-human | 2026-04-04 | 2 formal reviews, merge-blocked by conflicts |
 | Auto-rebase capability | — | #50 | needs-human | 2026-04-04 | Comment-only review, merge-blocked by conflicts |
-| tokenman v0.5.0 upgrade | — | — | pending | 2026-04-07 | v0.5.0 detected 10:25Z 04-07 (jumped from v0.4.0). Upgrade issue pending next evolve run. 3+ days unacted. |
+| tokenman v0.5.0 upgrade | — | — | pending | 2026-04-07 | v0.5.0 detected 10:25Z 04-07 (jumped from v0.4.0). Upgrade issue pending. 3+ days unacted. |
+| Direct log truncation | — | — | proposed | 2026-04-10 | .proposed-change.md written: truncate logs to 200 entries each (AUTO-tier, bypasses merge-blocked PRs). |
 | ~~evolve_config stale source fix~~ | #57 | — | **FIXED** | — | Directly edited evolve_config.md line 33: agentfolio→tokenman. |
 
 ## Stalled (no automated path forward)
 | Item | Weeks Stalled | Attempts | Blocker |
 |------|--------------|----------|---------|
-| Cron frequency reduction | 24 | 10+ PRs | Circular deadlock: hourly cron → state commits → merge conflicts → PR failure. Human must edit evolve.yml + watcher.yml directly. |
+| Cron frequency reduction | 25 | 10+ PRs | Circular deadlock: hourly cron → state commits → merge conflicts → PR failure. Human must edit evolve.yml + watcher.yml directly. |
 | Repo topics | 16 | 1 API call | GITHUB_TOKEN lacks admin scope. Human must set manually. |
 | Redundant PR cleanup (#5, #11, #16) | 14-16 | 0 | Human must close. |
-| Log archival (operational) | 8 | 5 PRs (#39, #42, #48, #50, #51) | All 5 reviewed/approved, all 5 merge-blocked. agent_log 588KB (2.3x limit), research_log 268KB (EXCEEDED limit — UNREADABLE). Log sizes plateaued but still exceeded. |
+| Log archival (operational) | 9 | 5 PRs (#39, #42, #48, #50, #51) | All 5 reviewed/approved, all 5 merge-blocked. agent_log 606KB (2.37x limit), research_log 275KB (EXCEEDED — UNREADABLE). Plateau broken, logs growing again. Direct truncation proposed. |
 
 ## Completed
 | Feature | Issue | PR | Completed |
