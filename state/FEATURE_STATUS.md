@@ -1,6 +1,6 @@
 # Feature Status
 <!-- Updated by weekly analysis. AUTO-tier state file. -->
-<!-- Last updated: 2026-04-11T12:15Z (week 29 analysis) -->
+<!-- Last updated: 2026-04-11T18:13Z (week 30 analysis) -->
 
 ## In Progress
 | Feature | Issue | PR | Status | Blocked Since | Blocker |
@@ -13,15 +13,15 @@
 | Aggressive log truncation | — | #51 | needs-human | 2026-04-04 | 2 formal reviews, merge-blocked by conflicts |
 | Auto-rebase capability | — | #50 | needs-human | 2026-04-04 | Comment-only review, merge-blocked by conflicts |
 | tokenman v0.5.0 upgrade | — | — | pending | 2026-04-07 | v0.5.0 detected 10:25Z 04-07 (jumped from v0.4.0). Upgrade issue pending. 4+ days unacted. |
-| Recurring log truncation | — | — | proposed | 2026-04-10 | One-time truncation done W28. Logs regrowing at ~32KB/day. Need issue→coder pathway for recurring mechanism. |
+| Recurring log truncation | — | #63 | proposed | 2026-04-10 | One-time truncation done W28. Logs regrowing at ~46KB/day (accelerating). PR #63 merged (proposed creating issue for coder). agent_log 1.9 days to 256KB limit. |
 
 ## Stalled (no automated path forward)
 | Item | Weeks Stalled | Attempts | Blocker |
 |------|--------------|----------|---------|
-| Cron frequency reduction | 26 | 10+ PRs | Circular deadlock: hourly cron → state commits → merge conflicts → PR failure. Human must edit evolve.yml + watcher.yml directly. |
+| Cron frequency reduction | 26 | 10+ PRs | Circular deadlock: hourly cron → state commits → merge conflicts → PR failure. Human must edit evolve.yml + watcher.yml directly. ROOT CAUSE of log growth, commit volume, and all merge-blocked PRs. |
 | Repo topics | 17 | 1 API call | GITHUB_TOKEN lacks admin scope. Human must set manually. |
 | Redundant PR cleanup (#5, #11, #16) | 15-17 | 0 | Human must close. |
-| Phantom PR pattern | 4 | 7 phantom PRs (#54, #55, #56, #59, #60 + prior) | Circular: proposals to fix the pattern also phantom-merge. Only coder direct edits via issues work. |
+| Phantom PR pattern | 5 | 7 phantom PRs (#54, #55, #56, #59, #60 + prior) | Circular: proposals to fix the pattern also phantom-merge. Only coder direct edits via issues work. Rate improving (71→63%). |
 
 ## Completed
 | Feature | Issue | PR | Completed |

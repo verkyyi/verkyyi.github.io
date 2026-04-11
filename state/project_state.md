@@ -3,32 +3,32 @@
 ## Current Focus
 Portfolio landing page — site needs a root index.html (issue #2).
 
-## Priorities (from weekly analysis 2026-04-11T12:15Z, week 29)
-1. **P0: Log truncation recurrence — create issue for coder** — Logs regrowing at ~32KB/day combined (agent_log 161KB, research_log 40KB). At current rate, both hit 256KB Read limit in ~5-6 days. W28 one-time truncation successful but not recurring. Issue→coder pathway is only proven fix mechanism. Create issue requesting coder add truncation logic or perform periodic truncation.
-2. **P0: Cron frequency — requires human manual edit** — 26th consecutive week. Proven circular deadlock: hourly cron → ~100 state commits/day → merge conflicts on every PR branch. Human must manually edit evolve.yml and watcher.yml cron schedules directly on main.
-3. **P0: Human must act on PR backlog** — 11 PRs needs-human. 5 PRs reviewed/approved but merge-blocked by conflicts (#39, #42, #48, #50, #51). PR #4 (landing page) blocked ~1080h (45+ days). PRs #5/#11/#16 are REDUNDANT — close them. 42+ days zero human activity.
+## Priorities (from weekly analysis 2026-04-11T18:13Z, week 30)
+1. **P0: Agent log hits 256KB limit in ~1.9 days** — agent_log 169KB growing at ~29KB/day. research_log 45KB at ~17KB/day. Combined ~46KB/day (accelerating from W29 estimate of 32KB/day). W28 direct truncation was one-time. Weekly analysis must truncate again before next run or agent_log becomes unreadable by tooling.
+2. **P0: Cron frequency — requires human manual edit** — 26th consecutive week. Proven circular deadlock: hourly cron → ~100 state commits/day → merge conflicts on every PR branch. Human must manually edit evolve.yml and watcher.yml cron schedules directly on main. Root cause of log growth, commit volume, and merge-blocked PRs.
+3. **P0: Human must act on PR backlog** — 12 PRs needs-human. 5 PRs reviewed/approved but merge-blocked by conflicts (#39, #42, #48, #50, #51). PR #4 (landing page) blocked ~1100h (45+ days). PRs #5/#11/#16 are REDUNDANT — close them. 42+ days zero human activity.
 4. **P1: tokenman v0.5.0 upgrade** — v0.5.0 detected 10:25Z 04-07 (jumped from v0.4.0). Upgrade issue pending creation. 4+ days unacted.
-5. **P1: Close redundant PRs (#5, #11, #16)** — 14-16 weeks stale, superseded by later work. Human must close.
-6. **P2: openai-harness-blog still checked by discover** — Cloudflare-blocked 93+ days. Removed from evolve_config research sources (PR #14) but discover workflow still hits it. Wasting API calls.
-7. **P2: v0.3.0 impact assessment complete** — 0 stars, 0 forks at 48h+. 3/3 releases with zero traction confirmed.
-8. **P2: Set repo topics** — GITHUB_TOKEN lacks admin scope. Growth prerequisite (2/4 met). Suggested: github-pages, autonomous-agents, claude-code, github-actions.
-9. **P3: Activate unused workflows** — discover, feedback-learner, claude-task have never been triggered.
-10. **P3: Node.js 20→24 migration** — GitHub Actions forcing Node 24 by June 2026. ~2 months runway.
+5. **P1: Recurring log truncation mechanism** — W28 one-time truncation successful. PR #63 merged (proposed creating issue for coder). Logs regrowing at ~46KB/day. Need issue→coder pathway for recurring truncation.
+6. **P2: Reduce watcher log verbosity** — watcher generates ~16 all-clear entries/day (~7KB/day agent_log growth). Proposed: daily digest mode to replace per-run entries. Would cut agent_log growth ~60%.
+7. **P2: Set repo topics** — GITHUB_TOKEN lacks admin scope. Growth prerequisite (2/4 met). Suggested: github-pages, autonomous-agents, claude-code, github-actions.
+8. **P3: Activate unused workflows** — discover, feedback-learner, claude-task have never been triggered.
+9. **P3: Node.js 20→24 migration** — GitHub Actions forcing Node 24 by June 2026. ~2 months runway.
+10. **P3: openai-harness-blog still checked by discover** — Cloudflare-blocked 95+ days. Wasting API calls.
 
-## Week 29 Summary (2026-04-04 to 2026-04-11)
-- **708 commits** (101/day), 699 state (98.7%), 9 substantive
-- **Commit breakdown**: watcher 322 (45.5%), evolve 328 (46.3%), growth 29 (4.1%), analysis 28 (4.0%)
-- **7 PRs merged**: #49 inline-truncation (04-04), #52 emergency-truncation (04-09), #53 watcher-silent-clear (04-09), #54-#56 phantom (04-09/10), #58 evolve-config-fix (04-10), #59-#60 phantom (04-10), #61 research-log-truncation (04-10)
-- **5 of 7 proposed-change PRs phantom** (71%) — #54/#55/#56/#59/#60 merged without implementing intended change
+## Week 30 Summary (2026-04-04 to 2026-04-11)
+- **709 commits** (101/day), 699 state (98.6%), 10 substantive
+- **Commit breakdown**: watcher 321 (45.3%), evolve 320 (45.1%), growth 28 (3.9%), analysis 28 (3.9%), other 12 (1.7%)
+- **8 PRs merged**: #52 emergency-truncation (04-09), #53 watcher-silent-clear (04-09), #54/#55/#56 phantom (04-09/10), #58 evolve-config-fix (04-10), #59/#60 phantom (04-10), #61 research-log-truncation (04-10), #63 issue-for-log-truncation (04-11)
+- **5 of 8 proposed-change PRs phantom** (63%) — #54/#55/#56/#59/#60 merged without implementing intended change
 - **evolve_config FIXED** — agentfolio→tokenman via coder direct edit (issue #57 → PR #58). Pipeline self-healing validated end-to-end: watcher→issue→triage→coder→fix in <3h
-- **Log crisis RESOLVED but regrowing** — agent_log 616→140KB (W28) → now 161KB (+21KB/day). research_log 276→28KB (W28) → now 40KB (+12KB/day). ~5-6 days until 256KB limit hit again.
-- **0 pipeline failures all week** — all 10 historical failures ALREADY-FIXED. No corrective actions needed (except PR re-triggers for reviewer).
+- **Log crisis RESOLVED but regrowing FASTER** — agent_log 616→140KB (W28) → now 169KB. research_log 276→28KB (W28) → now 45KB. Growth rate ~46KB/day combined (accelerating from 32KB/day). agent_log hits 256KB in ~1.9 days.
+- **0 pipeline failures all week** — 2nd consecutive perfect week. All 10 historical failures ALREADY-FIXED.
 - **v0.3.0 final measurement** — 0 impact at 48h+ (3/3 releases confirmed zero traction)
-- **119+ consecutive evolve HUMAN_ACTIVE no-ops** — system completely idle
+- **125+ consecutive evolve HUMAN_ACTIVE no-ops** — system completely idle
 - **42+ days zero human activity** — extends longest streak
-- **.proposed-change.md: issue-for-recurring-log-truncation** — create issue so coder agent can implement recurring truncation (proven pathway)
-- **Phantom PR pattern circular (confirmed W28)** — only issue→coder direct edits produce real changes
-- **14th consecutive week at autonomous improvement ceiling**
+- **.proposed-change.md: watcher-daily-digest** — replace per-run all-clear entries with daily summary to cut agent_log growth ~60%
+- **Phantom PR pattern persistent but declining** (71→63%) — only issue→coder direct edits produce real changes
+- **15th consecutive week at autonomous improvement ceiling**
 
 ## Growth Status (last run: 2026-04-11T18:00Z)
 - Phase: pre-growth (0 stars, 0 forks). v0.3.0 measurement concluded — all 3 releases confirmed zero traction.
@@ -107,4 +107,4 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - **Autonomous improvement ceiling confirmed 14th consecutive week — phantom PR pattern circular, only issue→coder pathway produces real changes**
 
 ## Week-over-Week Trends
-- Week 28→29: Commits FLAT (707→708, 101/day). State ratio FLAT (98.6→98.7%). Substantive DOWN (10→9, fewer phantom PRs). PRs merged DOWN (10→7). Merge-blocked PRs STABLE at 5 (+PR #62 new). **LOGS REGROWING** (agent_log 140→161KB, research_log 28→40KB — ~32KB/day combined, 5-6 days to limit). Human inactivity UP (40→42+ days). Evolve no-ops UP (104→119+). Growth: v0.3.0 final measurement confirmed zero impact. Pipeline PERFECT (0 failures, second consecutive clean week). Phantom PRs PERSISTENT (5/7 = 71%, up from 5/6 = 83%). evolve_config fix sustained (PR #58). Issue→coder pathway confirmed as only reliable change mechanism. 14th consecutive week at autonomous ceiling.
+- Week 29→30: Commits FLAT (708→709, 101/day). State ratio STABLE (98.7→98.6%). Substantive UP (9→10, +PR #63). PRs merged UP (7→8, +#63). Merge-blocked PRs STABLE at 5 (+PR #62 new). **LOG GROWTH ACCELERATING** (agent_log 161→169KB, research_log 40→45KB — ~46KB/day combined, UP from 32KB/day, agent_log 1.9 days to limit). Human inactivity STABLE (42+ days). Evolve no-ops UP (119→125+). Growth: v0.3.0 final measurement confirmed zero impact (3/3 releases). Pipeline PERFECT (0 failures, 2nd consecutive clean week). Phantom PRs IMPROVING (71→63%). evolve_config fix sustained (PR #58). Issue→coder pathway remains only reliable change mechanism. 15th consecutive week at autonomous ceiling. Key new signal: log growth rate accelerating despite W28 truncation — hourly cron is the root cause.
