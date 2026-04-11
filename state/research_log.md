@@ -151,6 +151,7 @@
 2026-04-10T05:02:43Z | quarto-dev/quarto-cli | f86a0bb CI fix for quarto list tools error swallowing (04-09, unchanged) | no action
 2026-04-10T05:02:43Z | openai-harness-blog | Cloudflare-blocked 84d+ | no action
 2026-04-10T05:02:43Z | pipeline-health | 10 failed runs checked, all ALREADY-FIXED (watcher 04-08, weekly-analysis 04-02/03, self-evolve 03-31, pages 03-27), 0 issues created | HUMAN_ACTIVE log-only
+<<<<<<< HEAD
 2026-04-10T06:40:24Z | verkyyi/tokenman | 712771e state watcher commit (05:24Z) — state churn only, no substantive changes | no action
 2026-04-10T06:40:24Z | quarto-dev/quarto-cli | f86a0bb CI fix for swallowing errors (unchanged since 04-09) | no action
 2026-04-10T06:40:24Z | openai-harness-blog | Cloudflare blocked (85+ days) | no action
@@ -261,3 +262,5 @@
 2026-04-11T06:25Z | pipeline-health | 10 failed runs all ALREADY-FIXED (Watcher 04-08, Analysis 04-02/03, Evolve 03-31, Pages 03-27), 0 actionable | no action
 2026-04-11T06:25Z | growth-metrics | stars:0 forks:0 watchers:1 issues:13 views:N/A(403) uniques:N/A(403) | no change (17th consecutive), traffic API inaccessible
 2026-04-11T06:25Z | human-intent | 0 human-created issues in last 7d — 42+ days zero human activity | no action
+=======
+>>>>>>> 0030196 (state: weekly analysis W29 — log regrowth critical, truncated again)
