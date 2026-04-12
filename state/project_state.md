@@ -36,20 +36,20 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~1190h), zero human activity 44+ days
 - 36 growth runs total. 29 consecutive no-action. Awesome-list targets: awesome-claude-code (38.0K), awesome-claude-code-subagents (17.0K).
 
-## System Health (last watcher: 2026-04-12T07:55Z, last analysis: 2026-04-12T06:30Z)
-- Self-Evolve: healthy (07:32Z 04-12, 138+ consecutive HUMAN_ACTIVE no-ops)
+## System Health (last watcher: 2026-04-12T08:50Z, last analysis: 2026-04-12T06:30Z)
+- Self-Evolve: healthy (08:19Z 04-12, 139+ consecutive HUMAN_ACTIVE no-ops)
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
-- pages-build-deployment: healthy (07:33Z 04-12)
-- Weekly Analysis (analyze.yml): healthy (06:34Z 04-12, W32 analysis + log truncation, PR #66 created)
+- pages-build-deployment: healthy (08:21Z 04-12)
+- Weekly Analysis (analyze.yml): healthy (06:34Z 04-12, W32 analysis + log truncation)
 - Growth Strategist: healthy (18:14Z 04-11)
-- Reviewer Agent: healthy (02:23Z 04-12, re-triggered for PR #66 at 07:55Z)
+- Reviewer Agent: healthy (07:55Z 04-12, reviewed+merged PR #66)
 - Coder Agent: healthy (06:13Z 04-10, fix #57 via #58)
 - Triage: healthy (06:12Z 04-10, triaged #57)
-- Token utilization: healthy, claude-opus-4-6, 369 usage_log pts, 0 max-turns, 0 rate-limit, 0 fallbacks
+- Token utilization: healthy, claude-opus-4-6, 371 usage_log pts, 0 max-turns, 0 rate-limit, 0 fallbacks
 - No failures in last 7 days. All workflows operational.
-- 12 PRs open: PR #66 needs-review (reviewer triggered), 11 needs-human/merge-blocked. 44+ day backlog.
+- 12 PRs open, all needs-human/merge-blocked. 44+ day backlog.
 - 2 issues (#24, #2) open, triaged (legacy format), terminal needs-human.
-- Log sizes: agent_log ~113KB, research_log ~31KB. Growth rate ~40KB/day combined. ~3 days to next truncation.
+- Log sizes: agent_log ~116KB, research_log ~31KB. Growth rate ~40KB/day combined. ~2.5 days to next truncation.
 
 ## Open Issues
 - #24 [growth] Submit to awesome-claude-code lists — needs-human, growth-action
@@ -70,10 +70,12 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #19 Fix cron frequency — needs-human (escalated 03-27)
 - #16 Reduce cron frequency — REDUNDANT (close)
 - #11 Fix analyze.yml branch collision — REDUNDANT (close)
+- #10 Fix watcher-created issues missing auto-triage — needs-human (reviewer commented, merge-blocked)
 - #5 Add missing file guards to growth.yml — REDUNDANT (close)
 - #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~1190h)
 
 ## Recently Closed PRs
+- #66 analyze/W32 — MERGED (04-12T07:55Z, state updates)
 - #65 research-source-cleanup — MERGED (04-12T02:25Z, PHANTOM: .proposed-change.md deleted but openai-harness-blog still hardcoded in prompts)
 - #64 watcher-daily-digest — MERGED (04-11, proposed change)
 - #63 log-truncation-issue — MERGED (04-11, proposed change)
