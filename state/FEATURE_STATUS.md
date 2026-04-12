@@ -1,6 +1,6 @@
 # Feature Status
 <!-- Updated by weekly analysis. AUTO-tier state file. -->
-<!-- Last updated: 2026-04-12T06:30Z (week 32 analysis) -->
+<!-- Last updated: 2026-04-12T12:00Z (week 33 analysis) -->
 
 ## In Progress
 | Feature | Issue | PR | Status | Blocked Since | Blocker |
@@ -12,17 +12,17 @@
 | Log archival in analyze | — | #48 | needs-human | 2026-04-04 | Reviewer approved via comment but merge-blocked by conflicts |
 | Aggressive log truncation | — | #51 | needs-human | 2026-04-04 | 2 formal reviews, merge-blocked by conflicts |
 | Auto-rebase capability | — | #50 | needs-human | 2026-04-04 | Comment-only review, merge-blocked by conflicts |
-| tokenman v0.5.0 upgrade | — | — | pending | 2026-04-07 | v0.5.0 detected 10:25Z 04-07 (jumped from v0.4.0). Upgrade issue pending. 12+ days unacted. |
+| tokenman v0.5.0 upgrade | — | — | pending | 2026-04-07 | v0.5.0 detected 10:25Z 04-07 (jumped from v0.4.0). Upgrade issue pending. 13+ days unacted. |
 | Recurring log truncation | — | #63 | proposed | 2026-04-10 | PR #63 merged (proposed creating issue for coder). W32 analysis performed manual truncation (agent_log 154→111KB). Logs regrow at ~40KB/day. |
 
 ## Stalled (no automated path forward)
 | Item | Weeks Stalled | Attempts | Blocker |
 |------|--------------|----------|---------|
-| Cron frequency reduction | 28 | 10+ PRs | Circular deadlock: hourly cron → state commits → merge conflicts → PR failure. Human must edit evolve.yml + watcher.yml directly. ROOT CAUSE of log growth, commit volume, and all merge-blocked PRs. |
+| Cron frequency reduction | 28 | 10+ PRs | Circular deadlock: hourly cron → state commits → merge conflicts → PR failure. Human must edit evolve.yml + watcher.yml directly. ROOT CAUSE of log growth, commit volume, and all merge-blocked PRs. 28th week. |
 | Repo topics | 19 | 1 API call | GITHUB_TOKEN lacks admin scope. Human must set manually. |
 | Redundant PR cleanup (#5, #11, #16) | 17-19 | 0 | Human must close. |
 | Phantom PR pattern | 7 | 8+ phantom PRs | Rate worsening (45→50%). Only coder direct edits via issues work. PR #65 confirmed: .proposed-change.md approach cannot modify workflow YAML. |
-| openai-harness-blog removal | 14+ | PR #65 phantom | Cloudflare-blocked 99+ days. Still checked hourly by evolve. PR #65 merged but only deleted .proposed-change.md — hardcoded refs in workflow YAML unchanged. ~168 wasted entries/week. |
+| openai-harness-blog removal | 14+ | PR #65 phantom | Cloudflare-blocked 100+ days (milestone). Still checked hourly by evolve. PR #65 phantom-merged. ~168 wasted entries/week (~2,400+ total). W33 proposes issue→coder pathway. |
 
 ## Completed
 | Feature | Issue | PR | Completed |
