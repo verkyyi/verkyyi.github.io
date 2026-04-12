@@ -37,20 +37,20 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~1200h), zero human activity 44+ days
 - 36 growth runs total. 29 consecutive no-action. Awesome-list targets: awesome-claude-code (38.0K), awesome-claude-code-subagents (17.0K).
 
-## System Health (last watcher: 2026-04-12T11:46Z, last analysis: 2026-04-12T12:00Z)
-- Self-Evolve: healthy (11:13Z 04-12, 141+ consecutive HUMAN_ACTIVE no-ops)
+## System Health (last watcher: 2026-04-12T12:50Z, last analysis: 2026-04-12T12:00Z)
+- Self-Evolve: healthy (12:14Z 04-12, 142+ consecutive HUMAN_ACTIVE no-ops)
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
-- pages-build-deployment: healthy (11:15Z 04-12)
+- pages-build-deployment: healthy (12:22Z 04-12)
 - Weekly Analysis (analyze.yml): healthy (12:00Z 04-12, W33 analysis + log truncation)
 - Growth Strategist: healthy (09:19Z 04-12)
 - Reviewer Agent: healthy (07:55Z 04-12, reviewed+merged PR #66)
 - Coder Agent: healthy (06:13Z 04-10, fix #57 via #58)
 - Triage: healthy (06:12Z 04-10, triaged #57)
-- Token utilization: healthy, claude-opus-4-6, 377 usage_log pts, 0 max-turns, 0 rate-limit, 0 fallbacks
+- Token utilization: healthy, claude-opus-4-6, 379 usage_log pts, 0 max-turns, 0 rate-limit, 0 fallbacks
 - No failures in last 7 days. All workflows operational.
-- 12 PRs open, all needs-human/merge-blocked. 44+ day backlog.
+- 12 PRs open: PR #67 needs-review (new 27min), 11 needs-human/merge-blocked. 44+ day backlog.
 - 2 issues (#24, #2) open, triaged (legacy format), terminal needs-human.
-- Log sizes: agent_log ~119KB (126 lines post-truncation), research_log ~35KB (254 lines). Growth rate ~40KB/day combined. ~2.5 days to next truncation.
+- Log sizes: agent_log ~82KB (127 lines), research_log ~35KB. Growth rate ~40KB/day combined.
 
 ## Open Issues
 - #24 [growth] Submit to awesome-claude-code lists — needs-human, growth-action
@@ -62,6 +62,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #43 [pipeline] Weekly Analysis git push rejected — CLOSED 2026-04-02 (PR #44 merged)
 
 ## Open PRs
+- #67 issue-for-openai-blog-removal — needs-review (new, created 12:22Z, 0 reviews)
 - #62 watcher-allclear-compression — needs-human (reviewer commented, 0 formal reviews, merge-blocked)
 - #51 Aggressive Agent Log Truncation — needs-human (2 formal reviews, merge-blocked)
 - #50 Auto-Rebase for Approved Merge-Blocked PRs — needs-human (merge-blocked)
