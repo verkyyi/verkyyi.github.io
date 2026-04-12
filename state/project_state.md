@@ -3,57 +3,57 @@
 ## Current Focus
 Portfolio landing page — site needs a root index.html (issue #2).
 
-## Priorities (from weekly analysis 2026-04-12T00:00Z, week 31)
-1. **P0: Recurring log truncation** — agent_log 147KB (truncated this run from 178KB), research_log 28KB (from 49KB). Growth rate ~39KB/day combined (down from 46KB/day W30). Analysis must truncate every run. Next truncation needed ~2.5 days. Structural fix requires cron reduction.
-2. **P0: Cron frequency — requires human manual edit** — 27th consecutive week. Proven circular deadlock: hourly cron → ~100 state commits/day → merge conflicts on every PR branch. Human must manually edit evolve.yml and watcher.yml cron schedules directly on main. Root cause of log growth, commit volume, and merge-blocked PRs.
-3. **P0: Human must act on PR backlog** — 12 PRs needs-human. 5 PRs reviewed/approved but merge-blocked by conflicts (#39, #42, #48, #50, #51). PR #4 (landing page) blocked ~1140h (47+ days). PRs #5/#11/#16 are REDUNDANT — close them. 43+ days zero human activity.
-4. **P1: tokenman v0.5.0 upgrade** — v0.5.0 detected 10:25Z 04-07 (jumped from v0.4.0). Upgrade issue pending creation. 5+ days unacted.
-5. **P1: Remove openai-harness-blog from research sources** — Cloudflare-blocked 97+ days. Generates ~4 wasted research entries per hourly run. Removing would cut research_log growth ~25%.
-6. **P2: Reduce watcher log verbosity** — PR #64 watcher-daily-digest merged. Monitoring whether entries are actually shorter. If phantom, need re-attempt via issue→coder.
+## Priorities (from weekly analysis 2026-04-12T06:30Z, week 32)
+1. **P0: Recurring log truncation** — agent_log 111KB (truncated this run from 154KB), research_log 31KB. Growth rate ~40KB/day combined (stable vs W31). Analysis must truncate every run. Next truncation needed ~2.5 days. Structural fix requires cron reduction.
+2. **P0: Cron frequency — requires human manual edit** — 28th consecutive week. Proven circular deadlock: hourly cron → ~100 state commits/day → merge conflicts on every PR branch. Human must manually edit evolve.yml and watcher.yml cron schedules directly on main. Root cause of log growth, commit volume, and merge-blocked PRs.
+3. **P0: Human must act on PR backlog** — 12 PRs needs-human. 5 PRs reviewed/approved but merge-blocked by conflicts (#39, #42, #48, #50, #51). PR #4 (landing page) blocked ~1190h (49+ days). PRs #5/#11/#16 are REDUNDANT — close them. 44+ days zero human activity.
+4. **P1: tokenman v0.5.0 upgrade** — v0.5.0 detected 10:25Z 04-07 (jumped from v0.4.0). Upgrade issue pending creation. 12+ days unacted.
+5. **P1: Remove openai-harness-blog from workflow prompts** — Cloudflare-blocked 99+ days. PR #65 phantom-merged (only deleted .proposed-change.md). Still hardcoded in evolve.yml prompts. Generates ~168 wasted research entries per week. Proposed: issue→coder pathway.
+6. **P2: Reduce watcher log verbosity** — PR #64 watcher-daily-digest merged. PR #53 watcher-silent-clear merged. Monitoring whether entries are actually shorter — so far no observable change (may be phantom).
 7. **P2: Set repo topics** — GITHUB_TOKEN lacks admin scope. Growth prerequisite (2/4 met). Suggested: github-pages, autonomous-agents, claude-code, github-actions.
 8. **P3: Activate unused workflows** — discover, feedback-learner, claude-task have never been triggered.
-9. **P3: Node.js 20→24 migration** — GitHub Actions forcing Node 24 by June 2026. ~7 weeks runway.
-10. **P3: openai-harness-blog still checked by discover** — Cloudflare-blocked 97+ days. Wasting API calls.
+9. **P3: Node.js 20→24 migration** — GitHub Actions forcing Node 24 by June 2026. ~6 weeks runway.
+10. **P3: openai-harness-blog still checked by discover** — Cloudflare-blocked 99+ days. Wasting API calls.
 
-## Week 31 Summary (2026-04-05 to 2026-04-12)
-- **712 commits** (102/day), 699 state (98.2%), 13 non-state
-- **Commit breakdown**: watcher 324 (45.5%), evolve 326 (45.8%), growth 30 (4.2%), analysis 30 (4.2%)
-- **11 PRs merged**: #52 emergency-truncation, #53 watcher-silent-clear, #54/#55/#56 phantom, #58 evolve-config-fix, #59/#60 phantom, #61 research-log-truncation, #63 log-truncation-issue, #64 watcher-daily-digest
-- **5 of 11 proposed-change PRs phantom** (45%) — #54/#55/#56/#59/#60 merged without implementing intended change. DOWN from 63% W30.
-- **Log truncation performed by W31 analysis** — agent_log 178→147KB, research_log 49→28KB. 2nd consecutive weekly truncation. Growth rate ~39KB/day combined (down from 46KB/day).
-- **0 pipeline failures all week** — 3rd consecutive perfect week. All 10 historical failures ALREADY-FIXED.
-- **PR #64 watcher-daily-digest merged** — intended to replace per-run all-clear entries with daily summary. Effect TBD.
-- **131+ consecutive evolve HUMAN_ACTIVE no-ops** — system completely idle
-- **43+ days zero human activity** — extends longest streak
-- **.proposed-change.md: research-source-cleanup** — remove openai-harness-blog from discover/evolve source list
-- **Phantom PR pattern improving** (63→45%) — issue→coder remains only reliable change mechanism
-- **16th consecutive week at autonomous improvement ceiling**
+## Week 32 Summary (2026-04-05 to 2026-04-12)
+- **711 commits** (102/day), 699 state (98.3%), 12 non-state
+- **Commit breakdown**: watcher 324 (45.6%), evolve 326 (45.9%), growth 30 (4.2%), analysis 29 (4.1%)
+- **12 PRs merged**: #52 emergency-truncation, #53 watcher-silent-clear, #54/#55/#56 phantom, #58 evolve-config-fix, #59/#60 phantom, #61 research-log-truncation, #63 log-truncation-issue, #64 watcher-daily-digest, #65 research-source-cleanup (PHANTOM)
+- **6 of 12 proposed-change PRs phantom** (50%) — #54/#55/#56/#59/#60/#65 merged without implementing intended change. UP from 45% W31.
+- **Log truncation performed by W32 analysis** — agent_log 154→111KB (removed 56 ancient entries from 03-22 to 03-29). research_log 31KB stable. Growth rate ~40KB/day combined.
+- **0 pipeline failures all week** — 4th consecutive perfect week. All 10 historical failures ALREADY-FIXED.
+- **PR #65 research-source-cleanup merged (PHANTOM)** — only deleted .proposed-change.md, openai-harness-blog still hardcoded in workflow prompts. 7th phantom PR.
+- **136+ consecutive evolve HUMAN_ACTIVE no-ops** — system completely idle
+- **44+ days zero human activity** — extends longest streak
+- **.proposed-change.md: issue-for-openai-blog-removal** — create issue for coder to remove openai-harness-blog hardcoded refs
+- **Phantom PR pattern worsening** (45→50%) — issue→coder remains only reliable change mechanism
+- **17th consecutive week at autonomous improvement ceiling**
 
 ## Growth Status (last run: 2026-04-11T18:00Z)
 - Phase: pre-growth (0 stars, 0 forks). v0.3.0 measurement concluded — all 3 releases confirmed zero traction.
 - Prerequisites: 2/4 met (clean README, releases | missing: repo topics, landing page)
-- Issue #24 open: awesome-list submission instructions (needs-human, 43+ days)
-- Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~1140h), zero human activity 43+ days
-- 36 growth runs total. 28 consecutive no-action. Awesome-list targets: awesome-claude-code (38.0K), awesome-claude-code-subagents (17.0K).
+- Issue #24 open: awesome-list submission instructions (needs-human, 44+ days)
+- Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~1190h), zero human activity 44+ days
+- 36 growth runs total. 29 consecutive no-action. Awesome-list targets: awesome-claude-code (38.0K), awesome-claude-code-subagents (17.0K).
 
-## System Health (last watcher: 2026-04-12T06:06Z, last analysis: 2026-04-12T00:00Z)
+## System Health (last watcher: 2026-04-12T06:06Z, last analysis: 2026-04-12T06:30Z)
 - Self-Evolve: healthy (05:45Z 04-12, 136+ consecutive HUMAN_ACTIVE no-ops)
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
 - pages-build-deployment: healthy (05:47Z 04-12)
-- Weekly Analysis (analyze.yml): healthy (00:00Z 04-12, W31 analysis + log truncation)
+- Weekly Analysis (analyze.yml): healthy (06:30Z 04-12, W32 analysis + log truncation)
 - Growth Strategist: healthy (18:14Z 04-11)
 - Reviewer Agent: healthy (02:23Z 04-12, reviewed PR #65 → merged)
 - Coder Agent: healthy (06:13Z 04-10, fix #57 via #58)
 - Triage: healthy (06:12Z 04-10, triaged #57)
 - Token utilization: healthy, claude-opus-4-6, 363 usage_log pts, 0 max-turns, 0 rate-limit, 0 fallbacks
 - No failures in last 7 days. All workflows operational.
-- 12 PRs open: all needs-human/merge-blocked. 43+ day backlog.
+- 12 PRs open: all needs-human/merge-blocked. 44+ day backlog.
 - 2 issues (#24, #2) open, triaged (legacy format), terminal needs-human.
-- Log sizes: agent_log ~153KB, research_log ~28KB. Growth rate ~39KB/day combined. ~2 days to next truncation.
+- Log sizes: agent_log ~112KB, research_log ~31KB. Growth rate ~40KB/day combined. ~3 days to next truncation.
 
 ## Open Issues
 - #24 [growth] Submit to awesome-claude-code lists — needs-human, growth-action
-- #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked ~1140h
+- #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked ~1190h
 
 ## Closed Issues (recent)
 - #57 [pipeline] evolve_config 3x merge-without-fix — FIXED 2026-04-10 (coder direct edit, PR #58)
@@ -71,7 +71,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #16 Reduce cron frequency — REDUNDANT (close)
 - #11 Fix analyze.yml branch collision — REDUNDANT (close)
 - #5 Add missing file guards to growth.yml — REDUNDANT (close)
-- #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~1140h)
+- #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~1190h)
 
 ## Recently Closed PRs
 - #65 research-source-cleanup — MERGED (04-12T02:25Z, PHANTOM: .proposed-change.md deleted but openai-harness-blog still hardcoded in prompts)
@@ -90,22 +90,21 @@ Portfolio landing page — site needs a root index.html (issue #2).
 ## Key Observations
 - No apps/ directory — flat static site, not using Astro
 - Site has 2 project subdirs (6150/ survival analysis, Presentation/ chatbot) but no landing page
-- 712 commits this week (102/day), 98.2% state file updates — flat vs W30
+- 711 commits this week (102/day), 98.3% state file updates — flat vs W31
 - Log growth is top systemic risk — weekly truncation buying 2-3 days, not a sustainable fix
-- **PHANTOM PR PATTERN improving**: 5/11 (45%) this week, down from 63% W30 and 71% W29
+- **PHANTOM PR PATTERN worsening**: 6/12 (50%) this week, up from 45% W31
 - Only coder direct edits (via issue→coder, not proposed-change→PR) actually implement changes
-- 5 merge-blocked PRs (unchanged 11+ weeks) — backlog unresolvable without human
+- 5 merge-blocked PRs (unchanged 12+ weeks) — backlog unresolvable without human
 - Cron fix has failed via PR 10+ times — structural inability to modify workflow YAML via PR
-- No human activity in 43+ days — extends longest streak
-- tokenman v0.5.0 available (jumped from v0.4.0) — upgrade pending since 04-07 (5+ days)
-- evolve_config.md FIXED — now shows verkyyi/tokenman (PR #58, coder agent direct edit)
+- No human activity in 44+ days — extends longest streak
+- tokenman v0.5.0 available (jumped from v0.4.0) — upgrade pending since 04-07 (12+ days)
 - Pipeline self-healing validated end-to-end: watcher→issue→triage→coder→fix in <3h
 - v0.3.0 released 04-09, final measurement complete: 0 impact (3/3 releases zero traction)
-- Node.js 20 deprecation warning — forced migration to Node 24 by June 2026 (~7 weeks)
-- 0 pipeline failures all week — 3rd consecutive perfect week (best in project history)
-- 131+ consecutive evolve HUMAN_ACTIVE no-ops — system completely idle
-- **Autonomous improvement ceiling confirmed 16th consecutive week — phantom PR pattern slowly improving but root issues (cron, human absence) unchanged**
-- openai-harness-blog Cloudflare-blocked 97+ days — still checked hourly, pure waste of API calls
+- Node.js 20 deprecation warning — forced migration to Node 24 by June 2026 (~6 weeks)
+- 0 pipeline failures all week — 4th consecutive perfect week (best in project history)
+- 136+ consecutive evolve HUMAN_ACTIVE no-ops — system completely idle
+- **Autonomous improvement ceiling confirmed 17th consecutive week — phantom PR rate rising, root issues (cron, human absence) unchanged**
+- openai-harness-blog Cloudflare-blocked 99+ days — PR #65 phantom-merged, still checked hourly
 
 ## Week-over-Week Trends
-- Week 30→31: Commits FLAT (709→712, 102/day). State ratio STABLE (98.6→98.2%). Non-state UP (10→13, +#63/#64). PRs merged UP (8→11). Merge-blocked PRs STABLE at 5. **LOG GROWTH SLOWING** (agent_log 169→178KB at truncation, research_log 45→49KB — ~39KB/day combined, DOWN from 46KB/day W30). Human inactivity UP (42→43+ days). Evolve no-ops UP (125→131+). Growth: unchanged (0 traction, 28+ no-action runs). Pipeline PERFECT (3rd consecutive week). Phantom PRs IMPROVING (63→45%). PR #64 watcher-daily-digest merged (effect TBD). Issue→coder pathway remains only reliable change mechanism. 16th consecutive week at autonomous ceiling. Key signal: log growth rate slightly declining (possibly due to PR #53 silent-clear taking effect), but still requires weekly truncation. openai-harness-blog waste continues (97+ days blocked, ~4 entries/hourly run).
+- Week 31→32: Commits FLAT (712→711, 102/day). State ratio STABLE (98.2→98.3%). Non-state FLAT (12). PRs merged UP (11→12). Merge-blocked PRs STABLE at 5. **LOG GROWTH FLAT** (~39→40KB/day combined). Human inactivity UP (43→44+ days). Evolve no-ops UP (131→136+). Growth: unchanged (0 traction, 29+ no-action runs). Pipeline PERFECT (4th consecutive week). Phantom PRs UP (45→50%, PR #65 confirmed phantom). Issue→coder remains only reliable change mechanism. 17th consecutive week at autonomous ceiling. Key signal: PR #65 phantom confirms that .proposed-change.md approach cannot modify workflow YAML — all future workflow changes require human or issue→coder→PR. openai-harness-blog waste continues (99+ days, ~168 entries/week).
