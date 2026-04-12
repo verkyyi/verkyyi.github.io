@@ -37,18 +37,18 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~1200h), zero human activity 44+ days
 - 36 growth runs total. 29 consecutive no-action. Awesome-list targets: awesome-claude-code (38.0K), awesome-claude-code-subagents (17.0K).
 
-## System Health (last watcher: 2026-04-12T13:51Z, last analysis: 2026-04-12T12:00Z)
-- Self-Evolve: healthy (13:28Z 04-12, 143+ consecutive HUMAN_ACTIVE no-ops)
+## System Health (last watcher: 2026-04-12T14:49Z, last analysis: 2026-04-12T12:00Z)
+- Self-Evolve: healthy (14:16Z 04-12, 144+ consecutive HUMAN_ACTIVE no-ops)
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
-- pages-build-deployment: healthy (13:30Z 04-12)
+- pages-build-deployment: healthy (14:17Z 04-12)
 - Weekly Analysis (analyze.yml): healthy (12:00Z 04-12, W33 analysis + log truncation)
 - Growth Strategist: healthy (09:19Z 04-12)
-- Reviewer Agent: re-triggered for PR #67 (13:51Z 04-12, run 24308259883)
+- Reviewer Agent: healthy (13:51Z 04-12, reviewed PR #67 → merged)
 - Coder Agent: healthy (06:13Z 04-10, fix #57 via #58)
 - Triage: healthy (06:12Z 04-10, triaged #57)
-- Token utilization: healthy, claude-opus-4-6, 382 usage_log pts, 0 max-turns, 0 rate-limit, 0 fallbacks
+- Token utilization: healthy, claude-opus-4-6, 384 usage_log pts, 0 max-turns, 0 rate-limit, 0 fallbacks
 - No failures in last 7 days. All workflows operational.
-- 12 PRs open: PR #67 needs-review (reviewer triggered), 11 needs-human/merge-blocked. 44+ day backlog.
+- 12 PRs open: all needs-human/merge-blocked. PR #67 merged since last check. 44+ day backlog.
 - 2 issues (#24, #2) open, triaged (legacy format), terminal needs-human.
 - Log sizes: agent_log ~82KB, research_log ~35KB. Growth rate ~40KB/day combined.
 
@@ -62,7 +62,6 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #43 [pipeline] Weekly Analysis git push rejected — CLOSED 2026-04-02 (PR #44 merged)
 
 ## Open PRs
-- #67 issue-for-openai-blog-removal — needs-review (new, created 12:22Z, 0 reviews)
 - #62 watcher-allclear-compression — needs-human (reviewer commented, 0 formal reviews, merge-blocked)
 - #51 Aggressive Agent Log Truncation — needs-human (2 formal reviews, merge-blocked)
 - #50 Auto-Rebase for Approved Merge-Blocked PRs — needs-human (merge-blocked)
@@ -77,6 +76,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~1200h)
 
 ## Recently Closed PRs
+- #67 issue-for-openai-blog-removal — MERGED (04-12, reviewed and merged)
 - #66 analyze/W32 — MERGED (04-12T07:55Z, state updates)
 - #65 research-source-cleanup — MERGED (04-12T02:25Z, PHANTOM: .proposed-change.md deleted but openai-harness-blog still hardcoded in prompts)
 - #64 watcher-daily-digest — MERGED (04-11, proposed change)
