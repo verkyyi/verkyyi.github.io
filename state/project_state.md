@@ -37,17 +37,17 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~1250h), zero human activity 46+ days
 - 38 growth runs total. 30 consecutive no-action. Awesome-list targets: awesome-claude-code (38.4K), awesome-claude-code-subagents (17.1K).
 
-## System Health (last watcher: 2026-04-13T15:05Z, last analysis: 2026-04-13T12:00Z)
-- Self-Evolve: healthy (14:36Z 04-13, 165+ consecutive HUMAN_ACTIVE no-ops)
+## System Health (last watcher: 2026-04-13T16:00Z, last analysis: 2026-04-13T12:00Z)
+- Self-Evolve: 1 transient failure (15:32Z, exit code 1 after 14s — likely rate limit/auth). Previous 9 runs successful. Not 3 consecutive — no action.
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
-- pages-build-deployment: healthy (14:40Z 04-13)
+- pages-build-deployment: healthy (15:06Z 04-13)
 - Weekly Analysis (analyze.yml): healthy (12:00Z 04-13, W34 summary)
 - Growth Strategist: healthy (09:42Z 04-13, 38 runs, 30 consecutive no-action)
 - Reviewer Agent: healthy (14:11Z 04-13, reviewed PR #70 — approved, merged 14:13Z)
 - Coder Agent: healthy (06:13Z 04-10, fix #57 via #58)
 - Triage: healthy (06:12Z 04-10, triaged #57)
-- Token utilization: healthy, claude-opus-4-6, 382 usage_log pts, 0 max-turns, 0 rate-limit, 0 fallbacks
-- No failures in last 7 days. All workflows operational. 0 failures in last 30 runs.
+- Token utilization: healthy, claude-opus-4-6, 383 usage_log pts, 0 max-turns, 0 rate-limit, 0 fallbacks
+- 1 failure in last 6h (Self-Evolve transient). All other workflows operational.
 - 14 PRs open: all needs-human/merge-blocked. 45+ day backlog.
 - 2 issues (#24, #2) open, triaged (legacy format), terminal needs-human.
 
