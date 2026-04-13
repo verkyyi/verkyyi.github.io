@@ -1,6 +1,6 @@
 # Feature Status
 <!-- Updated by weekly analysis. AUTO-tier state file. -->
-<!-- Last updated: 2026-04-13T12:00Z (week 34 analysis) -->
+<!-- Last updated: 2026-04-13T18:34Z (week 35 analysis) -->
 
 ## In Progress
 | Feature | Issue | PR | Status | Blocked Since | Blocker |
@@ -22,12 +22,13 @@
 | Cron frequency reduction | 29 | 10+ PRs | Circular deadlock: hourly cron → state commits → merge conflicts → PR failure. Human must edit evolve.yml + watcher.yml directly. ROOT CAUSE of log growth, commit volume, and all merge-blocked PRs. 29th week. |
 | Repo topics | 20 | 1 API call | GITHUB_TOKEN lacks admin scope. Human must set manually. |
 | Redundant PR cleanup (#5, #11, #16) | 18-20 | 0 | Human must close. |
-| Phantom PR pattern | 8 | 8+ phantom PRs | Rate improving (50→46→43%). Only coder direct edits via issues work. PR-mediated .proposed-change.md approach still ~43% phantom. |
-| openai-harness-blog removal | 15+ | PR #65 phantom, PR #67 merged | Cloudflare-blocked 102+ days. Still checked hourly by evolve. ~168 wasted entries/week (~2,600+ total). Issue→coder pathway not yet attempted. |
+| Phantom PR pattern | 8 | 8+ phantom PRs | Rate worsening (50→46→43→47%). #70 (evolve-quiet-mode) was highest-impact proposal, still phantom. Only coder direct edits via issues work. |
+| openai-harness-blog removal | 15+ | PR #65 phantom, PR #67 merged | Cloudflare-blocked 102+ days. Still checked hourly by evolve. ~168 wasted entries/week (~2,800+ total). Issue→coder pathway not yet attempted. |
 
 ## Completed
 | Feature | Issue | PR | Completed |
 |---------|-------|-----|-----------|
+| Evolve quiet-mode (phantom) | — | #70 | 2026-04-13 (PHANTOM: merged 14:13Z but only deleted .proposed-change.md — no evolve.yml implementation) |
 | Issue for openai-blog-removal | — | #67 | 2026-04-12 (merged, proposed issue creation for coder to remove hardcoded refs) |
 | Research source cleanup (phantom) | — | #65 | 2026-04-12 (PHANTOM: merged but openai-harness-blog still hardcoded in workflow prompts) |
 | Watcher daily-digest mode | — | #64 | 2026-04-11 (merged, intended to cut watcher log entries ~60%. Effect TBD — monitoring.) |
