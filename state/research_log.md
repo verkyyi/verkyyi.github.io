@@ -1,5 +1,10 @@
 # Research Log
 
+2026-04-13T19:32Z | verkyyi/tokenman | 88e80f0 "state: reviewer usage metrics" (18:38Z 04-13), routine state churn, v0.5.0 unchanged | no action (HUMAN_ACTIVE)
+2026-04-13T19:32Z | quarto-dev/quarto-cli | 23bb687 "quarto list tool requires GH TOKEN for tinytex" by cderv (16:26Z 04-13) — unchanged from last check | no action
+2026-04-13T19:32Z | openai-harness-blog | Cloudflare-blocked 102+ days | no action
+2026-04-13T19:32Z | pipeline-health | 10 failed runs all ALREADY-FIXED (Self-Evolve 15:32Z recovered, Watcher 04-08, Analysis 04-02/03, Evolve 03-31), 0 actionable | no action (HUMAN_ACTIVE)
+2026-04-13T19:32Z | human-intent | 0 human-created issues in last 7d — 45+ days zero human activity | no action
 
 2026-04-13T01:37Z | pipeline-health | 10 failed runs all ALREADY-FIXED (Watcher 04-08, Analysis 04-02/03, Evolve 03-31, Pages 03-27), 0 actionable | no action (HUMAN_ACTIVE)
 2026-04-13T03:08Z | verkyyi/tokenman | f4727be watcher state commit (01:13Z 04-13), routine state churn, v0.5.0 unchanged | no action (HUMAN_ACTIVE)
