@@ -1,40 +1,39 @@
 # Feature Status
 <!-- Updated by weekly analysis. AUTO-tier state file. -->
-<!-- Last updated: 2026-04-12T12:00Z (week 33 analysis) -->
+<!-- Last updated: 2026-04-13T07:00Z (week 34 analysis) -->
 
 ## In Progress
 | Feature | Issue | PR | Status | Blocked Since | Blocker |
 |---------|-------|-----|--------|---------------|---------|
-| Root index.html (landing page) | #2 | #4 | needs-human | 2026-03-14 | Merge conflicts, ~1190h (49+ days). Human must rebase and merge. |
+| Root index.html (landing page) | #2 | #4 | needs-human | 2026-03-14 | Merge conflicts, ~1250h (52+ days). Human must rebase and merge. |
 | Awesome-list submission | #24 | — | needs-human | 2026-03-27 | Human must submit to awesome-claude-code lists |
 | Agent log archival | — | #39 | needs-human | 2026-04-01 | Reviewer approved but merge-blocked by conflicts |
 | Research log rotation | — | #42 | needs-human | 2026-04-02 | Reviewer approved via comment but merge-blocked by conflicts |
 | Log archival in analyze | — | #48 | needs-human | 2026-04-04 | Reviewer approved via comment but merge-blocked by conflicts |
 | Aggressive log truncation | — | #51 | needs-human | 2026-04-04 | 2 formal reviews, merge-blocked by conflicts |
 | Auto-rebase capability | — | #50 | needs-human | 2026-04-04 | Comment-only review, merge-blocked by conflicts |
-| tokenman v0.5.0 upgrade | — | — | pending | 2026-04-07 | v0.5.0 detected 10:25Z 04-07 (jumped from v0.4.0). Upgrade issue pending. 13+ days unacted. |
-| Recurring log truncation | — | #63 | proposed | 2026-04-10 | PR #63 merged (proposed creating issue for coder). W32 analysis performed manual truncation (agent_log 154→111KB). Logs regrow at ~40KB/day. |
+| tokenman v0.5.0 upgrade | — | #68 | needs-human | 2026-04-07 | v0.5.0 detected 04-07. PR #68 opened 04-12, reviewed (comment), merge-blocked. 16+ days unacted. |
+| Recurring log truncation | — | #63 | proposed | 2026-04-10 | PR #63 merged (proposed creating issue for coder). Analysis performing manual truncation each run. Logs regrow at ~40-50KB/day. |
 
 ## Stalled (no automated path forward)
 | Item | Weeks Stalled | Attempts | Blocker |
 |------|--------------|----------|---------|
-| Cron frequency reduction | 28 | 10+ PRs | Circular deadlock: hourly cron → state commits → merge conflicts → PR failure. Human must edit evolve.yml + watcher.yml directly. ROOT CAUSE of log growth, commit volume, and all merge-blocked PRs. 28th week. |
-| Repo topics | 19 | 1 API call | GITHUB_TOKEN lacks admin scope. Human must set manually. |
-| Redundant PR cleanup (#5, #11, #16) | 17-19 | 0 | Human must close. |
-| Phantom PR pattern | 7 | 8+ phantom PRs | Rate worsening (45→50%). Only coder direct edits via issues work. PR #65 confirmed: .proposed-change.md approach cannot modify workflow YAML. |
-| openai-harness-blog removal | 14+ | PR #65 phantom | Cloudflare-blocked 100+ days (milestone). Still checked hourly by evolve. PR #65 phantom-merged. ~168 wasted entries/week (~2,400+ total). W33 proposes issue→coder pathway. |
+| Cron frequency reduction | 29 | 10+ PRs | Circular deadlock: hourly cron → state commits → merge conflicts → PR failure. Human must edit evolve.yml + watcher.yml directly. ROOT CAUSE of log growth, commit volume, and all merge-blocked PRs. 29th week. |
+| Repo topics | 20 | 1 API call | GITHUB_TOKEN lacks admin scope. Human must set manually. |
+| Redundant PR cleanup (#5, #11, #16) | 18-20 | 0 | Human must close. |
+| Phantom PR pattern | 8 | 8+ phantom PRs | Rate improving (50→46→43%). Only coder direct edits via issues work. |
+| openai-harness-blog removal | 15+ | PR #65 phantom, PR #67 likely phantom | Cloudflare-blocked 101+ days. Still checked hourly by evolve. ~168 wasted entries/week (~2,570+ total). Issue→coder only viable pathway. |
+| Node.js 20→24 migration | 2 (escalating) | 0 | GitHub Actions forcing Node 24 by June 2026. ~4 weeks remaining. Proposed change: node-24-migration-issue. |
 
 ## Completed
 | Feature | Issue | PR | Completed |
 |---------|-------|-----|-----------|
+| Issue for openai-blog removal (likely phantom) | — | #67 | 2026-04-12 (merged, but issue likely not created — phantom pattern) |
 | Research source cleanup (phantom) | — | #65 | 2026-04-12 (PHANTOM: merged but openai-harness-blog still hardcoded in workflow prompts) |
 | Watcher daily-digest mode | — | #64 | 2026-04-11 (merged, intended to cut watcher log entries ~60%. Effect TBD — monitoring.) |
 | Log truncation issue proposal | — | #63 | 2026-04-11 (merged, proposed creating issue for coder to handle recurring truncation) |
 | Log truncation (direct state commit) | — | — | 2026-04-10 (W28 analysis: agent_log 616→140KB, research_log 276→28KB. First successful truncation in 9+ weeks.) |
-| Bypass phantom PR proposal (phantom) | — | #60 | 2026-04-10 (merged but proposal NOT implemented — phantom PR pattern) |
-| Direct log truncation (phantom PR) | — | #59 | 2026-04-10 (merged but logs NOT truncated — phantom PR pattern) |
 | evolve_config stale source fix (direct edit) | #57 | #58 | 2026-04-10 (directly edited evolve_config.md: agentfolio→tokenman. Closes #57.) |
-| evolve-config-direct-fix (incomplete) | — | #55 | 2026-04-09 (merged 19:56Z, phantom PR — config NOT updated) |
 | Watcher silent-clear mode | — | #53 | 2026-04-09 (merged 08:05Z, expected ~80% watcher noise reduction) |
 | Emergency log truncation (proposed change) | — | #52 | 2026-04-09 (merged, execution of truncation pending) |
 | Inline log truncation in analyze | — | #49 | 2026-04-04 (merged 07:51Z, insufficient — logs still growing but plateaued) |
@@ -59,4 +58,4 @@
 - [x] Clean README (PR #21 merged 2026-03-27)
 - [x] First release (v0.1.0 released 2026-03-26)
 - [ ] Repo topics (needs admin scope)
-- [ ] Landing page (PR #4 blocked ~1190h)
+- [ ] Landing page (PR #4 blocked ~1250h)
