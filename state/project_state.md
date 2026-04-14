@@ -39,18 +39,19 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~1320h), zero human activity 48+ days
 - 39 growth runs total. 31 consecutive no-action. Awesome-list targets: awesome-claude-code (38.5K), awesome-claude-code-subagents (17.2K).
 
-## System Health (last watcher: 2026-04-14T06:30Z, last analysis: 2026-04-14T06:45Z)
-- Self-Evolve: healthy (05:47Z 04-14, 8+ consecutive successes)
+## System Health (last watcher: 2026-04-14T07:10Z, last analysis: 2026-04-14T06:45Z)
+- Self-Evolve: healthy (06:39Z 04-14, 8+ consecutive successes)
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
-- pages-build-deployment: healthy (05:49Z 04-14)
-- Weekly Analysis (analyze.yml): healthy (this run, W35 summary at 06:45Z 04-14)
+- pages-build-deployment: healthy (06:53Z 04-14)
+- Weekly Analysis (analyze.yml): healthy (06:53Z 04-14, W35 summary, PR #72 created)
 - Growth Strategist: healthy (18:30Z 04-13, 39 runs, 31 consecutive no-action)
 - Reviewer Agent: healthy (19:56Z 04-13, reviewed PR #71 — approved via comment, merge-blocked)
 - Coder Agent: healthy (06:13Z 04-10, fix #57 via #58)
 - Triage: healthy (06:12Z 04-10, triaged #57)
-- Token utilization: healthy. Haiku fallback streak resolved — 13 consecutive runs (22:19Z 04-13 through 05:49Z 04-14, ~7.5h), back on opus-4-6. ~410 data pts in usage_log, 13 haiku fallbacks (3.6%). 0 max-turns issues. 0 rate-limit errors.
+- Token utilization: healthy. Haiku fallback streak CORRECTED — 16 consecutive runs (22:19Z 04-13 through 06:53Z 04-14, ~8.5h), prior watcher (06:30Z) misidentified own model. Current run confirmed opus-4-6, streak ending. ~418 data pts in usage_log, 16 haiku fallbacks (3.8%). 0 max-turns issues. 0 rate-limit errors.
 - 0 failures in last 2h. All workflows operational.
-- 10+ PRs open: all needs-human/merge-blocked. 47+ day backlog.
+- PR #72 new (analyze/W35, needs-review, 12 min old, pending reviewer).
+- 10+ PRs open: all needs-human/merge-blocked except #72. 47+ day backlog.
 - 2 issues (#24, #2) open, triaged (legacy format), terminal needs-human.
 
 ## Open Issues
