@@ -39,16 +39,16 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~1370h), zero human activity 48+ days
 - 40 growth runs total. 32 consecutive no-action. Awesome-list targets: awesome-claude-code (38.6K), awesome-claude-code-subagents (17.3K).
 
-## System Health (last watcher: 2026-04-14T10:00Z, last analysis: 2026-04-14T06:45Z)
-- Self-Evolve: healthy (09:34Z 04-14, 9+ consecutive successes)
+## System Health (last watcher: 2026-04-14T10:55Z, last analysis: 2026-04-14T06:45Z)
+- Self-Evolve: healthy (10:30Z 04-14, 10+ consecutive successes)
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
-- pages-build-deployment: healthy (09:38Z 04-14)
+- pages-build-deployment: healthy (10:32Z 04-14)
 - Weekly Analysis (analyze.yml): healthy (06:53Z 04-14, W35 summary, PR #72 merged 08:10Z)
 - Growth Strategist: healthy (09:36Z 04-14, 40 runs, 32 consecutive no-action)
 - Reviewer Agent: healthy (08:09Z 04-14, reviewed+merged PR #72)
 - Coder Agent: healthy (06:13Z 04-10, fix #57 via #58)
 - Triage: healthy (06:12Z 04-10, triaged #57)
-- Token utilization: healthy. Haiku streak RE-CORRECTED to 23 runs (22:19Z 04-13 through 09:38Z 04-14, ~11.3h) — prior "FINAL CORRECTION" watcher (09:10Z) itself ran on haiku (usage_log line 367) + 2 subsequent runs also haiku (lines 368-369). 5 consecutive watchers undercounted due to haiku self-misidentification. 23/368 total (6.3%). 0 rate-limit errors. 0 max-turns issues.
+- Token utilization: healthy. Haiku streak at 25 runs (22:19Z 04-13 through 10:32Z 04-14, ~12.2h) — still ongoing. 6 consecutive watchers unable to self-verify own model. 25/371 total (6.7%). 0 rate-limit errors. 0 max-turns issues.
 - 0 failures in last 2h. All workflows operational.
 - 15 PRs open: all needs-human/merge-blocked. 48+ day backlog.
 - 2 issues (#24, #2) open, triaged (legacy format), terminal needs-human.
