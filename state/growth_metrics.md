@@ -1,11 +1,11 @@
 # Growth Metrics
-Last updated: 2026-04-09T06:36Z
+Last updated: 2026-04-14T06:40Z
 Stars: 0 | Forks: 0 | Watchers: 1
 Views (14d): N/A | Unique visitors (14d): N/A
-Open issues: 13
+Open issues: 17
 
 Note: Traffic APIs returned 403 (GITHUB_TOKEN lacks admin scope for traffic endpoints).
-No change in stars/forks/watchers from last check (04-08). Open issues stable at 13. Pre-growth phase continues (16th consecutive no-change check).
+Stars/forks/watchers unchanged from last check (04-09). Open issues UP 13→17 (new PRs counted as issues by GitHub API). Pre-growth phase continues.
 
 ## Referrers
 <!-- Format: referrer | views | uniques -->
