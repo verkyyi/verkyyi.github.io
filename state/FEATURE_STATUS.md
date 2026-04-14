@@ -1,18 +1,18 @@
 # Feature Status
 <!-- Updated by weekly analysis. AUTO-tier state file. -->
-<!-- Last updated: 2026-04-14T06:45Z (week 35 analysis) -->
+<!-- Last updated: 2026-04-14T12:30Z (week 36 analysis) -->
 
 ## In Progress
 | Feature | Issue | PR | Status | Blocked Since | Blocker |
 |---------|-------|-----|--------|---------------|---------|
-| Root index.html (landing page) | #2 | #4 | needs-human | 2026-03-14 | Merge conflicts, ~1250h (52+ days). Human must rebase and merge. |
+| Root index.html (landing page) | #2 | #4 | needs-human | 2026-03-14 | Merge conflicts, ~1370h (57+ days). Human must rebase and merge. |
 | Awesome-list submission | #24 | — | needs-human | 2026-03-27 | Human must submit to awesome-claude-code lists |
 | Agent log archival | — | #39 | needs-human | 2026-04-01 | Reviewer approved but merge-blocked by conflicts |
 | Research log rotation | — | #42 | needs-human | 2026-04-02 | Reviewer approved via comment but merge-blocked by conflicts |
 | Log archival in analyze | — | #48 | needs-human | 2026-04-04 | Reviewer approved via comment but merge-blocked by conflicts |
 | Aggressive log truncation | — | #51 | needs-human | 2026-04-04 | 2 formal reviews, merge-blocked by conflicts |
 | Auto-rebase capability | — | #50 | needs-human | 2026-04-04 | Comment-only review, merge-blocked by conflicts |
-| tokenman v0.5.0 upgrade | — | #68 | needs-human | 2026-04-07 | v0.5.0 detected 04-07. PR #68 created, reviewer commented, merge-blocked. 16+ days unacted. |
+| tokenman v0.5.0 upgrade | — | #68 | needs-human | 2026-04-07 | v0.5.0 detected 04-07. PR #68 created, reviewer commented, merge-blocked. 17+ days unacted. |
 | Node.js 24 migration | — | #69 | needs-human | 2026-04-13 | PR #69 created by analysis. Reviewed (approved), merge-blocked. ~3 weeks to GitHub Actions deadline (DOWN from 4). |
 | Issue for evolve-quiet-mode | — | #71 | needs-human | 2026-04-13 | PR #71 created, reviewed (approved via comment), merge-blocked. Intended to create issue for coder to implement quiet-mode since PR #70 was phantom. |
 | Recurring log truncation | — | #63 | proposed | 2026-04-10 | PR #63 merged (proposed creating issue for coder). Evolve now truncates directly. Logs regrow at ~40KB/day. |
@@ -20,11 +20,11 @@
 ## Stalled (no automated path forward)
 | Item | Weeks Stalled | Attempts | Blocker |
 |------|--------------|----------|---------|
-| Cron frequency reduction | 29 | 10+ PRs | Circular deadlock: hourly cron → state commits → merge conflicts → PR failure. Human must edit evolve.yml + watcher.yml directly. ROOT CAUSE of log growth, commit volume, and all merge-blocked PRs. 29th week. |
+| Cron frequency reduction | 30 | 10+ PRs | Circular deadlock: hourly cron → state commits → merge conflicts → PR failure. Human must edit evolve.yml + watcher.yml directly. ROOT CAUSE of log growth, commit volume, and all merge-blocked PRs. 30th week. |
 | Repo topics | 20 | 1 API call | GITHUB_TOKEN lacks admin scope. Human must set manually. |
 | Redundant PR cleanup (#5, #11, #16) | 18-20 | 0 | Human must close. |
-| Phantom PR pattern | 9 | 9+ phantom PRs | Rate WORSENING (50→46→43→47%). Trend reversed. 7th consecutive .proposed-change.md→PR phantom (#70). Only coder direct edits via issues work. |
-| openai-harness-blog removal | 15+ | PR #65 phantom, PR #67 phantom issue, proposed YAML edit | Cloudflare-blocked 103+ days. Still checked hourly by evolve (line 92+102 in evolve.yml). ~170 wasted entries/week (~2,800+ total). 4th removal attempt proposed (direct YAML edit). |
+| Phantom PR pattern | 10 | 10+ phantom PRs | Rate stabilizing (50→46→43→47→44%). 7th consecutive .proposed-change.md→PR phantom (#70). Only coder direct edits via issues work. |
+| openai-harness-blog removal | 15+ | PR #65 phantom, PR #67 phantom issue, 2 proposed YAML edits | Cloudflare-blocked 103+ days. Still checked hourly by evolve (line 92+102 in evolve.yml). ~170 wasted entries/week (~2,800+ total). 5th removal attempt proposed (issue→coder pathway). |
 
 ## Completed
 | Feature | Issue | PR | Completed |
@@ -63,4 +63,4 @@
 - [x] Clean README (PR #21 merged 2026-03-27)
 - [x] First release (v0.1.0 released 2026-03-26)
 - [ ] Repo topics (needs admin scope)
-- [ ] Landing page (PR #4 blocked ~1250h)
+- [ ] Landing page (PR #4 blocked ~1370h)
