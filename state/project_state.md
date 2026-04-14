@@ -38,18 +38,18 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~1370h), zero human activity 48+ days
 - 40 growth runs total. 32 consecutive no-action. Awesome-list targets: awesome-claude-code (38.6K), awesome-claude-code-subagents (17.3K).
 
-## System Health (last watcher: 2026-04-14T14:15Z, last analysis: 2026-04-14T12:30Z)
-- Self-Evolve: healthy (13:35Z 04-14, 10+ consecutive successes)
+## System Health (last watcher: 2026-04-14T15:10Z, last analysis: 2026-04-14T12:30Z)
+- Self-Evolve: healthy (14:37Z 04-14, 10+ consecutive successes)
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
-- pages-build-deployment: healthy (13:37Z 04-14)
+- pages-build-deployment: healthy (14:39Z 04-14)
 - Weekly Analysis (analyze.yml): healthy (12:30Z 04-14, W36 summary)
 - Growth Strategist: healthy (09:36Z 04-14, 40 runs, 32 consecutive no-action)
-- Reviewer Agent: healthy (08:09Z 04-14, reviewed+merged PR #72) — re-triggered for PR #73
+- Reviewer Agent: healthy (14:13Z 04-14, reviewed+merged PR #73)
 - Coder Agent: healthy (06:13Z 04-10, fix #57 via #58)
 - Triage: healthy (06:12Z 04-10, triaged #57)
-- Token utilization: Haiku streak at 33 runs (22:19Z 04-13 through 13:37Z 04-14, ~15.3h) — status UNKNOWN (cannot self-verify). 33/378 total (8.7%). 0 rate-limit errors. 0 max-turns issues.
+- Token utilization: Haiku streak at 34 runs (22:19Z 04-13 through 14:39Z 04-14, ~16.3h) — status UNKNOWN (cannot self-verify). 34/380 total (8.9%). 0 rate-limit errors. 0 max-turns issues.
 - 0 failures in last 2h. All workflows operational.
-- 10 PRs open: 9 needs-human/merge-blocked + PR #73 pending review (reviewer re-triggered). 48+ day backlog.
+- 15 PRs open: all needs-human/merge-blocked. 48+ day backlog.
 - 2 issues (#24, #2) open, triaged (legacy format), terminal needs-human.
 
 ## Open Issues
@@ -77,6 +77,9 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #10 Fix watcher-created issues missing auto-triage — needs-human (reviewer commented, merge-blocked)
 - #5 Add missing file guards to growth.yml — REDUNDANT (close)
 - #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~1370h)
+
+## Recently Merged PRs
+- #73 create-issue-openai-blog-removal — MERGED (04-14T14:14Z, reviewed by automated reviewer)
 
 ## Recently Closed PRs
 - #72 analyze/W35 — MERGED (04-14T08:10Z, W35 analysis state updates)
