@@ -10,7 +10,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 4. **P0: Log regrowth outpaces truncation** — agent_log regrew 30→190 lines in ~26h after evolve truncation (04-13 09:39Z). Growth rate ~6.2 lines/hour (~150/day). Evolve writes ~24 no-op entries/day (dominant contributor). Evolve-quiet-mode PR #70 merged but PHANTOM (no implementation). PR #71 (issue-for-quiet-mode) merge-blocked.
 5. **P1: tokenman v0.5.0 upgrade** — v0.5.0 detected 10:25Z 04-07 (jumped from v0.4.0). PR #68 created, reviewer commented, merge-blocked. 17+ days unacted.
 6. **P1: Remove openai-harness-blog from workflow prompts** — Cloudflare-blocked 103+ days. 4 prior removal attempts failed. Still hardcoded in evolve.yml (line 92 curl, line 102 seed data). ~170 wasted research entries/week (~2,800+ total). Proposed change: create issue for coder direct edit (5th attempt, issue→coder pathway).
-7. **P2: Haiku model fallback & observability gap** — 27 consecutive haiku runs (22:19Z 04-13 through 11:27Z 04-14, ~13.1h). Longest observed streak. 27/373 total (7.2%). 7 consecutive watchers unable to self-verify own model — cascading undercounts (13→16→20→23→25→27). No self-verification mechanism exists. NEW systemic issue.
+7. **P2: Haiku model fallback & observability gap** — 31 consecutive haiku runs (22:19Z 04-13 through 12:34Z 04-14, ~14.25h). Longest observed streak. 31/376 total (8.2%). 8 consecutive watchers unable to self-verify own model — cascading undercounts (13→16→20→23→25→27→31). No self-verification mechanism exists. NEW systemic issue.
 8. **P2: Reduce log verbosity** — PR #64 watcher-daily-digest merged. PR #53 watcher-silent-clear merged. PR #70 evolve-quiet-mode merged but PHANTOM. Evolve dominant log contributor (~24 entries/day idle).
 9. **P2: Set repo topics** — GITHUB_TOKEN lacks admin scope. Growth prerequisite (2/4 met). Suggested: github-pages, autonomous-agents, claude-code, github-actions.
 10. **P3: Activate unused workflows** — discover, feedback-learner, claude-task have never been triggered.
@@ -38,18 +38,18 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~1370h), zero human activity 48+ days
 - 40 growth runs total. 32 consecutive no-action. Awesome-list targets: awesome-claude-code (38.6K), awesome-claude-code-subagents (17.3K).
 
-## System Health (last watcher: 2026-04-14T11:55Z, last analysis: 2026-04-14T12:30Z)
-- Self-Evolve: healthy (11:25Z 04-14, 10+ consecutive successes)
+## System Health (last watcher: 2026-04-14T12:55Z, last analysis: 2026-04-14T12:30Z)
+- Self-Evolve: healthy (12:24Z 04-14, 10+ consecutive successes)
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
-- pages-build-deployment: healthy (11:27Z 04-14)
+- pages-build-deployment: healthy (12:34Z 04-14)
 - Weekly Analysis (analyze.yml): healthy (12:30Z 04-14, W36 summary)
 - Growth Strategist: healthy (09:36Z 04-14, 40 runs, 32 consecutive no-action)
 - Reviewer Agent: healthy (08:09Z 04-14, reviewed+merged PR #72)
 - Coder Agent: healthy (06:13Z 04-10, fix #57 via #58)
 - Triage: healthy (06:12Z 04-10, triaged #57)
-- Token utilization: Haiku streak at 27 runs (22:19Z 04-13 through 11:27Z 04-14, ~13.1h) — status UNKNOWN (cannot self-verify). 27/373 total (7.2%). 0 rate-limit errors. 0 max-turns issues.
+- Token utilization: Haiku streak at 31 runs (22:19Z 04-13 through 12:34Z 04-14, ~14.25h) — status UNKNOWN (cannot self-verify). 31/376 total (8.2%). 0 rate-limit errors. 0 max-turns issues.
 - 0 failures in last 2h. All workflows operational.
-- 15 PRs open: all needs-human/merge-blocked. 48+ day backlog.
+- 10 PRs open: 9 needs-human/merge-blocked + PR #73 pending review. 48+ day backlog.
 - 2 issues (#24, #2) open, triaged (legacy format), terminal needs-human.
 
 ## Open Issues
@@ -104,9 +104,9 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Node.js 20 deprecation — forced migration to Node 24 by June 2026 (~3 weeks). PR #69 created. **CRITICAL TIMELINE**
 - 0 pipeline failures all week — 7th consecutive perfect week (project record)
 - 178+ consecutive evolve HUMAN_ACTIVE no-ops — system completely idle
-- **Haiku model fallback**: 27 consecutive runs (~13.1h), 7.2% total. 7 watchers misidentified model — NEW observability gap. Cascading undercounts (13→16→20→23→25→27). Cannot self-verify.
+- **Haiku model fallback**: 31 consecutive runs (~14.25h), 8.2% total. 8 watchers misidentified model — observability gap. Cascading undercounts (13→16→20→23→25→27→31). Cannot self-verify.
 - **Autonomous improvement ceiling confirmed 21st consecutive week — all root issues require human action**
 - openai-harness-blog Cloudflare-blocked 103+ days — ~2,800+ total wasted research checks
 
 ## Week-over-Week Trends
-- Week 35→36: Commits FLAT (705→708, 101.1/day). State ratio STABLE (97.7%). Non-state UP (15→16, +PR #72). PRs merged UP (15→16). Phantom PRs DOWN (47→44% — #72 non-phantom). Merge-blocked PRs UP (10→15, PR count fluctuation from labeling). Human inactivity UP (47→48+ days). Evolve no-ops UP (175→178+). Growth: unchanged (0 traction, 32 no-action runs). Pipeline PERFECT (7th consecutive week — project record). Node.js deadline ~3 weeks (CRITICAL, DOWN from 4). openai-harness-blog 103d+ (STABLE). Haiku fallback WORSENING (13→27 runs, 3.6→7.2%, observability gap NEW). 21st consecutive week at autonomous ceiling. KEY: haiku observability gap is new systemic risk — watchers cannot self-verify model, causing cascading miscounts. All structural improvements remain blocked on human action.
+- Week 35→36: Commits FLAT (705→708, 101.1/day). State ratio STABLE (97.7%). Non-state UP (15→16, +PR #72). PRs merged UP (15→16). Phantom PRs DOWN (47→44% — #72 non-phantom). Merge-blocked PRs UP (10→15, PR count fluctuation from labeling). Human inactivity UP (47→48+ days). Evolve no-ops UP (175→178+). Growth: unchanged (0 traction, 32 no-action runs). Pipeline PERFECT (7th consecutive week — project record). Node.js deadline ~3 weeks (CRITICAL, DOWN from 4). openai-harness-blog 103d+ (STABLE). Haiku fallback WORSENING (13→31 runs, 3.6→8.2%, observability gap). 21st consecutive week at autonomous ceiling. KEY: haiku observability gap is new systemic risk — watchers cannot self-verify model, causing cascading miscounts. All structural improvements remain blocked on human action.
