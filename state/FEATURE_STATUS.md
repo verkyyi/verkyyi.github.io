@@ -1,6 +1,6 @@
 # Feature Status
 <!-- Updated by weekly analysis. AUTO-tier state file. -->
-<!-- Last updated: 2026-04-13T12:00Z (week 34 analysis) -->
+<!-- Last updated: 2026-04-14T06:45Z (week 35 analysis) -->
 
 ## In Progress
 | Feature | Issue | PR | Status | Blocked Since | Blocker |
@@ -13,7 +13,8 @@
 | Aggressive log truncation | — | #51 | needs-human | 2026-04-04 | 2 formal reviews, merge-blocked by conflicts |
 | Auto-rebase capability | — | #50 | needs-human | 2026-04-04 | Comment-only review, merge-blocked by conflicts |
 | tokenman v0.5.0 upgrade | — | #68 | needs-human | 2026-04-07 | v0.5.0 detected 04-07. PR #68 created, reviewer commented, merge-blocked. 16+ days unacted. |
-| Node.js 24 migration | — | #69 | needs-human | 2026-04-13 | PR #69 created by analysis. Reviewed (approved), merge-blocked. ~4 weeks to GitHub Actions deadline. |
+| Node.js 24 migration | — | #69 | needs-human | 2026-04-13 | PR #69 created by analysis. Reviewed (approved), merge-blocked. ~3 weeks to GitHub Actions deadline (DOWN from 4). |
+| Issue for evolve-quiet-mode | — | #71 | needs-human | 2026-04-13 | PR #71 created, reviewed (approved via comment), merge-blocked. Intended to create issue for coder to implement quiet-mode since PR #70 was phantom. |
 | Recurring log truncation | — | #63 | proposed | 2026-04-10 | PR #63 merged (proposed creating issue for coder). Evolve now truncates directly. Logs regrow at ~40KB/day. |
 
 ## Stalled (no automated path forward)
@@ -22,12 +23,13 @@
 | Cron frequency reduction | 29 | 10+ PRs | Circular deadlock: hourly cron → state commits → merge conflicts → PR failure. Human must edit evolve.yml + watcher.yml directly. ROOT CAUSE of log growth, commit volume, and all merge-blocked PRs. 29th week. |
 | Repo topics | 20 | 1 API call | GITHUB_TOKEN lacks admin scope. Human must set manually. |
 | Redundant PR cleanup (#5, #11, #16) | 18-20 | 0 | Human must close. |
-| Phantom PR pattern | 8 | 8+ phantom PRs | Rate improving (50→46→43%). Only coder direct edits via issues work. PR-mediated .proposed-change.md approach still ~43% phantom. |
-| openai-harness-blog removal | 15+ | PR #65 phantom, PR #67 merged | Cloudflare-blocked 102+ days. Still checked hourly by evolve. ~168 wasted entries/week (~2,600+ total). Issue→coder pathway not yet attempted. |
+| Phantom PR pattern | 9 | 9+ phantom PRs | Rate WORSENING (50→46→43→47%). Trend reversed. 7th consecutive .proposed-change.md→PR phantom (#70). Only coder direct edits via issues work. |
+| openai-harness-blog removal | 15+ | PR #65 phantom, PR #67 phantom issue, proposed YAML edit | Cloudflare-blocked 103+ days. Still checked hourly by evolve (line 92+102 in evolve.yml). ~170 wasted entries/week (~2,800+ total). 4th removal attempt proposed (direct YAML edit). |
 
 ## Completed
 | Feature | Issue | PR | Completed |
 |---------|-------|-----|-----------|
+| Evolve-quiet-mode (phantom) | — | #70 | 2026-04-13 (PHANTOM: merged 14:13Z, only deleted .proposed-change.md, no actual evolve.yml implementation) |
 | Issue for openai-blog-removal | — | #67 | 2026-04-12 (merged, proposed issue creation for coder to remove hardcoded refs) |
 | Research source cleanup (phantom) | — | #65 | 2026-04-12 (PHANTOM: merged but openai-harness-blog still hardcoded in workflow prompts) |
 | Watcher daily-digest mode | — | #64 | 2026-04-11 (merged, intended to cut watcher log entries ~60%. Effect TBD — monitoring.) |
