@@ -12,7 +12,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 6. **P1: Remove openai-harness-blog from workflow prompts** — Cloudflare-blocked 103+ days. PR #65 phantom-merged. PR #67 merged but no issue created. Still hardcoded in evolve.yml (line 92 curl, line 102 seed data). ~170 wasted research entries/week (~2,800+ total). Proposed change: direct YAML edit.
 7. **P2: Reduce log verbosity** — PR #64 watcher-daily-digest merged. PR #53 watcher-silent-clear merged. PR #70 evolve-quiet-mode merged but PHANTOM. Evolve dominant log contributor (~24 entries/day idle).
 8. **P2: Set repo topics** — GITHUB_TOKEN lacks admin scope. Growth prerequisite (2/4 met). Suggested: github-pages, autonomous-agents, claude-code, github-actions.
-9. **P2: Haiku model fallback monitoring** — 23 consecutive haiku runs (22:19Z 04-13 through 09:38Z 04-14, ~11.3h). Streak status unknown. 23/368 total (6.3%). 5 consecutive watchers undercounted (13→16→20→20→20) — haiku-running watchers misidentify own model as opus. Observability gap worsening: each watcher's "correction" is itself wrong.
+9. **P2: Haiku model fallback monitoring** — 27 consecutive haiku runs (22:19Z 04-13 through 11:27Z 04-14, ~13.1h). Longest observed streak. 27/373 total (7.2%). 7 consecutive watchers unable to self-verify own model — haiku-running watchers misidentify as opus. Observability gap persists.
 10. **P3: Activate unused workflows** — discover, feedback-learner, claude-task have never been triggered.
 
 ## Week 35 Summary (2026-04-07 to 2026-04-14)
@@ -39,16 +39,16 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~1370h), zero human activity 48+ days
 - 40 growth runs total. 32 consecutive no-action. Awesome-list targets: awesome-claude-code (38.6K), awesome-claude-code-subagents (17.3K).
 
-## System Health (last watcher: 2026-04-14T10:55Z, last analysis: 2026-04-14T06:45Z)
-- Self-Evolve: healthy (10:30Z 04-14, 10+ consecutive successes)
+## System Health (last watcher: 2026-04-14T11:55Z, last analysis: 2026-04-14T06:45Z)
+- Self-Evolve: healthy (11:25Z 04-14, 10+ consecutive successes)
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
-- pages-build-deployment: healthy (10:32Z 04-14)
+- pages-build-deployment: healthy (11:27Z 04-14)
 - Weekly Analysis (analyze.yml): healthy (06:53Z 04-14, W35 summary, PR #72 merged 08:10Z)
 - Growth Strategist: healthy (09:36Z 04-14, 40 runs, 32 consecutive no-action)
 - Reviewer Agent: healthy (08:09Z 04-14, reviewed+merged PR #72)
 - Coder Agent: healthy (06:13Z 04-10, fix #57 via #58)
 - Triage: healthy (06:12Z 04-10, triaged #57)
-- Token utilization: healthy. Haiku streak at 25 runs (22:19Z 04-13 through 10:32Z 04-14, ~12.2h) — still ongoing. 6 consecutive watchers unable to self-verify own model. 25/371 total (6.7%). 0 rate-limit errors. 0 max-turns issues.
+- Token utilization: healthy. Haiku streak at 27 runs (22:19Z 04-13 through 11:27Z 04-14, ~13.1h) — still ongoing. 7 consecutive watchers unable to self-verify own model. 27/373 total (7.2%). 0 rate-limit errors. 0 max-turns issues.
 - 0 failures in last 2h. All workflows operational.
 - 15 PRs open: all needs-human/merge-blocked. 48+ day backlog.
 - 2 issues (#24, #2) open, triaged (legacy format), terminal needs-human.
