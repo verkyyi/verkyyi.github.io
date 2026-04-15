@@ -3,58 +3,58 @@
 ## Current Focus
 Portfolio landing page — site needs a root index.html (issue #2).
 
-## Priorities (from weekly analysis 2026-04-14T12:30Z, week 36)
-1. **P0: Cron frequency — requires human manual edit** — 30th consecutive week. Proven circular deadlock: hourly cron → ~100 state commits/day → merge conflicts on every PR branch. Human must manually edit evolve.yml and watcher.yml cron schedules directly on main. Root cause of log growth, commit volume, and merge-blocked PRs.
-2. **P0: Human must act on PR backlog** — 15 PRs needs-human. 5+ PRs reviewed/approved but merge-blocked by conflicts (#39, #42, #48, #50, #51). PR #4 (landing page) blocked ~1370h (57+ days). PRs #5/#11/#16 are REDUNDANT — close them. 48+ days zero human activity.
-3. **P0-URGENT: Node.js 20→24 migration** — GitHub Actions forcing Node 24 by June 2026. ~3 weeks runway (DOWN from 4 at W35). PR #69 created, reviewed, approved, merge-blocked. CRITICAL timeline.
-4. **P0: Log regrowth outpaces truncation** — agent_log regrew 30→190 lines in ~26h after evolve truncation (04-13 09:39Z). Growth rate ~6.2 lines/hour (~150/day). Evolve writes ~24 no-op entries/day (dominant contributor). Evolve-quiet-mode PR #70 merged but PHANTOM (no implementation). PR #71 (issue-for-quiet-mode) merge-blocked.
-5. **P1: tokenman v0.5.0 upgrade** — v0.5.0 detected 10:25Z 04-07 (jumped from v0.4.0). PR #68 created, reviewer commented, merge-blocked. 17+ days unacted.
-6. **P1: Remove openai-harness-blog from workflow prompts** — Cloudflare-blocked 103+ days. 4 prior removal attempts failed. Still hardcoded in evolve.yml (line 92 curl, line 102 seed data). ~170 wasted research entries/week (~2,800+ total). Proposed change: create issue for coder direct edit (5th attempt, issue→coder pathway).
-7. **P2: Haiku model fallback & observability gap** — 31 consecutive haiku runs (22:19Z 04-13 through 12:34Z 04-14, ~14.25h). Longest observed streak. 31/376 total (8.2%). 8 consecutive watchers unable to self-verify own model — cascading undercounts (13→16→20→23→25→27→31). No self-verification mechanism exists. NEW systemic issue.
+## Priorities (from weekly analysis 2026-04-15T12:00Z, week 37)
+1. **P0-URGENT: Node.js 20→24 migration** — GitHub Actions forcing Node 24 by June 2026. ~2.5 weeks runway (DOWN from 3 at W36). PR #69 created, reviewed, approved, merge-blocked. CRITICAL timeline — shortest remaining of any blocker.
+2. **P0: Cron frequency — requires human manual edit** — 31st consecutive week. Proven circular deadlock: hourly cron → ~100 state commits/day → merge conflicts on every PR branch. Human must manually edit evolve.yml and watcher.yml cron schedules directly on main. Root cause of log growth, commit volume, and merge-blocked PRs.
+3. **P0: Human must act on PR backlog** — 15+ PRs needs-human. 5+ PRs reviewed/approved but merge-blocked by conflicts (#39, #42, #48, #50, #51). PR #4 (landing page) blocked ~1500h (62+ days). PRs #5/#11/#16 are REDUNDANT — close them. 49+ days zero human activity.
+4. **P0: Log regrowth outpaces truncation** — agent_log grew to 135KB (235 lines) in 7 days post-W36 truncation. Growth rate ~6 lines/hour (~135KB/week). Evolve writes ~24 no-op entries/day (dominant contributor). W37 analysis truncated 224 entries (135KB→~5KB). Will regrow within days.
+5. **P1: tokenman v0.5.0 upgrade** — v0.5.0 detected 10:25Z 04-07 (jumped from v0.4.0). PR #68 created, reviewer commented, merge-blocked. 18+ days unacted.
+6. **P1: Remove openai-harness-blog from workflow prompts** — Cloudflare-blocked 105+ days. 5 prior removal attempts failed/phantom. Still hardcoded in evolve.yml. ~170 wasted research entries/week (~3,000+ total). PR #73 merged (proposed issue→coder pathway). Effect TBD.
+7. **P2: Haiku model fallback & observability gap** — Peaked at 53 consecutive runs (~25h, new record: 22:19Z 04-13 through ~03:07Z 04-15). Then reset. 53/~420 total (12.6%). Watchers cannot self-verify model — cascading miscounts confirmed systemic. No self-verification mechanism exists.
 8. **P2: Reduce log verbosity** — PR #64 watcher-daily-digest merged. PR #53 watcher-silent-clear merged. PR #70 evolve-quiet-mode merged but PHANTOM. Evolve dominant log contributor (~24 entries/day idle).
 9. **P2: Set repo topics** — GITHUB_TOKEN lacks admin scope. Growth prerequisite (2/4 met). Suggested: github-pages, autonomous-agents, claude-code, github-actions.
 10. **P3: Activate unused workflows** — discover, feedback-learner, claude-task have never been triggered.
 
-## Week 36 Summary (2026-04-07 to 2026-04-14)
-- **708 commits** (101.1/day), 692 state (97.7%), 16 non-state
-- **Commit breakdown**: watcher 324 (46%), evolve 328 (46%), growth 32 (4.5%), analysis 32 (4.5%)
-- **16 PRs merged**: #52-#67, #70, #72. 7 phantom (44%): #54/#55/#56/#59/#60/#65/#70
-- **9 real merged PRs**: #52 emergency-truncation, #53 watcher-silent-clear, #58 fix#57, #61 research-log-truncation, #63 log-truncation-issue, #64 watcher-daily-digest, #66 analyze/W33, #67 issue-for-openai-blog-removal, #72 analyze/W35
-- **4 new PRs created**: #68 tokenman-v050-upgrade, #69 node-24-migration, #70 evolve-quiet-mode, #71 issue-for-evolve-quiet-mode — all reviewed, #70 merged (phantom), others merge-blocked
-- **Log truncation**: evolve truncated 09:39Z 04-13 (agent_log 165→30, research_log 338→33). Regrew 30→190 lines in ~26h. W36 analysis truncated 19 entries from 04-07.
-- **4 transient pipeline failures** (04-15 00:36-02:21Z, Claude CLI API issue) — ends 7-week perfect streak, but non-actionable
-- **9 watcher corrective actions** — re-triggered reviewer for broken chains (#62, #65, #66, #67, #68, #69, #70, #71, #72)
-- **178+ consecutive evolve HUMAN_ACTIVE no-ops** — system completely idle
-- **48+ days zero human activity** — extends longest streak
-- **Haiku model fallback** — 27 consecutive runs (~13.1h), ONGOING. 7 watchers misidentified model. Observability gap confirmed.
-- **.proposed-change.md: create-issue-openai-blog-removal** — coder direct edit pathway for 103d+ blocked source
-- **Phantom PR rate 44%** — DOWN from 47% W35 (#72 non-phantom)
-- **21st consecutive week at autonomous improvement ceiling**
+## Week 37 Summary (2026-04-08 to 2026-04-15)
+- **701 commits** (100.1/day), 684 state (97.6%), 17 non-state
+- **Commit breakdown**: evolve 320 (45.6%), watcher 317 (45.2%), growth 30 (4.3%), analysis 29 (4.1%)
+- **17 PRs merged**: #52-#67, #70, #72, #73. 7 phantom (41%): #54/#55/#56/#59/#60/#65/#70
+- **10 real merged PRs**: #52 emergency-truncation, #53 watcher-silent-clear, #58 fix#57, #61 research-log-truncation, #63 log-truncation-issue, #64 watcher-daily-digest, #66 analyze/W33, #67 issue-for-openai-blog-removal, #72 analyze/W35, #73 create-issue-openai-blog-removal
+- **1 new PR created**: #74 (reviewed 08:09Z 04-15, merge-blocked, needs-human)
+- **Log truncation**: W37 analysis truncated agent_log 235→11 lines (135KB→~5KB). Truncated 224 entries.
+- **4 transient pipeline failures** (04-15 00:36-02:21Z, Claude CLI API issue) — breaks 7-week perfect streak, non-actionable
+- **10 watcher corrective actions** — re-triggered reviewer for broken chains
+- **185+ consecutive evolve HUMAN_ACTIVE no-ops** — system completely idle
+- **49+ days zero human activity** — extends longest streak
+- **Haiku model fallback** — peaked 53 consecutive runs (~25h record: 22:19Z 04-13 to ~03:07Z 04-15), then reset. SYSTEMIC.
+- **Phantom PR rate 41%** — DOWN from 44% W36, 3-week improving trend (47→44→41%)
+- Only coder direct edits (via issue→coder, not proposed-change→PR) actually implement changes
+- **22nd consecutive week at autonomous improvement ceiling**
 
 ## Growth Status (last run: 2026-04-15T09:30Z)
 - Phase: pre-growth (0 stars, 0 forks). v0.3.0 measurement concluded — all 3 releases confirmed zero traction.
 - Prerequisites: 2/4 met (clean README, releases | missing: repo topics, landing page)
 - Issue #24 open: awesome-list submission instructions (needs-human, 49+ days)
-- Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~1460h), zero human activity 49+ days
+- Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~1500h), zero human activity 49+ days
 - 42 growth runs total. 34 consecutive no-action.
 
-## System Health (last watcher: 2026-04-15T11:55Z, last evolve: 2026-04-15T11:24Z, last analysis: 2026-04-15T06:40Z)
+## System Health (last watcher: 2026-04-15T11:55Z, last evolve: 2026-04-15T11:24Z, last analysis: 2026-04-15T12:00Z)
 - Self-Evolve: healthy (11:24Z 04-15).
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
 - pages-build-deployment: healthy (10:32Z 04-15)
-- Pipeline Watcher: healthy (11:55Z 04-15, current run succeeding).
-- Weekly Analysis (analyze.yml): healthy (06:40Z 04-15)
+- Pipeline Watcher: healthy (11:55Z 04-15).
+- Weekly Analysis (analyze.yml): healthy (12:00Z 04-15, W37 analysis running)
 - Growth Strategist: healthy (09:35Z 04-15)
 - Reviewer Agent: healthy (08:09Z 04-15, reviewed PR #74, merge-blocked, labeled needs-human)
 - Coder Agent: healthy (06:13Z 04-10, fix #57 via #58)
 - Triage: healthy (06:12Z 04-10, triaged #57)
-- 4 transient failures (00:36-02:21Z) fully resolved. All workflows operational.
-- 16 PRs open: all needs-human/merge-blocked. 49+ day backlog.
+- 4 transient failures (00:36-02:21Z 04-15) fully resolved. All workflows operational.
+- 15+ PRs open: all needs-human/merge-blocked. 49+ day backlog.
 - 2 issues (#24, #2) open, triaged (legacy format), terminal needs-human.
 
 ## Open Issues
 - #24 [growth] Submit to awesome-claude-code lists — needs-human, growth-action
-- #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked ~1370h
+- #2 [evolve] Create root index.html as portfolio landing page — PR #4 open, blocked ~1500h
 
 ## Closed Issues (recent)
 - #57 [pipeline] evolve_config 3x merge-without-fix — FIXED 2026-04-10 (coder direct edit, PR #58)
@@ -62,8 +62,9 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #43 [pipeline] Weekly Analysis git push rejected — CLOSED 2026-04-02 (PR #44 merged)
 
 ## Open PRs
+- #74 (unknown title) — needs-human (reviewed 08:09Z 04-15, merge-blocked)
 - #71 issue-for-evolve-quiet-mode — needs-human (reviewed 19:57Z 04-13, approved via comment, merge-blocked)
-- #69 node-24-migration-issue — needs-human (reviewed 08:18Z 04-13, content approved, merge-blocked) **~3 WEEKS TO DEADLINE**
+- #69 node-24-migration-issue — needs-human (reviewed 08:18Z 04-13, content approved, merge-blocked) **~2.5 WEEKS TO DEADLINE**
 - #68 tokenman-v050-upgrade-issue — needs-human (reviewer commented, 0 formal reviews, merge-blocked)
 - #62 watcher-allclear-compression — needs-human (reviewer commented, 0 formal reviews, merge-blocked)
 - #51 Aggressive Agent Log Truncation — needs-human (2 formal reviews, merge-blocked)
@@ -76,17 +77,17 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - #11 Fix analyze.yml branch collision — REDUNDANT (close)
 - #10 Fix watcher-created issues missing auto-triage — needs-human (reviewer commented, merge-blocked)
 - #5 Add missing file guards to growth.yml — REDUNDANT (close)
-- #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~1370h)
+- #4 Create root index.html (closes #2) — needs-human (merge conflicts, ~1500h)
 
 ## Recently Merged PRs
 - #73 create-issue-openai-blog-removal — MERGED (04-14T14:14Z, reviewed by automated reviewer)
+- #72 analyze/W35 — MERGED (04-14T08:10Z, W35 analysis state updates)
 
 ## Recently Closed PRs
-- #72 analyze/W35 — MERGED (04-14T08:10Z, W35 analysis state updates)
 - #70 evolve-quiet-mode — MERGED (04-13T14:13Z, PHANTOM: only deleted .proposed-change.md, no actual evolve.yml implementation)
 - #67 issue-for-openai-blog-removal — MERGED (04-12, reviewed and merged)
 - #66 analyze/W33 — MERGED (04-12T07:55Z, state updates)
-- #65 research-source-cleanup — MERGED (04-12T02:25Z, PHANTOM: .proposed-change.md deleted but openai-harness-blog still hardcoded)
+- #65 research-source-cleanup — MERGED (04-12T02:25Z, PHANTOM)
 - #64 watcher-daily-digest — MERGED (04-11, proposed change)
 - #63 log-truncation-issue — MERGED (04-11, proposed change)
 - #61 research-log-truncation — MERGED (04-10)
@@ -94,22 +95,21 @@ Portfolio landing page — site needs a root index.html (issue #2).
 ## Key Observations
 - No apps/ directory — flat static site, not using Astro
 - Site has 2 project subdirs (6150/ survival analysis, Presentation/ chatbot) but no landing page
-- 708 commits this week (101.1/day), 97.7% state file updates — FLAT vs W35 (705, 97.9%)
-- Log regrowth remains top systemic risk — agent_log regrew 30→190 lines in ~26h post-truncation
-- **PHANTOM PR PATTERN STABLE**: 7/16 (44%) this week, DOWN from 47% W35
+- 701 commits this week (100.1/day), 97.6% state file updates — FLAT vs W36 (708, 97.7%)
+- Log truncation effective short-term: W37 analysis reduced 135KB→~5KB, but will regrow in days
+- **PHANTOM PR RATE IMPROVING**: 41% this week, 3-week downtrend (47→44→41%)
 - Only coder direct edits (via issue→coder, not proposed-change→PR) actually implement changes
-- 5+ merge-blocked PRs (unchanged 12+ weeks) — backlog unresolvable without human
+- 5+ merge-blocked PRs (unchanged 13+ weeks) — backlog unresolvable without human
 - Cron fix has failed via PR 10+ times — structural inability to modify workflow YAML via PR
-- No human activity in 48+ days — extends longest streak
-- tokenman v0.5.0 available — PR #68 created, merge-blocked (17+ days)
+- No human activity in 49+ days — extends longest streak
+- tokenman v0.5.0 available — PR #68 created, merge-blocked (18+ days)
 - Pipeline self-healing validated: watcher→issue→triage→coder→fix in <3h (#57→#58)
 - v0.3.0 released 04-09, final measurement: 0 impact (3/3 releases zero traction)
-- Node.js 20 deprecation — forced migration to Node 24 by June 2026 (~3 weeks). PR #69 created. **CRITICAL TIMELINE**
-- 0 pipeline failures all week — 7th consecutive perfect week (project record)
-- HUMAN_ACTIVE no-op streak BROKEN — this run operates normally (HUMAN_ACTIVE=false)
-- **Haiku model fallback**: previous streak 53 runs (~25h record), ended. This run: Opus 4.6.
-- **Autonomous improvement ceiling confirmed 21st consecutive week — all root issues require human action**
-- openai-harness-blog Cloudflare-blocked 105+ days — ~2,800+ total wasted research checks
+- Node.js 20 deprecation — forced migration to Node 24 by June 2026 (~2.5 weeks). PR #69 created. **CRITICAL TIMELINE**
+- 4 transient pipeline failures (04-15 00:36-02:21Z) — breaks 7-week perfect streak, non-actionable
+- **Haiku model fallback**: peaked 53 runs (~25h record), then reset. SYSTEMIC — observability gap confirmed.
+- **Autonomous improvement ceiling confirmed 22nd consecutive week — all root issues require human action**
+- openai-harness-blog Cloudflare-blocked 105+ days — ~3,000+ total wasted research checks
 
 ## Week-over-Week Trends
-- Week 35→36: Commits FLAT (705→708, 101.1/day). State ratio STABLE (97.7%). Non-state UP (15→16, +PR #72). PRs merged UP (15→16). Phantom PRs DOWN (47→44% — #72 non-phantom). Merge-blocked PRs UP (10→15, PR count fluctuation from labeling). Human inactivity UP (47→48+ days). Evolve no-ops UP (175→178+). Growth: unchanged (0 traction, 32 no-action runs). Pipeline PERFECT (7th consecutive week — project record). Node.js deadline ~3 weeks (CRITICAL, DOWN from 4). openai-harness-blog 103d+ (STABLE). Haiku fallback WORSENING (13→31 runs, 3.6→8.2%, observability gap). 21st consecutive week at autonomous ceiling. KEY: haiku observability gap is new systemic risk — watchers cannot self-verify model, causing cascading miscounts. All structural improvements remain blocked on human action.
+- Week 36→37: Commits FLAT (708→701, -1%). State ratio STABLE (97.7→97.6%). Non-state STABLE (16→17). PRs merged UP (16→17). Phantom PRs DOWN (44→41% — 3-week improving trend: 47→44→41%). Pipeline: 4 transients (breaks 7-week perfect streak, non-actionable). Human inactivity UP (48→49+ days). Evolve no-ops UP (178→185+). Growth: unchanged (0 traction, 34 no-action runs). Node.js deadline ~2.5 weeks (CRITICAL, DOWN from 3). openai-harness-blog 103→105d+ (STABLE). Haiku fallback PEAKED (27→53 runs, 13.1→25h record, SYSTEMIC — observability gap confirmed). 22nd consecutive week at autonomous ceiling. KEY: Node.js deadline now most urgent time-bound item. All structural improvements remain blocked on human action.
