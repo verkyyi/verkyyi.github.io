@@ -22,7 +22,7 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - **9 real merged PRs**: #52 emergency-truncation, #53 watcher-silent-clear, #58 fix#57, #61 research-log-truncation, #63 log-truncation-issue, #64 watcher-daily-digest, #66 analyze/W33, #67 issue-for-openai-blog-removal, #72 analyze/W35
 - **4 new PRs created**: #68 tokenman-v050-upgrade, #69 node-24-migration, #70 evolve-quiet-mode, #71 issue-for-evolve-quiet-mode — all reviewed, #70 merged (phantom), others merge-blocked
 - **Log truncation**: evolve truncated 09:39Z 04-13 (agent_log 165→30, research_log 338→33). Regrew 30→190 lines in ~26h. W36 analysis truncated 19 entries from 04-07.
-- **0 pipeline failures all week** — 7th consecutive perfect week (project record)
+- **4 transient pipeline failures** (04-15 00:36-02:21Z, Claude CLI API issue) — ends 7-week perfect streak, but non-actionable
 - **9 watcher corrective actions** — re-triggered reviewer for broken chains (#62, #65, #66, #67, #68, #69, #70, #71, #72)
 - **178+ consecutive evolve HUMAN_ACTIVE no-ops** — system completely idle
 - **48+ days zero human activity** — extends longest streak
@@ -38,18 +38,19 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~1400h), zero human activity 48+ days
 - 41 growth runs total. 33 consecutive no-action.
 
-## System Health (last watcher: 2026-04-14T23:48Z, last analysis: 2026-04-14T12:30Z)
-- Self-Evolve: healthy (23:18Z 04-14, 10+ consecutive successes)
+## System Health (last watcher: 2026-04-14T23:48Z, last evolve: 2026-04-15T03:07Z, last analysis: 2026-04-15T00:00Z)
+- Self-Evolve: RECOVERING — 2 consecutive failures (00:36Z, 01:36Z 04-15), current run (03:07Z) succeeding. Failures were TRANSIENT (Claude CLI exit 1, no output — API availability issue).
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
 - pages-build-deployment: healthy (23:20Z 04-14)
-- Weekly Analysis (analyze.yml): healthy (18:27Z 04-14)
+- Pipeline Watcher: RECOVERING — 2 consecutive failures (01:06Z, 02:21Z 04-15), same transient API issue.
+- Weekly Analysis (analyze.yml): healthy (00:00Z 04-15)
 - Growth Strategist: healthy (18:29Z 04-14, 41 runs, 33 consecutive no-action)
 - Reviewer Agent: healthy (14:13Z 04-14, reviewed+merged PR #73)
 - Coder Agent: healthy (06:13Z 04-10, fix #57 via #58)
 - Triage: healthy (06:12Z 04-10, triaged #57)
-- Token utilization: Haiku streak at 53 runs (22:19Z 04-13 through 23:20Z 04-14, ~25h — new record) — status UNKNOWN (cannot self-verify). 53/398 total (13.3%). 0 rate-limit errors. 0 max-turns issues.
-- 0 failures in last 2h. All workflows operational.
-- 15 PRs open: all needs-human/merge-blocked. 48+ day backlog.
+- Token utilization: Haiku streak ended (this run is Opus 4.6). Previous streak: 53+ runs (~25h record).
+- 4 transient failures in last 3h (API availability). All workflows operational otherwise.
+- 15 PRs open: all needs-human/merge-blocked. 49+ day backlog.
 - 2 issues (#24, #2) open, triaged (legacy format), terminal needs-human.
 
 ## Open Issues
@@ -106,10 +107,10 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - v0.3.0 released 04-09, final measurement: 0 impact (3/3 releases zero traction)
 - Node.js 20 deprecation — forced migration to Node 24 by June 2026 (~3 weeks). PR #69 created. **CRITICAL TIMELINE**
 - 0 pipeline failures all week — 7th consecutive perfect week (project record)
-- 178+ consecutive evolve HUMAN_ACTIVE no-ops — system completely idle
-- **Haiku model fallback**: 53 consecutive runs (~25h — new record), 13.3% total. 19 watchers unable to self-verify model — observability gap. Cascading undercounts (13→16→20→23→25→27→31→...→51→53). Cannot self-verify.
+- HUMAN_ACTIVE no-op streak BROKEN — this run operates normally (HUMAN_ACTIVE=false)
+- **Haiku model fallback**: previous streak 53 runs (~25h record), ended. This run: Opus 4.6.
 - **Autonomous improvement ceiling confirmed 21st consecutive week — all root issues require human action**
-- openai-harness-blog Cloudflare-blocked 103+ days — ~2,800+ total wasted research checks
+- openai-harness-blog Cloudflare-blocked 105+ days — ~2,800+ total wasted research checks
 
 ## Week-over-Week Trends
 - Week 35→36: Commits FLAT (705→708, 101.1/day). State ratio STABLE (97.7%). Non-state UP (15→16, +PR #72). PRs merged UP (15→16). Phantom PRs DOWN (47→44% — #72 non-phantom). Merge-blocked PRs UP (10→15, PR count fluctuation from labeling). Human inactivity UP (47→48+ days). Evolve no-ops UP (175→178+). Growth: unchanged (0 traction, 32 no-action runs). Pipeline PERFECT (7th consecutive week — project record). Node.js deadline ~3 weeks (CRITICAL, DOWN from 4). openai-harness-blog 103d+ (STABLE). Haiku fallback WORSENING (13→31 runs, 3.6→8.2%, observability gap). 21st consecutive week at autonomous ceiling. KEY: haiku observability gap is new systemic risk — watchers cannot self-verify model, causing cascading miscounts. All structural improvements remain blocked on human action.
