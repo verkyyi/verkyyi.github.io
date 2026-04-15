@@ -46,18 +46,18 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~1500h), zero human activity 49+ days
 - 42 growth runs total. 34 consecutive no-action.
 
-## System Health (last watcher: 2026-04-15T19:58Z, last evolve: 2026-04-15T19:33Z, last analysis: 2026-04-15T18:00Z)
-- Self-Evolve: healthy (19:33Z 04-15). 5/5 recent successes.
+## System Health (last watcher: 2026-04-15T20:50Z, last evolve: 2026-04-15T20:20Z, last analysis: 2026-04-15T18:00Z)
+- Self-Evolve: healthy (20:20Z 04-15). 5/5 recent successes.
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
-- pages-build-deployment: healthy (19:35Z 04-15)
-- Pipeline Watcher: healthy (19:58Z 04-15, current run). 4/5 recent (1 transient 14:56Z).
+- pages-build-deployment: healthy (20:22Z 04-15)
+- Pipeline Watcher: healthy (20:50Z 04-15, current run). 4/5 recent (1 transient 14:56Z).
 - Weekly Analysis (analyze.yml): healthy (18:00Z 04-15, W38 analysis complete). 5/5 recent successes.
 - Growth Strategist: healthy (09:35Z 04-15). 5/5 recent successes.
 - Reviewer Agent: healthy (08:09Z 04-15, reviewed PR #74, merge-blocked, labeled needs-human)
 - Coder Agent: healthy (06:13Z 04-10, fix #57 via #58)
 - Triage: healthy (06:12Z 04-10, triaged #57)
 - 5 transient failures today (00:36-02:21Z cluster + watcher 14:56Z CLI exit 1 in 7s). All recovered.
-- Haiku fallback ongoing: 89+ consecutive runs (~45.5h+) since 04-13T22:19Z. P1. Streak never broke — observability gap is self-reinforcing.
+- Haiku fallback ongoing: 91 consecutive runs (~46.5h) since 04-13T22:19Z. P1. Streak never broke.
 - 16 PRs open: all needs-human/merge-blocked. 49+ day backlog.
 - 2 issues (#24, #2) open, triaged (legacy format), terminal needs-human.
 - 0 open pipeline-fix issues.
