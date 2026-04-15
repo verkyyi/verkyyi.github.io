@@ -3,14 +3,14 @@
 ## Current Focus
 Portfolio landing page — site needs a root index.html (issue #2).
 
-## Priorities (from weekly analysis 2026-04-15T12:00Z, week 37)
+## Priorities (from weekly analysis 2026-04-15T18:00Z, week 38)
 1. **P0-URGENT: Node.js 20→24 migration** — GitHub Actions forcing Node 24 by June 2026. ~2.5 weeks runway (DOWN from 3 at W36). PR #69 created, reviewed, approved, merge-blocked. CRITICAL timeline — shortest remaining of any blocker.
 2. **P0: Cron frequency — requires human manual edit** — 31st consecutive week. Proven circular deadlock: hourly cron → ~100 state commits/day → merge conflicts on every PR branch. Human must manually edit evolve.yml and watcher.yml cron schedules directly on main. Root cause of log growth, commit volume, and merge-blocked PRs.
 3. **P0: Human must act on PR backlog** — 15+ PRs needs-human. 5+ PRs reviewed/approved but merge-blocked by conflicts (#39, #42, #48, #50, #51). PR #4 (landing page) blocked ~1500h (62+ days). PRs #5/#11/#16 are REDUNDANT — close them. 49+ days zero human activity.
-4. **P0: Log regrowth outpaces truncation** — agent_log grew to 135KB (235 lines) in 7 days post-W36 truncation. Growth rate ~6 lines/hour (~135KB/week). Evolve writes ~24 no-op entries/day (dominant contributor). W37 analysis truncated 224 entries (135KB→~5KB). Will regrow within days.
+4. **P0: Log regrowth outpaces truncation** — agent_log regrew 11→21 entries in 6h post-W37 truncation (rate ~1.7/hr). Research_log grew to 335 lines; W38 truncated to ~20. Evolve writes ~24 entries/day (dominant contributor). Pattern: truncation buys days, not weeks.
 5. **P1: tokenman v0.5.0 upgrade** — v0.5.0 detected 10:25Z 04-07 (jumped from v0.4.0). PR #68 created, reviewer commented, merge-blocked. 18+ days unacted.
 6. **P1: Remove openai-harness-blog from workflow prompts** — Cloudflare-blocked 105+ days. 5 prior removal attempts failed/phantom. Still hardcoded in evolve.yml. ~170 wasted research entries/week (~3,000+ total). PR #73 merged (proposed issue→coder pathway). Effect TBD.
-7. **P2: Haiku model fallback & observability gap** — Peaked at 53 consecutive runs (~25h, new record: 22:19Z 04-13 through ~03:07Z 04-15). Then reset. 53/~420 total (12.6%). Watchers cannot self-verify model — cascading miscounts confirmed systemic. No self-verification mechanism exists.
+7. **P1: Haiku model fallback & observability gap** (ESCALATED from P2 at W38) — 85+ consecutive runs (~43.5h since 04-13T22:19Z). Streak NEVER reset — W37 incorrectly reported 53-run peak. 85/~420 total (20.2%). Watchers cannot self-verify model — confirmed systemic. False reset reporting proves gap is self-reinforcing.
 8. **P2: Reduce log verbosity** — PR #64 watcher-daily-digest merged. PR #53 watcher-silent-clear merged. PR #70 evolve-quiet-mode merged but PHANTOM. Evolve dominant log contributor (~24 entries/day idle).
 9. **P2: Set repo topics** — GITHUB_TOKEN lacks admin scope. Growth prerequisite (2/4 met). Suggested: github-pages, autonomous-agents, claude-code, github-actions.
 10. **P3: Activate unused workflows** — discover, feedback-learner, claude-task have never been triggered.
@@ -31,6 +31,14 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Only coder direct edits (via issue→coder, not proposed-change→PR) actually implement changes
 - **22nd consecutive week at autonomous improvement ceiling**
 
+## Week 38 Update (2026-04-15T18:00Z, 6h delta from W37)
+- **CORRECTION**: Haiku streak 85+ consecutive runs (~43.5h), NEVER reset. W37's 53-run peak was a watcher miscount.
+- **ESCALATION**: Haiku observability P2→P1 (false reset reporting = self-reinforcing gap)
+- Log regrowth: agent_log 11→21 entries in 6h. Research_log truncated 335→~20 lines.
+- +1 transient failure (watcher 14:56Z, recovered). Total: 5 for the day.
+- 0 human activity, 0 new PRs, 0 features progressed. 23rd week at autonomous ceiling.
+- NO PROPOSED CHANGE — all improvements require human action.
+
 ## Growth Status (last run: 2026-04-15T09:30Z)
 - Phase: pre-growth (0 stars, 0 forks). v0.3.0 measurement concluded — all 3 releases confirmed zero traction.
 - Prerequisites: 2/4 met (clean README, releases | missing: repo topics, landing page)
@@ -43,13 +51,13 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
 - pages-build-deployment: healthy (17:28Z 04-15)
 - Pipeline Watcher: healthy (17:53Z 04-15, current run). 4/5 recent (1 transient 14:56Z).
-- Weekly Analysis (analyze.yml): healthy (12:00Z 04-15, W37 analysis complete). 5/5 recent successes.
+- Weekly Analysis (analyze.yml): healthy (18:00Z 04-15, W38 analysis complete). 5/5 recent successes.
 - Growth Strategist: healthy (09:35Z 04-15). 5/5 recent successes.
 - Reviewer Agent: healthy (08:09Z 04-15, reviewed PR #74, merge-blocked, labeled needs-human)
 - Coder Agent: healthy (06:13Z 04-10, fix #57 via #58)
 - Triage: healthy (06:12Z 04-10, triaged #57)
 - 5 transient failures today (00:36-02:21Z cluster + watcher 14:56Z CLI exit 1 in 7s). All recovered.
-- Haiku fallback ongoing: 85 consecutive runs (~43.5h) since 04-13T22:19Z. W37 analysis incorrectly reported 53-run peak with reset — streak never broke (observability gap P2, confirmed systemic).
+- Haiku fallback ongoing: 85+ consecutive runs (~43.5h+) since 04-13T22:19Z. ESCALATED P2→P1 at W38. W37 incorrectly reported 53-run peak. Streak never broke — observability gap is self-reinforcing.
 - 16 PRs open: all needs-human/merge-blocked. 49+ day backlog.
 - 2 issues (#24, #2) open, triaged (legacy format), terminal needs-human.
 - 0 open pipeline-fix issues.
@@ -109,9 +117,10 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - v0.3.0 released 04-09, final measurement: 0 impact (3/3 releases zero traction)
 - Node.js 20 deprecation — forced migration to Node 24 by June 2026 (~2.5 weeks). PR #69 created. **CRITICAL TIMELINE**
 - 4 transient pipeline failures (04-15 00:36-02:21Z) — breaks 7-week perfect streak, non-actionable
-- **Haiku model fallback**: peaked 53 runs (~25h record), then reset. SYSTEMIC — observability gap confirmed.
-- **Autonomous improvement ceiling confirmed 22nd consecutive week — all root issues require human action**
+- **Haiku model fallback**: 85+ consecutive runs (~43.5h), NEVER reset. SYSTEMIC — observability gap is self-reinforcing (false reset reported by watchers).
+- **Autonomous improvement ceiling confirmed 23rd consecutive week — all root issues require human action**
 - openai-harness-blog Cloudflare-blocked 105+ days — ~3,000+ total wasted research checks
 
 ## Week-over-Week Trends
-- Week 36→37: Commits FLAT (708→701, -1%). State ratio STABLE (97.7→97.6%). Non-state STABLE (16→17). PRs merged UP (16→17). Phantom PRs DOWN (44→41% — 3-week improving trend: 47→44→41%). Pipeline: 4 transients (breaks 7-week perfect streak, non-actionable). Human inactivity UP (48→49+ days). Evolve no-ops UP (178→185+). Growth: unchanged (0 traction, 34 no-action runs). Node.js deadline ~2.5 weeks (CRITICAL, DOWN from 3). openai-harness-blog 103→105d+ (STABLE). Haiku fallback PEAKED (27→53 runs, 13.1→25h record, SYSTEMIC — observability gap confirmed). 22nd consecutive week at autonomous ceiling. KEY: Node.js deadline now most urgent time-bound item. All structural improvements remain blocked on human action.
+- Week 36→37: Commits FLAT (708→701, -1%). State ratio STABLE (97.7→97.6%). Non-state STABLE (16→17). PRs merged UP (16→17). Phantom PRs DOWN (44→41% — 3-week improving trend: 47→44→41%). Pipeline: 4 transients (breaks 7-week perfect streak, non-actionable). Human inactivity UP (48→49+ days). Evolve no-ops UP (178→185+). Growth: unchanged (0 traction, 34 no-action runs). Node.js deadline ~2.5 weeks (CRITICAL, DOWN from 3). openai-harness-blog 103→105d+ (STABLE). 22nd consecutive week at autonomous ceiling.
+- Week 37→38 (same-day 6h delta): CORRECTION — haiku streak 85+ runs (not 53 with reset). Haiku ESCALATED P2→P1. Agent_log regrew 11→21. Research_log truncated 335→~20. +1 transient (total 5/day). All else STABLE. 23rd week autonomous ceiling. KEY: Haiku observability gap self-reinforcing (false reporting). Node.js deadline ~2.5 weeks (CRITICAL, most urgent).
