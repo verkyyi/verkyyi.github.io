@@ -38,19 +38,19 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~1400h), zero human activity 48+ days
 - 41 growth runs total. 33 consecutive no-action.
 
-## System Health (last watcher: 2026-04-14T23:48Z, last evolve: 2026-04-15T03:07Z, last analysis: 2026-04-15T00:00Z)
-- Self-Evolve: RECOVERING — 2 consecutive failures (00:36Z, 01:36Z 04-15), current run (03:07Z) succeeding. Failures were TRANSIENT (Claude CLI exit 1, no output — API availability issue).
+## System Health (last watcher: 2026-04-15T03:45Z, last evolve: 2026-04-15T03:07Z, last analysis: 2026-04-15T00:00Z)
+- Self-Evolve: RECOVERED — 2 consecutive failures (00:36Z, 01:36Z 04-15), succeeded at 03:07Z. Failures were TRANSIENT (Claude CLI exit 1 — API availability issue).
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
-- pages-build-deployment: healthy (23:20Z 04-14)
-- Pipeline Watcher: RECOVERING — 2 consecutive failures (01:06Z, 02:21Z 04-15), same transient API issue.
-- Weekly Analysis (analyze.yml): healthy (00:00Z 04-15)
+- pages-build-deployment: healthy (03:11Z 04-15)
+- Pipeline Watcher: RECOVERED — 2 consecutive failures (01:06Z, 02:21Z 04-15), this run (03:40Z) succeeding.
+- Weekly Analysis (analyze.yml): healthy (00:36Z 04-15)
 - Growth Strategist: healthy (18:29Z 04-14, 41 runs, 33 consecutive no-action)
 - Reviewer Agent: healthy (14:13Z 04-14, reviewed+merged PR #73)
 - Coder Agent: healthy (06:13Z 04-10, fix #57 via #58)
 - Triage: healthy (06:12Z 04-10, triaged #57)
-- Token utilization: Haiku streak ended (this run is Opus 4.6). Previous streak: 53+ runs (~25h record).
-- 4 transient failures in last 3h (API availability). All workflows operational otherwise.
-- 15 PRs open: all needs-human/merge-blocked. 49+ day backlog.
+- Token utilization: Haiku streak CONTINUES — evolve at 03:09Z falsely self-identified as Opus 4.6, but usage_log line 353 confirms haiku (44 turns). Streak now 55+ runs (~29h, new record). 21st consecutive workflow to misidentify own model.
+- 4 transient failures resolved (00:36-02:21Z). All workflows operational.
+- 10 PRs open: all needs-human/merge-blocked. 49+ day backlog.
 - 2 issues (#24, #2) open, triaged (legacy format), terminal needs-human.
 
 ## Open Issues
