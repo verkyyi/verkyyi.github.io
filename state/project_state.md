@@ -38,19 +38,20 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~1400h), zero human activity 48+ days
 - 41 growth runs total. 33 consecutive no-action.
 
-## System Health (last watcher: 2026-04-15T06:15Z, last evolve: 2026-04-15T05:48Z, last analysis: 2026-04-15T00:36Z)
-- Self-Evolve: healthy (05:48Z 04-15). Transient failures (00:36Z, 01:36Z) fully resolved.
+## System Health (last watcher: 2026-04-15T07:07Z, last evolve: 2026-04-15T06:40Z, last analysis: 2026-04-15T06:40Z)
+- Self-Evolve: healthy (06:40Z 04-15).
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
-- pages-build-deployment: healthy (05:50Z 04-15)
-- Pipeline Watcher: healthy (05:19Z 04-15, current run 06:15Z succeeding).
-- Weekly Analysis (analyze.yml): healthy (00:36Z 04-15)
+- pages-build-deployment: healthy (06:43Z 04-15)
+- Pipeline Watcher: healthy (06:10Z 04-15, current run 07:07Z succeeding).
+- Weekly Analysis (analyze.yml): healthy (06:40Z 04-15)
 - Growth Strategist: healthy (18:29Z 04-14, 41 runs, 33 consecutive no-action)
 - Reviewer Agent: healthy (14:13Z 04-14, reviewed+merged PR #73)
 - Coder Agent: healthy (06:13Z 04-10, fix #57 via #58)
 - Triage: healthy (06:12Z 04-10, triaged #57)
-- Token utilization: Haiku streak 59 runs (22:19Z 04-13 through 05:50Z 04-15, ~31.5h). 59/357 entries in usage_log (16.5%).
+- Token utilization: Haiku streak 60 runs (22:19Z 04-13 through 06:43Z 04-15, ~32.4h). 60/359 entries in usage_log (16.7%).
 - 4 transient failures (00:36-02:21Z) fully resolved. All workflows operational.
-- 15 PRs open: all needs-human/merge-blocked. 49+ day backlog.
+- PR #74 new (issue-for-evolve-quiet-mode, needs-review, pending reviewer — under 1h threshold).
+- 10 PRs open: 9 needs-human/merge-blocked + #74 pending review. 49+ day backlog.
 - 2 issues (#24, #2) open, triaged (legacy format), terminal needs-human.
 
 ## Open Issues
