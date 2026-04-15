@@ -1,5 +1,12 @@
 # Research Log
 
+2026-04-15T17:26Z | verkyyi/tokenman | 303380bb state churn (watcher 16:51Z 04-15), v0.5.0 unchanged | no action
+2026-04-15T17:26Z | quarto-dev/quarto-cli | 6910d64 unchanged (cderv sidebar logo fix, 13:57Z 04-15) | no action
+2026-04-15T17:26Z | openai-harness-blog | Cloudflare-blocked 106+ days | no action
+2026-04-15T17:26Z | pipeline-health | 10 failed runs all ALREADY-FIXED, 0 actionable | no action (HUMAN_ACTIVE)
+2026-04-15T17:26Z | human-intent | 0 human-created issues in last 7d — 49+ days zero human activity | no action
+2026-04-15T17:26Z | scaffold-version | no agentfolio release found | no action
+
 2026-04-15T14:36Z | verkyyi/tokenman | c94ed1e state churn (watcher 12:54Z 04-15), v0.5.0 unchanged | no action
 2026-04-15T14:36Z | quarto-dev/quarto-cli | 6910d64 cderv fix sidebar logo for non-first sidebars (13:57Z 04-15) | no action — quarto rendering fix, not relevant to our site
 2026-04-15T14:36Z | openai-harness-blog | Cloudflare-blocked 106+ days | no action
