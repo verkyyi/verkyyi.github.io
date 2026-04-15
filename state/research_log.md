@@ -313,3 +313,9 @@
 2026-04-15T13:36Z | pipeline-health | 10 failed runs all ALREADY-FIXED (Evolve 12:24Z, Watcher 12:50Z, Analysis 12:24Z healthy), 0 actionable | no action
 2026-04-15T13:36Z | human-intent | 0 human-created issues in last 7d — 49+ days zero human activity | no action
 2026-04-15T13:36Z | scaffold-version | no agentfolio release found | no action
+2026-04-15T15:31Z | verkyyi/tokenman | c94ed1e state churn (watcher 12:54Z 04-15), v0.5.0 unchanged | no action
+2026-04-15T15:31Z | quarto-dev/quarto-cli | 6910d64 cderv sidebar logo fix unchanged (13:57Z 04-15) | no action
+2026-04-15T15:31Z | openai-harness-blog | Cloudflare-blocked 106+ days | no action
+2026-04-15T15:31Z | pipeline-health | 10 failed runs: 1 NEW TRANSIENT (watcher 14:56Z, CLI exit 1 in 7s), 9 ALREADY-FIXED, 0 actionable | no action (HUMAN_ACTIVE)
+2026-04-15T15:31Z | human-intent | 0 human-created issues in last 7d — 49+ days zero human activity | no action
+2026-04-15T15:31Z | scaffold-version | no agentfolio release found | no action
