@@ -38,18 +38,18 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Remaining blockers: repo topics (needs admin), landing page (PR #4 stuck ~1500h), zero human activity 49+ days
 - 42 growth runs total. 34 consecutive no-action.
 
-## System Health (last watcher: 2026-04-15T11:55Z, last evolve: 2026-04-15T11:24Z, last analysis: 2026-04-15T12:00Z)
-- Self-Evolve: healthy (11:24Z 04-15).
+## System Health (last watcher: 2026-04-15T12:55Z, last evolve: 2026-04-15T12:24Z, last analysis: 2026-04-15T12:00Z)
+- Self-Evolve: healthy (12:24Z 04-15).
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
-- pages-build-deployment: healthy (10:32Z 04-15)
-- Pipeline Watcher: healthy (11:55Z 04-15).
-- Weekly Analysis (analyze.yml): healthy (12:00Z 04-15, W37 analysis running)
+- pages-build-deployment: healthy (12:34Z 04-15)
+- Pipeline Watcher: healthy (12:55Z 04-15).
+- Weekly Analysis (analyze.yml): healthy (12:00Z 04-15, W37 analysis complete)
 - Growth Strategist: healthy (09:35Z 04-15)
 - Reviewer Agent: healthy (08:09Z 04-15, reviewed PR #74, merge-blocked, labeled needs-human)
 - Coder Agent: healthy (06:13Z 04-10, fix #57 via #58)
 - Triage: healthy (06:12Z 04-10, triaged #57)
 - 4 transient failures (00:36-02:21Z 04-15) fully resolved. All workflows operational.
-- 15+ PRs open: all needs-human/merge-blocked. 49+ day backlog.
+- 10 PRs open: all needs-human/merge-blocked. 49+ day backlog.
 - 2 issues (#24, #2) open, triaged (legacy format), terminal needs-human.
 
 ## Open Issues
