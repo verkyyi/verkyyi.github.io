@@ -4,7 +4,7 @@
     "label": "Forward Deployed Engineer",
     "email": "verky.yi@gmail.com",
     "phone": "(925) 900-3467",
-    "summary": "Forward Deployed Engineer with 5+ years shipping full-stack products and data infrastructure at scale. Experienced collaborating directly with enterprise customers to scope technical requirements and deploy end-to-end solutions — from front-end interfaces to backend systems and cloud infrastructure. Proven track record building production AI platforms that power 50,000+ users, with deep expertise in generative AI engineering, rapid experimentation, and high-quality data solutions.",
+    "summary": null,
     "location": {
       "city": "Santa Clara",
       "region": "CA",
@@ -24,7 +24,9 @@
   },
   "work": [
     {
+      "id": "24-helpful-llc",
       "name": "24 Helpful, LLC",
+      "company": "24 Helpful, LLC",
       "position": "Co-Founder & AI Engineer",
       "location": "Santa Clara, CA",
       "startDate": "2024-03",
@@ -32,11 +34,12 @@
         "Designed and shipped a self-evolving code system (generator/evaluator loop) that accelerated development velocity; implemented CI/CD automation with GitHub Actions to close iteration cycles in under 24 hours.",
         "Delivered end-to-end multi-tenant AWS cloud infrastructure for enterprise customers, reducing provisioning costs by 50% through automated resource management and tenant isolation.",
         "Collaborated directly with customers to scope requirements, remove deployment blockers, and accelerate rollouts — codified deployment playbooks and runbooks to standardize operational response across production systems."
-      ],
-      "company": "24 Helpful, LLC"
+      ]
     },
     {
+      "id": "24haowan-network-technology",
       "name": "24Haowan Network Technology Co., Ltd.",
+      "company": "24Haowan Network Technology Co., Ltd.",
       "position": "Co-Founder & Technical Lead",
       "location": "Shanghai, China",
       "startDate": "2019-10",
@@ -45,11 +48,12 @@
         "Designed a SaaS product and go-to-market strategy that achieved $1,000,000 ARR in 2 years by optimizing product lifecycle, user onboarding, and data-driven iteration loops.",
         "Led cross-functional engineering team; built internal tools that streamlined product and engineering workflows, improving team delivery cadence over a 6-month period.",
         "Engaged directly with enterprise customers to scope technical requirements and uncover pain points, converting 3 strategic accounts within 3 months and improving product-market fit."
-      ],
-      "company": "24Haowan Network Technology Co., Ltd."
+      ]
     },
     {
+      "id": "maiduote-network-technology",
       "name": "Maiduote Network Technology Co., Ltd.",
+      "company": "Maiduote Network Technology Co., Ltd.",
       "position": "Tech Lead",
       "location": "Guangzhou, China",
       "startDate": "2018-06",
@@ -59,12 +63,12 @@
         "Led end-to-end product development and launched a production platform that increased doctor-patient engagement by 30%; integrated predefined forms and chatbots in collaboration with stakeholders.",
         "Scoped and delivered data-driven features across the full stack, coordinating cross-functional teams to prioritize roadmap items and ensure stable, rapid rollouts.",
         "Drove customer-facing growth strategies that acquired over 50,000 users in 6 months, exceeding targets through targeted outreach and workflow optimization."
-      ],
-      "company": "Maiduote Network Technology Co., Ltd."
+      ]
     }
   ],
   "projects": [
     {
+      "id": "tokenman-io",
       "name": "tokenman.io",
       "description": "Claude Code Hosting & AI Repo Self-Evolution",
       "url": "https://tokenman.io",
@@ -81,6 +85,7 @@
       ]
     },
     {
+      "id": "ainbox",
       "name": "aInbox (ainbox.io)",
       "description": "MCP-Native AI Agent Email Middleware",
       "url": "https://ainbox.io",
@@ -97,6 +102,7 @@
       ]
     },
     {
+      "id": "agentfolio",
       "name": "AgentFolio",
       "description": "Open-Source Agentic Portfolio Engine",
       "url": "https://verkyyi.github.io/agentfolio",
@@ -115,6 +121,7 @@
   ],
   "skills": [
     {
+      "id": "ai-agentic-systems",
       "name": "AI & Agentic Systems",
       "keywords": [
         "Autonomous Agent Development",
@@ -128,6 +135,7 @@
       ]
     },
     {
+      "id": "full-stack",
       "name": "Full-Stack",
       "keywords": [
         "Python",
@@ -142,6 +150,7 @@
       ]
     },
     {
+      "id": "cloud-infrastructure",
       "name": "Cloud & Infrastructure",
       "keywords": [
         "AWS (EC2, SES, Aurora Serverless, IAM, SCPs)",
@@ -155,6 +164,7 @@
       ]
     },
     {
+      "id": "methods-tools",
       "name": "Methods & Tools",
       "keywords": [
         "Rapid Experimentation",
@@ -203,25 +213,11 @@
   ],
   "meta": {
     "version": "1.0.0",
-    "lastModified": "2026-04-16T03:00:00+00:00",
+    "lastModified": "2026-04-16T00:00:00Z",
     "agentfolio": {
       "company": "default",
-      "generated_by": "manual",
-      "match_score": {
-        "overall": 0,
-        "by_category": {},
-        "matched_keywords": [],
-        "missing_keywords": []
-      },
-      "skill_emphasis": [],
-      "section_order": [
-        "basics",
-        "work",
-        "projects",
-        "skills",
-        "education",
-        "volunteer"
-      ]
+      "role": null,
+      "generated_by": "claude-code/structurize-skill"
     }
   }
 }
