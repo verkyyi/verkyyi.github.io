@@ -1,115 +1,85 @@
-# Agentfolio — Scaffold Constitution
-# Harness rules only. No project-specific knowledge lives here.
-# Project context: read apps/${APP_NAME}/CLAUDE.md
+# AgentFolio
 
-## What this scaffold is
-A self-evolving web project harness powered by Claude Code.
-The repo IS the system. State lives in state/. Events live in
-GitHub Issues. Every agent action is a commit. The scaffold's
-first project is itself — it improves its own workflows, skills,
-and rules over time.
+Open-source agentic portfolio engine. Detects visitor context via URL slugs and renders an adapted resume for the target role.
 
-## Harness Architecture
-Runtime:     GitHub Actions (8 workflows)
-State:       state/ folder (committed markdown files)
-Event bus:   GitHub Issues with labels
-CMS:         content/ folder (Astro content collections)
-Memory:      state/project_state.md (read/write every run)
-Research:    state/research_log.md (append-only, external findings)
-Deployment:  GitHub Pages (Astro static build)
+## Quick Start
 
-## APP_NAME Resolution
-Workflows determine which project they operate on:
-1. Issue/PR-triggered (triage, coder, reviewer): read from issue/PR
-   label (e.g., project:profile, project:scaffold). Default: scaffold.
-2. Cron-triggered (evolve, analyze): iterate all apps/*/ folders,
-   or target scaffold for self-evolution tasks.
-3. Manual dispatch (claude-task, discover): accept APP_NAME as input.
+```bash
+cd web
+npm install
+npm run dev
+```
 
-## Session Protocol
+Open `http://localhost:5173/` to see the sample portfolio.
 
-ON START (every workflow run AND every CLI session):
-1. Read state/project_state.md — what happened last
-2. Read apps/${APP_NAME}/CLAUDE.md — project-specific rules
-3. Read apps/${APP_NAME}/FEATURE_STATUS.md — what's done and pending
-4. Check current event: issue body, PR diff, workflow input
+## Project Structure
 
-ON STOP (every workflow run AND every CLI session):
-1. Write session summary to state/project_state.md
-2. Update state/agent_log.md (append one line)
-3. Update apps/${APP_NAME}/FEATURE_STATUS.md if anything changed
-4. Commit all state/ changes with message: "state: [summary]"
+```
+agentfolio/
+├── data/                    # Personal data (replace with your own)
+│   ├── resume.json          # Base resume (JSON Resume schema)
+│   ├── adapted/             # Company-specific adapted resumes
+│   ├── companies/           # Company/role metadata
+│   ├── slugs.json           # URL slug → company mapping
+│   └── llm_cache/           # Cached LLM outputs (auto-generated)
+├── web/                     # React SPA (Vite + TypeScript)
+│   ├── src/
+│   │   ├── components/      # React components
+│   │   ├── hooks/           # Custom hooks
+│   │   ├── utils/           # Utility functions
+│   │   ├── styles/          # CSS
+│   │   ├── types.ts         # TypeScript types
+│   │   └── __tests__/       # Vitest unit tests
+│   ├── e2e/                 # Playwright E2E tests
+│   └── vite.config.ts       # Vite config
+├── scripts/                 # Python adaptation pipeline
+│   ├── adapt_one.py         # Adapt resume for one company
+│   ├── adapt_all.py         # Adapt all companies
+│   ├── chat_answer.py       # Chat widget answer generation
+│   ├── fetch_jds.py         # JD auto-fetching
+│   └── aggregate_feedback.py # Analytics aggregation
+└── .github/workflows/       # GitHub Actions
+    ├── deploy.yml           # Build + deploy to GitHub Pages
+    ├── adapt.yml            # Adaptation pipeline
+    ├── chat-on-request.yml  # Chat answer workflow
+    ├── analytics.yml        # Analytics aggregation
+    └── jd-sync.yml          # JD auto-fetching
+```
 
-CLI SESSION CLOSE (enforced by SessionEnd hook):
-When the user ends a CLI session (exits, /clear, closes terminal):
-- The SessionEnd hook auto-commits any uncommitted state/ changes
-- To ensure a useful summary exists, Claude MUST update state files
-  BEFORE the session ends — do not wait to be asked
-- When you detect the conversation is wrapping up (user says "done",
-  "thanks", "that's all", asks to commit, or context is being compressed),
-  proactively update state/project_state.md and state/agent_log.md
+## Key Conventions
 
-## Autonomy Rules (scaffold defaults — app CLAUDE.md may override)
+- **Test framework:** Vitest, not Jest. Use `vi.fn()`, `vi.mock()`, etc.
+- **Env vars:** Access via `import.meta.env.VITE_*` in browser code, `process.env.*` in Node/Vite config.
+- **Resume schema:** All resume data follows JSON Resume format. Types in `web/src/types.ts`.
+- **IntersectionObserver:** Must be mocked in tests — jsdom doesn't support it.
+- **Build pipeline:** `npm run copy-data` syncs `data/` → `web/public/data/` before every build/dev start.
 
-AUTO — commit directly, no PR needed:
-- State file updates (project_state.md, agent_log.md, research_log.md)
-- Failure log entries in CLAUDE.md
-- Skill file wording/clarity improvements (no behavioral changes)
-- FEATURE_STATUS updates
+## How to Personalize
 
-PR — open a pull request, label: auto-merge:
-- Lint and type fixes
-- Minor skill improvements (behavioral, low-risk)
+1. Replace `data/resume.json` with your resume (follow the JSON Resume schema)
+2. Run `python -m scripts.adapt_all` to generate adaptations (or create them manually)
+3. Update `data/slugs.json` with your company slugs
+4. Set env vars (see below)
+5. Push to trigger deploy
 
-PR — open a pull request, label: needs-review:
-- Workflow YAML changes (always)
-- CLAUDE.md autonomy rule changes
-- New skill files
-- Any change inspired by external research
-- Profile page layout/copy changes
-- Discovery-generated CLAUDE.md for new projects
+## Environment Variables
 
-NEVER auto-execute:
-- Deleting files or content
-- Promoting its own autonomy tier
-- Modifying auth/secrets configuration
-- More than one structural PR per evolve.yml run
-  (structural = workflow YAML, CLAUDE.md autonomy rules, new skill files)
+| Variable | Where | Purpose |
+|----------|-------|---------|
+| `VITE_GITHUB_PAT` | `.env.local` / Actions secret `GH_ISSUES_PAT` | GitHub PAT for issues API (analytics, chat) |
+| `VITE_GITHUB_REPO` | `.env.local` / `deploy.yml` | `owner/repo` for GitHub API calls |
+| `VITE_BASE_PATH` | `.env.local` / `deploy.yml` | URL base path (default `/`) |
+| `ANTHROPIC_API_KEY` | Actions secret | For chat answers and LLM summary polish |
 
-## GitHub Actions Context
-- GITHUB_TOKEN: always available, use for API calls
-- CLAUDE_CODE_OAUTH_TOKEN: in secrets, use for claude -p and claude-code-action
-- APP_NAME: resolved dynamically per workflow (see APP_NAME Resolution)
-- Workflows run on ubuntu-latest runners
-- Full outbound internet access in runners
+## Testing
 
-## Tool Usage in Workflows
-Preferred order for file operations:
-1. GitHub API (for GitHub data — richest, most structured)
-2. curl (for external HTTP — RSS, blogs, changelogs)
-3. Standard unix tools (grep, jq, sed — for parsing)
+```bash
+cd web
+npm test              # Run all unit tests
+npx vitest run        # Same, non-watch mode
+npx playwright test   # E2E tests (requires built site)
+```
 
-## Commit Message Convention
-feat(content): add new content for [topic]
-feat(harness): add [workflow/skill/capability]
-fix(workflow): fix [issue] in [workflow]
-state: session summary — [what was done]
-chore(deps): patch [package] security vulnerability
-research: [source] — [finding summary]
+## Deployment
 
-## Failure Handling
-If a step fails:
-1. Write failure to state/agent_log.md
-2. Add failure to CLAUDE.md failure log (below)
-3. Open a GitHub Issue labeled: agent-error
-4. Do NOT retry more than once automatically
-5. Exit cleanly — next run will pick up from state
-
-If a merged self-improvement causes a regression:
-1. Log the regression in the failure log
-2. Open a revert PR (needs-review)
-
-## FAILURE LOG
-# Each line = a past mistake, now prevented.
-# Add here. Never remove. Date every entry.
-# (Empty on fresh scaffold — grows with your project)
+Deploys to GitHub Pages via `.github/workflows/deploy.yml` on push to `main`. Set `GH_ISSUES_PAT` as a repository secret if you want analytics and chat features.

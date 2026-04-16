@@ -1,51 +1,75 @@
-# verkyyi.github.io
+# AgentFolio
 
-Personal portfolio and project showcase, hosted on GitHub Pages. Powered by an autonomous self-evolving harness that triages issues, writes fixes, reviews PRs, and monitors pipeline health — all through GitHub Actions and Claude Code.
+An open-source agentic portfolio engine. Fork it, drop in your resume, and deploy a portfolio site that adapts to each visitor's context.
 
-[![GitHub Pages](https://img.shields.io/website?url=https%3A%2F%2Fverkyyi.github.io&label=GitHub%20Pages)](https://verkyyi.github.io)
+## How It Works
 
-## Workflows
+AgentFolio detects who's visiting via URL slugs and renders a resume adapted to the target company and role. Each slug maps to a pre-built adaptation with tailored summaries, reordered sections, and match scores.
 
-| Workflow | Trigger | Description |
-|----------|---------|-------------|
-| `analyze.yml` | Schedule, manual | Weekly codebase analysis |
-| `claude-task.yml` | Manual dispatch | Run ad-hoc Claude tasks |
-| `coder.yml` | Issue labeled, manual | Implement fixes from issues |
-| `deploy.yml` | Manual dispatch | Deploy to GitHub Pages |
-| `discover.yml` | Manual dispatch | Discover and onboard new projects |
-| `evolve.yml` | Schedule, manual | Self-evolution orchestrator |
-| `feedback-learner.yml` | PR/issue events | Learn from merged PRs and closed issues |
-| `growth.yml` | Schedule, manual | Growth and traction strategy |
-| `reviewer.yml` | PR opened/updated, manual | Automated PR review |
-| `triage.yml` | Issue opened/reopened, manual | Classify and elaborate new issues |
-| `watcher.yml` | Schedule, manual | Pipeline health monitoring |
+```
+/                    → default resume
+/c/company-slug      → company-specific adaptation
+/c/unknown           → falls back to default
+```
+
+## Quick Start
+
+1. **Fork** this repo
+2. **Replace** `data/resume.json` with your resume ([JSON Resume](https://jsonresume.org/) schema)
+3. **Generate adaptations:**
+   ```bash
+   pip install anthropic   # needed for LLM features
+   python -m scripts.adapt_all
+   ```
+4. **Run locally:**
+   ```bash
+   cd web && npm install && npm run dev
+   ```
+5. **Deploy:** push to `main` — GitHub Actions builds and deploys to GitHub Pages automatically
+
+## Personalization
+
+All personal data lives in `data/`. Replace these files with your own:
+
+| File | Purpose |
+|------|---------|
+| `data/resume.json` | Your base resume (JSON Resume schema) |
+| `data/companies/*.json` | Target company/role metadata |
+| `data/adapted/*.json` | Adapted resumes (generated or manual) |
+| `data/slugs.json` | URL slug → company mapping |
+
+Framework code in `web/`, `scripts/`, and `.github/` is generic — you shouldn't need to modify it.
+
+## Environment Variables
+
+Set these in `web/.env.local` for development, or as GitHub Actions secrets/env for production:
+
+| Variable | Purpose |
+|----------|---------|
+| `VITE_GITHUB_PAT` | Fine-grained PAT with `issues:read+write` on your fork. Enables analytics and chat. |
+| `VITE_GITHUB_REPO` | `your-username/your-repo`. Auto-set in deploy workflow via `${{ github.repository }}`. |
+| `VITE_BASE_PATH` | URL base path. Default `/`. Set to `/repo-name/` if deploying to `username.github.io/repo-name/`. |
+| `ANTHROPIC_API_KEY` | For chat widget and LLM summary polish (Actions secret only, never in client). |
 
 ## Features
 
-- **Autonomous pipeline** — issues are triaged, coded, reviewed, and merged without human intervention
-- **Self-healing** — the watcher detects failures and opens fix issues automatically
-- **State tracking** — all agent activity is logged in `state/` for cross-session continuity
-- **Growth strategy** — automated outreach and traction monitoring
+- **Adaptive resumes** — each company slug gets a tailored version with reordered sections and customized summaries
+- **Match scores** — weighted scoring shows how well your profile fits each role
+- **Chat widget** — visitors can ask questions about your background (powered by Claude via GitHub Actions)
+- **Analytics** — anonymous engagement tracking via GitHub Issues
+- **Architecture page** — `/how-it-works` shows the pipeline and side-by-side adaptation comparisons
 
-## Project Structure
+## Architecture
+
+See `docs/architecture.md` for the full design.
 
 ```
-.
-├── .github/workflows/   # 11 GitHub Actions workflows
-├── 6150/                # Survival analysis project (Quarto-generated)
-├── Presentation/        # Chatbot presentation project
-├── skills/              # Agent skill definitions
-├── state/               # Agent state and logs
-├── CLAUDE.md            # Scaffold constitution and harness rules
-└── README.md
+web/           React SPA (Vite + TypeScript)
+scripts/       Python adaptation pipeline
+data/          Your personal data (the only directory you edit)
+.github/       GitHub Actions workflows
 ```
-
-## Getting Started
-
-The site deploys automatically to GitHub Pages on push to `main`. No build step is required — the content is static HTML, CSS, and JavaScript.
-
-To run a workflow manually, go to **Actions** and trigger any `workflow_dispatch`-enabled workflow.
 
 ## License
 
-This project is open source. See the repository for details.
+MIT

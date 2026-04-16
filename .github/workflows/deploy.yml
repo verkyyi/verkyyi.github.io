@@ -1,8 +1,7 @@
-name: Deploy to GitHub Pages
-
-# Disabled: GitHub Pages auto-deploys on push to main.
-# This workflow exists for future use if a build step is needed.
+name: Deploy to Pages
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -11,41 +10,41 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: 'pages'
   cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Check onboarding complete
-        run: |
-          if [ ! -f state/evolve_config.md ]; then
-            echo "::warning::Onboarding not complete. Run: claude 'Set up agentfolio. Follow https://github.com/verkyyi/agentfolio/blob/main/docs/onboarding.md'"
-            exit 0
-          fi
-
-      - name: Build
-        run: |
-          BUILD_CMD=$(grep '^build:' state/evolve_config.md | cut -d: -f2- | xargs)
-          if [ -n "$BUILD_CMD" ] && [ "$BUILD_CMD" != "(none)" ]; then
-            eval "$BUILD_CMD"
-          else
-            echo "No build command configured — static site, skipping build"
-            mkdir -p dist
-            cp -r *.html *.css *.js 6150/ Presentation/ dist/ 2>/dev/null || true
-          fi
-        env:
-          SITE_URL: https://${{ github.repository_owner }}.github.io
-          BASE_PATH: /${{ github.event.repository.name }}
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/setup-node@v4
         with:
-          path: dist/
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: web/package-lock.json
+
+      - name: Install web deps
+        working-directory: web
+        run: npm ci
+
+      - name: Run web tests
+        working-directory: web
+        run: npm test
+
+      - name: Build web
+        working-directory: web
+        env:
+          VITE_GITHUB_PAT: ${{ secrets.GH_ISSUES_PAT }}
+          VITE_GITHUB_REPO: ${{ github.repository }}
+        run: npm run build
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web/dist
 
   deploy:
     needs: build
@@ -54,6 +53,5 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
+      - id: deployment
         uses: actions/deploy-pages@v4
