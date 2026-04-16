@@ -40,19 +40,19 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Open issues 17→18. Traffic API still 403.
 - 42 growth runs total. 34 consecutive no-action.
 
-## System Health (last watcher: 2026-04-16T06:12Z, last evolve: 2026-04-16T06:41Z, last analysis: 2026-04-16T06:30Z)
+## System Health (last watcher: 2026-04-16T07:10Z, last evolve: 2026-04-16T06:41Z, last analysis: 2026-04-16T06:30Z)
 - Self-Evolve: healthy (06:41Z 04-16). 10/10 recent successes.
 - Deploy: SKIP in config (GitHub Pages auto-deploys on push)
-- pages-build-deployment: healthy (05:24Z 04-16)
-- Pipeline Watcher: healthy (06:12Z 04-16). 10/10 recent successes.
-- Weekly Analysis (analyze.yml): healthy (06:30Z 04-16, W40). 5/5 recent successes. NOTE: Running ~2.3x/day.
+- pages-build-deployment: healthy (06:48Z 04-16)
+- Pipeline Watcher: healthy (07:10Z 04-16). 10/10 recent successes.
+- Weekly Analysis (analyze.yml): healthy (06:48Z 04-16, W40). 5/5 recent successes. NOTE: Running ~2.3x/day.
 - Growth Strategist: healthy (09:35Z 04-15). 5/5 recent successes.
 - Reviewer Agent: healthy (08:09Z 04-15, reviewed PR #74, merge-blocked, labeled needs-human)
 - Coder Agent: healthy (06:13Z 04-10, fix #57 via #58)
 - Triage: healthy (06:12Z 04-10, triaged #57)
-- 5 transient failures 04-15. All recovered. 0 failures since (1.3 days clean).
-- Haiku fallback: 108 runs (~56h since 04-13T22:19Z). Self-ID unreliable. P1 WORSENING.
-- 16 PRs open: all needs-human/merge-blocked. 50+ day backlog.
+- 5 transient failures 04-15. All recovered. 0 failures since (1.7 days clean).
+- Haiku fallback: 110 runs (~57h since 04-13T22:19Z). Self-ID unreliable. P1 WORSENING.
+- 16 PRs open: all needs-human/merge-blocked. 51+ day backlog.
 - 2 issues (#24, #2) open, triaged (legacy format), terminal needs-human.
 - 0 open pipeline-fix issues.
 
@@ -110,8 +110,8 @@ Portfolio landing page — site needs a root index.html (issue #2).
 - Pipeline self-healing validated: watcher→issue→triage→coder→fix in <3h (#57→#58)
 - v0.3.0 released 04-09, final measurement: 0 impact (3/3 releases zero traction)
 - Node.js 20 deprecation — forced migration to Node 24 by June 2026 (~2.3 weeks). PR #69 created. **CRITICAL TIMELINE**
-- 0 transient pipeline failures since 04-15 (1.3 days clean)
-- **Haiku model fallback**: 108 consecutive runs (~56h), NEVER reset. Self-ID unreliable. SYSTEMIC.
+- 0 transient pipeline failures since 04-15 (1.7 days clean)
+- **Haiku model fallback**: 110 consecutive runs (~57h), NEVER reset. Self-ID unreliable. SYSTEMIC.
 - **Analysis cadence**: 5 analyses in 52h (~2.3x/day). Each adds ~31 commits. Self-referential noise contributor (4.5% of total). NEW FINDING at W40.
 - **Autonomous improvement ceiling confirmed 25th consecutive week — all root issues require human action**
 - openai-harness-blog Cloudflare-blocked 110+ days — ~3,400+ total wasted research checks. PR #73 effect not materialized.
