@@ -2,6 +2,17 @@
 
 Open-source agentic portfolio engine. See `README.md` for setup and personalization.
 
+## Derived repo rule (this repo)
+
+This is a **derived repo** — the framework was copied in from the upstream
+project `verkyyi/agentfolio`. In this repo, **only the `data/` folder may
+be modified**. Do not edit `web/`, `.github/`, `.claude/`, scripts, configs,
+or any framework source. Framework fixes belong upstream in `verkyyi/agentfolio`;
+re-apply them here by re-running the deploy from the latest upstream.
+
+The only exception: `CLAUDE.md` and `README.md` may carry deploy-specific notes
+(like this one), but their framework sections should track upstream.
+
 ## Project Structure
 
 ```
