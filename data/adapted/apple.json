@@ -62,7 +62,8 @@
             "playbooks"
           ]
         }
-      ]
+      ],
+      "company": "24 Helpful, LLC"
     },
     {
       "id": "maiduote",
@@ -105,7 +106,8 @@
             "scale"
           ]
         }
-      ]
+      ],
+      "company": "Maiduote Network Technology Co., Ltd."
     },
     {
       "id": "24haowan",
@@ -147,7 +149,8 @@
             "product-market-fit"
           ]
         }
-      ]
+      ],
+      "company": "24Haowan Network Technology Co., Ltd."
     }
   ],
   "projects": [

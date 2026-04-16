@@ -1,30 +1,30 @@
 import { useEffect, useState } from 'react';
 import type { AdaptedResume } from '../types';
 
-function normalize(company: string): string {
-  return company.trim().toLowerCase().replace(/\s+/g, '-');
+function parseSlug(pathname: string, basePath: string = '/'): string | null {
+  let path = pathname;
+  if (basePath !== '/' && path.startsWith(basePath)) {
+    path = path.slice(basePath.length);
+  }
+  const segment = path.replace(/^\/+|\/+$/g, '').split('/')[0] || null;
+  return segment || null;
 }
 
-export function useAdaptation(company: string | null) {
+export function useAdaptation() {
   const [adapted, setAdapted] = useState<AdaptedResume | null>(null);
   const [error, setError] = useState<Error | null>(null);
 
+  const slug = parseSlug(window.location.pathname, import.meta.env.BASE_URL);
+
   useEffect(() => {
-    if (!company) return;
     let cancelled = false;
-    const slug = normalize(company);
+    const file = slug ?? 'default';
+    const url = `${import.meta.env.BASE_URL}data/adapted/${file}.json`;
 
     (async () => {
       try {
-        const primaryUrl = `${import.meta.env.BASE_URL}data/adapted/${slug}.json`;
-        let res = await fetch(primaryUrl);
-        if (!res.ok) {
-          const fallbackUrl = `${import.meta.env.BASE_URL}data/adapted/default.json`;
-          res = await fetch(fallbackUrl);
-          if (!res.ok) {
-            throw new Error(`no adaptation available for ${slug} or default`);
-          }
-        }
+        const res = await fetch(url);
+        if (!res.ok) throw new Error('not_found');
         const data = (await res.json()) as AdaptedResume;
         if (cancelled) return;
         setAdapted(data);
@@ -35,7 +35,7 @@ export function useAdaptation(company: string | null) {
     })();
 
     return () => { cancelled = true; };
-  }, [company]);
+  }, [slug]);
 
-  return { adapted, error };
+  return { adapted, error, slug };
 }

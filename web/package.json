@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "copy-data": "node -e \"require('node:fs').cpSync('../data', 'public/data', {recursive: true})\"",
+    "copy-data": "node scripts/copy-data.cjs",
     "dev": "npm run copy-data && vite",
     "build": "npm run copy-data && tsc -b && vite build && node -e \"require('node:fs').copyFileSync('dist/index.html', 'dist/404.html')\"",
     "preview": "vite preview",
@@ -12,14 +12,18 @@
     "test:watch": "vitest"
   },
   "dependencies": {
+    "diff": "^9.0.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-markdown": "^10.1.0",
+    "styled-components": "^6.4.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.59.1",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^16.0.0",
     "@testing-library/user-event": "^14.5.2",
+    "@types/diff": "^7.0.2",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
